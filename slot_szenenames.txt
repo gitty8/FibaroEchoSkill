@@ -2,3 +2,5 @@ Schalte Alarm an
 Schalte Alarm aus
 Status offene Fenster
 Alarm
+Rollläden runter
+Rollläden rauf
