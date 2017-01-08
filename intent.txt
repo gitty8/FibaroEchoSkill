@@ -1,0 +1,269 @@
+{
+    "intents": [
+    
+    {
+      "intent": "SzeneIntent",
+      "slots": [
+        {
+            "name": "Name",
+            "type": "SZENENAMES"
+        },
+        {
+            "name": "Raumtyp",
+            "type": "ROOMTYPE"
+        },
+        {
+            "name": "Raum",
+            "type": "ROOMS"
+        }
+      ]
+    },
+    
+   {
+      "intent": "GlobalIntent",
+      "slots": [
+        {
+            "name": "Variable",
+            "type": "VARIABLENAMES"
+        }
+      ]
+    },
+
+   {
+      "intent": "GlobalSetIntent",
+      "slots": [
+        {
+            "name": "Variable",
+            "type": "VARIABLENAMES"
+        },
+        {
+            "name": "Wert",
+            "type": "AMAZON.NUMBER"
+        }
+      ]
+    },
+
+   {
+      "intent": "VirtualIntent",
+      "slots": [
+        {
+            "name": "Modul",
+            "type": "MODULNAMES"
+        },
+        {
+            "name": "Button",
+            "type": "BUTTONLABELS"
+        },
+        {
+            "name": "Roomtype",
+            "type": "ROOMTYPE"
+        },
+        {
+            "name": "Room",
+            "type": "ROOMS"
+        }
+      ]
+    },
+
+    {
+      "intent": "OpenIntent",
+      "slots": [
+        {
+            "name": "Area",
+            "type": "AREANAMES"
+        },
+        {
+            "name": "Devicename",
+            "type": "NAMES"
+        },
+        {
+            "name": "Raumtyp",
+            "type": "ROOMTYPE"
+        },
+        {
+            "name": "Raum",
+            "type": "ROOMS"
+        },
+        {
+            "name": "Status",
+            "type": "TOGGLES"
+        },   
+        {
+            "name": "Direkt",
+            "type": "DIRECTTYPES"
+        }
+      ]
+    },
+
+	{
+      "intent": "TemperatureIntent",
+      "slots": [
+        {
+            "name": "Raum",
+            "type": "ROOMS"
+        },
+        {
+            "name": "Raumtyp",
+            "type": "ROOMTYPE"
+        },
+        {
+            "name": "Typ",
+            "type": "STATUSWERT"
+        }
+      ]
+    },
+      
+	{
+      "intent": "StatusIntent",
+      "slots": [
+        {
+            "name": "Geraet",
+            "type": "DEVICE"
+        },
+        {
+            "name": "Geraettyp",
+            "type": "DEVICETYPES"
+        }    
+      ]
+    },
+      
+	{
+      "intent": "SwitchIntent",
+      "slots": [
+        {
+            "name": "Geraet",
+            "type": "DEVICE"
+        },
+        {
+            "name": "Status",
+            "type": "TOGGLES"
+        },
+        {
+            "name": "Janein",
+            "type": "YESNO"
+        }
+      ]
+    },
+      
+	{
+      "intent": "LightIntent",
+      "slots": [
+        {
+            "name": "Licht",
+            "type": "DEVICE"
+        },
+        {
+            "name": "Lichttyp",
+            "type": "LIGHTTYPES"
+        },
+        {
+            "name": "Lichtzwei",
+            "type": "DEVICE"
+        },
+        {
+            "name": "Raum",
+            "type": "ROOMS"
+        },
+        {
+            "name": "Raumzwei",
+            "type": "ROOMS"
+        },
+        {
+            "name": "Raumtyp",
+            "type": "ROOMTYPE"
+        },
+        {
+            "name": "Status",
+            "type": "TOGGLES"
+        }
+      ]
+    },
+      
+	{
+      "intent": "DimIntent",
+      "slots": [
+        {
+            "name": "Licht",
+            "type": "DEVICE"
+        },
+        {
+            "name": "Lichttyp",
+            "type": "LIGHTTYPES"
+        },
+        {
+            "name": "Raum",
+            "type": "ROOMS"
+        },
+        {
+            "name": "Raumzwei",
+            "type": "ROOMS"
+        },
+        {
+            "name": "Raumtyp",
+            "type": "ROOMTYPE"
+        },
+        {
+            "name": "Dimwert",
+            "type": "AMAZON.NUMBER"
+        }
+      ]
+    },
+
+    {
+      "intent": "HeatingIntent",
+      "slots": [
+        {
+            "name": "Heiztyp",
+            "type": "HEATINGTYPES"
+        },
+        {
+            "name": "Raum",
+            "type": "ROOMS"
+        },
+        {
+            "name": "Raumtyp",
+            "type": "ROOMTYPE"
+        },
+        {
+            "name": "Temperatur",
+            "type": "AMAZON.NUMBER"
+        },
+        {
+            "name": "Dauer",
+            "type": "AMAZON.DURATION"
+        }
+      ]
+    },
+      
+	{
+      "intent": "RolloIntent",
+      "slots": [
+        {
+            "name": "Rollo",
+            "type": "NAMES"
+        },
+        {
+            "name": "Rollotyp",
+            "type": "ROLLOTYPES"
+        },
+        {
+            "name": "Raum",
+            "type": "ROOMS"
+        },
+        {
+            "name": "Raumtyp",
+            "type": "ROOMTYPE"
+        },
+        {
+            "name": "Percent",
+            "type": "AMAZON.NUMBER"
+        },
+        {
+            "name": "Richtung",
+            "type": "TOGGLES"
+        }
+      ]
+    }    
+  ]
+}
+
