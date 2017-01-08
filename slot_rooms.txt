@@ -1,0 +1,24 @@
+Arbeitszimmer
+Gästezimmer
+Schlafzimmer
+Küche
+Bad
+Gästebad
+Wohnzimmer
+Esszimmer
+Wintergarten
+Foyer
+Flur
+Dachboden
+Abstellkammer
+Kinderzimmer
+Kellerabgang
+Draußen
+Außen vorne
+Außen hinten
+Ölkeller
+Heizungsraum
+Werkstatt
+Speisekammer
+Apfelkeller
+Kellerflur
