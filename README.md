@@ -26,6 +26,10 @@
 
  
 # Code explanation:
-The slots must be used because AMAZON.LITERAL is not allowed in german skills
-The utterances do have all kind of ways how you can start an intent
+The slots must be used because AMAZON.LITERAL is not allowed in german skills.
+
+The utterances do have all kind of ways how you can start an intent.
+
 At the beginning of the code (index.js) there are a couple of output language entries. They can be modified of course to match your favorite slang.
+
+
