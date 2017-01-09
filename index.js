@@ -9,6 +9,7 @@ var dynamodb = null;
 var options = require('./options');
 var storage = require('./storage');
 
+//var APP_ID = 'amzn1.ask.skill.ac1f17ee-23e1-4c3d-9b93-2e4d9c4cb871';
 var REPLACE_TEXT = {WZ:"Wohnzimmer",EZ:"Esszimmer",AZ:"Arbeitszimmer",OG:"Obergeschoss",KiZi2:"Kinderzimmer",KiZi1:"Gästezimmer",EG:"Erdgeschoss", WiGa:"Wintergarten",SZ:"Schlafzimmer"};
 
 var AlexaSkill = require('./AlexaSkill');
@@ -358,6 +359,9 @@ EchoFibaro.prototype.intentHandlers = {
     	        }
     	        var result='';
     	        diff/=jsonContent.length;
+    	        diff=diff.toFixed(1).replace('.',',');
+    	        min=min.toFixed(1).replace('.',',');
+    	        max=max.toFixed(1).replace('.',',');
     	        if (jsonContent.length==1)
     	            result=STATE_RESPONSES.SensorState.replace('$Room',roomValue).replace(/$Unit/g,einheit).replace('$SensorTyp',valueSpoken).replace('$value',diff);
     	        else
