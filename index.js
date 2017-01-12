@@ -91,7 +91,8 @@ var STATE_RESPONSES = {
     Open:'auf',
     Close:'zu',
     Yes:'ja',
-    No:'nein'
+    No:'nein',
+    TemperatureInvalid:'Temperatur konnte nicht erkannt werden oder hat einen nicht gültigen Wert.'
 };
 
 var GLOBAL_TRANSLATE = {
@@ -349,7 +350,7 @@ EchoFibaro.prototype.intentHandlers = {
     	        var min=99, max=0, diff=0;
     	        for(var i = 0; i < jsonContent.length; i++)
     	        {
-    	            var t=parseFloat(jsonContent[i].properties.value);
+    	            var t=parseInt(jsonContent[i].properties.value);
     	            console.log('Found one: '+t);
     	            if (t<min)
     	                min=t;
@@ -359,9 +360,9 @@ EchoFibaro.prototype.intentHandlers = {
     	        }
     	        var result='';
     	        diff/=jsonContent.length;
-    	        diff=diff.toFixed(1).replace('.',',');
-    	        min=min.toFixed(1).replace('.',',');
-    	        max=max.toFixed(1).replace('.',',');
+    	        diff=diff.toFixed(0).replace('.',',');
+    	        //min=min.toFixed(1).replace('.',',');
+    	        //max=max.toFixed(1).replace('.',',');
     	        if (jsonContent.length==1)
     	            result=STATE_RESPONSES.SensorState.replace('$Room',roomValue).replace(/$Unit/g,einheit).replace('$SensorTyp',valueSpoken).replace('$value',diff);
     	        else
@@ -1005,6 +1006,13 @@ EchoFibaro.prototype.intentHandlers = {
         var grad=intent.slots.Temperatur.value;
         var zeit=intent.slots.Dauer.value;
         console.log('Trying to parse. Grad='+grad+', Zeit='+zeit);
+        
+        if (grad===undefined||grad=='?'||grad<0||grad>40)
+        {
+            logAndSay(response,STATE_RESPONSES.TemperatureInvalid);
+        	return;
+        }
+        
         getRoomIDForName(roomValue, function (roomID)
         {
             console.log("Found Room ID for Room "+roomValue+": "+roomID);
