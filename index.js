@@ -21,11 +21,6 @@ var options = {
 };
 
 
-//var storage = require('./storage');
-
-//var APP_ID = 'amzn1.ask.skill.ac1f17ee-23e1-4c3d-9b93-2e4d9c4cb871';
-var REPLACE_TEXT = {WZ:"Wohnzimmer",EZ:"Esszimmer",AZ:"Arbeitszimmer",OG:"Obergeschoss",KiZi2:"Kinderzimmer",KiZi1:"Gästezimmer",EG:"Erdgeschoss", WiGa:"Wintergarten",SZ:"Schlafzimmer"};
-
 var AlexaSkill = require('./AlexaSkill');
 var EchoFibaro = function () {
     AlexaSkill.call(this, options.appid);
@@ -766,7 +761,7 @@ EchoFibaro.prototype.intentHandlers = {
 	        console.log("Parsing rollos for status: "+statusValue);
 	    }
 	    
-	    getJsonDataFromFibaro(type+'=com.fibaro.'+model+'&enabled=true&visible=true'+additional,function (events) {
+	    getJsonDataFromFibaro(type+'=com.fibaro.'+model+'&enabled=true&visible=true'+additional,function (events) {
 	        //console.log('Parameter: '+events);
 	        var jsonContent = JSON.parse(events);
 	        console.log('Status: '+statusValue);
@@ -800,7 +795,7 @@ EchoFibaro.prototype.intentHandlers = {
     	            else if (model=='FGR221')
     	                status=(jsonContent[i].properties.value=="0"?STATE_RESPONSES.DeviceState.Close:STATE_RESPONSES.DeviceState.jsonContent[i].properties.value=="true");*/
     	                
-    	            var status=STATE_RESPONSES.No;
+    	            status=STATE_RESPONSES.No;
     	            if (jsonContent[i].properties.value==statusValue)
     	                status=STATE_RESPONSES.Yes;
     	            logAndSay(response,status);
