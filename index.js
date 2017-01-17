@@ -107,7 +107,8 @@ var STATE_RESPONSES = {
     Yes:'ja',
     No:'nein',
     TemperatureInvalid:'Temperatur konnte nicht erkannt werden oder hat einen nicht gültigen Wert.',
-    InvalidValue:'Ein ungültiger Wert wurde erkannt'
+    InvalidValue:'Ein ungültiger Wert wurde erkannt',
+    UnknownCommand:'Das Kommando konnte nicht korrekt erkannt werden.'
 };
 
 var GLOBAL_TRANSLATE = {
@@ -645,6 +646,12 @@ EchoFibaro.prototype.intentHandlers = {
     	var janeinValue=intent.slots.Janein.value;
     	console.log(deviceValue);
     	// or baseType: com.fibaro.binarySwitch
+    	
+    	if (deviceValue===undefined||statusValue===undefined)
+    	{
+    	    logAndSay(response,STATE_RESPONSES.UnknownCommand);
+    	    return;
+    	}
     	
     	if (janeinValue!==undefined&&session.attributes.lastSwitchCommand!==undefined&&janeinValue=="ja"&&session.attributes.lastSwitch!==undefined)
     	{
