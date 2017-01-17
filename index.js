@@ -7,10 +7,10 @@ var dynamodb = null;
 //var Alexa = require('alexa-sdk');
 
 //var options = require('./options');
-var auth = new Buffer("<USER>" + ":" + "<PASSWORD>").toString("base64");
+var auth = new Buffer(encodeURIComponent("<USER>") + ":" + encodeURIComponent("<PASSWORD>")).toString("base64");
 var options = {
   appid: "<APPID>",
-  host: "<URL>",
+  host: "<URL>",	// NO http:// !!! just the pure domain name
   port: "<PORT>",
   headers: {
       'Authorization': 'Basic ' + auth,
