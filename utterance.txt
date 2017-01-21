@@ -36,6 +36,8 @@ RolloIntent {Rollo} auf {Percent} Prozent
 
 StatusIntent Wie ist der Status {Geraettyp} {Geraet}
 StatusIntent Status {Geraettyp} {Geraet}
+StatusIntent Wie ist der Status {Geraettyp} {Geraet} {Raumtyp} {Raum}
+StatusIntent Status {Geraettyp} {Geraet} {Raumtyp} {Raum}
 
 LightIntent Schalte {Lichttyp} {Licht} {Status}
 LightIntent {Lichttyp} {Licht} {Status}

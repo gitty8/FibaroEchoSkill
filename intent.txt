@@ -123,7 +123,15 @@
         {
             "name": "Geraettyp",
             "type": "DEVICETYPES"
-        }    
+        },
+        {
+            "name": "Raumtyp",
+            "type": "ROOMTYPE"
+        },
+        {
+            "name": "Raum",
+            "type": "ROOMS"
+        }
       ]
     },
       
