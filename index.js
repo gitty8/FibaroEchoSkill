@@ -400,19 +400,19 @@ EchoFibaro.prototype.intentHandlers = {
         	var type='temperatureSensor';
         	var valueSpoken=STATE_RESPONSES.Temperature;
         	var einheit=STATE_RESPONSES.Degrees;
-        	if (typ==STATE_RESPONSES.Warm)
+        	if (typ==STATE_RESPONSES.Warm||typ==STATE_RESPONSES.Temperature)
         	{
         	    type='temperatureSensor';
         	    valueSpoken=STATE_RESPONSES.Temperature;
         	    einheit=STATE_RESPONSES.Degrees;
         	}
-        	else if (typ==STATE_RESPONSES.Humid)
+        	else if (typ==STATE_RESPONSES.Humid||typ==STATE_RESPONSES.Humidity)
         	{
         	    type='humiditySensor';
         	    valueSpoken=STATE_RESPONSES.Humidity;
         	    einheit=STATE_RESPONSES.Percent;
         	}
-        	else if (typ==STATE_RESPONSES.Bright)
+        	else if (typ==STATE_RESPONSES.Bright||typ==STATE_RESPONSES.Luminance)
         	{
         	    type='lightSensor';
         	    valueSpoken=STATE_RESPONSES.Luminance;
@@ -448,7 +448,7 @@ EchoFibaro.prototype.intentHandlers = {
     	        //min=min.toFixed(1).replace('.',',');
     	        //max=max.toFixed(1).replace('.',',');
     	        if (jsonContent.length==1)
-    	            result=STATE_RESPONSES.SensorState.replace('$Room',roomValue).replace(/$Unit/g,einheit).replace('$SensorTyp',valueSpoken).replace('$value',diff);
+    	            result=STATE_RESPONSES.SensorState.replace('$Room',roomValue).replace(/\$Unit/g,einheit).replace('$SensorTyp',valueSpoken).replace('$value',diff);
     	        else
     	            result=STATE_RESPONSES.SensorStateMinMax.replace('$Room',roomValue).replace(/\$Unit/g,einheit).replace('$SensorTyp',valueSpoken).replace('$value1',min).replace('$value2',max).replace('$value3',diff);
     	       

@@ -6,12 +6,10 @@ OpenIntent {Direkt} {Area} {Raumtyp} {Raum} {Status}
 OpenIntent {Direkt} {Area} {Devicename} {Raum} {Status}
 OpenIntent {Direkt} {Area} {Devicename} {Raumtyp} {Raum} {Status}
 
-TemperatureIntent Wie ist die Temperatur {Raumtyp} {Raum}
-TemperatureIntent Wie {Typ} ist es {Raum}
 TemperatureIntent Wie {Typ} ist es {Raumtyp} {Raum}
 TemperatureIntent Nenn die {Typ} {Raumtyp} {Raum}
+TemperatureIntent Wie ist die {Typ} {Raumtyp} {Raum}
 TemperatureIntent Nenn mir die {Typ} {Raumtyp} {Raum}
-TemperatureIntent Sag mir die {Typ} {Raumtyp} {Raum}
 TemperatureIntent Sag mir die {Typ} {Raumtyp} {Raum}
 
 HeatingIntent Stelle {Heiztyp} {Raumtyp} {Raum} auf {Temperatur} Grad
