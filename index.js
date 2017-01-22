@@ -111,7 +111,11 @@ var STATE_RESPONSES = {
     DeviceInRoom:'$Device in $Room',
     DoorLock:'schloss',
     RemovableWords:'der die das',
-    IllegalPercentValue:'Ungültiger Prozentwert'
+    IllegalPercentValue:'Ungültiger Prozentwert',
+    DoorOpen:'Das Schloss ist auf.',
+    DoorClosed:'Das Schloss ist zu.',
+    AskDoorOpen:'Wollen Sie das Schloss $Device öffnen?',
+    AskDoorClose:'Wollen Sie das Schloss $Device schließen?'
 };
 
 var GLOBAL_TRANSLATE = {
@@ -309,6 +313,13 @@ function checkDevice(response,session,events,name,room)
             var power=parseInt(jsonContent[0].properties.power);
             result=STATE_RESPONSES.SwitchOnPower.replace('$Device',name).replace('$value',power);
         }
+        else if (jsonContent[0].type=='com.fibaro.doorLock')
+        {
+            session.attributes.lastSwitchCommand='turnOn';
+            result=STATE_RESPONSES.DoorClosed.replace('$Device',name);
+            response.ask(result+STATE_RESPONSES.AskOpenDoor.replace('$Device',name));
+            return;
+        }
         else
         {
             result=STATE_RESPONSES.SwitchOn.replace('$Device',name);
@@ -317,8 +328,17 @@ function checkDevice(response,session,events,name,room)
     }
     else
     {
-        result=STATE_RESPONSES.SwitchIsOff.replace('$Device',name);
-        response.ask(result+STATE_RESPONSES.SwitchAskOn.replace('$Device',name));
+        if (jsonContent[0].type=='com.fibaro.doorLock')
+        {
+            session.attributes.lastSwitchCommand='turnOff';
+            result=STATE_RESPONSES.DoorOpen.replace('$Device',name);
+            response.ask(result+STATE_RESPONSES.AskCloseDoor.replace('$Device',name));
+        }
+        else
+        {
+            result=STATE_RESPONSES.SwitchIsOff.replace('$Device',name);
+            response.ask(result+STATE_RESPONSES.SwitchAskOn.replace('$Device',name));
+        }
     }
     console.log('Result: '+result);
     
@@ -650,24 +670,24 @@ EchoFibaro.prototype.intentHandlers = {
                 }
                 
             	if (deviceValue.toLowerCase().indexOf(STATE_RESPONSES.DoorLock)===-1)
-                    getJsonDataFromFibaro(response,'baseType=com.fibaro.binarySwitch&enabled=true&visible=true&roomID='+roomID,function (events) {  //type=com.fibaro.FGWP101&
-                        checkDevice(response,session,events,deviceValue,room);
-                    });
-                else
                     getJsonDataFromFibaro(response,'type=com.fibaro.doorLock&enabled=true&visible=true&roomID='+roomID,function (events) {
                         checkDevice(response,session,events,deviceValue);
+                    });
+                else
+                    getJsonDataFromFibaro(response,'baseType=com.fibaro.binarySwitch&enabled=true&visible=true&roomID='+roomID,function (events) {  //type=com.fibaro.FGWP101&
+                        checkDevice(response,session,events,deviceValue,room);
                     });
             });
         }
         else
         {
-        	if (deviceValue.toLowerCase().indexOf(STATE_RESPONSES.DoorLock)===-1)
-                getJsonDataFromFibaro(response,'baseType=com.fibaro.binarySwitch&enabled=true&visible=true',function (events) {  //type=com.fibaro.FGWP101&
-                    checkDevice(response,session,events,deviceValue,room);
-                });
-            else
+        	if (deviceValue.toLowerCase().indexOf(STATE_RESPONSES.DoorLock)!==-1)
                 getJsonDataFromFibaro(response,'type=com.fibaro.doorLock&enabled=true&visible=true',function (events) {  //type=com.fibaro.FGWP101&
                     checkDevice(response,session,events,deviceValue);
+                });
+            else
+                getJsonDataFromFibaro(response,'baseType=com.fibaro.binarySwitch&enabled=true&visible=true',function (events) {  //type=com.fibaro.FGWP101&
+                    checkDevice(response,session,events,deviceValue,room);
                 });
         }
     },
