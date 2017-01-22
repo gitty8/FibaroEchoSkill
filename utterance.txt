@@ -26,6 +26,8 @@ SzeneIntent Szene {Name}
 RolloIntent Fahre {Rollotyp} {Rollo} {Richtung}
 RolloIntent Fahre {Rollotyp} {Rollo} {Raumtyp} {Raum} {Richtung}
 RolloIntent Fahre {Rollotyp} {Raumtyp} {Raum} {Richtung}
+RolloIntent Fahre {Rollotyp} {Raumtyp} {Raum} auf {Percent} Prozent
+RolloIntent Fahre {Rollotyp} {Raumtyp} {Raum} auf {Percent} Prozent {Richtung}
 RolloIntent {Richtung} {Rollotyp} {Rollo} 
 RolloIntent {Richtung} {Rollotyp} {Rollo} {Raumtyp} {Raum}
 RolloIntent {Richtung} {Rollotyp}

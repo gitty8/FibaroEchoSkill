@@ -52,6 +52,7 @@ var STATE_RESPONSES = {
     SwitchedOff:'Gerät wurde ausgeschaltet.',
     SwitchedOn:'Gerät wurde eingeschaltet.',
     NewStateShutters:"Neuer Status für Rollos gesetzt.",
+    NewStateShuttersInRoom:"Neuer Status für Rollos im Raum $Room gesetzt.",
     NoNameGiven:"Kein Name angegeben.",
     NoShutterFound:"Es wurde kein Rollo mit dem Namen $Shutter gefunden.",
     NoLightsFound:"Es konnten keine Lampen gefunden werden.",
@@ -109,7 +110,8 @@ var STATE_RESPONSES = {
     ErrorInAPI:'Es ist ein Fehler beim Nutzen der API aufgetreten.',
     DeviceInRoom:'$Device in $Room',
     DoorLock:'schloss',
-    RemovableWords:'der die das'
+    RemovableWords:'der die das',
+    IllegalPercentValue:'Ungültiger Prozentwert'
 };
 
 var GLOBAL_TRANSLATE = {
@@ -914,7 +916,7 @@ EchoFibaro.prototype.intentHandlers = {
     RolloIntent: function (intent, session, response) {
         console.log("RolloIntent received");
 	    var rolloName='';
-        console.log(intent.slots.Rollo.value); // name of rollo --> translate to id
+        console.log('Shutter name: '+intent.slots.Rollo.value); // name of rollo --> translate to id
 
         console.log('Trying to parse');
         // baseType=com.fibaro.FGR221
@@ -933,9 +935,11 @@ EchoFibaro.prototype.intentHandlers = {
         // Mit Raumangabe
         if (intent.slots.Raum.value!==undefined)
         {
+            console.log('Given name of room: '+intent.slots.Raum.value);
             //var additional='&roomID='+intent.slots.Raum.value;
             getRoomIDForName(response,intent.slots.Raum.value,function (roomID)
             {
+                console.log('RoomID: '+roomID);
                 if (roomID<0)
                 {
                     logAndSay(response,STATE_RESPONSES.RoomNotFound.replace('$Room',intent.slots.Raum.value));
@@ -944,11 +948,25 @@ EchoFibaro.prototype.intentHandlers = {
                 getJsonDataFromFibaro(response,'baseType=com.fibaro.FGR221&enabled=true&visible=true&roomID='+roomID,function (events) 
                 {
                     var n=intent.slots.Rollo.value;
-	                n=replaceAllBackwards(n);
+                    var additionalNameFilter;
+                    if (n!==undefined)
+                    {
+	                    n=replaceAllBackwards(n);
+                        console.log('Modified name of shutter: '+n);
+                        additionalNameFilter=[STATE_RESPONSES.Shutter+" "+n,n];
+                    }
                     var addValue='';
-                    if (intent.slots.Percent.value!==undefined)
+                    if (cmd=='setValue')
+                    {
+                        if (intent.slots.Percent.value===undefined||intent.slots.Percent.value<0||intent.slots.Percent.value>100||intent.slots.Percent.value=='?')
+                        {
+                            logAndSay(response,STATE_RESPONSES.IllegalPercentValue);
+                            return;
+                        }
                         addValue='&arg1='+intent.slots.Percent.value;
-                    if (!sendCommandToDevices(events,response,[STATE_RESPONSES.Shutter+" "+n,n],undefined,'name='+cmd+addValue,STATE_RESPONSES.NewStateShutters))    // Data, Additional Filter for Name, Filter for Room, Command, responseText
+                    }
+                                            //data,response,additionalNameFilters,additionalRoomFilters,command,responseText
+                    if (!sendCommandToDevices(events,response,additionalNameFilter,undefined,'name='+cmd+addValue,STATE_RESPONSES.NewStateShuttersInRoom.replace('$Room',intent.slots.Raum.value)))    // Data, Additional Filter for Name, Filter for Room, Command, responseText
                         logAndSay(response,STATE_RESPONSES.NoShuttersInRoom.replace('$Room',intent.slots.Raum.value));
                 });
                     
@@ -957,6 +975,7 @@ EchoFibaro.prototype.intentHandlers = {
         else
         {
             // Ohne Raumangabe
+            console.log('No room given');
             getJsonDataFromFibaro(response,'baseType=com.fibaro.FGR221&enabled=true&visible=true',function (events) {
                 rolloName=intent.slots.Rollo.value;
                 if (rolloName===undefined)
@@ -966,10 +985,19 @@ EchoFibaro.prototype.intentHandlers = {
                 }
                 rolloName=replaceAllBackwards(rolloName);
                 var addValue='';
-                if (intent.slots.Percent.value!==undefined)
+                console.log('Modified name of shutter: '+rolloName);
+                if (cmd=='setValue')
+                {
+                    if (intent.slots.Percent.value===undefined||intent.slots.Percent.value<0||intent.slots.Percent.value>100||intent.slots.Percent.value=='?')
+                    {
+                        logAndSay(response,STATE_RESPONSES.IllegalPercentValue);
+                        return;
+                    }
                     addValue='&arg1='+intent.slots.Percent.value;
+                }
+                                         //data,response,additionalNameFilters,additionalRoomFilters,command,responseText
                 if (!sendCommandToDevices(events,response,[STATE_RESPONSES.Shutter+" "+rolloName,rolloName],undefined,'name='+cmd+addValue,STATE_RESPONSES.NewStateShutters))    // Data, Additional Filter for Name, Filter for Room, Command, responseText
-                    logAndSay(response,STATE_RESPONSES.NoShutterFound);
+                    logAndSay(response,STATE_RESPONSES.NoShutterFound.replace('$Shutter',intent.slots.Rollo.value));
             });
         }
     },
