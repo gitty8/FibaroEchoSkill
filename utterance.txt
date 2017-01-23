@@ -70,3 +70,16 @@ VirtualIntent Rufe Button {Button} im Modul {Modul} {Roomtype} {Room} auf
 VirtualIntent Rufe Button {Button} im virtuellen Modul {Modul} {Roomtype} {Room} auf
 VirtualIntent Drücke Button {Button} im Modul {Modul} {Roomtype} {Room}
 VirtualIntent Drücke Button {Button} im virtuellen Modul {Modul} {Roomtype} {Room}
+
+UsageIntent Wie ist der Verbauch {Devicetyp} {Device}
+UsageIntent Nenn mir den Verbauch {Devicetyp} {Device}
+UsageIntent Wieviel verbraucht {Devicetyp} {Device}
+
+AlarmIntent Ist der Alarm geschaltet
+AlarmIntent Wie ist der Status vom Alarm
+
+RGBIntent Wie sind die Farben {Devicetyp} {Device}
+RGBIntent Welches Programm nutzt {Devicetyp} {Device}
+RGBIntent Welches Programm läuft auf {Devicetyp} {Device}
+RGBIntent Setze Programm {Program} {Devicetyp} {Device}
+RGBIntent Setze die Farben {Devicetyp} {Device} auf {Red} Prozent Rot {Green} Prozent Gelb {Blue} Prozent Blau {White} Prozent Weiß {Helligkeit} Prozent Helligkeit

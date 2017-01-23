@@ -39,7 +39,7 @@ var STATE_RESPONSES = {
     Luminance:'Helligkeit',
     Lux:'Lux',
     Percent:'Prozent',
-    Humidity:'Feuchtigkeit',
+    Humidity:'Luftfeuchtigkeit',
     NoSensorFound:'Es konnte kein passender Sensor im Raum $Room gefunden werden!',
     SensorState:'Die $SensorTyp im Raum $Room beträgt $value $Unit. ',
     SensorStateMinMax:'Die $SensorTyp im Raum $Room liegt zwischen $value1 $Unit und $value2 $Unit. Der Durchschnitt beträgt $value3 $Unit. ',
@@ -73,9 +73,9 @@ var STATE_RESPONSES = {
     On:'an',
     Off:'aus',
     All:'alle',
-    Up:'hoch,auf,offen,oben',
+    Up:'hoch,auf,offen,oben,geöffnet',
     Down:'runter',
-    OpenTyps:'an,auf,hoch,offen,oben',
+    OpenTyps:'an,auf,hoch,offen,oben,geöffnet',
     LightTyps:'lichter,lampen,leuchten',
     ShutterTyps:'rollos,rollläden',
     Shutter:'Rollo',
@@ -83,6 +83,11 @@ var STATE_RESPONSES = {
     DoorTyps:'tür,türen',
     Door:'Tür',
     Window:'Fenster',
+    Doors:'Türen',
+    Windows:'Fenster',
+    Lights:'Lichter',
+    Shutters:'Rollläden',
+    DoorsAndWindows:'Türen und Fenster',
     WindowTyps:'fenster',
     DoorWindowTyps:'fenster türen,türen fenster,fenster und türen,türen und fenster,tür fenster,fenster tür',
     Lamp:'Lampe',
@@ -103,6 +108,8 @@ var STATE_RESPONSES = {
     Close:'zu',
     Yes:'ja',
     No:'nein',
+    AllClosed:'Alle $Type sind geschlossen.',
+    AllOpen:'Alle $Type sind offen.',
     TemperatureInvalid:'Temperatur konnte nicht erkannt werden oder hat einen nicht gültigen Wert.',
     InvalidValue:'Ein ungültiger Wert wurde erkannt',
     UnknownCommand:'Das Kommando konnte nicht korrekt erkannt werden.',
@@ -115,12 +122,21 @@ var STATE_RESPONSES = {
     DoorOpen:'Das Schloss ist auf.',
     DoorClosed:'Das Schloss ist zu.',
     AskDoorOpen:'Wollen Sie das Schloss $Device öffnen?',
-    AskDoorClose:'Wollen Sie das Schloss $Device schließen?'
+    AskDoorClose:'Wollen Sie das Schloss $Device schließen?',
+    PowerUsage:'Der Verbrauch vom Gerät $Device beträgt $value Watt.',
+    RGBLight:'Die Farben sind: $red Rot, $green Grün, $blue Blau und $white Weiß.',
+    RGBProgram:'Programm Nummer $value wurde gestartet.',
+    RGBProgramRunning:'Es läuft Programm Nummer $value',
+    RGBValueRedSet:'Wert für Rot wurde gesetzt.',
+    RGBValueGreenSet:'Wert für Grün wurde gesetzt.',
+    RGBValueBlueSet:'Wert für Blau wurde gesetzt.',
+    RGBValueWhiteSet:'Wert für Weiß wurde gesetzt.',
+    RGBValueBrightnessSet:'Wert für Helligkeit wurde gesetzt.'
 };
 
 var GLOBAL_TRANSLATE = {
     "blockiere licht aus" : "BlockGlobalLightOff"
-}
+};
 
 EchoFibaro.prototype = Object.create(AlexaSkill.prototype);
 EchoFibaro.prototype.constructor = EchoFibaro;
@@ -310,7 +326,7 @@ function checkDevice(response,session,events,name,room)
         session.attributes.lastSwitchCommand='turnOff';
         if (jsonContent[0].type=='com.fibaro.FGWP101')
         {
-            var power=parseInt(jsonContent[0].properties.power);
+            var power=parseFloat(jsonContent[0].properties.power).toFixed(1);
             result=STATE_RESPONSES.SwitchOnPower.replace('$Device',name).replace('$value',power);
         }
         else if (jsonContent[0].type=='com.fibaro.doorLock')
@@ -341,6 +357,41 @@ function checkDevice(response,session,events,name,room)
         }
     }
     console.log('Result: '+result);
+    
+}
+
+
+function rgbWork(response,data,lightName,getColor,getProgram,cmdValue,textValue)
+{
+    var jsonContent=JSON.parse(data);
+    var ids = jsonContent.getIdOfDeviceWithName({"name":lightName});
+    var id=ids[0].id;
+    if (ids===undefined||ids.length===0||ids.length>1)
+    {
+        logAndSay(response,STATE_RESPONSES.NoDeviceFound);
+        return;
+    }
+
+    if (getColor)
+    {
+        var rgbw=ids[0].properties.color.split(",");
+        logAndSay(response,STATE_RESPONSES.RGBLight.replace('$red',rgbw[0]).replace('$green',rgbw[1]).replace('$blue',rgbw[2]).replace('$white',rgbw[3]));
+        return;
+    }
+    
+    if (getProgram)
+    {
+        var program=parseInt(ids[0].properties.currentProgram);
+        logAndSay(response,STATE_RESPONSES.RGBProgramRunning.replace('value',program));
+        return;
+    }
+    
+    options.path = '/api/callAction?deviceID='+id+'&'+cmdValue;
+    httpreq(options, function(error) {
+        logAndSay(response,textValue);
+        if (error!==undefined)
+            logAndSay(response,STATE_RESPONSES.ErrorInAPI);
+    });
     
 }
 
@@ -471,6 +522,24 @@ EchoFibaro.prototype.intentHandlers = {
     	});
     },
     
+    AlarmIntent: function (intent, session, response)
+    {
+        console.log("AlarmIntent received");
+        
+        getJsonGlobalFromFibaro(response,globalValue,function (events) {
+	        /*console.log('Parameter: '+events);
+	        var jsonContent = JSON.parse(events);
+	        //console.log('JSON: '+jsonContent);
+	        if (jsonContent===undefined)
+	        {
+	            logAndSay(response,STATE_RESPONSES.NoGlobalVariableFound.replace('$value',globalValue));
+	            return;
+	        }
+	        var result=STATE_RESPONSES.GlobalValue.replace('$global',globalValue).replace('$value',v);
+            response.ask(result+possibleResults,STATE_RESPONSES.ChangeGlobalValue);*/
+        });
+    },
+
     GlobalIntent: function (intent, session, response)
     {
         console.log("GlobalIntent received");
@@ -658,7 +727,7 @@ EchoFibaro.prototype.intentHandlers = {
     	/*if (deviceValue.toLowerCase()=='waschmaschine')
     	    return;*/
     	// or baseType: com.fibaro.binarySwitch ... com.fibaro.doorLock (type)
-    	// TODO
+    	// TODO Greenwave Switch: Somebody screwed baseType and type...
         if (room!==undefined)
         {
             getRoomIDForName(response,room,function (roomID)
@@ -689,6 +758,53 @@ EchoFibaro.prototype.intentHandlers = {
                 getJsonDataFromFibaro(response,'baseType=com.fibaro.binarySwitch&enabled=true&visible=true',function (events) {  //type=com.fibaro.FGWP101&
                     checkDevice(response,session,events,deviceValue,room);
                 });
+        }
+    },
+    
+    UsageIntent: function (intent, session, response)
+    {
+        console.log("UsageIntent received");
+    	var deviceValue=intent.slots.Device.value;
+    	var room=intent.slots.Raum.value;
+    	console.log(deviceValue);
+        if (room!==undefined)
+        {
+            getRoomIDForName(response,room,function (roomID)
+            {
+                if (roomID<0)
+                {
+                    logAndSay(response,STATE_RESPONSES.RoomNotFound.replace('$Room',intent.slots.Raum.value));
+                    return;
+                }
+                
+                getJsonDataFromFibaro(response,'baseType=com.fibaro.binarySwitch&enabled=true&visible=true&roomID='+roomID,function (events) {
+                    var jsonContent=JSON.parse(events);
+        	        var ids = jsonContent.getIdOfDeviceWithName({"name":deviceValue});
+        	        if (ids===undefined||ids.length===0||ids.length>1)
+        	        {
+        	            logAndSay(response,STATE_RESPONSES.NoDeviceFound);
+        	            return;
+        	        }
+                    var power=parseFloat(ids[0].properties.power).toFixed(1);
+                    var result=STATE_RESPONSES.PowerUsage.replace('$Device',deviceValue).replace('$value',power);
+                    logAndSay(response,result);
+                });
+            });
+        }
+        else
+        {
+            getJsonDataFromFibaro(response,'baseType=com.fibaro.binarySwitch&enabled=true&visible=true',function (events) {  //type=com.fibaro.FGWP101&
+                var jsonContent=JSON.parse(events);
+    	        var ids = jsonContent.getIdOfDeviceWithName({"name":deviceValue});
+    	        if (ids===undefined||ids.length===0||ids.length>1)
+    	        {
+    	            logAndSay(response,STATE_RESPONSES.NoDeviceFound);
+    	            return;
+    	        }
+                var power=parseFloat(ids[0].properties.power).toFixed(1);
+                var result=STATE_RESPONSES.PowerUsage.replace('$Device',deviceValue).replace('$value',power);
+                logAndSay(response,result);
+            });
         }
     },
     
@@ -769,13 +885,14 @@ EchoFibaro.prototype.intentHandlers = {
 	    //console.log(intent.slots.Preset.Name);
 	    var t=intent.slots.Area.value.toLowerCase();
 	    var status=intent.slots.Status.value.toLowerCase();
-	    var direct=intent.slots.Direkt.value!==undefined&&intent.slots.Raum.value==undefined;
+	    var direct=intent.slots.Direkt.value!==undefined&&intent.slots.Raum.value===undefined;
 	    var model='doorWindowSensor'; // com.fibaro.windowSensor
 	    var type='baseType';
 	    var statusValue="false";
 	    var statusValue2='';
 	    var additional='';
 	    var replacetext='';
+	    var typeValue;
 	    
 	    STATE_RESPONSES.RemovableWords.split(" ").map(function (val) { t=t.replace(val,''); });
 	    //t=t.replace(STATE_RESPONSES.RemovableWords,'');
@@ -787,6 +904,7 @@ EchoFibaro.prototype.intentHandlers = {
 	        console.log('Checking for doors only');
 	        type='type';
 	        model='doorSensor';
+	        typeValue=STATE_RESPONSES.Doors;
 	        if (STATE_RESPONSES.OpenTyps.indexOf(status) !== -1)
 	            statusValue="true";
 	        replacetext=[STATE_RESPONSES.Door];
@@ -796,6 +914,7 @@ EchoFibaro.prototype.intentHandlers = {
 	        console.log('Checking for windows only');
 	        type='type';
 	        model='windowSensor';
+	        typeValue=STATE_RESPONSES.Windows;
 	        if (STATE_RESPONSES.OpenTyps.indexOf(status) !== -1)
 	            statusValue="true";
 	        replacetext=[STATE_RESPONSES.Window];
@@ -805,6 +924,7 @@ EchoFibaro.prototype.intentHandlers = {
 	        console.log('Checking for doors and windows');
 	        type='baseType';
 	        model='doorWindowSensor';
+	        typeValue=STATE_RESPONSES.DoorsAndWindows;
 	        if (STATE_RESPONSES.OpenTyps.indexOf(status) !== -1)
 	            statusValue="true";
 	        replacetext=[STATE_RESPONSES.Door];
@@ -815,6 +935,7 @@ EchoFibaro.prototype.intentHandlers = {
 	        console.log('Checking for lights');
 	        type='baseType';
 	        model='binarySwitch';
+	        typeValue=STATE_RESPONSES.Lights;
 	        statusValue2='0';
 	        if (status==STATE_RESPONSES.On)
 	        {
@@ -830,6 +951,7 @@ EchoFibaro.prototype.intentHandlers = {
 	        console.log('Checking for roller shutters');
 	        type='baseType';
 	        model='FGR221';
+	        typeValue=STATE_RESPONSES.Shutters;
 	        if (STATE_RESPONSES.OpenTyps.indexOf(status))
 	            statusValue="99";
 	        else
@@ -864,11 +986,12 @@ EchoFibaro.prototype.intentHandlers = {
                     console.log('Filtering for room with ID '+roomID);
 	            }
 
+                var statusResponse=STATE_RESPONSES.Yes+" "+STATE_RESPONSES.AllClosed.replace('$Type',typeValue);
     	        for(var i = 0; i < jsonContent.length; i++)
     	        {
     	            if (roomID!=-1&&jsonContent[i].roomID!=roomID)
     	                continue;
-    	            if (direct)
+    	            if (direct) // means we are asking for close/open and so on directly
     	            {
         	            if (intent.slots.Devicename.value!==undefined&&jsonContent[i].properties.name.toLowerCase()!=intent.slots.Devicename.value.toLowerCase())
         	                continue;
@@ -881,10 +1004,9 @@ EchoFibaro.prototype.intentHandlers = {
         	            else if (model=='FGR221')
         	                status=(jsonContent[i].properties.value=="0"?STATE_RESPONSES.DeviceState.Close:STATE_RESPONSES.DeviceState.jsonContent[i].properties.value=="true");*/
         	                
-        	            status=STATE_RESPONSES.No;
-        	            if (jsonContent[i].properties.value==statusValue)
-        	                status=STATE_RESPONSES.Yes;
-        	            logAndSay(response,status);
+        	            if (jsonContent[i].properties.value!=statusValue)
+        	                statusResponse=STATE_RESPONSES.No+" "+STATE_RESPONSES.AllOpen.replace('$Type',typeValue);
+        	            logAndSay(response,statusResponse);
                 	    //logAndSay(response,STATE_RESPONSES.DeviceState.replace('$status',status).replace('$name',jsonContent[i].properties.name));
                 	    return;
     	            }
@@ -1163,6 +1285,118 @@ EchoFibaro.prototype.intentHandlers = {
             {
                 if (!sendCommandToDevices(events,response,lightName,undefined,cmdValue,textValue))
                     logAndSay(response,STATE_RESPONSES.NoLightsFound);
+            });                
+        }
+    },
+
+    RGBIntent: function (intent, session, response) {
+        console.log("DimIntent received");
+	    var lightName=intent.slots.Device.value;
+	    var roomName=intent.slots.Raum.value;
+	    var redValue=intent.slots.Rot.value;
+	    var greenValue=intent.slots.Gruen.value;
+	    var blueValue=intent.slots.Blau.value;
+	    var whiteValue=intent.slots.Whie.value;
+	    var programNr=intent.slots.Program.value;
+	    var brightValue=intent.slots.Helligkeit.value;
+        console.log('Trying to parse');
+
+        var textValue;
+        var cmdValue='name=setColor&arg1='+blueValue+'&arg2='+greenValue+'&arg3='+redValue+'&arg4='+whiteValue;
+        if (redValue!==undefined)
+        {
+            if (parseInt(redValue)<0||parseInt(redValue)>255)
+            {
+                logAndSay(response,STATE_RESPONSES.DimValueIncorrect);
+                return;
+            }
+            cmdValue='name=setR&arg1='+redValue;
+            textValue=STATE_RESPONSES.RGBValueRedSet;
+        }
+        if (greenValue!==undefined)
+        {
+            if (parseInt(greenValue)<0||parseInt(greenValue)>255)
+            {
+                logAndSay(response,STATE_RESPONSES.DimValueIncorrect);
+                return;
+            }
+            cmdValue='name=setG&arg1='+greenValue;
+            textValue=STATE_RESPONSES.RGBValueGreenSet;
+        }
+        if (blueValue!==undefined)
+        {
+            if (parseInt(blueValue)<0||parseInt(blueValue)>255)
+            {
+                logAndSay(response,STATE_RESPONSES.DimValueIncorrect);
+                return;
+            }
+            cmdValue='name=setB&arg1='+blueValue;
+            textValue=STATE_RESPONSES.RGBValueBlueSet;
+        }
+        if (whiteValue!==undefined)
+        {
+            if (parseInt(whiteValue)<0||parseInt(whiteValue)>255)
+            {
+                logAndSay(response,STATE_RESPONSES.DimValueIncorrect);
+                return;
+            }
+            cmdValue='name=setW&arg1='+whiteValue;
+            textValue=STATE_RESPONSES.RGBValueWhiteSet;
+        }
+        if (brightValue!==undefined)
+        {
+            if (parseInt(brightValue)<0||parseInt(brightValue)>255)
+            {
+                logAndSay(response,STATE_RESPONSES.DimValueIncorrect);
+                return;
+            }
+            cmdValue='name=setValue&arg1='+brightValue;
+            textValue=STATE_RESPONSES.RGBValueBrightnessSet
+        }
+        
+        if (lightName===undefined)
+        {
+            logAndSay(response,STATE_RESPONSES.UnknownCommand);
+    	    return;
+        }
+
+        // Not setting color but getting it
+        var getColor=false;
+        var getProgram=false;
+        if (redValue===undefined&&greenValue===undefined&&blueValue===undefined&&brightValue===undefined&&whiteValue===undefined&&programNr===undefined)
+        {
+            getProgram=false;
+            getColor=true;
+        }
+        
+        if (programNr!==undefined)
+        {
+            cmdValue='name=setProgram&arg1='+parseInt(programNr);
+            textValue=STATE_RESPONSES.RGBProgram.replace('$value',programNr);
+        }
+
+
+        if (roomName!==undefined)
+        {
+            getRoomIDForName(response,roomName,function (roomID)
+            {
+                if (roomID<0)
+                {
+                    logAndSay(response,STATE_RESPONSES.RoomNotFound.replace('$Room',roomName));
+                    return;
+                }
+                
+                getJsonDataFromFibaro(response,'type=com.fibaro.colorController&interface=light&enabled=true&visible=true',function (events) 
+                {
+                    rgbWork(response,events,getColor,getProgram,cmdValue,textValue);
+                });
+            });
+        }
+        else
+        {
+            getJsonDataFromFibaro(response,'type=com.fibaro.colorController&interface=light&enabled=true&visible=true',function (events) 
+            {
+                rgbWork(response,events,getColor,getProgram,cmdValue,textValue);
             });                
         }
     },

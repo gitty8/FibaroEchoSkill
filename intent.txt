@@ -20,6 +20,16 @@
     },
     
    {
+      "intent": "AlarmIntent",
+      "slots": [
+        {
+            "name": "Variable",
+            "type": "VARIABLENAMES"
+        }
+      ]
+    },
+
+   {
       "intent": "GlobalIntent",
       "slots": [
         {
@@ -136,6 +146,74 @@
     },
       
 	{
+      "intent": "UsageIntent",
+      "slots": [
+        {
+            "name": "Device",
+            "type": "DEVICE"
+        },
+        {
+            "name": "Devicetyp",
+            "type": "DEVICETYPES"
+        },
+        {
+            "name": "Raumtyp",
+            "type": "ROOMTYPE"
+        },
+        {
+            "name": "Raum",
+            "type": "ROOMS"
+        }
+      ]
+    },
+      
+	{
+      "intent": "RGBIntent",
+      "slots": [
+        {
+            "name": "Device",
+            "type": "DEVICE"
+        },
+        {
+            "name": "Devicetyp",
+            "type": "DEVICETYPES"
+        },
+        {
+            "name": "Raumtyp",
+            "type": "ROOMTYPE"
+        },
+        {
+            "name": "Raum",
+            "type": "ROOMS"
+        },
+        {
+            "name": "Helligkeit",
+            "type": "AMAZON.NUMBER"
+        },
+        {
+            "name": "Red",
+            "type": "AMAZON.NUMBER"
+        },
+        {
+            "name": "Green",
+            "type": "AMAZON.NUMBER"
+        },
+        {
+            "name": "Blue",
+            "type": "AMAZON.NUMBER"
+        },
+        {
+            "name": "White",
+            "type": "AMAZON.NUMBER"
+        },
+        {
+            "name": "Program",
+            "type": "AMAZON.NUMBER"
+        }
+      ]
+    },
+
+    {
       "intent": "SwitchIntent",
       "slots": [
         {
