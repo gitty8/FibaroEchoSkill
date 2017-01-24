@@ -1393,7 +1393,7 @@ EchoFibaro.prototype.intentHandlers = {
     	        getJsonRoomFromFibaro(response,function(events) {
     	            var rooms=JSON.parse(events);
                     var movementFound=false;
-                    var roomTxt;
+                    var roomTxt=[];
         	        for(var i = 0; i < jsonContent.length; i++)
         	        {
                         console.log('Found one: '+jsonContent[i].name);
