@@ -548,7 +548,7 @@ EchoFibaro.prototype.intentHandlers = {
     {
         console.log("AlarmIntent received");
         
-        getJsonGlobalFromFibaro(response,globalValue,function (events) {
+        getJsonGlobalFromFibaro(response,"alarm",function (events) {
 	        /*console.log('Parameter: '+events);
 	        var jsonContent = JSON.parse(events);
 	        //console.log('JSON: '+jsonContent);
@@ -773,11 +773,11 @@ EchoFibaro.prototype.intentHandlers = {
         else
         {
         	if (deviceValue.toLowerCase().indexOf(STATE_RESPONSES.DoorLock)!==-1)
-                getJsonDataFromFibaro(response,'type=com.fibaro.doorLock&enabled=true&visible=true',function (events) {  //type=com.fibaro.FGWP101&
+                getJsonDataFromFibaro(response,'type=com.fibaro.doorLock&enabled=true&visible=true',function (events) {
                     checkDevice(response,session,events,deviceValue);
                 });
             else
-                getJsonDataFromFibaro(response,'baseType=com.fibaro.binarySwitch&enabled=true&visible=true',function (events) {  //type=com.fibaro.FGWP101&
+                getJsonDataFromFibaro(response,'baseType=com.fibaro.binarySwitch&enabled=true&visible=true',function (events) {
                     checkDevice(response,session,events,deviceValue,room);
                 });
         }
@@ -799,7 +799,7 @@ EchoFibaro.prototype.intentHandlers = {
                     return;
                 }
                 
-                getJsonDataFromFibaro(response,'baseType=com.fibaro.binarySwitch&enabled=true&visible=true&roomID='+roomID,function (events) {
+                getJsonDataFromFibaro(response,'enabled=true&visible=true&roomID='+roomID,function (events) { //baseType=com.fibaro.binarySwitch&
                     var jsonContent=JSON.parse(events);
         	        var ids = jsonContent.getIdOfDeviceWithName({"name":deviceValue});
         	        if (ids===undefined||ids.length===0||ids.length>1)
@@ -873,7 +873,7 @@ EchoFibaro.prototype.intentHandlers = {
     	}
     	
     	
-        getJsonDataFromFibaro(response,'type=com.fibaro.FGWP101&enabled=true&visible=true',function (events) {
+        getJsonDataFromFibaro(response,'baseType=com.fibaro.binarySwitch&enabled=true&visible=true',function (events) { // FGWP101
 	        //console.log('Parameter: '+events);
 	        var jsonContent = JSON.parse(events);
 	        if (jsonContent===undefined||jsonContent.length===0)
@@ -1059,18 +1059,18 @@ EchoFibaro.prototype.intentHandlers = {
                 if (statusValue2!=='')	        
                 {
                     //ids = jsonContent.getIdOfDeviceWithName({"value":statusValue2});
-        	        for(var j = 0; j < jsonContent.length; j++)
+        	        for(var k = 0; k < jsonContent.length; k++)
         	        {
-    	            if (jsonContent[j].properties.value!=statusValue2)
+    	            if (jsonContent[k].properties.value!=statusValue2)
     	                continue;
-        	            console.log('Found one: '+jsonContent[j].name);
+        	            console.log('Found one: '+jsonContent[k].name);
         	            if (result!=='')
         	                result=result+', ';
-        	            var m=jsonContent[j].name.replaceArray(replacetext, ''); //.replace('Rollladen','');
+        	            var m=jsonContent[k].name.replaceArray(replacetext, ''); //.replace('Rollladen','');
         	            m=m.replaceArrayArray();
         	            // If room name is not mentioned in device name add room name to device name
-        	            if (m.indexOf(rooms[jsonContent[i].roomID])!==-1)
-        	                m=STATE_RESPONSES.DeviceInRoom.replace('$Room',rooms[jsonContent[i].roomID]).replace('$Device', m);
+        	            if (m.indexOf(rooms[jsonContent[k].roomID])!==-1)
+        	                m=STATE_RESPONSES.DeviceInRoom.replace('$Room',rooms[jsonContent[k].roomID]).replace('$Device', m);
         	            result=result+m;
         	        }
                 }
@@ -1467,7 +1467,7 @@ EchoFibaro.prototype.intentHandlers = {
                 return;
             }
             cmdValue='name=setValue&arg1='+brightValue;
-            textValue=STATE_RESPONSES.RGBValueBrightnessSet
+            textValue=STATE_RESPONSES.RGBValueBrightnessSet;
         }
         
         if (lightName===undefined)
@@ -1618,7 +1618,7 @@ EchoFibaro.prototype.eventHandlers.onSessionEnded = function (sessionEndedReques
     console.log("EchoFibaro onSessionEnded requestId: " + sessionEndedRequest.requestId
         + ", sessionId: " + session.sessionId);
     // any cleanup logic goes here
-    response.tell(STATE_RESPONSES.Bye);
+    //response.tell(STATE_RESPONSES.Bye);
 };
 
 EchoFibaro.prototype.eventHandlers.onLaunch = function (launchRequest, session, response) {
