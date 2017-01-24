@@ -68,6 +68,7 @@ var STATE_RESPONSES = {
     Warm:'warm',
     Humid:'feucht',
     Bright:'hell',
+    AllInState:'Es sind alle $Objects $status.',
     NothingInState:'Es sind keine $Objects $status.',
     ObjectsInState:'Es sind folgende $Objects $status: ',
     LightsSwitchedOff:'Lampen wurden ausgeschaltet',
@@ -155,7 +156,7 @@ EchoFibaro.prototype = Object.create(AlexaSkill.prototype);
 EchoFibaro.prototype.constructor = EchoFibaro;
 
 var REPLACE_TEXT = {WZ:"Wohnzimmer",EZ:"Esszimmer",AZ:"Arbeitszimmer",OG:"Obergeschoss",KiZi2:"Kinderzimmer",KiZi1:"Gästezimmer",EG:"Erdgeschoss", WiGa:"Wintergarten",SZ:"Schlafzimmer"};
-var re=new RegExp(Object.keys(REPLACE_TEXT).join("|"),"gi"); 
+var re=new RegExp(Object.keys(REPLACE_TEXT).join("|"),"g"); 
 
 
 function matchRuleShort(str, rule) {
@@ -929,6 +930,7 @@ EchoFibaro.prototype.intentHandlers = {
 	    t=t.trim();
 	    console.log("t is: "+t);
 	    console.log("Direct: "+direct);
+	    console.log("Asking for status: "+status);
 	    if (STATE_RESPONSES.DoorTyps.indexOf(t) !== -1) 
 	    {
 	        console.log('Checking for doors only');
@@ -982,7 +984,7 @@ EchoFibaro.prototype.intentHandlers = {
 	        type='baseType';
 	        model='FGR221';
 	        typeValue=STATE_RESPONSES.Shutters;
-	        if (STATE_RESPONSES.OpenTyps.indexOf(status))
+	        if (STATE_RESPONSES.OpenTyps.indexOf(status)!==-1)
 	            statusValue="99";
 	        else
 	            statusValue="0";
@@ -1017,10 +1019,13 @@ EchoFibaro.prototype.intentHandlers = {
 	            }
 
                 var statusResponse=STATE_RESPONSES.Yes+" "+STATE_RESPONSES.AllClosed.replace('$Type',typeValue);
+                var counter=0;
+                var opposite=0;
     	        for(var i = 0; i < jsonContent.length; i++)
     	        {
     	            if (roomID!=-1&&jsonContent[i].roomID!=roomID)
     	                continue;
+    	            counter++;
     	            if (direct) // means we are asking for close/open and so on directly
     	            {
         	            if (intent.slots.Devicename.value!==undefined&&jsonContent[i].properties.name.toLowerCase()!=intent.slots.Devicename.value.toLowerCase())
@@ -1043,7 +1048,10 @@ EchoFibaro.prototype.intentHandlers = {
     	            else
     	            {
         	            if (jsonContent[i].properties.value!=statusValue)
+        	            {
+        	                opposite++;
         	                continue;
+        	            }
         	            console.log('Found one: '+jsonContent[i].name);
         	            if (result!=='')
         	                result=result+', ';
@@ -1077,7 +1085,9 @@ EchoFibaro.prototype.intentHandlers = {
     
     	        if (result==='')
     	            result=STATE_RESPONSES.NothingInState.replace('$status',status).replace('$Objects',t);
-    	       else
+    	        else if (opposite==counter)
+    	            result=STATE_RESPONSES.AllInState.replace('$status',status).replace('$Objects',t);
+    	        else
     	           result=STATE_RESPONSES.ObjectsInState.replace('$status',status).replace('$Objects',t)+result;
         	    logAndSay(response,result);
         	    return;
