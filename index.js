@@ -16,8 +16,8 @@ var options = {
       'Authorization': 'Basic ' + auth,
       'Content-Type': 'text/html'
   },
-  useHttps: false, // Change to true if you setup node-sonos-http-api with HTTPS
-  rejectUnauthorized: true, // Change to false if you self-signed your certificate
+  useHttps: false,
+  rejectUnauthorized: false,
 };
 ///////////////////////////////////////////////////////////////////////////////////////
 
@@ -131,7 +131,9 @@ var STATE_RESPONSES = {
     RGBValueGreenSet:'Wert für Grün wurde gesetzt.',
     RGBValueBlueSet:'Wert für Blau wurde gesetzt.',
     RGBValueWhiteSet:'Wert für Weiß wurde gesetzt.',
-    RGBValueBrightnessSet:'Wert für Helligkeit wurde gesetzt.'
+    RGBValueBrightnessSet:'Wert für Helligkeit wurde gesetzt.',
+    NoRGBProgramRunning:'Aktuell läuft kein Programm.',
+    Colors:'Farben'
 };
 
 var GLOBAL_TRANSLATE = {
@@ -382,7 +384,10 @@ function rgbWork(response,data,lightName,getColor,getProgram,cmdValue,textValue)
     if (getProgram)
     {
         var program=parseInt(ids[0].properties.currentProgram);
-        logAndSay(response,STATE_RESPONSES.RGBProgramRunning.replace('value',program));
+        if (program===0)
+            logAndSay(response,STATE_RESPONSES.NoRGBProgramRunning);
+        else
+            logAndSay(response,STATE_RESPONSES.RGBProgramRunning.replace('value',program));
         return;
     }
     
@@ -1290,15 +1295,16 @@ EchoFibaro.prototype.intentHandlers = {
     },
 
     RGBIntent: function (intent, session, response) {
-        console.log("DimIntent received");
+        console.log("RGBIntent received");
 	    var lightName=intent.slots.Device.value;
 	    var roomName=intent.slots.Raum.value;
-	    var redValue=intent.slots.Rot.value;
-	    var greenValue=intent.slots.Gruen.value;
-	    var blueValue=intent.slots.Blau.value;
-	    var whiteValue=intent.slots.Whie.value;
+	    var redValue=intent.slots.Red.value;
+	    var greenValue=intent.slots.Green.value;
+	    var blueValue=intent.slots.Blue.value;
+	    var whiteValue=intent.slots.White.value;
 	    var programNr=intent.slots.Program.value;
-	    var brightValue=intent.slots.Helligkeit.value;
+	    var brightValue=intent.slots.Brightness.value;
+	    var mode=intent.slots.Mode.value;
         console.log('Trying to parse');
 
         var textValue;
@@ -1365,8 +1371,10 @@ EchoFibaro.prototype.intentHandlers = {
         var getProgram=false;
         if (redValue===undefined&&greenValue===undefined&&blueValue===undefined&&brightValue===undefined&&whiteValue===undefined&&programNr===undefined)
         {
-            getProgram=false;
-            getColor=true;
+            if (mode==STATE_RESPONSES.COLORS)
+                getColor=true;
+            else
+                getProgram=true;
         }
         
         if (programNr!==undefined)
@@ -1388,7 +1396,7 @@ EchoFibaro.prototype.intentHandlers = {
                 
                 getJsonDataFromFibaro(response,'type=com.fibaro.colorController&interface=light&enabled=true&visible=true',function (events) 
                 {
-                    rgbWork(response,events,getColor,getProgram,cmdValue,textValue);
+                    rgbWork(response,events,lightName,getColor,getProgram,cmdValue,textValue);
                 });
             });
         }
@@ -1396,7 +1404,7 @@ EchoFibaro.prototype.intentHandlers = {
         {
             getJsonDataFromFibaro(response,'type=com.fibaro.colorController&interface=light&enabled=true&visible=true',function (events) 
             {
-                rgbWork(response,events,getColor,getProgram,cmdValue,textValue);
+                rgbWork(response,events,lightName,getColor,getProgram,cmdValue,textValue);
             });                
         }
     },

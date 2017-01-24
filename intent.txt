@@ -144,6 +144,28 @@
         }
       ]
     },
+    
+	{
+      "intent": "MovementIntent",
+      "slots": [
+        {
+            "name": "Device",
+            "type": "DEVICE"
+        },
+        {
+            "name": "Devicetyp",
+            "type": "DEVICETYPES"
+        },
+        {
+            "name": "Roomtype",
+            "type": "ROOMTYPE"
+        },
+        {
+            "name": "Room",
+            "type": "ROOMS"
+        }
+      ]
+    },
       
 	{
       "intent": "UsageIntent",
@@ -179,6 +201,10 @@
             "type": "DEVICETYPES"
         },
         {
+            "name": "Mode",
+            "type": "RGBTYPE"
+        },
+        {
             "name": "Raumtyp",
             "type": "ROOMTYPE"
         },
@@ -187,7 +213,7 @@
             "type": "ROOMS"
         },
         {
-            "name": "Helligkeit",
+            "name": "Brightness",
             "type": "AMAZON.NUMBER"
         },
         {

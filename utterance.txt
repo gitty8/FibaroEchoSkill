@@ -78,8 +78,18 @@ UsageIntent Wieviel verbraucht {Devicetyp} {Device}
 AlarmIntent Ist der Alarm geschaltet
 AlarmIntent Wie ist der Status vom Alarm
 
-RGBIntent Wie sind die Farben {Devicetyp} {Device}
-RGBIntent Welches Programm nutzt {Devicetyp} {Device}
-RGBIntent Welches Programm läuft auf {Devicetyp} {Device}
+RGBIntent Wie sind die {Mode} {Devicetyp} {Device}
+RGBIntent Welches {Mode} nutzt {Devicetyp} {Device}
+RGBIntent Welches {Mode} läuft auf {Devicetyp} {Device}
 RGBIntent Setze Programm {Program} {Devicetyp} {Device}
-RGBIntent Setze die Farben {Devicetyp} {Device} auf {Red} Prozent Rot {Green} Prozent Gelb {Blue} Prozent Blau {White} Prozent Weiß {Helligkeit} Prozent Helligkeit
+RGBIntent Setze Rot {Devicetyp} {Device} auf {Red} Prozent
+RGBIntent Setze Blau {Devicetyp} {Device} auf {Blue} Prozent
+RGBIntent Setze Grün {Devicetyp} {Device} auf {Green} Prozent
+RGBIntent Setze Weiß {Devicetyp} {Device} auf {White} Prozent
+RGBIntent Setze Helligkeit {Devicetyp} {Device} auf {Brightness} Prozent
+RGBIntent Setze die Farben {Devicetyp} {Device} auf {Red} Prozent Rot {Green} Prozent Gelb {Blue} Prozent Blau {White} Prozent Weiß {Brightness} Prozent Helligkeit
+
+MovementIntent In wechem Raum ist Bewegung
+MovementIntent Ist Bewegung {Roomtype} {Room}
+MovementIntent Wann war die letzte Bewegung {Roomtype} {Room}
+MovementIntent Welches Gerät hat zuletzt eine Bewegung erkannt
