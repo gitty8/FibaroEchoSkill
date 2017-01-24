@@ -133,7 +133,16 @@ var STATE_RESPONSES = {
     RGBValueWhiteSet:'Wert für Weiß wurde gesetzt.',
     RGBValueBrightnessSet:'Wert für Helligkeit wurde gesetzt.',
     NoRGBProgramRunning:'Aktuell läuft kein Programm.',
-    Colors:'Farben'
+    Colors:'Farben',
+    MovementInRoom:'Aktuell gibt es Bewegung in Raum $Room.',
+    NoMovementInRoom:'Aktuell gibt es keine Bewegung in Raum $Room.',
+    LastMovement:'Die letzte registrierte Bewegung war vor $Time $Unit',
+    NoMovementsFound:'Es wurde aktuell keine Bewegung registriert',
+    MovementsInRooms:'In den folgenden Räumen wird Bewegung registriert:',
+    SECONDS:'Sekunden',
+    MINUTES:'Minuten',
+    HOURS:'Stunden',
+    DAYS:'Tagen'
 };
 
 var GLOBAL_TRANSLATE = {
@@ -1293,6 +1302,91 @@ EchoFibaro.prototype.intentHandlers = {
             });                
         }
     },
+
+    MovementIntent: function (intent, session, response) {
+        console.log("MovementIntent received");
+	    var roomName=intent.slots.Room.value;
+
+        if (roomName!==undefined)
+        {   // ask for a particular room
+            getRoomIDForName(response,roomName,function (roomID)
+            {
+                if (roomID<0)
+                {
+                    logAndSay(response,STATE_RESPONSES.RoomNotFound.replace('$Room',roomName));
+                    return;
+                }
+                
+                getJsonDataFromFibaro(response,'baseType=com.fibaro.motionSensor&enabled=true&visible=true&roomID='+roomID,function (data) 
+                {
+                    var jsonContent = JSON.parse(data);
+                    var movementFound=false;
+                    var lastBreached=0;
+        	        for(var i = 0; i < jsonContent.length; i++)
+        	        {
+    	                console.log('Found one: '+jsonContent[i].name);
+    	                if (jsonContent[i].properties.value=="true")
+    	                    movementFound=true;
+                        if (parseInt(jsonContent[i].properties.lastBreached)>lastBreached)
+                            lastBreached=parseInt(jsonContent[i].properties.lastBreached);
+        	        }
+        	        
+        	        console.log("Last Breached: "+lastBreached);
+        	        console.log("Now: "+new Date().getTime()/1000);
+        	        lastBreached=new Date().getTime()/1000-lastBreached; // Seconds
+        	        var timeType=STATE_RESPONSES.SECONDS;
+        	        if (lastBreached>60)
+    	            {
+    	                lastBreached/=60;
+    	                timeType=STATE_RESPONSES.MINUTES;
+            	        if (lastBreached>60)
+        	            {
+        	                lastBreached/=60;
+        	                timeType=STATE_RESPONSES.HOURS;
+                	        if (lastBreached>24)
+            	            {
+            	                lastBreached/=24;
+            	                timeType=STATE_RESPONSES.DAYS;
+            	            }
+        	            }
+    	            }
+    	            lastBreached=lastBreached.toFixed(0);
+        	        var resp=STATE_RESPONSES.LastMovement.replace('$Time',lastBreached).replace('$Unit',timeType);
+        	        if (movementFound)
+        	            logAndSay(response,STATE_RESPONSES.MovementInRoom.replace('$Room',roomName)+" "+resp);
+        	        else
+        	            logAndSay(response,STATE_RESPONSES.NoMovementInRoom.replace('$Room',roomName)+" "+resp);
+                });                
+            });
+        }
+        else
+        {   // global checking
+            getJsonDataFromFibaro(response,'baseType=com.fibaro.motionSensor&enabled=true&visible=true',function (data) 
+            {
+                var jsonContent = JSON.parse(data);
+    	        getJsonRoomFromFibaro(response,function(events) {
+    	            var rooms=JSON.parse(events);
+                    var movementFound=false;
+                    var roomTxt;
+        	        for(var i = 0; i < jsonContent.length; i++)
+        	        {
+                        console.log('Found one: '+jsonContent[i].name);
+                        if (jsonContent[i].properties.value=="true")
+                        {
+                            movementFound=true;
+                            roomTxt.push(rooms[jsonContent[i].roomID].name);
+                        }
+        	        }
+        	        
+        	        if (movementFound)
+        	            logAndSay(response,STATE_RESPONSES.MovementsInRooms+roomTxt.join(","));
+        	        else
+        	            logAndSay(response,STATE_RESPONSES.NoMovementsFound);
+                });                
+            });                
+        }
+    },
+
 
     RGBIntent: function (intent, session, response) {
         console.log("RGBIntent received");
