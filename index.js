@@ -28,7 +28,9 @@ var EchoFibaro = function () {
 
 var STATE_RESPONSES = {
     NoHelpYet:"Noch gibt es keine Hilfe.",
-    DoSomething:"Machen sie irgend etwas.",
+    DoSomething:"Nenne ein Kommando oder stelle eine Frage.",
+    Bye:'Tschüss',
+    Welcome:'Willkommen bei der Heimautomatisierung deines Hauses.',
     NoDeviceFound:"Es konnte kein passendes Gerät gefunden werden!",
     SceneNotFound:"Diese Szene wurde nicht gefunden.",
     SceneStarted:"Szene $Szenename wurde gestartet.",
@@ -47,8 +49,8 @@ var STATE_RESPONSES = {
     SwitchOn:'$Device ist an',
     SwitchOnPower:'$Device ist an und verbraucht aktuell $value Watt.',
     SwitchIsOff:'$Device ist aus.',
-    SwitchAskOn:"Wollen Sie es anschalten? Sagen Sie dazu Schalte $Device an.",
-    SwitchAskOff:"Wollen Sie es ausschalten? Sagen Sie dazu Schalte $Device aus.",
+    SwitchAskOn:"Wollen Sie es anschalten? Sagen Sie dazu nein, ja oder Schalte $Device an.",
+    SwitchAskOff:"Wollen Sie es ausschalten? Sagen Sie dazu nein, ja oder Schalte $Device aus.",
     SwitchedOff:'Gerät wurde ausgeschaltet.',
     SwitchedOn:'Gerät wurde eingeschaltet.',
     NewStateShutters:"Neuer Status für Rollos gesetzt.",
@@ -273,6 +275,12 @@ function sendCommandToDevices(data,response,additionalNameFilters,additionalRoom
 function logAndSay(response,msg)
 {
     console.log(msg);
+    response.ask(msg, STATE_RESPONSES.DoSomething);
+}
+
+function logAndSayQuit(response,msg)
+{
+    console.log(msg);
     response.tell(msg);
 }
 
@@ -404,14 +412,14 @@ function rgbWork(response,data,lightName,getColor,getProgram,cmdValue,textValue)
     httpreq(options, function(error) {
         logAndSay(response,textValue);
         if (error!==undefined)
-            logAndSay(response,STATE_RESPONSES.ErrorInAPI);
+            logAndSayQuit(response,STATE_RESPONSES.ErrorInAPI);
     });
     
 }
 
 EchoFibaro.prototype.intentHandlers = {
     "AMAZON.StopIntent": function (intent, session, response) {
-        logAndSay(response,STATE_RESPONSES.Bye, STATE_RESPONSES.Bye);
+        logAndSayQuit(response,STATE_RESPONSES.Bye, STATE_RESPONSES.Bye);
     },
     "HelpIntent": function (intent, session, response) {
         response.ask(STATE_RESPONSES.NoHelpYet, STATE_RESPONSES.DoSomething);
@@ -828,19 +836,19 @@ EchoFibaro.prototype.intentHandlers = {
     	var deviceValue=intent.slots.Geraet.value;
     	var statusValue=intent.slots.Status.value;
     	var janeinValue=intent.slots.Janein.value;
-    	console.log(deviceValue);
+    	console.log('Device: '+deviceValue);
     	// or baseType: com.fibaro.binarySwitch
     	
-    	if (deviceValue===undefined||statusValue===undefined)
+    	if (janeinValue!==undefined&&session.attributes.lastSwitchCommand!==undefined&&session.attributes.lastSwitch!==undefined)
     	{
-    	    logAndSay(response,STATE_RESPONSES.UnknownCommand);
-    	    return;
-    	}
-    	
-    	if (janeinValue!==undefined&&session.attributes.lastSwitchCommand!==undefined&&janeinValue=="ja"&&session.attributes.lastSwitch!==undefined)
-    	{
+    	    if (janeinValue!=STATE_RESPONSES.Yes&&janeinValue!=STATE_RESPONSES.No)
+        	{
+        	    logAndSay(response,STATE_RESPONSES.UnknownCommand);
+        	    return;
+        	}
     	    var id=session.attributes.lastSwitch;
     	    var cmd=session.attributes.lastSwitchCommand;
+        	console.log('Got yes for switching on '+id);
     	    session.attributes.lastSwitch=undefined;
     	    session.attributes.lastSwitchCommand=undefined;
     	    options.path = '/api/callAction?deviceID='+id+'&name='+cmd;
@@ -855,7 +863,15 @@ EchoFibaro.prototype.intentHandlers = {
                     return;
                 }
             });
+            return;
     	}
+
+    	if (deviceValue===undefined||statusValue===undefined)
+    	{
+    	    logAndSay(response,STATE_RESPONSES.UnknownCommand);
+    	    return;
+    	}
+    	
     	
         getJsonDataFromFibaro(response,'type=com.fibaro.FGWP101&enabled=true&visible=true',function (events) {
 	        //console.log('Parameter: '+events);
@@ -885,7 +901,7 @@ EchoFibaro.prototype.intentHandlers = {
             httpreq(options, function(error) {
                 logAndSay(response,cmdText);
                 if (error!==undefined)
-                    logAndSay(response,STATE_RESPONSES.ErrorInAPI);
+                    logAndSayQuit(response,STATE_RESPONSES.ErrorInAPI);
             });
         });
         return;
@@ -1549,20 +1565,19 @@ EchoFibaro.prototype.intentHandlers = {
                     options.path = '/api/callAction?deviceID='+jsonContent[i].id+'&name=setTargetLevel&arg1='+grad;
                     httpreq(options, function(error) 
                     {
-                        if (zeit!=-1&&zeit!==undefined) // like PT1H
+                        if (zeit===undefined||zeit==-1)
                         {
-                            var dauer=zeit.substr(2);
-                            dauer=dauer.substr(0,dauer.length-1);
-                            zeit=dauer*60*60+Math.floor(new Date()/1000);
-                            options.path = '/api/callAction?deviceID='+jsonContent[i].id+'&name=setTime&arg1='+zeit;
-                            httpreq(options, function(error) {
-                                logAndSay(response,result+STATE_RESPONSES.ForTime.replace('$value',dauer));
-                            });
+                            logAndSay(response,result);
+                            return;
                         }
-                        else
-                        {
-                            response.tell(result);
-                        }
+                        // like PT1H
+                        var dauer=zeit.substr(2);
+                        dauer=dauer.substr(0,dauer.length-1);
+                        zeit=dauer*60*60+Math.floor(new Date()/1000);
+                        options.path = '/api/callAction?deviceID='+jsonContent[i].id+'&name=setTime&arg1='+zeit;
+                        httpreq(options, function(error) {
+                            logAndSay(response,result+STATE_RESPONSES.ForTime.replace('$value',dauer));
+                        });
                     });
     	        //}
                 });
@@ -1603,10 +1618,12 @@ EchoFibaro.prototype.eventHandlers.onSessionEnded = function (sessionEndedReques
     console.log("EchoFibaro onSessionEnded requestId: " + sessionEndedRequest.requestId
         + ", sessionId: " + session.sessionId);
     // any cleanup logic goes here
+    response.tell(STATE_RESPONSES.Bye);
 };
 
 EchoFibaro.prototype.eventHandlers.onLaunch = function (launchRequest, session, response) {
     console.log("EchoFibaro onLaunch requestId: " + launchRequest.requestId + ", sessionId: " + session.sessionId);
+    response.ask(STATE_RESPONSES.Welcome, STATE_RESPONSES.DoSomething);
     //Speak welcome message and ask user questions
     //based on whether there are players or not.
     /*storage.loadList(session, function (currentList) {
@@ -1693,7 +1710,7 @@ function getJsonDataFromFibaro(response,filter, eventCallback) {
         });
     }).on('error', function (e) {
         //console.log("Got error: ", e);
-        logAndSay(response,"Got error: "+e);
+        logAndSayQuit(response,"Got error: "+e);
         return;
     });
 }
@@ -1715,7 +1732,7 @@ function getJsonRoomFromFibaro(response,eventCallback) {
             eventCallback(stringResult);
         });
     }).on('error', function (e) {
-        logAndSay(response,"Got error: ", e);
+        logAndSayQuit(response,"Got error: ", e);
     });
 }
 
@@ -1736,7 +1753,7 @@ function getJsonGlobalFromFibaro(response,globalVariable,eventCallback) {
             eventCallback(stringResult);
         });
     }).on('error', function (e) {
-        logAndSay(response,"Got error: ", e);
+        logAndSayQuit(response,"Got error: ", e);
     });
 }
 
@@ -1758,7 +1775,7 @@ function getJsonSceneFromFibaro(response,eventCallback) {
             eventCallback(stringResult);
         });
     }).on('error', function (e) {
-        logAndSay(response,"Got error: ", e);
+        logAndSayQuit(response,"Got error: ", e);
     });
 }
 

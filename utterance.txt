@@ -38,6 +38,7 @@ StatusIntent Wie ist der Status {Geraettyp} {Geraet}
 StatusIntent Status {Geraettyp} {Geraet}
 StatusIntent Wie ist der Status {Geraettyp} {Geraet} {Raumtyp} {Raum}
 StatusIntent Status {Geraettyp} {Geraet} {Raumtyp} {Raum}
+StatusIntent Ist {Geraettyp} {Geraet} {Status}
 
 LightIntent Schalte {Lichttyp} {Licht} {Status}
 LightIntent {Lichttyp} {Licht} {Status}

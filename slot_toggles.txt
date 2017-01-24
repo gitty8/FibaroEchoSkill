@@ -10,3 +10,5 @@ offen
 geschlossen
 oben
 unten
+eingeschaltet
+ausgeschaltet

@@ -141,6 +141,10 @@
         {
             "name": "Raum",
             "type": "ROOMS"
+        },
+        {
+            "name": "Status",
+            "type": "TOGGLES"
         }
       ]
     },
