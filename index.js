@@ -145,7 +145,10 @@ var STATE_RESPONSES = {
     SECONDS:'Sekunden',
     MINUTES:'Minuten',
     HOURS:'Stunden',
-    DAYS:'Tagen'
+    DAYS:'Tagen',
+    AlarmActive:'Alarm ist aktiv.',
+    ArmedModules:'Folgende Geräte sind scharf geschaltet:',
+    AlarmInactive:'Alarm ist inaktiv. Kein Modul ist scharf geschaltet.'
 };
 
 var GLOBAL_TRANSLATE = {
@@ -549,17 +552,28 @@ EchoFibaro.prototype.intentHandlers = {
     {
         console.log("AlarmIntent received");
         
-        getJsonGlobalFromFibaro(response,"alarm",function (events) {
-	        /*console.log('Parameter: '+events);
+        getJsonDataFromFibaro(response,'property=[armed,true]&enabled=true&visible=true',function (events) {
 	        var jsonContent = JSON.parse(events);
-	        //console.log('JSON: '+jsonContent);
 	        if (jsonContent===undefined)
 	        {
-	            logAndSay(response,STATE_RESPONSES.NoGlobalVariableFound.replace('$value',globalValue));
+	            logAndSay(response,STATE_RESPONSES.ErrorInAPI);
 	            return;
 	        }
-	        var result=STATE_RESPONSES.GlobalValue.replace('$global',globalValue).replace('$value',v);
-            response.ask(result+possibleResults,STATE_RESPONSES.ChangeGlobalValue);*/
+	        if (jsonContent.length===0)
+	        {
+                logAndSay(response,STATE_RESPONSES.AlarmInactive);
+	            return;
+	        }
+	        
+	        var armed=[];
+	        for (var i=0;i<jsonContent.length;i++)
+	        {
+	            console.log("Found armed device: "+jsonContent[i].id);
+	            armed.push(jsonContent[i].name.replaceArrayArray());
+	        }
+	        
+            logAndSay(response,STATE_RESPONSES.AlarmActive+" "+STATE_RESPONSES.ArmedModules+" "+armed.join(","));
+            return;
         });
     },
 
