@@ -93,3 +93,8 @@ RGBIntent Setze die Farben {Devicetyp} {Device} auf {Red} Prozent Rot {Green} Pr
 MovementIntent In wechem Raum ist Bewegung
 MovementIntent Ist Bewegung {Roomtype} {Room}
 MovementIntent Wann war die letzte Bewegung {Roomtype} {Room}
+
+StopIntent Stop
+StopIntent Alexa stop
+StopIntent Das reicht
+StopIntent Hör auf

@@ -2,6 +2,10 @@
     "intents": [
     
     {
+      "intent": "StopIntent"
+    },
+    
+    {
       "intent": "SzeneIntent",
       "slots": [
         {

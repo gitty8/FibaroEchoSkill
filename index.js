@@ -300,9 +300,9 @@ function getRoomIDForName(response,roomname, eventCallback)
     roomname=roomname.toLowerCase();
     console.log("Trying to find ID for room "+roomname);
     getJsonRoomFromFibaro(response,function (events) {
-        console.log(events);
+        //console.log(events);
         var jsonContent = JSON.parse(events);
-        console.log("Parsing data of finding room");
+        console.log("Parsing data to find room");
         if (jsonContent.length===0)
         {
             eventCallback(-1);
@@ -429,6 +429,10 @@ EchoFibaro.prototype.intentHandlers = {
         response.ask(STATE_RESPONSES.NoHelpYet, STATE_RESPONSES.DoSomething);
     },
     
+    StopIntent: function (intent, session, response) {
+        logAndSayQuit(response,STATE_RESPONSES.Bye, STATE_RESPONSES.Bye);
+    },
+
     SzeneIntent: function (intent, session, response) {
         console.log("SzeneIntent received");
     	//console.log(intent.slots);
@@ -464,7 +468,8 @@ EchoFibaro.prototype.intentHandlers = {
     	console.log(intent.slots);
     	var roomValue=intent.slots.Raum.value;
     	var typ=intent.slots.Typ.value; //warm, feucht, hell
-    	console.log(roomValue); // both is right, it depends on something...
+    	console.log("Room: "+roomValue); // both is right, it depends on something...
+    	console.log("Typ: "+typ);
     	getRoomIDForName(response,roomValue, function(roomID)
     	{
         	// TODO: defaultThermostat!
@@ -482,21 +487,25 @@ EchoFibaro.prototype.intentHandlers = {
         	    type='temperatureSensor';
         	    valueSpoken=STATE_RESPONSES.Temperature;
         	    einheit=STATE_RESPONSES.Degrees;
+        	    console.log("Temperatur");
         	}
         	else if (typ==STATE_RESPONSES.Humid||typ==STATE_RESPONSES.Humidity)
         	{
         	    type='humiditySensor';
         	    valueSpoken=STATE_RESPONSES.Humidity;
         	    einheit=STATE_RESPONSES.Percent;
+        	    console.log("Feuchtigkeit");
         	}
         	else if (typ==STATE_RESPONSES.Bright||typ==STATE_RESPONSES.Luminance)
         	{
         	    type='lightSensor';
         	    valueSpoken=STATE_RESPONSES.Luminance;
         	    einheit=STATE_RESPONSES.Lux;
+        	    console.log("Helligkeit");
         	}
         	else
         	{
+        	    console.log("Nichts von alledem");
         	    logAndSay(response,STATE_RESPONSES.InvalidValue);
     	        return;
         	}
