@@ -21,6 +21,11 @@ SzeneIntent Starte Szene {Name}
 SzeneIntent Starte Szene {Name} {Raumtyp} {Raum}
 SzeneIntent Szene {Name}
 
+SzeneIntent Ausgabe von Szene {Name}
+SzeneIntent Ausgabe von Szene {Name} {Raumtyp} {Raum}
+SzeneIntent Wie ist die Ausgabe von Szene {Name}
+SzeneIntent Wie ist die Ausgabe von Szene {Name} {Raumtyp} {Raum}
+
 RolloIntent Fahre {Rollotyp} {Rollo} {Richtung}
 RolloIntent Fahre {Rollotyp} {Rollo} {Raumtyp} {Raum} {Richtung}
 RolloIntent Fahre {Rollotyp} {Raumtyp} {Raum} {Richtung}

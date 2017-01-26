@@ -23,7 +23,25 @@
       ]
     },
     
-   {
+    {
+      "intent": "SzeneOutputIntent",
+      "slots": [
+        {
+            "name": "Name",
+            "type": "SZENENAMES"
+        },
+        {
+            "name": "Raumtyp",
+            "type": "ROOMTYPE"
+        },
+        {
+            "name": "Raum",
+            "type": "ROOMS"
+        }
+      ]
+    },
+
+    {
       "intent": "AlarmIntent",
       "slots": [
         {

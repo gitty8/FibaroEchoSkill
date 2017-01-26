@@ -148,7 +148,8 @@ var STATE_RESPONSES = {
     DAYS:'Tagen',
     AlarmActive:'Alarm ist aktiv.',
     ArmedModules:'Folgende Geräte sind scharf geschaltet:',
-    AlarmInactive:'Alarm ist inaktiv. Kein Modul ist scharf geschaltet.'
+    AlarmInactive:'Alarm ist inaktiv. Kein Modul ist scharf geschaltet.',
+    SceneOutput:'Ausgabe der Szene ist: $Output'
 };
 
 var GLOBAL_TRANSLATE = {
@@ -169,8 +170,12 @@ function matchRuleShort(str, rule) {
 Array.prototype.getIdOfDeviceWithName = function(obj) {
     return this.filter(function(item) {
         for (var prop in obj)
+        {
+            // prop is the key; item[prop] is the value of the target array-list working on; obj[prop] is the filter array given as parameter
+            //console.log("Remove Me: prop="+prop+", obj[prop]="+obj[prop]+", item[prop]="+item[prop]);
             if (!(prop in item) || obj[prop].toLowerCase() !== item[prop].toLowerCase())
                  return false;
+        }
         return true;
     });
 };
@@ -458,6 +463,41 @@ EchoFibaro.prototype.intentHandlers = {
                 {
                     console.log(error);
                     logAndSay(response,STATE_RESPONSES.SceneStarted.replace('$Szenename',sceneName));
+                });
+    	});
+    },
+    
+    SzeneOutputIntent: function (intent, session, response) {
+        console.log("SzeneOutputIntent received");
+    	//console.log(intent.slots);
+    	console.log(intent.slots.Name); // both is right, it depends on something...
+    	//console.log(intent.slots.Preset.Name);
+    	var sceneName=intent.slots.Name.value;
+	    if (sceneName===undefined||sceneName=='?'||sceneName==='')
+	    {
+	        logAndSay(response,STATE_RESPONSES.SceneNotFound);
+	        return;
+	    }
+    	getJsonSceneFromFibaro(response,function (events) {
+    	    var jsonContent = JSON.parse(events);
+    	    var ids = jsonContent.getIdOfDeviceWithName({"name":sceneName});
+    	    if (ids[0]===undefined)
+    	    {
+    	        logAndSay(response,STATE_RESPONSES.SceneNotFound);
+    	        return;
+    	    }
+    	    var sceneID=ids[0].id;
+            options.path = '/api/scenes/'+sceneID+'/debugMessages';
+            httpreq(options, function(output) 
+                {
+                    console.log(output);
+                    var jsonOutput = JSON.parse(output);
+                    var out;
+                    // There is: timestampt, type (debug) and txt
+                    for(var i = 0; i < jsonOutput.length; i++)
+        	            if (jsonOutput[i].type=="DEBUG")    // TODO: changem later
+        	                out+=jsonOutput[i].txt+' ';
+                    logAndSay(response,STATE_RESPONSES.SceneOutput.replace('$Output',out));
                 });
     	});
     },
