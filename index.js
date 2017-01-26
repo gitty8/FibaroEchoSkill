@@ -149,7 +149,8 @@ var STATE_RESPONSES = {
     AlarmActive:'Alarm ist aktiv.',
     ArmedModules:'Folgende Geräte sind scharf geschaltet:',
     AlarmInactive:'Alarm ist inaktiv. Kein Modul ist scharf geschaltet.',
-    SceneOutput:'Ausgabe der Szene ist: $Output'
+    SceneOutput:'Ausgabe der Szene ist: $Output',
+    NoSceneOutput:'Szene $Name hat keine Ausgabe'
 };
 
 var GLOBAL_TRANSLATE = {
@@ -497,7 +498,10 @@ EchoFibaro.prototype.intentHandlers = {
                     for(var i = 0; i < jsonOutput.length; i++)
         	            if (jsonOutput[i].type=="DEBUG")    // TODO: changem later
         	                out+=jsonOutput[i].txt+' ';
-                    logAndSay(response,STATE_RESPONSES.SceneOutput.replace('$Output',out));
+        	        if (out===undefined)
+        	            logAndSay(response,STATE_RESPONSES.NoSceneOutput.replace('$Name',sceneName));
+        	        else
+                        logAndSay(response,STATE_RESPONSES.SceneOutput.replace('$Output',out));
                 });
     	});
     },
