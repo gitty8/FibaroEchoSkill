@@ -438,7 +438,7 @@ EchoFibaro.prototype.intentHandlers = {
     	//console.log(intent.slots);
     	console.log(intent.slots.Name); // both is right, it depends on something...
     	//console.log(intent.slots.Preset.Name);
-    	var sceneName=intent.slots;
+    	var sceneName=intent.slots.Name.value;
 	    var control='start';
 	    if (sceneName===undefined||sceneName=='?'||sceneName==='')
 	    {
