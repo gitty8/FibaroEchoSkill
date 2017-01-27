@@ -487,22 +487,24 @@ EchoFibaro.prototype.intentHandlers = {
     	        logAndSay(response,STATE_RESPONSES.SceneNotFound);
     	        return;
     	    }
-    	    var sceneID=ids[0].id;
-            options.path = '/api/scenes/'+sceneID+'/debugMessages';
-            httpreq(options, function(output) 
+    	    var sceneID=parseInt(ids[0].id);
+    	    getJsonDataFromScene(response,ids[0].id, function(data) {
+                if (data===undefined)
                 {
-                    console.log(output);
-                    var jsonOutput = JSON.parse(output);
-                    var out;
-                    // There is: timestampt, type (debug) and txt
-                    for(var i = 0; i < jsonOutput.length; i++)
-        	            if (jsonOutput[i].type=="DEBUG")    // TODO: changem later
-        	                out+=jsonOutput[i].txt+' ';
-        	        if (out===undefined)
-        	            logAndSay(response,STATE_RESPONSES.NoSceneOutput.replace('$Name',sceneName));
-        	        else
-                        logAndSay(response,STATE_RESPONSES.SceneOutput.replace('$Output',out));
-                });
+                    logAndSay(response,STATE_RESPONSES.NoSceneOutput.replace('$Name',sceneName));
+                    return;
+                }
+                var jsonOutput = JSON.parse(data);
+                var out='';
+                // There is: timestampt, type (debug) and txt
+                for(var i = 0; i < jsonOutput.length; i++)
+    	            if (jsonOutput[i].type=="DEBUG")    // TODO: changem later
+    	                out+=jsonOutput[i].txt+' ';
+    	        if (out==='')
+    	            logAndSay(response,STATE_RESPONSES.NoSceneOutput.replace('$Name',sceneName));
+    	        else
+                    logAndSay(response,STATE_RESPONSES.SceneOutput.replace('$Output',out));
+    	    });
     	});
     },
     
@@ -1768,6 +1770,29 @@ function httpreq(options, responseCallback, writeData)
 	req.end();
 }
 
+
+function getJsonDataFromScene(response, sceneID, eventCallback) {
+    var transport = options.useHttps ? https : http;
+    options.path = '/api/scenes/'+sceneID+'/debugMessages';
+    console.log('Called getJsonDataFromScene');
+    transport.get(options, function(res) {
+        var body = '';
+
+        res.on('data', function (chunk) {
+            body += chunk;
+        });
+
+        res.on('end', function () {
+            var stringResult = body; //parseJson(body);
+            console.log("Result: "+stringResult);
+            eventCallback(stringResult);
+        });
+    }).on('error', function (e) {
+        //console.log("Got error: ", e);
+        logAndSayQuit(response,"Got error: "+e);
+        return;
+    });
+}
 
 function getJsonDataFromFibaro(response,filter, eventCallback) {
     var transport = options.useHttps ? https : http;
