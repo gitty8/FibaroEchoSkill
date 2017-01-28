@@ -17,7 +17,8 @@ var options = {
       'Content-Type': 'text/html'
   },
   useHttps: false,
-  rejectUnauthorized: false,
+  rejectUnauthorized: false, // Change to false if you self-signed your certificate
+  reAsk: true       // Change to false if Alexa should only ask once
 };
 ///////////////////////////////////////////////////////////////////////////////////////
 
@@ -285,7 +286,10 @@ function sendCommandToDevices(data,response,additionalNameFilters,additionalRoom
 function logAndSay(response,msg)
 {
     console.log(msg);
-    response.ask(msg, STATE_RESPONSES.DoSomething);
+    if (options.reAsk)
+        response.ask(msg, STATE_RESPONSES.DoSomething);
+    else
+        response.tell(msg);
 }
 
 function logAndSayQuit(response,msg)
