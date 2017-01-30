@@ -1421,6 +1421,11 @@ EchoFibaro.prototype.intentHandlers = {
                     var jsonContent = JSON.parse(data);
                     var movementFound=false;
                     var lastBreached=0;
+                    if (jsonContent===undefined||jsonContent.length===0)
+                    {
+                        logAndSay(response,STATE_RESPONSES.NoDeviceFound);
+                        return;
+                    }
         	        for(var i = 0; i < jsonContent.length; i++)
         	        {
         	            if (jsonContent[i].baseType=="com.fibaro.motionSensor"||jsonContent[i].type=="com.fibaro.motionSensor"||jsonContent[i].baseType=="com.fibaro.FGMS001")
@@ -1470,6 +1475,11 @@ EchoFibaro.prototype.intentHandlers = {
     	            var rooms=JSON.parse(events);
                     var movementFound=false;
                     var roomTxt=[];
+                    if (jsonContent===undefined||jsonContent.length===0)
+                    {
+                        logAndSay(response,STATE_RESPONSES.NoDeviceFound);
+                        return;
+                    }
         	        for(var i = 0; i < jsonContent.length; i++)
         	        {
         	            if (jsonContent[i].baseType=="com.fibaro.motionSensor"||jsonContent[i].type=="com.fibaro.motionSensor"||jsonContent[i].baseType=="com.fibaro.FGMS001")
