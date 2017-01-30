@@ -1912,19 +1912,3 @@ exports.handler = (event, context, callback) => {
     var echoFibaro = new EchoFibaro();
     echoFibaro.execute(event, context);
 };
-
-        res.on('end', function () {
-            var stringResult = body; //parseJson(body);
-            console.log(stringResult);
-            eventCallback(stringResult);
-        });
-    }).on('error', function (e) {
-        logAndSayQuit(response,"Got error: ", e);
-    });
-}
-
-
-exports.handler = (event, context, callback) => {
-    var echoFibaro = new EchoFibaro();
-    echoFibaro.execute(event, context);
-};
