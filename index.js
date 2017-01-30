@@ -1416,18 +1416,21 @@ EchoFibaro.prototype.intentHandlers = {
                     return;
                 }
                 
-                getJsonDataFromFibaro(response,'baseType=com.fibaro.motionSensor&enabled=true&visible=true&roomID='+roomID,function (data) 
+                getJsonDataFromFibaro(response,'interface=fibaroBreach&enabled=true&visible=true&roomID='+roomID,function (data) //baseType=com.fibaro.motionSensor&
                 {
                     var jsonContent = JSON.parse(data);
                     var movementFound=false;
                     var lastBreached=0;
         	        for(var i = 0; i < jsonContent.length; i++)
         	        {
-    	                console.log('Found one: '+jsonContent[i].name);
-    	                if (jsonContent[i].properties.value=="true")
-    	                    movementFound=true;
-                        if (parseInt(jsonContent[i].properties.lastBreached)>lastBreached)
-                            lastBreached=parseInt(jsonContent[i].properties.lastBreached);
+        	            if (jsonContent[i].baseType=="com.fibaro.motionSensor"||jsonContent[i].type=="com.fibaro.motionSensor"||jsonContent[i].baseType=="com.fibaro.FGMS001")
+        	            {
+        	                console.log('Found one: '+jsonContent[i].name);
+        	                if (jsonContent[i].properties.value=="true")
+        	                    movementFound=true;
+                            if (parseInt(jsonContent[i].properties.lastBreached)>lastBreached)
+                                lastBreached=parseInt(jsonContent[i].properties.lastBreached);
+        	            }
         	        }
         	        
         	        console.log("Last Breached: "+lastBreached);
@@ -1460,7 +1463,7 @@ EchoFibaro.prototype.intentHandlers = {
         }
         else
         {   // global checking
-            getJsonDataFromFibaro(response,'baseType=com.fibaro.motionSensor&enabled=true&visible=true',function (data) 
+            getJsonDataFromFibaro(response,'interface=fibaroBreach&enabled=true&visible=true',function (data)   //baseType=com.fibaro.motionSensor&
             {
                 var jsonContent = JSON.parse(data);
     	        getJsonRoomFromFibaro(response,function(events) {
@@ -1469,12 +1472,15 @@ EchoFibaro.prototype.intentHandlers = {
                     var roomTxt=[];
         	        for(var i = 0; i < jsonContent.length; i++)
         	        {
-                        console.log('Found one: '+jsonContent[i].name);
-                        if (jsonContent[i].properties.value=="true")
-                        {
-                            movementFound=true;
-                            roomTxt.push(rooms[jsonContent[i].roomID].name);
-                        }
+        	            if (jsonContent[i].baseType=="com.fibaro.motionSensor"||jsonContent[i].type=="com.fibaro.motionSensor"||jsonContent[i].baseType=="com.fibaro.FGMS001")
+        	            {
+                            console.log('Found one: '+jsonContent[i].name);
+                            if (jsonContent[i].properties.value=="true")
+                            {
+                                movementFound=true;
+                                roomTxt.push(rooms[jsonContent[i].roomID].name);
+                            }
+        	            }
         	        }
         	        
         	        if (movementFound)
