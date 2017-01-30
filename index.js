@@ -532,21 +532,27 @@ EchoFibaro.prototype.intentHandlers = {
         	var type='temperatureSensor';
         	var valueSpoken=STATE_RESPONSES.Temperature;
         	var einheit=STATE_RESPONSES.Degrees;
-        	if (typ==STATE_RESPONSES.Warm||typ==STATE_RESPONSES.Temperature)
+        	if (typ===undefined)
+        	{
+        	    logAndSay(response,STATE_RESPONSES.InvalidValue);
+    	        return;
+        	}
+        	typ=typ.toLowerCase();
+        	if (typ==STATE_RESPONSES.Warm.toLowerCase()||typ==STATE_RESPONSES.Temperature.toLowerCase())
         	{
         	    type='temperatureSensor';
         	    valueSpoken=STATE_RESPONSES.Temperature;
         	    einheit=STATE_RESPONSES.Degrees;
         	    console.log("Temperatur");
         	}
-        	else if (typ==STATE_RESPONSES.Humid||typ==STATE_RESPONSES.Humidity)
+        	else if (typ==STATE_RESPONSES.Humid.toLowerCase()||typ==STATE_RESPONSES.Humidity.toLowerCase())
         	{
         	    type='humiditySensor';
         	    valueSpoken=STATE_RESPONSES.Humidity;
         	    einheit=STATE_RESPONSES.Percent;
         	    console.log("Feuchtigkeit");
         	}
-        	else if (typ==STATE_RESPONSES.Bright||typ==STATE_RESPONSES.Luminance)
+        	else if (typ==STATE_RESPONSES.Bright.toLowerCase()||typ==STATE_RESPONSES.Luminance.toLowerCase())
         	{
         	    type='lightSensor';
         	    valueSpoken=STATE_RESPONSES.Luminance;
@@ -588,7 +594,7 @@ EchoFibaro.prototype.intentHandlers = {
     	        else
     	            result=STATE_RESPONSES.SensorStateMinMax.replace('$Room',roomValue).replace(/\$Unit/g,einheit).replace('$SensorTyp',valueSpoken).replace('$value1',min).replace('$value2',max).replace('$value3',diff);
     	       
-    	        if (typ==STATE_RESPONSES.Warm)
+    	        if (typ==STATE_RESPONSES.Warm.toLowerCase())
     	        {
         	        getJsonDataFromFibaro(response,'type=com.fibaro.thermostatDanfoss&enabled=true&visible=true&roomID='+roomID,function (events2) {
             	        var jsonContent = JSON.parse(events2);
@@ -1890,6 +1896,22 @@ function getJsonSceneFromFibaro(response,eventCallback) {
         res.on('data', function (chunk) {
             body += chunk;
         });
+
+        res.on('end', function () {
+            var stringResult = body; //parseJson(body);
+            console.log(stringResult);
+            eventCallback(stringResult);
+        });
+    }).on('error', function (e) {
+        logAndSayQuit(response,"Got error: ", e);
+    });
+}
+
+
+exports.handler = (event, context, callback) => {
+    var echoFibaro = new EchoFibaro();
+    echoFibaro.execute(event, context);
+};
 
         res.on('end', function () {
             var stringResult = body; //parseJson(body);
