@@ -107,6 +107,8 @@ var STATE_RESPONSES = {
     VirtualModuleNotFound:'Konnte das virtuelle modul mit dem Namen $name nicht finden.',
     PressedButton:'Button $button im Modul $name wurde gedrückt.',
     ButtonNotFound:'Button $name nicht gefunden.',
+    SliderNotFound:'Slider $name nicht gefunden.',
+    SetSlider:'Slider $slider im Modul $name auf $value gesetzt.',
     DeviceState:'$name ist $status',
     Open:'auf',
     Close:'zu',
@@ -739,6 +741,7 @@ EchoFibaro.prototype.intentHandlers = {
         console.log("VirtualIntent received");
     	var modul=intent.slots.Modul.value;
     	var button=intent.slots.Button.value;
+    	var wert=intent.slots.Value.value;
     	var room=intent.slots.Room.value;
     	console.log(modul);
     	console.log(button);
@@ -795,7 +798,10 @@ EchoFibaro.prototype.intentHandlers = {
 	        
 	        if (bid===undefined)
 	        {
-	            logAndSay(response,STATE_RESPONSES.ButtonNotFound.replace('$name',button));
+	            if (wert===undefined)
+	                logAndSay(response,STATE_RESPONSES.ButtonNotFound.replace('$name',button));
+	            else
+	                logAndSay(response,STATE_RESPONSES.SliderNotFound.replace('$name',button));
 	            return;
 	        }
 	        
@@ -811,12 +817,24 @@ EchoFibaro.prototype.intentHandlers = {
 	        // Save id for additional button
 	        session.attributes.lastModuleID=modulID;
 	        session.attributes.lastModuleButton=bid;
-
-            options.path = '/api/callAction?deviceID='+modulID+'&name=pressButton&arg1='+bid;
-            console.log('Path: '+options.path);
-            httpreq(options, function(error) {
-                logAndSay(response,STATE_RESPONSES.PressedButton.replace('$name',modul).replace('$button',button));
-            });
+	        session.attributes.lastModuleValue=wert;
+            
+            if (wert!==undefined)
+            {
+                options.path = '/api/callAction?deviceID='+modulID+'&name=setSlider&arg1='+bid+'&arg2='+parseInt(wert);
+                console.log('Path: '+options.path);
+                httpreq(options, function(error) {
+                    logAndSay(response,STATE_RESPONSES.SetSlider.replace('$name',modul).replace('$slider',button).replace('$value',wert));
+                });
+            }
+            else
+            {
+                options.path = '/api/callAction?deviceID='+modulID+'&name=pressButton&arg1='+bid;
+                console.log('Path: '+options.path);
+                httpreq(options, function(error) {
+                    logAndSay(response,STATE_RESPONSES.PressedButton.replace('$name',modul).replace('$button',button));
+                });
+            }
         });
     },
     

@@ -87,6 +87,10 @@
             "type": "BUTTONLABELS"
         },
         {
+            "name": "Value",
+            "type": "AMAZON.NUMBER"
+        },
+        {
             "name": "Roomtype",
             "type": "ROOMTYPE"
         },

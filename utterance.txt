@@ -76,6 +76,10 @@ VirtualIntent Rufe Button {Button} im Modul {Modul} {Roomtype} {Room} auf
 VirtualIntent Rufe Button {Button} im virtuellen Modul {Modul} {Roomtype} {Room} auf
 VirtualIntent Drücke Button {Button} im Modul {Modul} {Roomtype} {Room}
 VirtualIntent Drücke Button {Button} im virtuellen Modul {Modul} {Roomtype} {Room}
+VirtualIntent Setze Slider {Button} auf {Value} Prozent im Modul {Modul}
+VirtualIntent Stelle Slider {Button} auf {Value} Prozent im Modul {Modul}
+VirtualIntent Setze Slider {Button} auf {Value} im Modul {Modul}
+VirtualIntent Stelle Slider {Button} auf {Value} im Modul {Modul}
 
 UsageIntent Wie ist der Verbauch {Devicetyp} {Device}
 UsageIntent Nenn mir den Verbauch {Devicetyp} {Device}
