@@ -783,7 +783,9 @@ EchoFibaro.prototype.intentHandlers = {
 	        //console.log(jsonContent[0].properties.rows);
 	        for (var k=0;k<jsonContent[0].properties.rows.length;k++)
 	        {
-	            if (jsonContent[0].properties.rows[k].type!=="button")
+	            if (wert===undefined&&jsonContent[0].properties.rows[k].type!=="button")
+	                continue;
+	            if (wert!==undefined&&jsonContent[0].properties.rows[k].type!=="slider")
 	                continue;
 	            for (var l=0;l<jsonContent[0].properties.rows[k].elements.length;l++)
 	            {
