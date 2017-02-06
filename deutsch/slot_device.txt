@@ -1,0 +1,49 @@
+Trockner
+Waschmaschine
+Spülmaschine
+Strom Computer
+Strom Laptop
+Schalter Lüfter
+Weihnachtsbaum
+Saugroboter
+Anlage
+Fernseher
+Kühlschrank
+Sonne
+Baum
+Steckdose Beet
+Steckdose Küche
+Licht Foyer
+Licht Seite Foyer
+Licht Arbeitszimmer
+Licht Küche
+Licht Anbau
+Licht Küchentür
+Dimmer Kinderzimmer
+Dimmer Gästezimmer
+Dimmer Schlafzimmer
+Licht Dachboden
+Licht Kellerabgang
+Licht Eingangstür
+Licht Flur
+Licht Ölkeller
+Licht Heizung
+Licht Werkstatt
+Licht Kellerflur
+Licht Beet
+Licht Wasserstein
+Licht Terrasse
+Licht Beet Treppe
+Licht Balkon
+Bad Erdgeschoss Licht
+Licht Bad Obergeschoss
+Licht Bad OG
+Licht Bad EG
+Licht Essplatz
+Licht Speisekammer
+Dimmer Wohnzimmer
+Dimmer Esszimmer
+Aussentür Licht Weg
+Licht Wintergarten
+Licht Apfelkeller
+Licht Klo Ölkeller

@@ -1,0 +1,14 @@
+an
+aus
+auf
+zu
+hoch
+runter
+öffne
+schließe
+offen
+geschlossen
+oben
+unten
+eingeschaltet
+ausgeschaltet

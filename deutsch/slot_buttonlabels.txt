@@ -1,0 +1,10 @@
+Play
+Pause
+Stop
+Küche
+an
+aus
+Bestimmen
+Update
+Lauter
+leiser
