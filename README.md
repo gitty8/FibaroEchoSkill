@@ -8,7 +8,7 @@
   3. Service Endpoint: "AWS Lambda" and select Europe
   4. Note the "Application ID" (can be found below Skill Information)
   5. Modify URL, Port, Authentication/login informations
-4. zip all three *.js files as one zip file without encryption, protection and (sub-)folders
+4. zip the four *.js files (languagefile.js, index.js, options.js and AlexaSkill.js) as one zip file without encryption, protection and (sub-)folders
 5. Create blanc Lambda-Function:
   1. https://eu-west-1.console.aws.amazon.com/lambda/home?region=eu-west-1#/functions?display=list
   2. Runtime: Node.js
