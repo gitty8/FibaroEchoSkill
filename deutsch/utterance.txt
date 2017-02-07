@@ -1,103 +1,103 @@
 OpenIntent Welche {Area} {Status} sind
-OpenIntent Welche {Area} {Raumtyp} {Status} sind
+OpenIntent Welche {Area} {Roomtype} {Status} sind
 OpenIntent Welche {Area} sind {Status}
-OpenIntent Welche {Area} sind {Raumtyp} {Raum} {Status}
-OpenIntent {Direkt} {Area} {Raumtyp} {Raum} {Status}
-OpenIntent {Direkt} {Area} {Devicename} {Raum} {Status}
-OpenIntent {Direkt} {Area} {Devicename} {Raumtyp} {Raum} {Status}
+OpenIntent Welche {Area} sind {Roomtype} {Room} {Status}
+OpenIntent {Direct} {Area} {Roomtype} {Room} {Status}
+OpenIntent {Direct} {Area} {Devicename} {Room} {Status}
+OpenIntent {Direct} {Area} {Devicename} {Roomtype} {Room} {Status}
 
-TemperatureIntent Wie {Typ} ist es {Raumtyp} {Raum}
-TemperatureIntent Nenn die {Typ} {Raumtyp} {Raum}
-TemperatureIntent Wie ist die {Typ} {Raumtyp} {Raum}
-TemperatureIntent Nenn mir die {Typ} {Raumtyp} {Raum}
-TemperatureIntent Sag mir die {Typ} {Raumtyp} {Raum}
+TemperatureIntent Wie {Type} ist es {Roomtype} {Room}
+TemperatureIntent Nenn die {Type} {Roomtype} {Room}
+TemperatureIntent Wie ist die {Type} {Roomtype} {Room}
+TemperatureIntent Nenn mir die {Type} {Roomtype} {Room}
+TemperatureIntent Sag mir die {Type} {Roomtype} {Room}
 
-HeatingIntent Stelle {Heiztyp} {Raumtyp} {Raum} auf {Temperatur} Grad
-HeatingIntent {Heiztyp} {Raumtyp} {Raum} auf {Temperatur} Grad
-HeatingIntent Stelle {Heiztyp} {Raumtyp} {Raum} für {Dauer} auf {Temperatur} Grad
-HeatingIntent {Heiztyp} {Raumtyp} {Raum} für {Dauer} auf {Temperatur} Grad
+HeatingIntent Stelle {Heatingtype} {Roomtype} {Room} auf {Temperature} Grad
+HeatingIntent {Heatingtype} {Roomtype} {Room} auf {Temperature} Grad
+HeatingIntent Stelle {Heatingtype} {Roomtype} {Room} für {Duration} auf {Temperature} Grad
+HeatingIntent {Heatingtype} {Roomtype} {Room} für {Duration} auf {Temperature} Grad
 
-SzeneIntent Starte Szene {Name}
-SzeneIntent Starte Szene {Name} {Raumtyp} {Raum}
-SzeneIntent Szene {Name}
+SceneIntent Starte Szene {Name}
+SceneIntent Starte Szene {Name} {Roomtype} {Room}
+SceneIntent Szene {Name}
 
-SzeneOutputIntent Ausgabe von Szene {Name}
-SzeneOutputIntent Ausgabe von Szene {Name} {Raumtyp} {Raum}
-SzeneOutputIntent Wie ist die Ausgabe von Szene {Name}
-SzeneOutputIntent Wie ist die Ausgabe von Szene {Name} {Raumtyp} {Raum}
+SceneOutputIntent Ausgabe von Szene {Name}
+SceneOutputIntent Ausgabe von Szene {Name} {Roomtype} {Room}
+SceneOutputIntent Wie ist die Ausgabe von Szene {Name}
+SceneOutputIntent Wie ist die Ausgabe von Szene {Name} {Roomtype} {Room}
 
-RolloIntent Fahre {Rollotyp} {Rollo} {Richtung}
-RolloIntent Fahre {Rollotyp} {Rollo} {Raumtyp} {Raum} {Richtung}
-RolloIntent Fahre {Rollotyp} {Raumtyp} {Raum} {Richtung}
-RolloIntent Fahre {Rollotyp} {Raumtyp} {Raum} auf {Percent} Prozent
-RolloIntent Fahre {Rollotyp} {Raumtyp} {Raum} auf {Percent} Prozent {Richtung}
-RolloIntent {Richtung} {Rollotyp} {Rollo} 
-RolloIntent {Richtung} {Rollotyp} {Rollo} {Raumtyp} {Raum}
-RolloIntent {Richtung} {Rollotyp}
-RolloIntent {Richtung} {Rollotyp} {Raumtyp} {Raum}
-RolloIntent {Rollotyp} {Raumtyp} {Raum} auf {Percent} Prozent
-RolloIntent {Rollotyp} {Rollo} auf {Percent} Prozent
-RolloIntent {Rollo} auf {Percent} Prozent
+ShutterIntent Fahre {Shuttertype} {Shutter} {Direction}
+ShutterIntent Fahre {Shuttertype} {Shutter} {Roomtype} {Room} {Direction}
+ShutterIntent Fahre {Shuttertype} {Roomtype} {Room} {Direction}
+ShutterIntent Fahre {Shuttertype} {Roomtype} {Room} auf {Percent} Prozent
+ShutterIntent Fahre {Shuttertype} {Roomtype} {Room} auf {Percent} Prozent {Direction}
+ShutterIntent {Direction} {Shuttertype} {Shutter} 
+ShutterIntent {Direction} {Shuttertype} {Shutter} {Roomtype} {Room}
+ShutterIntent {Direction} {Shuttertype}
+ShutterIntent {Direction} {Shuttertype} {Roomtype} {Room}
+ShutterIntent {Shuttertype} {Roomtype} {Room} auf {Percent} Prozent
+ShutterIntent {Shuttertype} {Shutter} auf {Percent} Prozent
+ShutterIntent {Shutter} auf {Percent} Prozent
 
-StatusIntent Wie ist der Status {Geraettyp} {Geraet}
-StatusIntent Status {Geraettyp} {Geraet}
-StatusIntent Wie ist der Status {Geraettyp} {Geraet} {Raumtyp} {Raum}
-StatusIntent Status {Geraettyp} {Geraet} {Raumtyp} {Raum}
-StatusIntent Ist {Geraettyp} {Geraet} {Status}
+StatusIntent Wie ist der Status {Devicetype} {Device}
+StatusIntent Status {Devicetype} {Device}
+StatusIntent Wie ist der Status {Devicetype} {Device} {Roomtype} {Room}
+StatusIntent Status {Devicetype} {Device} {Roomtype} {Room}
+StatusIntent Ist {Devicetype} {Device} {Status}
 
-LightIntent Schalte {Lichttyp} {Licht} {Status}
-LightIntent {Lichttyp} {Licht} {Status}
-LightIntent Schalte {Lichttyp} {Licht} und {Lichtzwei} {Status}
-LightIntent Schalte {Lichttyp} {Licht} {Raumtyp} {Raum} und {Raumtyp} {Raumzwei} {Status}
-LightIntent {Lichttyp} {Licht} {Raumtyp} {Raum} und {Raumtyp} {Raumzwei} {Status}
-LightIntent Schalte {Lichttyp} {Licht} {Raumtyp} {Raum} {Status}
-LightIntent Schalte {Lichttyp} {Raumtyp} {Raum} {Status}
-LightIntent {Lichttyp} {Raumtyp} {Raum} {Status}
+LightIntent Schalte {Lighttype} {Light} {Status}
+LightIntent {Lighttype} {Light} {Status}
+LightIntent Schalte {Lighttype} {Light} und {Lighttwo} {Status}
+LightIntent Schalte {Lighttype} {Light} {Roomtype} {Room} und {Roomtype} {Roomtwo} {Status}
+LightIntent {Lighttype} {Light} {Roomtype} {Room} und {Roomtype} {Roomtwo} {Status}
+LightIntent Schalte {Lighttype} {Light} {Roomtype} {Room} {Status}
+LightIntent Schalte {Lighttype} {Roomtype} {Room} {Status}
+LightIntent {Lighttype} {Roomtype} {Room} {Status}
 
-DimIntent Dimme {Lichttyp} {Licht} {Dimwert} Prozent
-DimIntent Dimme {Lichttyp} {Licht} {Raumtyp} {Raum} {Dimwert} Prozent
-DimIntent Dimme {Raumtyp} {Raum} {Dimwert} Prozent
+DimIntent Dimme {Lighttype} {Light} {Dimvalue} Prozent
+DimIntent Dimme {Lighttype} {Light} {Roomtype} {Room} {Dimvalue} Prozent
+DimIntent Dimme {Lighttype} {Room} {Dimvalue} Prozent
 
-SwitchIntent Schalte {Geraet} {Status}
-SwitchIntent {Janein}
+SwitchIntent Schalte {Device} {Status}
+SwitchIntent {Yesno}
 
 GlobalIntent Wie ist der Status der Variable {Variable}
 GlobalIntent Status der Variable {Variable}
 GlobalIntent Status Variable {Variable}
 
-GlobalSetIntent Setze Variable {Variable} auf {Wert}
-GlobalSetIntent Setze Variable {Variable} auf den Wert {Wert}
+GlobalSetIntent Setze Variable {Variable} auf {Value}
+GlobalSetIntent Setze Variable {Variable} auf den Wert {Value}
 
-VirtualIntent Rufe Button {Button} im Modul {Modul} auf
-VirtualIntent Rufe Button {Button} im virtuellen Modul {Modul} auf
-VirtualIntent Drücke Button {Button} im Modul {Modul}
-VirtualIntent Drücke Button {Button} im virtuellen Modul {Modul}
-VirtualIntent Rufe Button {Button} im Modul {Modul} {Roomtype} {Room} auf
-VirtualIntent Rufe Button {Button} im virtuellen Modul {Modul} {Roomtype} {Room} auf
-VirtualIntent Drücke Button {Button} im Modul {Modul} {Roomtype} {Room}
-VirtualIntent Drücke Button {Button} im virtuellen Modul {Modul} {Roomtype} {Room}
-VirtualIntent Setze Slider {Button} auf {Value} Prozent im Modul {Modul}
-VirtualIntent Stelle Slider {Button} auf {Value} Prozent im Modul {Modul}
-VirtualIntent Setze Slider {Button} auf {Value} im Modul {Modul}
-VirtualIntent Stelle Slider {Button} auf {Value} im Modul {Modul}
+VirtualIntent Rufe Button {Button} im Modul {Module} auf
+VirtualIntent Rufe Button {Button} im virtuellen Modul {Module} auf
+VirtualIntent Drücke Button {Button} im Modul {Module}
+VirtualIntent Drücke Button {Button} im virtuellen Modul {Module}
+VirtualIntent Rufe Button {Button} im Modul {Module} {Roomtype} {Room} auf
+VirtualIntent Rufe Button {Button} im virtuellen Modul {Module} {Roomtype} {Room} auf
+VirtualIntent Drücke Button {Button} im Modul {Module} {Roomtype} {Room}
+VirtualIntent Drücke Button {Button} im virtuellen Modul {Module} {Roomtype} {Room}
+VirtualIntent Setze Slider {Button} auf {Value} Prozent im Modul {Module}
+VirtualIntent Stelle Slider {Button} auf {Value} Prozent im Modul {Module}
+VirtualIntent Setze Slider {Button} auf {Value} im Modul {Module}
+VirtualIntent Stelle Slider {Button} auf {Value} im Modul {Module}
 
-UsageIntent Wie ist der Verbauch {Devicetyp} {Device}
-UsageIntent Nenn mir den Verbauch {Devicetyp} {Device}
-UsageIntent Wieviel verbraucht {Devicetyp} {Device}
+UsageIntent Wie ist der Verbauch {Devicetype} {Device}
+UsageIntent Nenn mir den Verbauch {Devicetype} {Device}
+UsageIntent Wieviel verbraucht {Devicetype} {Device}
 
 AlarmIntent Ist der Alarm geschaltet
 AlarmIntent Wie ist der Status vom Alarm
 
-RGBIntent Wie sind die {Mode} {Devicetyp} {Device}
-RGBIntent Welches {Mode} nutzt {Devicetyp} {Device}
-RGBIntent Welches {Mode} läuft auf {Devicetyp} {Device}
-RGBIntent Setze Programm {Program} {Devicetyp} {Device}
-RGBIntent Setze Rot {Devicetyp} {Device} auf {Red} Prozent
-RGBIntent Setze Blau {Devicetyp} {Device} auf {Blue} Prozent
-RGBIntent Setze Grün {Devicetyp} {Device} auf {Green} Prozent
-RGBIntent Setze Weiß {Devicetyp} {Device} auf {White} Prozent
-RGBIntent Setze Helligkeit {Devicetyp} {Device} auf {Brightness} Prozent
-RGBIntent Setze die Farben {Devicetyp} {Device} auf {Red} Prozent Rot {Green} Prozent Gelb {Blue} Prozent Blau {White} Prozent Weiß {Brightness} Prozent Helligkeit
+RGBIntent Wie sind die {Mode} {Devicetype} {Device}
+RGBIntent Welches {Mode} nutzt {Devicetype} {Device}
+RGBIntent Welches {Mode} läuft auf {Devicetype} {Device}
+RGBIntent Setze Programm {Program} {Devicetype} {Device}
+RGBIntent Setze Rot {Devicetype} {Device} auf {Red} Prozent
+RGBIntent Setze Blau {Devicetype} {Device} auf {Blue} Prozent
+RGBIntent Setze Grün {Devicetype} {Device} auf {Green} Prozent
+RGBIntent Setze Weiß {Devicetype} {Device} auf {White} Prozent
+RGBIntent Setze Helligkeit {Devicetype} {Device} auf {Brightness} Prozent
+RGBIntent Setze die Farben {Devicetype} {Device} auf {Red} Prozent Rot {Green} Prozent Gelb {Blue} Prozent Blau {White} Prozent Weiß {Brightness} Prozent Helligkeit
 
 MovementIntent In wechem Raum ist Bewegung
 MovementIntent Ist Bewegung {Roomtype} {Room}

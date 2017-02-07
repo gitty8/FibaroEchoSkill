@@ -6,36 +6,36 @@
     },
     
     {
-      "intent": "SzeneIntent",
+      "intent": "SceneIntent",
       "slots": [
         {
             "name": "Name",
-            "type": "SZENENAMES"
+            "type": "SCENENAMES"
         },
         {
-            "name": "Raumtyp",
+            "name": "Roomtype",
             "type": "ROOMTYPE"
         },
         {
-            "name": "Raum",
+            "name": "Room",
             "type": "ROOMS"
         }
       ]
     },
     
     {
-      "intent": "SzeneOutputIntent",
+      "intent": "SceneOutputIntent",
       "slots": [
         {
             "name": "Name",
-            "type": "SZENENAMES"
+            "type": "SCENENAMES"
         },
         {
-            "name": "Raumtyp",
+            "name": "Roomtype",
             "type": "ROOMTYPE"
         },
         {
-            "name": "Raum",
+            "name": "Room",
             "type": "ROOMS"
         }
       ]
@@ -69,7 +69,7 @@
             "type": "VARIABLENAMES"
         },
         {
-            "name": "Wert",
+            "name": "Value",
             "type": "AMAZON.NUMBER"
         }
       ]
@@ -79,7 +79,7 @@
       "intent": "VirtualIntent",
       "slots": [
         {
-            "name": "Modul",
+            "name": "Module",
             "type": "MODULNAMES"
         },
         {
@@ -113,11 +113,11 @@
             "type": "NAMES"
         },
         {
-            "name": "Raumtyp",
+            "name": "Roomtype",
             "type": "ROOMTYPE"
         },
         {
-            "name": "Raum",
+            "name": "Room",
             "type": "ROOMS"
         },
         {
@@ -125,7 +125,7 @@
             "type": "TOGGLES"
         },   
         {
-            "name": "Direkt",
+            "name": "Direct",
             "type": "DIRECTTYPES"
         }
       ]
@@ -135,16 +135,16 @@
       "intent": "TemperatureIntent",
       "slots": [
         {
-            "name": "Raum",
+            "name": "Room",
             "type": "ROOMS"
         },
         {
-            "name": "Raumtyp",
+            "name": "Roomtype",
             "type": "ROOMTYPE"
         },
         {
-            "name": "Typ",
-            "type": "STATUSWERT"
+            "name": "Type",
+            "type": "STATUSVALUE"
         }
       ]
     },
@@ -153,19 +153,19 @@
       "intent": "StatusIntent",
       "slots": [
         {
-            "name": "Geraet",
+            "name": "Device",
             "type": "DEVICE"
         },
         {
-            "name": "Geraettyp",
+            "name": "Devicetype",
             "type": "DEVICETYPES"
         },
         {
-            "name": "Raumtyp",
+            "name": "Roomtype",
             "type": "ROOMTYPE"
         },
         {
-            "name": "Raum",
+            "name": "Room",
             "type": "ROOMS"
         },
         {
@@ -183,7 +183,7 @@
             "type": "DEVICE"
         },
         {
-            "name": "Devicetyp",
+            "name": "Devicetype",
             "type": "DEVICETYPES"
         },
         {
@@ -205,15 +205,15 @@
             "type": "DEVICE"
         },
         {
-            "name": "Devicetyp",
+            "name": "Devicetype",
             "type": "DEVICETYPES"
         },
         {
-            "name": "Raumtyp",
+            "name": "Roomtype",
             "type": "ROOMTYPE"
         },
         {
-            "name": "Raum",
+            "name": "Room",
             "type": "ROOMS"
         }
       ]
@@ -227,7 +227,7 @@
             "type": "DEVICE"
         },
         {
-            "name": "Devicetyp",
+            "name": "Devicetype",
             "type": "DEVICETYPES"
         },
         {
@@ -235,11 +235,11 @@
             "type": "RGBTYPE"
         },
         {
-            "name": "Raumtyp",
+            "name": "Roomtype",
             "type": "ROOMTYPE"
         },
         {
-            "name": "Raum",
+            "name": "Room",
             "type": "ROOMS"
         },
         {
@@ -273,7 +273,7 @@
       "intent": "SwitchIntent",
       "slots": [
         {
-            "name": "Geraet",
+            "name": "Device",
             "type": "DEVICE"
         },
         {
@@ -281,7 +281,7 @@
             "type": "TOGGLES"
         },
         {
-            "name": "Janein",
+            "name": "Yesno",
             "type": "YESNO"
         }
       ]
@@ -291,27 +291,27 @@
       "intent": "LightIntent",
       "slots": [
         {
-            "name": "Licht",
+            "name": "Light",
             "type": "DEVICE"
         },
         {
-            "name": "Lichttyp",
+            "name": "Lighttype",
             "type": "LIGHTTYPES"
         },
         {
-            "name": "Lichtzwei",
+            "name": "Lighttwo",
             "type": "DEVICE"
         },
         {
-            "name": "Raum",
+            "name": "Room",
             "type": "ROOMS"
         },
         {
-            "name": "Raumzwei",
+            "name": "Roomtwo",
             "type": "ROOMS"
         },
         {
-            "name": "Raumtyp",
+            "name": "Roomtype",
             "type": "ROOMTYPE"
         },
         {
@@ -325,27 +325,27 @@
       "intent": "DimIntent",
       "slots": [
         {
-            "name": "Licht",
+            "name": "Light",
             "type": "DEVICE"
         },
         {
-            "name": "Lichttyp",
+            "name": "Lighttype",
             "type": "LIGHTTYPES"
         },
         {
-            "name": "Raum",
+            "name": "Room",
             "type": "ROOMS"
         },
         {
-            "name": "Raumzwei",
+            "name": "Roomtwo",
             "type": "ROOMS"
         },
         {
-            "name": "Raumtyp",
+            "name": "Roomtype",
             "type": "ROOMTYPE"
         },
         {
-            "name": "Dimwert",
+            "name": "Dimvalue",
             "type": "AMAZON.NUMBER"
         }
       ]
@@ -355,45 +355,45 @@
       "intent": "HeatingIntent",
       "slots": [
         {
-            "name": "Heiztyp",
+            "name": "Heatingtype",
             "type": "HEATINGTYPES"
         },
         {
-            "name": "Raum",
+            "name": "Room",
             "type": "ROOMS"
         },
         {
-            "name": "Raumtyp",
+            "name": "Roomtype",
             "type": "ROOMTYPE"
         },
         {
-            "name": "Temperatur",
+            "name": "Temperature",
             "type": "AMAZON.NUMBER"
         },
         {
-            "name": "Dauer",
+            "name": "Duration",
             "type": "AMAZON.DURATION"
         }
       ]
     },
       
 	{
-      "intent": "RolloIntent",
+      "intent": "ShutterIntent",
       "slots": [
         {
-            "name": "Rollo",
+            "name": "Shutter",
             "type": "NAMES"
         },
         {
-            "name": "Rollotyp",
-            "type": "ROLLOTYPES"
+            "name": "Shuttertype",
+            "type": "SHUTTERTYPES"
         },
         {
-            "name": "Raum",
+            "name": "Room",
             "type": "ROOMS"
         },
         {
-            "name": "Raumtyp",
+            "name": "Roomtype",
             "type": "ROOMTYPE"
         },
         {
@@ -401,7 +401,7 @@
             "type": "AMAZON.NUMBER"
         },
         {
-            "name": "Richtung",
+            "name": "Direction",
             "type": "TOGGLES"
         }
       ]
