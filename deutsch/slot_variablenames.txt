@@ -1,9 +1,0 @@
-NightTime
-SonosMsgBad
-SonosMsgKitchen
-SonosTTS
-SonosTTSBad
-Telegram
-AlarmState
-BlockLightAutoOff
-PresentState
