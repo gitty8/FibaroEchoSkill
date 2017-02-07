@@ -4,12 +4,12 @@ OpenIntent Which {Area} {Roomtype} is {Status}
 OpenIntent Which {Area} {Roomtype} are {Status}
 OpenIntent Which {Area} is {Roomtype} {Room} {Status}
 OpenIntent Which {Area} are {Roomtype} {Room} {Status}
-OpenIntent Tell me, which {Area} is {Status}
-OpenIntent Tell me, which {Area} are {Status}
-OpenIntent Tell me, which {Area} {Roomtype} is {Status}
-OpenIntent Tell me, which {Area} {Roomtype} are {Status}
-OpenIntent Tell me, which {Area} is {Roomtype} {Room} {Status}
-OpenIntent Tell me, which {Area} are {Roomtype} {Room} {Status}
+OpenIntent Tell me which {Area} is {Status}
+OpenIntent Tell me which {Area} are {Status}
+OpenIntent Tell me which {Area} {Roomtype} is {Status}
+OpenIntent Tell me which {Area} {Roomtype} are {Status}
+OpenIntent Tell me which {Area} is {Roomtype} {Room} {Status}
+OpenIntent Tell me which {Area} are {Roomtype} {Room} {Status}
 OpenIntent {Direct} {Devicename} {Room} {Status}
 OpenIntent {Direct} {Devicename} {Roomtype} {Room} {Status}
 OpenIntent {Direct} {Area} {Roomtype} {Room} {Status}
@@ -26,15 +26,9 @@ TemperatureIntent Tell me {Type} {Roomtype} {Room}
 HeatingIntent Set {Heatingtype} {Roomtype} {Room} to {Temperature} degrees
 HeatingIntent Set {Heatingtype} {Roomtype} {Room} for {Duration} to {Temperature} degrees
 HeatingIntent Set {Heatingtype} {Roomtype} {Room} to {Temperature} degrees for {Duration}
-HeatingIntent Set {Devicename} to {Temperature} degrees
-HeatingIntent Set {Devicename} for {Duration} to {Temperature} degrees
-HeatingIntent Set {Devicename} to {Temperature} degrees for {Duration}
 HeatingIntent {Heatingtype} {Roomtype} {Room} to {Temperature} degrees
 HeatingIntent {Heatingtype} {Roomtype} {Room} for {Duration} to {Temperature} degrees
 HeatingIntent {Heatingtype} {Roomtype} {Room} to {Temperature} degrees for {Duration}
-HeatingIntent {Devicename} to {Temperature} degrees
-HeatingIntent {Devicename} for {Duration} to {Temperature} degrees
-HeatingIntent {Devicename} to {Temperature} degrees for {Duration}
 
 SceneIntent Start scene {Name}
 SceneIntent Start the scene {Name}
