@@ -1,0 +1,25 @@
+on
+off
+at
+out
+to
+high
+up
+down
+bottom
+open
+opened
+close
+closed
+above
+below
+switched on
+switch on
+turned on
+turn on
+switched off
+switch off
+turned off
+turn off
+armed
+disarmed

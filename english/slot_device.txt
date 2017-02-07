@@ -1,0 +1,32 @@
+Television
+Socket
+Office Room Socket
+Lights
+Kitchen Lights
+Kitchen Primary Lights
+Kitchen Secondary Lights
+Lamps
+Kitchen Lamp
+Living Room Lamp
+Dimmer
+Bedroom Dimmer
+Thermostat
+Bedroom Thermostat
+Bathroom Thermostat
+Kitchen Thermostat
+Living Room Primary Thermostat
+Living Room Secondary Thermostat
+Thermometer
+Kitchen Thermometer
+Living Room Thermometer
+Bedroom Thermometer
+Camera
+Surveillance Camera
+Light Sensor
+Bedroom lLight Sensor
+Living Room Light Sensor
+Motion Sensor
+Living Room Motion Sensor
+Bedroom Motion Sensor
+Door Sensor
+Hallway Door Sensor

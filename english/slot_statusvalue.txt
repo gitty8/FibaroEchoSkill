@@ -1,0 +1,16 @@
+warm
+hot
+cold
+luminance
+brightness
+bright
+humidity
+humid
+moisture
+temperature
+on
+off
+turned on
+turned off
+switched on
+switched off
