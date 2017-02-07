@@ -1,12 +1,29 @@
 on
 off
 at
-out
 to
+in
+out
 high
+low
 up
 down
+top
 bottom
+raise
+lower
+lift
+drop
+ascend
+descend
+move up
+move down
+move upwards
+move downwards
+set up
+set down
+set it up
+set it down
 open
 opened
 close

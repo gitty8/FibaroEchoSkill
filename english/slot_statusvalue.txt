@@ -1,13 +1,23 @@
 warm
+the warm
 hot
+the hot
 cold
+the cold
 luminance
+the luminance
 brightness
+the brightness
 bright
+the bright
 humidity
+the humidity
 humid
+the humid
 moisture
+the moisture
 temperature
+the temperature
 on
 off
 turned on
