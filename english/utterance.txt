@@ -26,9 +26,15 @@ TemperatureIntent Tell me {Type} {Roomtype} {Room}
 HeatingIntent Set {Heatingtype} {Roomtype} {Room} to {Temperature} degrees
 HeatingIntent Set {Heatingtype} {Roomtype} {Room} for {Duration} to {Temperature} degrees
 HeatingIntent Set {Heatingtype} {Roomtype} {Room} to {Temperature} degrees for {Duration}
+HeatingIntent Set {Devicename} to {Temperature} degrees
+HeatingIntent Set {Devicename} for {Duration} to {Temperature} degrees
+HeatingIntent Set {Devicename} to {Temperature} degrees for {Duration}
 HeatingIntent {Heatingtype} {Roomtype} {Room} to {Temperature} degrees
 HeatingIntent {Heatingtype} {Roomtype} {Room} for {Duration} to {Temperature} degrees
 HeatingIntent {Heatingtype} {Roomtype} {Room} to {Temperature} degrees for {Duration}
+HeatingIntent {Devicename} to {Temperature} degrees
+HeatingIntent {Devicename} for {Duration} to {Temperature} degrees
+HeatingIntent {Devicename} to {Temperature} degrees for {Duration}
 
 SceneIntent Start scene {Name}
 SceneIntent Start the scene {Name}
