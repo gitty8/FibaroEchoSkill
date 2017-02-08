@@ -1,4 +1,4 @@
-var options = {
+module.exports.options = {
   appid: "<APPID>",
   host: "<URL>",	// NO http:// !!! just the pure domain name
   port: "<PORT>",
@@ -8,5 +8,5 @@ var options = {
   },
   useHttps: false,
   rejectUnauthorized: false, // Change to false if you self-signed your certificate
-  reAsk: true       // Change to false if Alexa should only ask once
+  reAsk: false       // Change to false if Alexa should only ask once
 };
