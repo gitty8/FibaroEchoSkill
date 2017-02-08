@@ -23,7 +23,7 @@ Bedroom Thermometer
 Camera
 Surveillance Camera
 Light Sensor
-Bedroom lLight Sensor
+Bedroom Light Sensor
 Living Room Light Sensor
 Motion Sensor
 Living Room Motion Sensor
