@@ -1,9 +1,9 @@
-NightTime
-SonosMsgBad
-SonosMsgKitchen
-SonosTTS
-SonosTTSBad
-Telegram
-AlarmState
-BlockLightAutoOff
-PresentState
+blockiere Licht aus
+Nachtzeit
+Meldung Sonos Bad
+Meldung Sonos Küche
+Sonos Text to Speech
+Sonos Text to Speech Bad
+Telegramm
+Alarm Status
+Anwesendheitsstatus
