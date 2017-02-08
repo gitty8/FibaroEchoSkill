@@ -1508,6 +1508,7 @@ EchoFibaro.prototype.intentHandlers = {
         var roomValue=intent.slots.Room.value;
         var grad=intent.slots.Temperature.value;
         var zeit=intent.slots.Duration.value;
+        var devicename=intent.slots.Devicename.value;
         console.log('Trying to parse. Grad='+grad+', Zeit='+zeit);
         
         if (grad===undefined||grad=='?'||grad<0||grad>40)
@@ -1538,17 +1539,24 @@ EchoFibaro.prototype.intentHandlers = {
                 // Now events is the json object of all these devices
                 var jsonContent = JSON.parse(events);
     
-    	        //for(var i = 0; i < jsonContent.length; i++)
-    	        //{
-    	            var i=0;
+                var responses = [];
+                var completed_requests = 0;
+                var withTime=(zeit===undefined||zeit==-1);
+                var maxReq=withTime?jsonContent.length*2:jsonContent.length;
+    	        for(var i = 0; i < jsonContent.length; i++)
+    	        {
     	            console.log('Found one: '+jsonContent[i].name);
+    	            if (devicename!==undefined&&jsonContent[i].name.toLowerCase()!==devicename.toLowerCase())
+    	                continue;
     	            //result+='Temperatur von '+jsonContent[i].name+' auf '+grad+' Grad gesetzt';
     	            
     	            result+=STATE_RESPONSES.TemperatureSet.replace('$Room',roomValue).replace('$value',grad);
                     options.path = '/api/callAction?deviceID='+jsonContent[i].id+'&name=setTargetLevel&arg1='+grad;
                     httpreq(options, function(error) 
                     {
-                        if (zeit===undefined||zeit==-1)
+                        completed_requests++;
+                        responses.push(error);
+                        if (!withTime && completed_requests == maxReq)
                         {
                             logAndSay(response,result);
                             return;
@@ -1559,10 +1567,13 @@ EchoFibaro.prototype.intentHandlers = {
                         zeit=dauer*60*60+Math.floor(new Date()/1000);
                         options.path = '/api/callAction?deviceID='+jsonContent[i].id+'&name=setTime&arg1='+zeit;
                         httpreq(options, function(error) {
-                            logAndSay(response,result+STATE_RESPONSES.ForTime.replace('$value',dauer));
+                            completed_requests++;
+                            if (completed_requests == maxReq) {
+                                logAndSay(response,result+STATE_RESPONSES.ForTime.replace('$value',dauer));
+                            }
                         });
                     });
-    	        //}
+    	        }
                 });
             //logAndSay(response,STATE_RESPONSES.NoThermostatFound.replace('$Room',roomValue));
 

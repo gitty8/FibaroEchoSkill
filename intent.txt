@@ -367,6 +367,10 @@
             "type": "ROOMTYPE"
         },
         {
+            "name": "Devicename",
+            "type": "NAMES"
+        },
+        {
             "name": "Temperature",
             "type": "AMAZON.NUMBER"
         },
