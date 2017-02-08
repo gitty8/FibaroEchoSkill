@@ -128,7 +128,8 @@ module.exports.STATE_RESPONSES = {
 };
 
 module.exports.GLOBAL_TRANSLATE = {
-    "Block Light Off" : "BlockGlobalLightOff"
+    "Living Room Temperature" : "LivingRoomTemp",
+    "Bedroom Temperature" : "BedroomTemp"
 };
 
 module.exports.REPLACE_TEXT = {KZ:"Living Room",DR:"Dining Room",OR:"Office Room",FL:"Floor",NU:"Nursery",GR:"Guest Room",GF:"Ground Floor", WG:"Winter Garden",BR:"Bedroom",HA:"Hall",TR:"Terrace",BA:"Balcony"};
