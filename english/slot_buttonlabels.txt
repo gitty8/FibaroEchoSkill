@@ -1,0 +1,8 @@
+Play
+Pause
+Stop
+On
+Off
+Update
+Volume up
+Volume down

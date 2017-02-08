@@ -1,0 +1,37 @@
+Living Room
+Dining Room
+Work Room
+Office Room
+Children's Room
+Nursery
+Guest Room
+Bedroom
+Kitchen
+Hall
+Hallway
+Lobby
+Restroom
+Toilet
+Bathroom
+Server Room
+Boiler Room
+Storage Room
+Garage
+Floor
+Basement
+Cellar
+Ground Floor
+First Floor
+Second Floor
+Third Floor
+Attic
+Terrace
+Balcony
+Garden
+Winter Garden
+Outside
+Exterior Front
+Exterior Back
+Backyard
+Workshop
+

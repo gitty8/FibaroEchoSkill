@@ -1,0 +1,215 @@
+OpenIntent Which {Area} is {Status}
+OpenIntent Which {Area} are {Status}
+OpenIntent Which {Area} {Roomtype} is {Status}
+OpenIntent Which {Area} {Roomtype} are {Status}
+OpenIntent Which {Area} is {Roomtype} {Room} {Status}
+OpenIntent Which {Area} are {Roomtype} {Room} {Status}
+OpenIntent Tell me, which {Area} is {Status}
+OpenIntent Tell me, which {Area} are {Status}
+OpenIntent Tell me, which {Area} {Roomtype} is {Status}
+OpenIntent Tell me, which {Area} {Roomtype} are {Status}
+OpenIntent Tell me, which {Area} is {Roomtype} {Room} {Status}
+OpenIntent Tell me, which {Area} are {Roomtype} {Room} {Status}
+OpenIntent {Direct} {Devicename} {Room} {Status}
+OpenIntent {Direct} {Devicename} {Roomtype} {Room} {Status}
+OpenIntent {Direct} {Area} {Roomtype} {Room} {Status}
+OpenIntent {Direct} {Area} {Devicename} {Room} {Status}
+OpenIntent {Direct} {Area} {Devicename} {Roomtype} {Room} {Status}
+
+TemperatureIntent What is the {Type} {Roomtype} {Room}
+TemperatureIntent What's the {Type} {Roomtype} {Room}
+TemperatureIntent What {Type} is {Roomtype} {Room}
+TemperatureIntent {Type} {Roomtype} {Room}
+TemperatureIntent Give me {Type} {Roomtype} {Room}
+TemperatureIntent Tell me {Type} {Roomtype} {Room}
+
+HeatingIntent Set {Heatingtype} {Roomtype} {Room} to {Temperature} degrees
+HeatingIntent Set {Heatingtype} {Roomtype} {Room} for {Duration} to {Temperature} degrees
+HeatingIntent Set {Heatingtype} {Roomtype} {Room} to {Temperature} degrees for {Duration}
+HeatingIntent Set {Devicename} to {Temperature} degrees
+HeatingIntent Set {Devicename} for {Duration} to {Temperature} degrees
+HeatingIntent Set {Devicename} to {Temperature} degrees for {Duration}
+HeatingIntent {Heatingtype} {Roomtype} {Room} to {Temperature} degrees
+HeatingIntent {Heatingtype} {Roomtype} {Room} for {Duration} to {Temperature} degrees
+HeatingIntent {Heatingtype} {Roomtype} {Room} to {Temperature} degrees for {Duration}
+HeatingIntent {Devicename} to {Temperature} degrees
+HeatingIntent {Devicename} for {Duration} to {Temperature} degrees
+HeatingIntent {Devicename} to {Temperature} degrees for {Duration}
+
+SceneIntent Start scene {Name}
+SceneIntent Start the scene {Name}
+SceneIntent Start scene {Name} {Roomtype} {Room}
+SceneIntent Start the scene {Name} {Roomtype} {Room}
+SceneIntent Run scene {Name}
+SceneIntent Run the scene {Name}
+SceneIntent Run scene {Name} {Roomtype} {Room}
+SceneIntent Run the scene {Name} {Roomtype} {Room}
+SceneIntent Scene {Name}
+
+SceneOutputIntent Output of scene {Name}
+SceneOutputIntent Output of the scene {Name}
+SceneOutputIntent Output of scene {Name} {Roomtype} {Room}
+SceneOutputIntent Output of the scene {Name} {Roomtype} {Room}
+SceneOutputIntent What is output of scene {Name}
+SceneOutputIntent What is the output of scene {Name}
+SceneOutputIntent What is output of the scene {Name}
+SceneOutputIntent What is the output of the scene {Name}
+SceneOutputIntent What is output of scene {Name} {Roomtype} {Room}
+SceneOutputIntent What is the output of scene {Name} {Roomtype} {Room}
+SceneOutputIntent What is output of the scene {Name} {Roomtype} {Room}
+SceneOutputIntent What is the output of the scene {Name} {Roomtype} {Room}
+SceneOutputIntent What's output of scene {Name}
+SceneOutputIntent What's the output of scene {Name}
+SceneOutputIntent What's output of the scene {Name}
+SceneOutputIntent What's the output of the scene {Name}
+SceneOutputIntent What's output of scene {Name} {Roomtype} {Room}
+SceneOutputIntent What's the output of scene {Name} {Roomtype} {Room}
+SceneOutputIntent What's output of the scene {Name} {Roomtype} {Room}
+SceneOutputIntent What's the output of the scene {Name} {Roomtype} {Room}
+
+ShutterIntent Move {Shutter} {Direction}
+ShutterIntent Move {Shutter} by {Percent} percent {Direction}
+ShutterIntent Move {Shuttertype} {Shutter} {Direction}
+ShutterIntent Move {Shuttertype} {Shutter} {Roomtype} {Room} {Direction}
+ShutterIntent Move {Shuttertype} {Roomtype} {Room} {Direction}
+ShutterIntent Move {Shuttertype} {Roomtype} {Room} by {Percent} percent
+ShutterIntent Move {Shuttertype} {Roomtype} {Room} by {Percent} percent {Direction}
+ShutterIntent {Direction} {Shutter}
+ShutterIntent {Direction} {Shuttertype} {Shutter} 
+ShutterIntent {Direction} {Shuttertype} {Shutter} {Roomtype} {Room}
+ShutterIntent {Direction} {Shuttertype} {Roomtype} {Room}
+ShutterIntent {Shuttertype} {Roomtype} {Room} by {Percent} percent
+ShutterIntent {Shuttertype} {Shutter} by {Percent} percent
+ShutterIntent {Shutter} by {Percent} percent
+
+StatusIntent What is the status {Devicetype} {Device}
+StatusIntent What is the status {Devicetype} {Device} {Roomtype} {Room}
+StatusIntent What's the status {Devicetype} {Device}
+StatusIntent What's the status {Devicetype} {Device} {Roomtype} {Room}
+StatusIntent Status {Devicetype} {Device}
+StatusIntent Status {Devicetype} {Device} {Roomtype} {Room}
+StatusIntent Is {Devicetype} {Device} {Status}
+StatusIntent Give me the status {Devicetype} {Device}
+StatusIntent Give me the status {Devicetype} {Device} {Roomtype} {Room}
+StatusIntent Tell me the status {Devicetype} {Device}
+StatusIntent Tell me the status {Devicetype} {Device} {Roomtype} {Room}
+
+LightIntent {Status} {Light}
+LightIntent {Status} {Lighttype} {Light}
+LightIntent Switch {Light} {Status}
+LightIntent Switch {Light} {Roomtype} {Room} {Status}
+LightIntent Switch {Light} {Roomtype} {Room} {Status}
+LightIntent Switch {Light} and {Lighttwo} {Status}
+LightIntent Switch {Light} {Roomtype} {Room} and {Roomtype} {Roomtwo} {Status}
+LightIntent Switch {Lighttype} {Light} {Status}
+LightIntent Switch {Lighttype} {Light} {Roomtype} {Room} {Status}
+LightIntent Switch {Lighttype} {Roomtype} {Room} {Status}
+LightIntent Switch {Lighttype} {Light} and {Lighttwo} {Status}
+LightIntent Switch {Lighttype} {Light} {Roomtype} {Room} and {Roomtype} {Roomtwo} {Status}
+LightIntent Turn {Light} {Status}
+LightIntent Turn {Light} {Roomtype} {Room} {Status}
+LightIntent Turn {Light} {Roomtype} {Room} {Status}
+LightIntent Turn {Light} and {Lighttwo} {Status}
+LightIntent Turn {Light} {Roomtype} {Room} and {Roomtype} {Roomtwo} {Status}
+LightIntent Turn {Lighttype} {Light} {Status}
+LightIntent Turn {Lighttype} {Light} {Roomtype} {Room} {Status}
+LightIntent Turn {Lighttype} {Roomtype} {Room} {Status}
+LightIntent Turn {Lighttype} {Light} and {Lighttwo} {Status}
+LightIntent Turn {Lighttype} {Light} {Roomtype} {Room} and {Roomtype} {Roomtwo} {Status}
+LightIntent {Light} {Status}
+LightIntent {Lighttype} {Light} {Status}
+LightIntent {Lighttype} {Light} {Roomtype} {Room} and {Roomtype} {Roomtwo} {Status}
+LightIntent {Lighttype} {Roomtype} {Room} {Status}
+
+DimIntent Dim {Light} to {Dimvalue} percent
+DimIntent Dim {Light} {Roomtype} {Room} to {Dimvalue} percent
+DimIntent Dim {Light} {Room} to {Dimvalue} percent
+DimIntent Dim {Lighttype} {Light} to {Dimvalue} percent
+DimIntent Dim {Lighttype} {Light} {Roomtype} {Room} to {Dimvalue} percent
+DimIntent Dim {Lighttype} {Room} to {Dimvalue} percent
+
+SwitchIntent {Status} {Device}
+SwitchIntent Switch {Device} {Status}
+SwitchIntent Turn {Device} {Status}
+SwitchIntent {Yesno}
+
+GlobalIntent What is the status of variable {Variable}
+GlobalIntent What is the status of the variable {Variable}
+GlobalIntent What's the status of variable {Variable}
+GlobalIntent What's the status of the variable {Variable}
+GlobalIntent Status of variable {Variable}
+GlobalIntent Status of the variable {Variable}
+GlobalIntent Status variable {Variable}
+
+GlobalSetIntent Set variable {Variable} to {Value}
+GlobalSetIntent Set the variable {Variable} to {Value}
+GlobalSetIntent Set variable {Variable} to value {Value}
+GlobalSetIntent Set the variable {Variable} to the value {Value}
+GlobalSetIntent Set the variable {Variable} to value {Value}
+GlobalSetIntent Set variable {Variable} to the value {Value}
+
+VirtualIntent Call {Button} button in module {Module} out
+VirtualIntent Call {Button} button in virtual module {Module} out
+VirtualIntent Call {Button} button in module {Module} {Roomtype} {Room} out
+VirtualIntent Call {Button} button in virtual module {Module} {Roomtype} {Room} out
+VirtualIntent Press {Button} button in module {Module}
+VirtualIntent Press {Button} button in virtual module {Module}
+VirtualIntent Press {Button} button in module {Module} {Roomtype} {Room}
+VirtualIntent Press {Button} button in virtual module {Module} {Roomtype} {Room}
+VirtualIntent Set slider {Button} to {Value} percent in module {Module}
+VirtualIntent Set the slider {Button} to {Value} percent in the module {Module}
+VirtualIntent Set the slider {Button} to {Value} percent in module {Module}
+VirtualIntent Set slider {Button} to {Value} percent in the module {Module}
+VirtualIntent Set slider {Button} to {Value} in module {Module}
+VirtualIntent Set the slider {Button} to {Value} in the module {Module}
+VirtualIntent Set the slider {Button} to {Value} in module {Module}
+VirtualIntent Set slider {Button} to {Value} in the module {Module}
+
+UsageIntent What is the power consumption {Devicetype} {Device}
+UsageIntent What's the power consumption {Devicetype} {Device}
+UsageIntent Tell me the power consumption {Devicetype} {Device}
+UsageIntent Give me the power consumption {Devicetype} {Device}
+UsageIntent How much power {Devicetype} {Device} consumed
+
+AlarmIntent What is the status of the alarm
+AlarmIntent What's the status of the alarm
+AlarmIntent Is the alarm switched on
+AlarmIntent Is the alarm turned on
+AlarmIntent Is the alarm armed
+
+RGBIntent What is the {Mode} {Devicetype} {Device}
+RGBIntent What's the {Mode} {Devicetype} {Device}
+RGBIntent What {Mode} is used {Devicetype} {Device}
+RGBIntent What {Mode} is on {Devicetype} {Device}
+RGBIntent What {Mode} runs on {Devicetype} {Device}
+RGBIntent Which {Mode} is used {Devicetype} {Device}
+RGBIntent Which {Mode} is on {Devicetype} {Device}
+RGBIntent Which {Mode} runs on {Devicetype} {Device}
+RGBIntent What {Mode} is used {Devicetype} {Device}
+RGBIntent What {Mode} is on {Devicetype} {Device}
+RGBIntent What {Mode} runs on {Devicetype} {Device}
+RGBIntent Tell me the {Mode} {Devicetype} {Device}
+RGBIntent Give me the {Mode} {Devicetype} {Device}
+RGBIntent Set program {Program} {Devicetype} {Device}
+RGBIntent Set red {Devicetype} {Device} to {Red} percent
+RGBIntent Set blue {Devicetype} {Device} to {Blue} percent
+RGBIntent Set green {Devicetype} {Device} to {Green} percent
+RGBIntent Set white {Devicetype} {Device} to {White} percent
+RGBIntent Set brightness {Devicetype} {Device} to {Brightness} percent
+RGBIntent Set color {Devicetype} {Device} to {Red} percent red {Green} percent green {Blue} percent blue
+RGBIntent Set color {Devicetype} {Device} to {Red} percent red {Green} percent green {Blue} percent blue {Brightness} percent brightness
+RGBIntent Set color {Devicetype} {Device} to {Red} percent red {Green} percent green {Blue} percent blue {White} percent white {Brightness} percent brightness
+
+MovementIntent Where movement is being detected
+MovementIntent Where movement was detected
+MovementIntent In which room movement is being detected
+MovementIntent In which room movement was detected
+MovementIntent Is there any movement {Roomtype} {Room}
+MovementIntent When the last movement was detected {Roomtype} {Room}
+
+StopIntent Stop
+StopIntent Stop it
+StopIntent Alexa stop
+StopIntent Enough
+StopIntent That's enough
+StopIntent Shut up
