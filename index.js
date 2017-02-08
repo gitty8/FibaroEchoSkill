@@ -126,14 +126,14 @@ function sendCommandToDevices(data,response,additionalNameFilters,additionalRoom
         return false;
     //console.log('Length: '+ids.length);
 
-    var responses = [];
+    //var responses = [];
     var completed_requests = 0;
     for (var m=0;m<ids.length;m++)
     {
         console.log("Got "+ids[m]);
         options.path = '/api/callAction?deviceID='+ids[m]+'&'+command;
         httpreq(options, function(error) {
-            responses.push(error);
+            //responses.push(error);
             completed_requests++;
             if (completed_requests == ids.length) {
                 logAndSay(response,responseText);
@@ -1509,6 +1509,7 @@ EchoFibaro.prototype.intentHandlers = {
         var grad=intent.slots.Temperature.value;
         var zeit=intent.slots.Duration.value;
         var devicename=intent.slots.Devicename.value;
+        var ids = [];
         console.log('Trying to parse. Grad='+grad+', Zeit='+zeit);
         
         if (grad===undefined||grad=='?'||grad<0||grad>40)
@@ -1533,43 +1534,48 @@ EchoFibaro.prototype.intentHandlers = {
             // baseType=com.fibaro.FGR221
             // interface=light
             // &name='+encodeURIComponent(x) not working
+            // better: baseType=com.fibaro.hvac ?
             getJsonDataFromFibaro(response,'type=com.fibaro.thermostatDanfoss&enabled=true&visible=true&roomID='+roomID, function (events) {
                 console.log('Parameter: '+events);
-                var result='';
                 // Now events is the json object of all these devices
                 var jsonContent = JSON.parse(events);
     
-                var responses = [];
+                //var responses = [];
                 var completed_requests = 0;
-                var withTime=(zeit===undefined||zeit==-1);
-                var maxReq=withTime?jsonContent.length*2:jsonContent.length;
+                var withTime=!(zeit===undefined||zeit==-1);
     	        for(var i = 0; i < jsonContent.length; i++)
     	        {
     	            console.log('Found one: '+jsonContent[i].name);
     	            if (devicename!==undefined&&jsonContent[i].name.toLowerCase()!==devicename.toLowerCase())
     	                continue;
-    	            //result+='Temperatur von '+jsonContent[i].name+' auf '+grad+' Grad gesetzt';
-    	            
-    	            result+=STATE_RESPONSES.TemperatureSet.replace('$Room',roomValue).replace('$value',grad);
-                    options.path = '/api/callAction?deviceID='+jsonContent[i].id+'&name=setTargetLevel&arg1='+grad;
+    	           ids.push(jsonContent[i].id);
+    	        }
+                var maxReq=withTime?ids.length*2:ids.length;
+                console.log("maxReq: "+maxReq);
+                
+    	        for(var j = 0; j < ids.length; j++)
+    	        {
+                    options.path = '/api/callAction?deviceID='+ids[j]+'&name=setTargetLevel&arg1='+grad;
+                    var secondpath='/api/callAction?deviceID='+ids[j]+'&name=setTime&arg1='+zeit;
                     httpreq(options, function(error) 
                     {
                         completed_requests++;
-                        responses.push(error);
+                        //responses.push(error);
                         if (!withTime && completed_requests == maxReq)
                         {
-                            logAndSay(response,result);
+                            logAndSay(response,STATE_RESPONSES.TemperatureSet.replace('$Room',roomValue).replace('$value',grad));
                             return;
                         }
                         // like PT1H
                         var dauer=zeit.substr(2);
                         dauer=dauer.substr(0,dauer.length-1);
                         zeit=dauer*60*60+Math.floor(new Date()/1000);
-                        options.path = '/api/callAction?deviceID='+jsonContent[i].id+'&name=setTime&arg1='+zeit;
+                        options.path = secondpath;
+                        //console.log('Sending nr '+j+': '+ids[j]);
                         httpreq(options, function(error) {
                             completed_requests++;
                             if (completed_requests == maxReq) {
-                                logAndSay(response,result+STATE_RESPONSES.ForTime.replace('$value',dauer));
+                                logAndSay(response,STATE_RESPONSES.TemperatureSet.replace('$Room',roomValue).replace('$value',grad)+STATE_RESPONSES.ForTime.replace('$value',dauer));
                             }
                         });
                     });
