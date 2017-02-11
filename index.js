@@ -505,6 +505,11 @@ EchoFibaro.prototype.intentHandlers = {
     GlobalIntent: function (intent, session, response)
     {
         console.log("GlobalIntent received");
+        if (intent.slots.Variable.value===undefined)
+        {
+            logAndSay(response,STATE_RESPONSES.NoGlobalVariableFound.replace('$value',globalValue));
+            return;
+        }
     	var globalValue=translateSpokenToGlobalVariable(intent.slots.Variable.value);
     	console.log(globalValue);
     	/*if (deviceValue.toLowerCase()=='waschmaschine')
@@ -553,6 +558,11 @@ EchoFibaro.prototype.intentHandlers = {
     GlobalSetIntent: function (intent, session, response)
     {
         console.log("GlobalSetIntent received");
+        if (intent.slots.Variable.value===undefined)
+        {
+            logAndSay(response,STATE_RESPONSES.NoGlobalVariableFound.replace('$value',globalValue));
+            return;
+        }
     	var globalValue=translateSpokenToGlobalVariable(intent.slots.Variable.value);
     	var newvalue=intent.slots.Value.value;
     	console.log(globalValue);
