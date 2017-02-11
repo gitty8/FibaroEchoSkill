@@ -1,2 +1,2 @@
-LivingRoomTemp
-BedroomTemp
+Living Room Temperature
+Bedroom Temperature
