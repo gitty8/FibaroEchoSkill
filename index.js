@@ -507,7 +507,7 @@ EchoFibaro.prototype.intentHandlers = {
         console.log("GlobalIntent received");
         if (intent.slots.Variable.value===undefined)
         {
-            logAndSay(response,STATE_RESPONSES.NoGlobalVariableFound.replace('$value',globalValue));
+            logAndSay(response,STATE_RESPONSES.NoDeviceFound);
             return;
         }
     	var globalValue=translateSpokenToGlobalVariable(intent.slots.Variable.value);
@@ -560,7 +560,7 @@ EchoFibaro.prototype.intentHandlers = {
         console.log("GlobalSetIntent received");
         if (intent.slots.Variable.value===undefined)
         {
-            logAndSay(response,STATE_RESPONSES.NoGlobalVariableFound.replace('$value',globalValue));
+            logAndSay(response,STATE_RESPONSES.NoDeviceFound);
             return;
         }
     	var globalValue=translateSpokenToGlobalVariable(intent.slots.Variable.value);
