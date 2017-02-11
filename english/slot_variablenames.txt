@@ -1,2 +1,2 @@
-Living Room Temperature
-Bedroom Temperature
+living room temperature
+bedroom temperature
