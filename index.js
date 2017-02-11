@@ -162,7 +162,7 @@ function translateSpokenToGlobalVariable(txt)
 {
     if (GLOBAL_TRANSLATE[txt.toLowerCase()]!==undefined)
         return GLOBAL_TRANSLATE[txt];
-    return txt;
+    return undefined;
 }
 
 function getRoomIDForName(response,roomname, eventCallback)
@@ -512,6 +512,11 @@ EchoFibaro.prototype.intentHandlers = {
         }
     	var globalValue=translateSpokenToGlobalVariable(intent.slots.Variable.value);
     	console.log(globalValue);
+        if (globalValue===undefined)
+        {
+            logAndSay(response,STATE_RESPONSES.NoGlobalVariableFound.replace('$value',intent.slots.Variable.value));
+            return;
+        }
     	/*if (deviceValue.toLowerCase()=='waschmaschine')
     	    return;*/
     	// or baseType: com.fibaro.binarySwitch
@@ -564,6 +569,11 @@ EchoFibaro.prototype.intentHandlers = {
             return;
         }
     	var globalValue=translateSpokenToGlobalVariable(intent.slots.Variable.value);
+        if (globalValue===undefined)
+        {
+            logAndSay(response,STATE_RESPONSES.NoGlobalVariableFound.replace('$value',intent.slots.Variable.value));
+            return;
+        }
     	var newvalue=intent.slots.Value.value;
     	console.log(globalValue);
     	console.log(newvalue);
