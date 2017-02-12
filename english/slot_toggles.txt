@@ -16,27 +16,11 @@ lift
 drop
 ascend
 descend
-move up
-move down
-move upwards
-move downwards
-set up
-set down
-set it up
-set it down
 open
 opened
 close
 closed
 above
 below
-switched on
-switch on
-turned on
-turn on
-switched off
-switch off
-turned off
-turn off
 armed
 disarmed
