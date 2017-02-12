@@ -221,7 +221,7 @@ function checkDevice(response,session,events,name,room)
         session.attributes.lastSwitchCommand='turnOff';
         if (jsonContent[0].type=='com.fibaro.FGWP101')
         {
-            var power=parseFloat(jsonContent[0].properties.power).toFixed(1);
+            var power=parseFloat(jsonContent[0].properties.power).toFixed(1).toString().replace(".", ",");
             result=STATE_RESPONSES.SwitchOnPower.replace('$Device',name).replace('$value',power);
         }
         else if (jsonContent[0].type=='com.fibaro.doorLock')
@@ -786,7 +786,7 @@ EchoFibaro.prototype.intentHandlers = {
         	            logAndSay(response,STATE_RESPONSES.NoDeviceFound);
         	            return;
         	        }
-                    var power=parseFloat(ids[0].properties.power).toFixed(1);
+                    var power=parseFloat(ids[0].properties.power).toFixed(1).toString().replace(".", ",");
                     var result=STATE_RESPONSES.PowerUsage.replace('$Device',deviceValue).replace('$value',power);
                     logAndSay(response,result);
                 });
@@ -802,7 +802,7 @@ EchoFibaro.prototype.intentHandlers = {
     	            logAndSay(response,STATE_RESPONSES.NoDeviceFound);
     	            return;
     	        }
-                var power=parseFloat(ids[0].properties.power).toFixed(1);
+                var power=parseFloat(ids[0].properties.power).toFixed(1).toString().replace(".", ",");
                 var result=STATE_RESPONSES.PowerUsage.replace('$Device',deviceValue).replace('$value',power);
                 logAndSay(response,result);
             });
@@ -823,6 +823,11 @@ EchoFibaro.prototype.intentHandlers = {
     	    if (janeinValue!=STATE_RESPONSES.Yes&&janeinValue!=STATE_RESPONSES.No)
         	{
         	    logAndSay(response,STATE_RESPONSES.UnknownCommand);
+        	    return;
+        	}
+        	if (janeinValue===STATE_RESPONSES.No)
+        	{
+        	    logAndSay(response,'Ok');
         	    return;
         	}
     	    var id=session.attributes.lastSwitch;
