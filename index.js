@@ -161,6 +161,8 @@ function logAndSayQuit(response,msg)
 function translateSpokenToGlobalVariable(txt)
 {
     if (GLOBAL_TRANSLATE[txt.toLowerCase()]!==undefined)
+        return GLOBAL_TRANSLATE[txt.toLowerCase()];
+    if (GLOBAL_TRANSLATE[txt]!==undefined)
         return GLOBAL_TRANSLATE[txt];
     return undefined;
 }
@@ -607,10 +609,9 @@ EchoFibaro.prototype.intentHandlers = {
 	        }
 
             options.path = '/api/globalVariables/'+globalValue;
-            //options.method='PUT';
             httpreq(options, function(error) {
                 logAndSay(response,STATE_RESPONSES.GlobalVariableSet.replace('$global',globalValue).replace('$newvalue',newvalue).replace('$oldvalue',v));
-            }, JSON.stringify({"value":newvalue}));
+            }, JSON.stringify({"value":newvalue,"invokeScenes":true}));
         });
     },
     
