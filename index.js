@@ -873,7 +873,7 @@ EchoFibaro.prototype.intentHandlers = {
 	        // TODO: janeinValue
 	        var cmd='turnOff';
 	        var cmdText=STATE_RESPONSES.SwitchedOff;
-	        if (statusValue==STATE_RESPONSES.On)
+	        if (statusValue.toLowerCase()==STATE_RESPONSES.On.toLowerCase())
 	        {
 	            cmd='turnOn';
 	            cmdText=STATE_RESPONSES.SwitchedOn;
