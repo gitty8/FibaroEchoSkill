@@ -124,11 +124,21 @@ module.exports.STATE_RESPONSES = {
     ArmedModules:'Folgende Geräte sind scharf geschaltet:',
     AlarmInactive:'Alarm ist inaktiv. Kein Modul ist scharf geschaltet.',
     SceneOutput:'Ausgabe der Szene ist: $Output',
-    NoSceneOutput:'Szene $Name hat keine Ausgabe'
+    NoSceneOutput:'Szene $Name hat keine Ausgabe',
+    Ok:'Ok.',
+    ParameterMissing:'Parameter fehlt.'
 };
 
 module.exports.GLOBAL_TRANSLATE = {
-    "blockiere licht aus" : "BlockGlobalLightOff"
+    "blockiere licht aus" : "BlockGlobalLightOff",
+    "nachtzeit" : "NightTime",
+    "meldung sonos bad" : "SonosMsgBad",
+    "meldung sonos küche" : "SonosMsgKitchen",
+    "sonos text to speech" : "SonosTTS",
+    "sonos text to speech bad" : "SonosTTSBad",
+    "telegramm" : "Telegram",
+    "alarm status" : "AlarmState",
+    "anwesendheitsstatus" : "PresentState"
 };
 
 module.exports.REPLACE_TEXT = {WZ:"Wohnzimmer",EZ:"Esszimmer",AZ:"Arbeitszimmer",OG:"Obergeschoss",KiZi2:"Kinderzimmer",KiZi1:"Gästezimmer",EG:"Erdgeschoss", WiGa:"Wintergarten",SZ:"Schlafzimmer"};
