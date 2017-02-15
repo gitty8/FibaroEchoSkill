@@ -124,7 +124,9 @@ module.exports.STATE_RESPONSES = {
     ArmedModules:"The following devices are armed:",
     AlarmInactive:"Alarm is inactive. Devices are unarmed.",
     SceneOutput:"Output of the scene is: $Output.",
-    NoSceneOutput:"Scene $Name has no output."
+    NoSceneOutput:"Scene $Name has no output.",
+    Ok:'Ok.',
+    ParameterMissing:'Parameter missing.'
 };
 
 module.exports.GLOBAL_TRANSLATE = {
