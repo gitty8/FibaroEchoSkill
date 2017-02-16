@@ -18,6 +18,17 @@ var EchoFibaro = function () {
     AlexaSkill.call(this, options.appid);
 };
 
+GLOBAL_TRANSLATE = {
+    "blockiere licht aus" : "BlockGlobalLightOff",
+    "nachtzeit" : "NightTime",
+    "meldung sonos bad" : "SonosMsgBad",
+    "meldung sonos küche" : "SonosMsgKitchen",
+    "sonos text to speech" : "SonosTTS",
+    "sonos text to speech bad" : "SonosTTSBad",
+    "telegramm" : "Telegram",
+    "alarm status" : "AlarmState",
+    "anwesendheitsstatus" : "PresentState"
+};
 
 EchoFibaro.prototype = Object.create(AlexaSkill.prototype);
 EchoFibaro.prototype.constructor = EchoFibaro;
@@ -95,7 +106,7 @@ function sendCommandToDevices(data,response,additionalNameFilters,additionalRoom
             for(var j = 0; j < additionalNameFilters.length; j++)
             {
                 //console.log('Comparing "'+jsonContent[i].name+'" to "*'+additionalNameFilters[j]+'*"');
-                if (additionalNameFilters[j]==STATE_RESPONSES.All || matchRuleShort(jsonContent[i].name,'*'+additionalNameFilters[j]+'*'))
+                if (additionalNameFilters[j].toLowerCase()==STATE_RESPONSES.All.toLowerCase() || matchRuleShort(jsonContent[i].name,'*'+additionalNameFilters[j]+'*'))
                 {
                     foundn=true;
                     break; // breaking additionalNameFilters loop, continue with next device
@@ -364,7 +375,7 @@ EchoFibaro.prototype.intentHandlers = {
                 var out='';
                 // There is: timestampt, type (debug) and txt
                 for(var i = 0; i < jsonOutput.length; i++)
-    	            if (jsonOutput[i].type=="DEBUG")    // TODO: changem later
+    	            if (jsonOutput[i].type=="DEBUG")    // TODO: changeme later
     	                out+=jsonOutput[i].txt+' ';
     	        if (out==='')
 		    logAndSay(response,STATE_RESPONSES.NoSceneOutput.replace('$Name',sceneName));
@@ -400,21 +411,21 @@ EchoFibaro.prototype.intentHandlers = {
     	            return;
         	}
         	typ=typ.toLowerCase();
-        	if (typ==STATE_RESPONSES.Warm.toLowerCase()||typ==STATE_RESPONSES.Temperature.toLowerCase())
+        	if (STATE_RESPONSES.Warm.toLowerCase().indexOf(typ)!==-1)
         	{
         	    type='temperatureSensor';
         	    valueSpoken=STATE_RESPONSES.Temperature;
         	    einheit=STATE_RESPONSES.Degrees;
         	    console.log("Temperature");
         	}
-        	else if (typ==STATE_RESPONSES.Humid.toLowerCase()||typ==STATE_RESPONSES.Humidity.toLowerCase())
+        	else if (STATE_RESPONSES.Humid.toLowerCase().indexOf(typ)!==-1)
         	{
         	    type='humiditySensor';
         	    valueSpoken=STATE_RESPONSES.Humidity;
         	    einheit=STATE_RESPONSES.Percent;
         	    console.log("Feuchtigkeit");
         	}
-        	else if (typ==STATE_RESPONSES.Bright.toLowerCase()||typ==STATE_RESPONSES.Luminance.toLowerCase())
+        	else if (STATE_RESPONSES.Bright.toLowerCase().indexOf(typ)!==-1)
         	{
         	    type='lightSensor';
         	    valueSpoken=STATE_RESPONSES.Luminance;
@@ -456,7 +467,7 @@ EchoFibaro.prototype.intentHandlers = {
     	        else
     	            result=STATE_RESPONSES.SensorStateMinMax.replace('$Room',roomValue).replace(/\$Unit/g,einheit).replace('$SensorTyp',valueSpoken).replace('$value1',min).replace('$value2',max).replace('$value3',diff);
     	       
-    	        if (typ==STATE_RESPONSES.Warm.toLowerCase())
+    	        if (type=='temperatureSensor')
     	        {
         	        getJsonDataFromFibaro(response,'type=com.fibaro.thermostatDanfoss&enabled=true&visible=true&roomID='+roomID,function (events2) {
             	            var jsonContent = JSON.parse(events2);
@@ -639,7 +650,7 @@ EchoFibaro.prototype.intentHandlers = {
           "elements": [
             {
               "id": 7,
-              "lua": true,.toLowerCase()
+              "lua": true,
               "waitForResponse": false,
               "caption": "› Play",
               "name": "btnPlay",
@@ -873,7 +884,7 @@ EchoFibaro.prototype.intentHandlers = {
 	        // TODO: janeinValue
 	        var cmd='turnOff';
 	        var cmdText=STATE_RESPONSES.SwitchedOff;
-	        if (statusValue.toLowerCase()==STATE_RESPONSES.On.toLowerCase())
+	        if (STATE_RESPONSES.On.toLowerCase().indexOf(statusValue.toLowerCase())!==-1)
 	        {
 	            cmd='turnOn';
 	            cmdText=STATE_RESPONSES.SwitchedOn;
@@ -929,7 +940,7 @@ EchoFibaro.prototype.intentHandlers = {
 	            statusValue="true";
 	        replacetext=[STATE_RESPONSES.Door];
 	    }
-	    else if (STATE_RESPONSES.WindowTyps.toLowerCase().indexOf(t) !== -1)
+	    else if (STATE_RESPONSES.WindowTyps.indexOf(t) !== -1)
 	    {
 	        console.log('Checking for windows only');
 	        type='type';
@@ -945,7 +956,7 @@ EchoFibaro.prototype.intentHandlers = {
 	        type='baseType';
 	        model='doorWindowSensor';
 	        typeValue=STATE_RESPONSES.DoorsAndWindows;
-	        if (STATE_RESPONSES.OpenTyps.indexOf(status) !== -1)
+	        if (STATE_RESPONSES.OpenTyps.toLowerCase().indexOf(status) !== -1)
 	            statusValue="true";
 	        replacetext=[STATE_RESPONSES.Door];
 	        replacetext.push(STATE_RESPONSES.Door);
@@ -957,7 +968,7 @@ EchoFibaro.prototype.intentHandlers = {
 	        model='binarySwitch';
 	        typeValue=STATE_RESPONSES.Lights;
 	        statusValue2='0';
-	        if (status==STATE_RESPONSES.On)
+	        if (STATE_RESPONSES.On.toLowerCase().indexOf(status)!==-1)
 	        {
 	            statusValue="true"; // or >0... TODO
 	            statusValue2='99';
@@ -1057,11 +1068,11 @@ EchoFibaro.prototype.intentHandlers = {
                     //ids = jsonContent.getIdOfDeviceWithName({"value":statusValue2});
         	    for(var k = 0; k < jsonContent.length; k++)
         	    {
-    	                if (jsonContent[k].properties.value.toLowerCase()!=statusValue2.toLowerCase())
-    	                    continue;
-			console.log('Found one: '+jsonContent[k].name);
-			if (result!=='')
-        	            result=result+', ';
+    	            if (jsonContent[k].properties.value.toLowerCase()!=statusValue2.toLowerCase())
+    	                continue;
+			        console.log('Found one: '+jsonContent[k].name);
+			        if (result!=='')
+        	           result=result+', ';
         	        var m=jsonContent[k].name.replaceArray(replacetext, ''); //.replace('Rollladen','');
         	        m=m.replaceArrayArray();
         	        // If room name is not mentioned in device name add room name to device name
@@ -1085,7 +1096,7 @@ EchoFibaro.prototype.intentHandlers = {
 
     ShutterIntent: function (intent, session, response) {
         console.log("ShutterIntent received");
-	var shutterName='';
+	    var shutterName='';
         console.log('Shutter name: '+intent.slots.Shutter.value); // name of shutter --> translate to id
 
         console.log('Trying to parse');
@@ -1098,7 +1109,7 @@ EchoFibaro.prototype.intentHandlers = {
             var direction = intent.slots.Direction.value.toLowerCase();
             if (STATE_RESPONSES.Up.toLowerCase().indexOf(direction) !== -1)
                 cmd='turnOn';
-            else if (STATE_RESPONSES.toLowerCase().Down.indexOf(direction) !== -1)
+            else if (STATE_RESPONSES.Down.toLowerCase().indexOf(direction) !== -1)
                 cmd='turnOff';
         }
 
@@ -1180,7 +1191,7 @@ EchoFibaro.prototype.intentHandlers = {
 	var roomName=intent.slots.Room.value;
 	var roomName2=intent.slots.Roomtwo.value;
 	var statusValue=intent.slots.Status.value;
-        console.log('Trying to parse. Status: '+statusValue+' ('+STATE_RESPONSES.On+')');
+        console.log('Trying to parse. Status: '+statusValue);
 
         if (statusValue===undefined)
         {
@@ -1190,7 +1201,7 @@ EchoFibaro.prototype.intentHandlers = {
 
         var cmdValue='name=turnOff';
         var textValue=STATE_RESPONSES.LightsSwitchedOff;
-        if (statusValue.toLowerCase()==STATE_RESPONSES.On.toLowerCase())
+        if (STATE_RESPONSES.On.toLowerCase().indexOf(statusValue.toLowerCase())!==-1)
         {
             cmdValue='name=turnOn';
             textValue=STATE_RESPONSES.LightsSwitchedOn;
@@ -1348,8 +1359,8 @@ EchoFibaro.prototype.intentHandlers = {
         	                console.log('Found one: '+jsonContent[i].name);
         	                if (jsonContent[i].properties.value=="true")
         	                    movementFound=true;
-				if (parseInt(jsonContent[i].properties.lastBreached)>lastBreached)
-				    lastBreached=parseInt(jsonContent[i].properties.lastBreached);
+				            if (parseInt(jsonContent[i].properties.lastBreached)>lastBreached)
+				                lastBreached=parseInt(jsonContent[i].properties.lastBreached);
         	            }
         	        }
         	        
