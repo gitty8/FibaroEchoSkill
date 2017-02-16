@@ -55,6 +55,7 @@ LightIntent Schalte {Lighttype} {Light} {Roomtype} {Room} {Status}
 LightIntent Schalte {Lighttype} {Roomtype} {Room} {Status}
 LightIntent {Lighttype} {Roomtype} {Room} {Status}
 LightIntent Schalte alle {Lighttype} {Status}
+LightIntent Schalte alle {Lighttype} {Roomtype} {Room} {Status}
 
 DimIntent Dimme {Lighttype} {Light} {Dimvalue} Prozent
 DimIntent Dimme {Lighttype} {Light} {Roomtype} {Room} {Dimvalue} Prozent
