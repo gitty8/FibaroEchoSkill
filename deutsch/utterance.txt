@@ -11,6 +11,7 @@ TemperatureIntent Nenn die {Type} {Roomtype} {Room}
 TemperatureIntent Wie ist die {Type} {Roomtype} {Room}
 TemperatureIntent Nenn mir die {Type} {Roomtype} {Room}
 TemperatureIntent Sag mir die {Type} {Roomtype} {Room}
+TemperatureIntent Wie {Type} ist es {Room}
 
 HeatingIntent Stelle {Heatingtype} {Roomtype} {Room} auf {Temperature} Grad
 HeatingIntent {Heatingtype} {Roomtype} {Room} auf {Temperature} Grad
