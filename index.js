@@ -33,11 +33,11 @@ GLOBAL_TRANSLATE = {
 EchoFibaro.prototype = Object.create(AlexaSkill.prototype);
 EchoFibaro.prototype.constructor = EchoFibaro;
 
-var re=new RegExp(Object.keys(REPLACE_TEXT).join("|"),"g"); 
+var re=new RegExp(Object.keys(REPLACE_TEXT).join("|"),"gi"); 
 
 
 function matchRuleShort(str, rule) {
-  return new RegExp("^" + rule.split("*").join(".*") + "$").test(str);
+  return new RegExp("^" + rule.split("*").join(".*") + "$", "i").test(str);
 }
 
 Array.prototype.getIdOfDeviceWithName = function(obj) {
@@ -1276,12 +1276,19 @@ EchoFibaro.prototype.intentHandlers = {
         
         if (lightName===undefined)
         {
-            logAndSay(response,STATE_RESPONSES.UnknownCommand);
-    	    return;
+            if (roomName===undefined)
+            {
+                logAndSay(response,STATE_RESPONSES.UnknownCommand);
+    	        return;
+            }
+            lightName=STATE_RESPONSES.ALL;
         }
 
         var cmdValue='name=setValue&arg1='+percentValue;
         var textValue=STATE_RESPONSES.DimLight.replace('$value',percentValue);
+        
+        var filter=[];
+        filter.push(replaceAllBackwards(lightName));
         
         if (roomName!==undefined)
         {
@@ -1305,7 +1312,7 @@ EchoFibaro.prototype.intentHandlers = {
                         getJsonDataFromFibaro(response,'interface=light&enabled=true&visible=true',function (events) 
                         {
                             // sendCommandToDevices(Data, response, Filter, Action, Message)
-                            if (!sendCommandToDevices(events,response,lightName,[roomID,roomID2],cmdValue,textValue))    // Data, Additional Filter, Command, responseText
+                            if (!sendCommandToDevices(events,response,filter,[roomID,roomID2],cmdValue,textValue))    // Data, Additional Filter, Command, responseText
                                 logAndSay(response,STATE_RESPONSES.NoLightsFoundInRoomAndRoom2.replace('$Room1',roomName).replace('$Room2',roomName2));
                         });
                     });
@@ -1313,7 +1320,7 @@ EchoFibaro.prototype.intentHandlers = {
 
                 getJsonDataFromFibaro(response,'interface=light&enabled=true&visible=true&roomID='+roomID,function (events) 
                 {
-                    if (!sendCommandToDevices(events,response,lightName,undefined,cmdValue,textValue))
+                    if (!sendCommandToDevices(events,response,filter,undefined,cmdValue,textValue))
                         logAndSay(response,STATE_RESPONSES.NoLightsFoundInRoom.replace('$Room',roomName));
                 });          
             });
@@ -1322,7 +1329,7 @@ EchoFibaro.prototype.intentHandlers = {
         {
             getJsonDataFromFibaro(response,'interface=light&enabled=true&visible=true',function (events) 
             {
-                if (!sendCommandToDevices(events,response,lightName,undefined,cmdValue,textValue))
+                if (!sendCommandToDevices(events,response,filter,undefined,cmdValue,textValue))
                     logAndSay(response,STATE_RESPONSES.NoLightsFound);
             });                
         }

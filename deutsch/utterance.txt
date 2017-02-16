@@ -58,6 +58,10 @@ LightIntent {Lighttype} {Roomtype} {Room} {Status}
 DimIntent Dimme {Lighttype} {Light} {Dimvalue} Prozent
 DimIntent Dimme {Lighttype} {Light} {Roomtype} {Room} {Dimvalue} Prozent
 DimIntent Dimme {Lighttype} {Room} {Dimvalue} Prozent
+DimIntent Dimme {Light} auf {Dimvalue} Prozent
+DimIntent Dimme {Lighttype} {Light} auf {Dimvalue} Prozent
+DimIntent Dimme {Lighttype} {Light} {Roomtype} {Room} auf {Dimvalue} Prozent
+DimIntent Dimme {Lighttype} {Room} auf {Dimvalue} Prozent
 
 SwitchIntent Schalte {Device} {Status}
 SwitchIntent {Yesno}
