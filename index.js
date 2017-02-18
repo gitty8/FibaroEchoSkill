@@ -3,6 +3,7 @@
 var http = require('http');
 var https = require('https');
 var AWS = require('aws-sdk');
+//var sleep = require('sleep');
 //var dynamodb = null;
 //var Alexa = require('alexa-sdk');
 var AlexaSkill = require('./AlexaSkill');
@@ -129,6 +130,7 @@ function sendCommandToDevices(data,response,additionalNameFilters,additionalRoom
     {
         console.log("Got "+ids[m]);
         options.path = '/api/callAction?deviceID='+ids[m]+'&'+command;
+        //sleep.msleep(300);
         httpreq(options, function(error) {
             //responses.push(error);
             completed_requests++;
@@ -945,14 +947,14 @@ EchoFibaro.prototype.intentHandlers = {
 	        replacetext=[STATE_RESPONSES.Door];
 	        replacetext.push(STATE_RESPONSES.Door);
 	    }
-	    else if (STATE_RESPONSES.OpenTyps.toLowerCase().indexOf(t) !== -1)
+	    else if (STATE_RESPONSES.LightTyps.toLowerCase().indexOf(t) !== -1)
 	    {
 	        console.log('Checking for lights');
-	        type='baseType';
-	        model='binarySwitch';
+	        type='';
+	        //model='binarySwitch';
 	        typeValue=STATE_RESPONSES.Lights;
 	        statusValue2='0';
-	        if (STATE_RESPONSES.On.toLowerCase().indexOf(status)!==-1)
+	        if (STATE_RESPONSES.OpenTyps.toLowerCase().indexOf(status)!==-1)
 	        {
 	            statusValue="true"; // or >0... TODO
 	            statusValue2='99';
@@ -975,7 +977,10 @@ EchoFibaro.prototype.intentHandlers = {
 	        console.log("Parsing shutters for status: "+statusValue);
 	    }
 	    
-	    getJsonDataFromFibaro(response,type+'=com.fibaro.'+model+'&enabled=true&visible=true'+additional,function (events) {
+	    if (type!=='')
+	        type=type+'=com.fibaro.'+model+'&';
+	        
+	    getJsonDataFromFibaro(response,type+'enabled=true&visible=true'+additional,function (events) {
 	        //console.log('Parameter: '+events);
 	        var jsonContent = JSON.parse(events);
 	        console.log('Status checking for: '+statusValue);
