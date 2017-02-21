@@ -277,6 +277,10 @@
             "type": "DEVICE"
         },
         {
+            "name": "Devicetypes",
+            "type": "DEVICETYPES"
+        },
+        {
             "name": "Status",
             "type": "TOGGLES"
         },
