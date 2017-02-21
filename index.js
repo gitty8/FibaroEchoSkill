@@ -522,6 +522,11 @@ EchoFibaro.prototype.intentHandlers = {
     	    return;*/
     	// or baseType: com.fibaro.binarySwitch
         getJsonGlobalFromFibaro(response,globalValue,function (events) {
+	        if (events==='')
+	        {
+	            logAndSay(response,STATE_RESPONSES.ErrorInAPI);
+	            return;
+	        }
 	        console.log('Parameter: '+events);
 	        var jsonContent = JSON.parse(events);
 	        //console.log('JSON: '+jsonContent);
@@ -549,7 +554,7 @@ EchoFibaro.prototype.intentHandlers = {
 	        var v=jsonContent.value;
 	        session.attributes.lastGlobal=globalValue;
 	        session.attributes.lastGlobalValue=v;
-	        var possibleResults;
+	        var possibleResults='';
 	        if (jsonContent.isEnum)
 	            possibleResults=STATE_RESPONSES.PossibleGlobalValues+' '+jsonContent.enumValues.toString();
 
@@ -583,6 +588,11 @@ EchoFibaro.prototype.intentHandlers = {
     	console.log(newvalue);
         getJsonGlobalFromFibaro(response,globalValue,function (events) {
 	        //console.log('Parameter: '+events);
+	        if (events==='')
+	        {
+	            logAndSay(response,STATE_RESPONSES.ErrorInAPI);
+	            return;
+	        }
 	        var jsonContent = JSON.parse(events);
 	        if (jsonContent===undefined)
 	        {
