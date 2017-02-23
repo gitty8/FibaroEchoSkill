@@ -986,6 +986,11 @@ EchoFibaro.prototype.intentHandlers = {
 	        replacetext=[STATE_RESPONSES.Shutter,STATE_RESPONSES.Shutter2];
 	        console.log("Parsing shutters for status: "+statusValue);
 	    }
+	    else
+	    {
+	        logAndSay(response,STATE_RESPONSES.UnknownCommand);
+	        return;
+	    }
 	    
 	    if (type!=='')
 	        type=type+'=com.fibaro.'+model+'&';
