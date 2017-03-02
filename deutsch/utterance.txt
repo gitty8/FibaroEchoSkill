@@ -102,10 +102,14 @@ RGBIntent Wie sind die {Mode} {Devicetype} {Device}
 RGBIntent Welches {Mode} nutzt {Devicetype} {Device}
 RGBIntent Welches {Mode} läuft auf {Devicetype} {Device}
 RGBIntent Setze Programm {Program} {Devicetype} {Device}
-RGBIntent Setze Farbe Rot {Devicetype} {Device} auf {Red} Prozent
-RGBIntent Setze Farbe Blau {Devicetype} {Device} auf {Blue} Prozent
-RGBIntent Setze Farbe Grün {Devicetype} {Device} auf {Green} Prozent
-RGBIntent Setze Farbe Weiß {Devicetype} {Device} auf {White} Prozent
+RGBIntent Setze die Farbe Rot {Devicetype} {Device} auf {Red} Prozent
+RGBIntent Setze die Farbe Blau {Devicetype} {Device} auf {Blue} Prozent
+RGBIntent Setze die Farbe Grün {Devicetype} {Device} auf {Green} Prozent
+RGBIntent Setze die Farbe Weiß {Devicetype} {Device} auf {White} Prozent
+RGBIntent Setze {Devicetype} {Device} auf {Red} Prozent Rot
+RGBIntent Setze {Devicetype} {Device} auf {Blue} Prozent Blau
+RGBIntent Setze {Devicetype} {Device} auf {Green} Prozent Grün
+RGBIntent Setze {Devicetype} {Device} auf {White} Prozent Weiß
 RGBIntent Setze Rot {Devicetype} {Device} auf {Red} Prozent
 RGBIntent Setze Blau {Devicetype} {Device} auf {Blue} Prozent
 RGBIntent Setze Grün {Devicetype} {Device} auf {Green} Prozent
