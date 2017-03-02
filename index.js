@@ -259,12 +259,12 @@ function rgbWork(response,data,lightName,getColor,getProgram,cmdValue,textValue)
 {
     var jsonContent=JSON.parse(data);
     var ids = jsonContent.getIdOfDeviceWithName({"name":lightName});
-    var id=ids[0].id;
     if (ids===undefined||ids.length===0||ids.length>1)
     {
         logAndSay(response,STATE_RESPONSES.NoDeviceFound);
         return;
     }
+    var id=ids[0].id;
 
     if (getColor)
     {
