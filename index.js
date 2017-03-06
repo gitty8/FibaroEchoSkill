@@ -1480,7 +1480,8 @@ EchoFibaro.prototype.intentHandlers = {
         var cmdValue='name=setColor&arg1='+blueValue+'&arg2='+greenValue+'&arg3='+redValue+'&arg4='+whiteValue;
         if (redValue!==undefined)
         {
-            if (parseInt(redValue)<0||parseInt(redValue)>255)
+            redValue=(parseInt(redValue)*2,55).toFixed(0);
+            if (redValue<0||redValue>255)
             {
                 logAndSay(response,STATE_RESPONSES.DimValueIncorrect);
                 return;
@@ -1490,7 +1491,8 @@ EchoFibaro.prototype.intentHandlers = {
         }
         if (greenValue!==undefined)
         {
-            if (parseInt(greenValue)<0||parseInt(greenValue)>255)
+            greenValue=(parseInt(greenValue)*2,55).toFixed(0);
+            if (greenValue<0||greenValue>255)
             {
                 logAndSay(response,STATE_RESPONSES.DimValueIncorrect);
                 return;
@@ -1500,7 +1502,8 @@ EchoFibaro.prototype.intentHandlers = {
         }
         if (blueValue!==undefined)
         {
-            if (parseInt(blueValue)<0||parseInt(blueValue)>255)
+            blueValue=(parseInt(blueValue)*2,55).toFixed(0);
+            if (blueValue<0||blueValue>255)
             {
                 logAndSay(response,STATE_RESPONSES.DimValueIncorrect);
                 return;
@@ -1510,7 +1513,8 @@ EchoFibaro.prototype.intentHandlers = {
         }
         if (whiteValue!==undefined)
         {
-            if (parseInt(whiteValue)<0||parseInt(whiteValue)>255)
+            whiteValue=(parseInt(whiteValue)*2,55).toFixed(0);
+            if (whiteValue<0||whiteValue>255)
             {
                 logAndSay(response,STATE_RESPONSES.DimValueIncorrect);
                 return;
@@ -1520,7 +1524,8 @@ EchoFibaro.prototype.intentHandlers = {
         }
         if (brightValue!==undefined)
         {
-            if (parseInt(brightValue)<0||parseInt(brightValue)>255)
+            brightValue=(parseInt(brightValue)*2,55).toFixed(0);
+            if (brightValue<0||brightValue>255)
             {
                 logAndSay(response,STATE_RESPONSES.DimValueIncorrect);
                 return;
