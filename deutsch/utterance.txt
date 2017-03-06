@@ -117,6 +117,25 @@ RGBIntent Setze Weiß {Devicetype} {Device} auf {White} Prozent
 RGBIntent Setze Helligkeit {Devicetype} {Device} auf {Brightness} Prozent
 RGBIntent Setze die Farben {Devicetype} {Device} auf {Red} Prozent Rot {Green} Prozent Gelb {Blue} Prozent Blau {White} Prozent Weiß {Brightness} Prozent Helligkeit
 
+RGBIntent Wie sind die {Mode} {Devicetype} {Device} {Roomtype} {Room}
+RGBIntent Welches {Mode} nutzt {Devicetype} {Device} {Roomtype} {Room}
+RGBIntent Welches {Mode} läuft auf {Devicetype} {Device} {Roomtype} {Room}
+RGBIntent Setze Programm {Program} {Devicetype} {Device} {Roomtype} {Room}
+RGBIntent Setze die Farbe Rot {Devicetype} {Device} {Roomtype} {Room} auf {Red} Prozent
+RGBIntent Setze die Farbe Blau {Devicetype} {Device} {Roomtype} {Room} auf {Blue} Prozent
+RGBIntent Setze die Farbe Grün {Devicetype} {Device} {Roomtype} {Room} auf {Green} Prozent
+RGBIntent Setze die Farbe Weiß {Devicetype} {Device} {Roomtype} {Room} auf {White} Prozent
+RGBIntent Setze {Device} {Roomtype} {Room} auf {Red} Prozent Rot
+RGBIntent Setze {Device} {Roomtype} {Room} auf {Blue} Prozent Blau
+RGBIntent Setze {Device} {Roomtype} {Room} auf {Green} Prozent Grün
+RGBIntent Setze {Device} {Roomtype} {Room} auf {White} Prozent Weiß
+RGBIntent Setze Rot {Devicetype} {Device} {Roomtype} {Room} auf {Red} Prozent
+RGBIntent Setze Blau {Devicetype} {Device} {Roomtype} {Room} auf {Blue} Prozent
+RGBIntent Setze Grün {Devicetype} {Device} {Roomtype} {Room} auf {Green} Prozent
+RGBIntent Setze Weiß {Devicetype} {Device} {Roomtype} {Room} auf {White} Prozent
+RGBIntent Setze Helligkeit {Devicetype} {Device} {Roomtype} {Room} auf {Brightness} Prozent
+RGBIntent Setze die Farben {Devicetype} {Device} {Roomtype} {Room} auf {Red} Prozent Rot {Green} Prozent Gelb {Blue} Prozent Blau {White} Prozent Weiß {Brightness} Prozent Helligkeit
+
 MovementIntent In wechem Raum ist Bewegung
 MovementIntent Ist Bewegung {Roomtype} {Room}
 MovementIntent Wann war die letzte Bewegung {Roomtype} {Room}
