@@ -1524,8 +1524,8 @@ EchoFibaro.prototype.intentHandlers = {
         }
         if (brightValue!==undefined)
         {
-            brightValue=(parseInt(brightValue)*2,55).toFixed(0);
-            if (brightValue<0||brightValue>255)
+            brightValue=parseInt(brightValue).toFixed(0);
+            if (brightValue<0||brightValue>100)
             {
                 logAndSay(response,STATE_RESPONSES.DimValueIncorrect);
                 return;
