@@ -3,9 +3,6 @@
 var http = require('http');
 var https = require('https');
 var AWS = require('aws-sdk');
-//var sleep = require('sleep');
-//var dynamodb = null;
-//var Alexa = require('alexa-sdk');
 var AlexaSkill = require('./AlexaSkill');
 var langfile=require('./languagefile');
 var optionfile=require('./options');
@@ -1365,37 +1362,37 @@ EchoFibaro.prototype.intentHandlers = {
                         logAndSay(response,STATE_RESPONSES.NoDeviceFound);
                         return;
                     }
-        	        for(var i = 0; i < jsonContent.length; i++)
+	       	    for(var i = 0; i < jsonContent.length; i++)
+        	    {
+        	        if (jsonContent[i].baseType=="com.fibaro.motionSensor"||jsonContent[i].type=="com.fibaro.motionSensor"||jsonContent[i].baseType=="com.fibaro.FGMS001")
         	        {
-        	            if (jsonContent[i].baseType=="com.fibaro.motionSensor"||jsonContent[i].type=="com.fibaro.motionSensor"||jsonContent[i].baseType=="com.fibaro.FGMS001")
-        	            {
-        	                console.log('Found one: '+jsonContent[i].name);
-        	                if (jsonContent[i].properties.value=="true")
-        	                    movementFound=true;
-				            if (parseInt(jsonContent[i].properties.lastBreached)>lastBreached)
-				                lastBreached=parseInt(jsonContent[i].properties.lastBreached);
-        	            }
+        	            console.log('Found one: '+jsonContent[i].name);
+        	            if (jsonContent[i].properties.value=="true")
+        	                movementFound=true;
+			    if (parseInt(jsonContent[i].properties.lastBreached)>lastBreached)
+			        lastBreached=parseInt(jsonContent[i].properties.lastBreached);
         	        }
+		    }
         	        
-        	        console.log("Last Breached: "+lastBreached);
-        	        console.log("Now: "+new Date().getTime()/1000);
-        	        lastBreached=new Date().getTime()/1000-lastBreached; // Seconds
-        	        var timeType=STATE_RESPONSES.SECONDS;
-        	        if (lastBreached>60)
-    	            {
-    	                lastBreached/=60;
+		    console.log("Last Breached: "+lastBreached);
+        	    console.log("Now: "+new Date().getTime()/1000);
+        	    lastBreached=new Date().getTime()/1000-lastBreached; // Seconds
+        	    var timeType=STATE_RESPONSES.SECONDS;
+        	    if (lastBreached>60)
+		    {	
+			lastBreached/=60;
     	                timeType=STATE_RESPONSES.MINUTES;
             	        if (lastBreached>60)
-        	            {
-        	                lastBreached/=60;
-        	                timeType=STATE_RESPONSES.HOURS;
-                	        if (lastBreached>24)
+			{
+			    lastBreached/=60;
+			    timeType=STATE_RESPONSES.HOURS;
+			    if (lastBreached>24)
             	            {
             	                lastBreached/=24;
             	                timeType=STATE_RESPONSES.DAYS;
             	            }
-        	            }
-    	            }
+			}
+		    }
     	            lastBreached=lastBreached.toFixed(0);
             	    var resp=STATE_RESPONSES.LastMovement.replace('$Time',lastBreached).replace('$Unit',timeType);
             	    if (movementFound)
