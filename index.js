@@ -19,7 +19,6 @@ var EchoFibaro = function () {
     AlexaSkill.call(this, options.appid);
 };
 
-
 EchoFibaro.prototype = Object.create(AlexaSkill.prototype);
 EchoFibaro.prototype.constructor = EchoFibaro;
 
@@ -1420,6 +1419,7 @@ EchoFibaro.prototype.intentHandlers = {
                         logAndSay(response,STATE_RESPONSES.NoDeviceFound);
                         return;
                     }
+                    var lastBreached=0;
             	    for(var i = 0; i < jsonContent.length; i++)
             	    {
             	        if (jsonContent[i].baseType=="com.fibaro.motionSensor"||jsonContent[i].type=="com.fibaro.motionSensor"||jsonContent[i].baseType=="com.fibaro.FGMS001")
@@ -1430,8 +1430,31 @@ EchoFibaro.prototype.intentHandlers = {
                                     movementFound=true;
                                     roomTxt.push(rooms[jsonContent[i].roomID].name);
                                 }
+                                if (parseInt(jsonContent[i].properties.lastBreached)>lastBreached)
+			                        lastBreached=parseInt(jsonContent[i].properties.lastBreached);
             	        }
             	    }
+
+        	        console.log("Last Breached: "+lastBreached);
+        	        console.log("Now: "+new Date().getTime()/1000);
+        	        lastBreached=new Date().getTime()/1000-lastBreached; // Seconds
+        	        var timeType=STATE_RESPONSES.SECONDS;
+        	        if (lastBreached>60)
+    	            {
+    	                lastBreached/=60;
+    	                timeType=STATE_RESPONSES.MINUTES;
+            	        if (lastBreached>60)
+        	            {
+        	                lastBreached/=60;
+        	                timeType=STATE_RESPONSES.HOURS;
+                	        if (lastBreached>24)
+            	            {
+            	                lastBreached/=24;
+            	                timeType=STATE_RESPONSES.DAYS;
+            	            }
+        	            }
+    	            }
+    	            lastBreached=lastBreached.toFixed(0);
             	        
             	    if (movementFound)
             	        logAndSay(response,STATE_RESPONSES.MovementsInRooms+roomTxt.join(","));
@@ -1545,7 +1568,19 @@ EchoFibaro.prototype.intentHandlers = {
                 
                 getJsonDataFromFibaro(response,'type=com.fibaro.colorController&interface=light&enabled=true&visible=true',function (events) 
                 {
-                    rgbWork(response,events,lightName,getColor,getProgram,cmdValue,textValue);
+                    var jsonContent=JSON.parse(events);
+                    var ids = jsonContent.getIdOfDeviceWithName({"name":lightName});
+                    if (ids===undefined||ids.length===0||ids.length>1)
+                    {
+    	  	            getJsonDataFromFibaro(response,'baseType=com.fibaro.colorController&interface=light&enabled=true&visible=true',function (events) 
+                    	{	
+                    		rgbWork(response,events,lightName,getColor,getProgram,cmdValue,textValue);
+                    	});
+                    }
+                    else
+                    {
+                		rgbWork(response,events,lightName,getColor,getProgram,cmdValue,textValue);
+                    }
                 });
             });
         }
@@ -1553,7 +1588,19 @@ EchoFibaro.prototype.intentHandlers = {
         {
             getJsonDataFromFibaro(response,'type=com.fibaro.colorController&interface=light&enabled=true&visible=true',function (events) 
             {
-                rgbWork(response,events,lightName,getColor,getProgram,cmdValue,textValue);
+                var jsonContent=JSON.parse(events);
+                var ids = jsonContent.getIdOfDeviceWithName({"name":lightName});
+                if (ids===undefined||ids.length===0||ids.length>1)
+                {
+	  	            getJsonDataFromFibaro(response,'baseType=com.fibaro.colorController&interface=light&enabled=true&visible=true',function (events) 
+                	{	
+                		rgbWork(response,events,lightName,getColor,getProgram,cmdValue,textValue);
+                	});
+                }
+                else
+                {
+            		rgbWork(response,events,lightName,getColor,getProgram,cmdValue,textValue);
+                }
             });                
         }
     },
