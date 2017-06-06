@@ -16,6 +16,15 @@ var EchoFibaro = function () {
     AlexaSkill.call(this, options.appid);
 };
 
+//      'Authorization': 'Basic ' + new Buffer(encodeURIComponent("admin") + ":" + encodeURIComponent("fibarohelp")).toString("base64"),
+//      'Authorization': 'Basic ' + new Buffer(encodeURIComponent("alexandernaumann@gmx.de") + ":" + encodeURIComponent("Visualc2")).toString("base64"),
+//      'Authorization': 'Basic ' + new Buffer(encodeURIComponent("alexandernaumann%40gmx.de") + ":" + encodeURIComponent("Visualc2")).toString("base64"),
+
+options.headers={
+      'Authorization': 'Basic ' + new Buffer("alexandernaumann@gmx.de:Visualc2").toString("base64"),
+      'Content-Type': 'text/html'
+  };
+
 EchoFibaro.prototype = Object.create(AlexaSkill.prototype);
 EchoFibaro.prototype.constructor = EchoFibaro;
 
@@ -458,7 +467,8 @@ EchoFibaro.prototype.intentHandlers = {
             	            if (jsonContent[0]!==undefined)
             	            {
             	                console.log('Found one: '+jsonContent[0].name);
-            	                var current=jsonContent[0].properties.value;
+            	                var current=parseFloat(jsonContent[0].properties.value);
+            	                current=current.toFixed(1).replace('.',',');
             	                result+=STATE_RESPONSES.ThermostatCurrent.replace('$value',current);
             	            }
             	            logAndSay(response,result);
@@ -1101,6 +1111,8 @@ EchoFibaro.prototype.intentHandlers = {
         console.log('Shutter name: '+intent.slots.Shutter.value); // name of shutter --> translate to id
 
         console.log('Trying to parse');
+        console.log("Direction: "+intent.slots.Direction.value);
+        console.log("Percent: "+intent.slots.Percent.value);
         // baseType=com.fibaro.FGR221
         // interface=light
         // &name='+encodeURIComponent(x) not working
@@ -1362,37 +1374,37 @@ EchoFibaro.prototype.intentHandlers = {
                         logAndSay(response,STATE_RESPONSES.NoDeviceFound);
                         return;
                     }
-	       	    for(var i = 0; i < jsonContent.length; i++)
-        	    {
-        	        if (jsonContent[i].baseType=="com.fibaro.motionSensor"||jsonContent[i].type=="com.fibaro.motionSensor"||jsonContent[i].baseType=="com.fibaro.FGMS001")
+        	        for(var i = 0; i < jsonContent.length; i++)
         	        {
-        	            console.log('Found one: '+jsonContent[i].name);
-        	            if (jsonContent[i].properties.value=="true")
-        	                movementFound=true;
-			    if (parseInt(jsonContent[i].properties.lastBreached)>lastBreached)
-			        lastBreached=parseInt(jsonContent[i].properties.lastBreached);
+        	            if (jsonContent[i].baseType=="com.fibaro.motionSensor"||jsonContent[i].type=="com.fibaro.motionSensor"||jsonContent[i].baseType=="com.fibaro.FGMS001")
+        	            {
+        	                console.log('Found one: '+jsonContent[i].name);
+        	                if (jsonContent[i].properties.value=="true")
+        	                    movementFound=true;
+				            if (parseInt(jsonContent[i].properties.lastBreached)>lastBreached)
+				                lastBreached=parseInt(jsonContent[i].properties.lastBreached);
+        	            }
         	        }
-		    }
         	        
-		    console.log("Last Breached: "+lastBreached);
-        	    console.log("Now: "+new Date().getTime()/1000);
-        	    lastBreached=new Date().getTime()/1000-lastBreached; // Seconds
-        	    var timeType=STATE_RESPONSES.SECONDS;
-        	    if (lastBreached>60)
-		    {	
-			lastBreached/=60;
+        	        console.log("Last Breached: "+lastBreached);
+        	        console.log("Now: "+new Date().getTime()/1000);
+        	        lastBreached=new Date().getTime()/1000-lastBreached; // Seconds
+        	        var timeType=STATE_RESPONSES.SECONDS;
+        	        if (lastBreached>60)
+    	            {
+    	                lastBreached/=60;
     	                timeType=STATE_RESPONSES.MINUTES;
             	        if (lastBreached>60)
-			{
-			    lastBreached/=60;
-			    timeType=STATE_RESPONSES.HOURS;
-			    if (lastBreached>24)
+        	            {
+        	                lastBreached/=60;
+        	                timeType=STATE_RESPONSES.HOURS;
+                	        if (lastBreached>24)
             	            {
             	                lastBreached/=24;
             	                timeType=STATE_RESPONSES.DAYS;
             	            }
-			}
-		    }
+        	            }
+    	            }
     	            lastBreached=lastBreached.toFixed(0);
             	    var resp=STATE_RESPONSES.LastMovement.replace('$Time',lastBreached).replace('$Unit',timeType);
             	    if (movementFound)
