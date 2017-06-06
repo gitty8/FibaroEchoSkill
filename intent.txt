@@ -1,419 +1,308 @@
 {
-    "intents": [
-    
+  "intents": [
     {
       "intent": "StopIntent"
     },
-    
     {
-      "intent": "SceneIntent",
       "slots": [
         {
-            "name": "Name",
-            "type": "SCENENAMES"
+          "name": "Name",
+          "type": "SCENENAMES"
         },
         {
-            "name": "Roomtype",
-            "type": "ROOMTYPE"
-        },
-        {
-            "name": "Room",
-            "type": "ROOMS"
+          "name": "Room",
+          "type": "ROOMS"
         }
-      ]
+      ],
+      "intent": "SceneIntent"
     },
-    
     {
-      "intent": "SceneOutputIntent",
       "slots": [
         {
-            "name": "Name",
-            "type": "SCENENAMES"
+          "name": "Name",
+          "type": "SCENENAMES"
         },
         {
-            "name": "Roomtype",
-            "type": "ROOMTYPE"
-        },
-        {
-            "name": "Room",
-            "type": "ROOMS"
+          "name": "Room",
+          "type": "ROOMS"
         }
-      ]
+      ],
+      "intent": "SceneOutputIntent"
     },
-
     {
-      "intent": "AlarmIntent",
       "slots": [
         {
-            "name": "Variable",
-            "type": "VARIABLENAMES"
+          "name": "Variable",
+          "type": "VARIABLENAMES"
         }
-      ]
+      ],
+      "intent": "AlarmIntent"
     },
-
-   {
-      "intent": "GlobalIntent",
-      "slots": [
-        {
-            "name": "Variable",
-            "type": "VARIABLENAMES"
-        }
-      ]
-    },
-
-   {
-      "intent": "GlobalSetIntent",
-      "slots": [
-        {
-            "name": "Variable",
-            "type": "VARIABLENAMES"
-        },
-        {
-            "name": "Value",
-            "type": "AMAZON.NUMBER"
-        }
-      ]
-    },
-
-   {
-      "intent": "VirtualIntent",
-      "slots": [
-        {
-            "name": "Module",
-            "type": "MODULNAMES"
-        },
-        {
-            "name": "Button",
-            "type": "BUTTONLABELS"
-        },
-        {
-            "name": "Value",
-            "type": "AMAZON.NUMBER"
-        },
-        {
-            "name": "Roomtype",
-            "type": "ROOMTYPE"
-        },
-        {
-            "name": "Room",
-            "type": "ROOMS"
-        }
-      ]
-    },
-
     {
-      "intent": "OpenIntent",
       "slots": [
         {
-            "name": "Area",
-            "type": "AREANAMES"
-        },
-        {
-            "name": "Devicename",
-            "type": "NAMES"
-        },
-        {
-            "name": "Roomtype",
-            "type": "ROOMTYPE"
-        },
-        {
-            "name": "Room",
-            "type": "ROOMS"
-        },
-        {
-            "name": "Status",
-            "type": "TOGGLES"
-        },   
-        {
-            "name": "Direct",
-            "type": "DIRECTTYPES"
+          "name": "Variable",
+          "type": "VARIABLENAMES"
         }
-      ]
+      ],
+      "intent": "GlobalIntent"
     },
-
-	{
-      "intent": "TemperatureIntent",
-      "slots": [
-        {
-            "name": "Room",
-            "type": "ROOMS"
-        },
-        {
-            "name": "Roomtype",
-            "type": "ROOMTYPE"
-        },
-        {
-            "name": "Type",
-            "type": "STATUSVALUE"
-        }
-      ]
-    },
-      
-	{
-      "intent": "StatusIntent",
-      "slots": [
-        {
-            "name": "Device",
-            "type": "DEVICE"
-        },
-        {
-            "name": "Devicetype",
-            "type": "DEVICETYPES"
-        },
-        {
-            "name": "Roomtype",
-            "type": "ROOMTYPE"
-        },
-        {
-            "name": "Room",
-            "type": "ROOMS"
-        },
-        {
-            "name": "Status",
-            "type": "TOGGLES"
-        }
-      ]
-    },
-    
-	{
-      "intent": "MovementIntent",
-      "slots": [
-        {
-            "name": "Device",
-            "type": "DEVICE"
-        },
-        {
-            "name": "Devicetype",
-            "type": "DEVICETYPES"
-        },
-        {
-            "name": "Roomtype",
-            "type": "ROOMTYPE"
-        },
-        {
-            "name": "Room",
-            "type": "ROOMS"
-        }
-      ]
-    },
-      
-	{
-      "intent": "UsageIntent",
-      "slots": [
-        {
-            "name": "Device",
-            "type": "DEVICE"
-        },
-        {
-            "name": "Devicetype",
-            "type": "DEVICETYPES"
-        },
-        {
-            "name": "Roomtype",
-            "type": "ROOMTYPE"
-        },
-        {
-            "name": "Room",
-            "type": "ROOMS"
-        }
-      ]
-    },
-      
-	{
-      "intent": "RGBIntent",
-      "slots": [
-        {
-            "name": "Device",
-            "type": "DEVICE"
-        },
-        {
-            "name": "Devicetype",
-            "type": "DEVICETYPES"
-        },
-        {
-            "name": "Mode",
-            "type": "RGBTYPE"
-        },
-        {
-            "name": "Roomtype",
-            "type": "ROOMTYPE"
-        },
-        {
-            "name": "Room",
-            "type": "ROOMS"
-        },
-        {
-            "name": "Brightness",
-            "type": "AMAZON.NUMBER"
-        },
-        {
-            "name": "Red",
-            "type": "AMAZON.NUMBER"
-        },
-        {
-            "name": "Green",
-            "type": "AMAZON.NUMBER"
-        },
-        {
-            "name": "Blue",
-            "type": "AMAZON.NUMBER"
-        },
-        {
-            "name": "White",
-            "type": "AMAZON.NUMBER"
-        },
-        {
-            "name": "Program",
-            "type": "AMAZON.NUMBER"
-        }
-      ]
-    },
-
     {
-      "intent": "SwitchIntent",
       "slots": [
         {
-            "name": "Device",
-            "type": "DEVICE"
+          "name": "Variable",
+          "type": "VARIABLENAMES"
         },
         {
-            "name": "Devicetypes",
-            "type": "DEVICETYPES"
-        },
-        {
-            "name": "Status",
-            "type": "TOGGLES"
-        },
-        {
-            "name": "Yesno",
-            "type": "YESNO"
+          "name": "Value",
+          "type": "AMAZON.NUMBER"
         }
-      ]
+      ],
+      "intent": "GlobalSetIntent"
     },
-      
-	{
-      "intent": "LightIntent",
-      "slots": [
-        {
-            "name": "Light",
-            "type": "DEVICE"
-        },
-        {
-            "name": "Lighttype",
-            "type": "LIGHTTYPES"
-        },
-        {
-            "name": "Lighttwo",
-            "type": "DEVICE"
-        },
-        {
-            "name": "Room",
-            "type": "ROOMS"
-        },
-        {
-            "name": "Roomtwo",
-            "type": "ROOMS"
-        },
-        {
-            "name": "Roomtype",
-            "type": "ROOMTYPE"
-        },
-        {
-            "name": "Status",
-            "type": "TOGGLES"
-        }
-      ]
-    },
-      
-	{
-      "intent": "DimIntent",
-      "slots": [
-        {
-            "name": "Light",
-            "type": "DEVICE"
-        },
-        {
-            "name": "Lighttype",
-            "type": "LIGHTTYPES"
-        },
-        {
-            "name": "Room",
-            "type": "ROOMS"
-        },
-        {
-            "name": "Roomtwo",
-            "type": "ROOMS"
-        },
-        {
-            "name": "Roomtype",
-            "type": "ROOMTYPE"
-        },
-        {
-            "name": "Dimvalue",
-            "type": "AMAZON.NUMBER"
-        }
-      ]
-    },
-
     {
-      "intent": "HeatingIntent",
       "slots": [
         {
-            "name": "Heatingtype",
-            "type": "HEATINGTYPES"
+          "name": "Module",
+          "type": "MODULNAMES"
         },
         {
-            "name": "Room",
-            "type": "ROOMS"
+          "name": "Button",
+          "type": "BUTTONLABELS"
         },
         {
-            "name": "Roomtype",
-            "type": "ROOMTYPE"
+          "name": "Value",
+          "type": "AMAZON.NUMBER"
         },
         {
-            "name": "Devicename",
-            "type": "NAMES"
-        },
-        {
-            "name": "Temperature",
-            "type": "AMAZON.NUMBER"
-        },
-        {
-            "name": "Duration",
-            "type": "AMAZON.DURATION"
+          "name": "Room",
+          "type": "ROOMS"
         }
-      ]
+      ],
+      "intent": "VirtualIntent"
     },
-      
-	{
-      "intent": "ShutterIntent",
+    {
       "slots": [
         {
-            "name": "Shutter",
-            "type": "NAMES"
+          "name": "Area",
+          "type": "AREANAMES"
         },
         {
-            "name": "Shuttertype",
-            "type": "SHUTTERTYPES"
+          "name": "Devicename",
+          "type": "NAMES"
         },
         {
-            "name": "Room",
-            "type": "ROOMS"
+          "name": "Room",
+          "type": "ROOMS"
         },
         {
-            "name": "Roomtype",
-            "type": "ROOMTYPE"
-        },
-        {
-            "name": "Percent",
-            "type": "AMAZON.NUMBER"
-        },
-        {
-            "name": "Direction",
-            "type": "TOGGLES"
+          "name": "Status",
+          "type": "TOGGLES"
         }
-      ]
-    }    
+      ],
+      "intent": "OpenIntent"
+    },
+    {
+      "slots": [
+        {
+          "name": "Room",
+          "type": "ROOMS"
+        },
+        {
+          "name": "Type",
+          "type": "STATUSVALUE"
+        }
+      ],
+      "intent": "TemperatureIntent"
+    },
+    {
+      "slots": [
+        {
+          "name": "Device",
+          "type": "DEVICE"
+        },
+        {
+          "name": "Room",
+          "type": "ROOMS"
+        },
+        {
+          "name": "Status",
+          "type": "TOGGLES"
+        }
+      ],
+      "intent": "StatusIntent"
+    },
+    {
+      "slots": [
+        {
+          "name": "Device",
+          "type": "DEVICE"
+        },
+        {
+          "name": "Room",
+          "type": "ROOMS"
+        }
+      ],
+      "intent": "MovementIntent"
+    },
+    {
+      "slots": [
+        {
+          "name": "Device",
+          "type": "DEVICE"
+        },
+        {
+          "name": "Room",
+          "type": "ROOMS"
+        }
+      ],
+      "intent": "UsageIntent"
+    },
+    {
+      "slots": [
+        {
+          "name": "Device",
+          "type": "DEVICE"
+        },
+        {
+          "name": "Mode",
+          "type": "RGBTYPE"
+        },
+        {
+          "name": "Room",
+          "type": "ROOMS"
+        },
+        {
+          "name": "Brightness",
+          "type": "AMAZON.NUMBER"
+        },
+        {
+          "name": "Red",
+          "type": "AMAZON.NUMBER"
+        },
+        {
+          "name": "Green",
+          "type": "AMAZON.NUMBER"
+        },
+        {
+          "name": "Blue",
+          "type": "AMAZON.NUMBER"
+        },
+        {
+          "name": "White",
+          "type": "AMAZON.NUMBER"
+        },
+        {
+          "name": "Program",
+          "type": "AMAZON.NUMBER"
+        }
+      ],
+      "intent": "RGBIntent"
+    },
+    {
+      "slots": [
+        {
+          "name": "Device",
+          "type": "DEVICE"
+        },
+        {
+          "name": "Status",
+          "type": "TOGGLES"
+        },
+        {
+          "name": "Yesno",
+          "type": "YESNO"
+        }
+      ],
+      "intent": "SwitchIntent"
+    },
+    {
+      "slots": [
+        {
+          "name": "Light",
+          "type": "DEVICE"
+        },
+        {
+          "name": "Lighttwo",
+          "type": "DEVICE"
+        },
+        {
+          "name": "Room",
+          "type": "ROOMS"
+        },
+        {
+          "name": "Roomtwo",
+          "type": "ROOMS"
+        },
+        {
+          "name": "Status",
+          "type": "TOGGLES"
+        }
+      ],
+      "intent": "LightIntent"
+    },
+    {
+      "slots": [
+        {
+          "name": "Light",
+          "type": "DEVICE"
+        },
+        {
+          "name": "Room",
+          "type": "ROOMS"
+        },
+        {
+          "name": "Roomtwo",
+          "type": "ROOMS"
+        },
+        {
+          "name": "Dimvalue",
+          "type": "AMAZON.NUMBER"
+        }
+      ],
+      "intent": "DimIntent"
+    },
+    {
+      "slots": [
+        {
+          "name": "Room",
+          "type": "ROOMS"
+        },
+        {
+          "name": "Devicename",
+          "type": "NAMES"
+        },
+        {
+          "name": "Temperature",
+          "type": "AMAZON.NUMBER"
+        },
+        {
+          "name": "Duration",
+          "type": "AMAZON.DURATION"
+        }
+      ],
+      "intent": "HeatingIntent"
+    },
+    {
+      "slots": [
+        {
+          "name": "Shutter",
+          "type": "NAMES"
+        },
+        {
+          "name": "Room",
+          "type": "ROOMS"
+        },
+        {
+          "name": "Percent",
+          "type": "AMAZON.NUMBER"
+        },
+        {
+          "name": "Direction",
+          "type": "TOGGLES"
+        }
+      ],
+      "intent": "ShutterIntent"
+    }
   ]
 }
-
