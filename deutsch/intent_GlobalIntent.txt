@@ -1,0 +1,3 @@
+Wie ist der Status der Variable {Variable}
+Status der Variable {Variable}
+Status Variable {Variable}

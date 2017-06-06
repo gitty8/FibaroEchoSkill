@@ -1,0 +1,12 @@
+Rufe Button {Button} im Modul {Module} auf
+Rufe Button {Button} im virtuellen Modul {Module} auf
+Drücke Button {Button} im Modul {Module}
+Drücke Button {Button} im virtuellen Modul {Module}
+Rufe Button {Button} im Modul {Module} (in|im|in dem|im Raum|in dem Raum|Raum|in der) {Room} auf
+Rufe Button {Button} im virtuellen Modul {Module} (in|im|in dem|im Raum|in dem Raum|Raum|in der) {Room} auf
+Drücke Button {Button} im Modul {Module} (in|im|in dem|im Raum|in dem Raum|Raum|in der) {Room}
+Drücke Button {Button} im virtuellen Modul {Module} (in|im|in dem|im Raum|in dem Raum|Raum|in der) {Room}
+Setze Slider {Button} auf {Value} Prozent im Modul {Module}
+Stelle Slider {Button} auf {Value} Prozent im Modul {Module}
+Setze Slider {Button} auf {Value} im Modul {Module}
+Stelle Slider {Button} auf {Value} im Modul {Module}

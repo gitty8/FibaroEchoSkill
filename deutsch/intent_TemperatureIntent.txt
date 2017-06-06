@@ -1,0 +1,6 @@
+Wie {Type} ist es (in|im|in dem|im Raum|in dem Raum|Raum|in der) {Room}
+Nenn die {Type} (in|im|in dem|im Raum|in dem Raum|Raum|in der) {Room}
+Wie ist die {Type} (in|im|in dem|im Raum|in dem Raum|Raum|in der) {Room}
+Nenn mir die {Type} (in|im|in dem|im Raum|in dem Raum|Raum|in der) {Room}
+Sag mir die {Type} (in|im|in dem|im Raum|in dem Raum|Raum|in der) {Room}
+Wie {Type} ist es {Room}

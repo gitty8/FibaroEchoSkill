@@ -1,0 +1,4 @@
+Stelle (Heizung|die Heizung|Heizungen|die Heizungen|Heizkörper|der Heizkörper|den Heizkörper|die Heizkörper|das Thermostat|Thermostat|die Thermostate) (in|im|in dem|im Raum|in dem Raum|Raum|in der) {Room} auf {Temperature} Grad
+(Heizung|die Heizung|Heizungen|die Heizungen|Heizkörper|der Heizkörper|den Heizkörper|die Heizkörper|das Thermostat|Thermostat|die Thermostate) (in|im|in dem|im Raum|in dem Raum|Raum|in der) {Room} auf {Temperature} Grad
+Stelle (Heizung|die Heizung|Heizungen|die Heizungen|Heizkörper|der Heizkörper|den Heizkörper|die Heizkörper|das Thermostat|Thermostat|die Thermostate) (in|im|in dem|im Raum|in dem Raum|Raum|in der) {Room} für {Duration} auf {Temperature} Grad
+(Heizung|die Heizung|Heizungen|die Heizungen|Heizkörper|der Heizkörper|den Heizkörper|die Heizkörper|das Thermostat|Thermostat|die Thermostate) (in|im|in dem|im Raum|in dem Raum|Raum|in der) {Room} für {Duration} auf {Temperature} Grad

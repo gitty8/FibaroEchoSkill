@@ -1,0 +1,2 @@
+Setze Variable {Variable} auf {Value}
+Setze Variable {Variable} auf den Wert {Value}

@@ -1,0 +1,7 @@
+Welche {Area} {Status} sind
+Welche {Area} (in|im|in dem|im Raum|in dem Raum|Raum|in der) {Room} {Status} sind
+Welche {Area} sind {Status}
+Welche {Area} sind (in|im|in dem|im Raum|in dem Raum|Raum|in der) {Room} {Status}
+(Ist|Sind) {Area} (in|im|in dem|im Raum|in dem Raum|Raum|in der) {Room} {Status}
+(Ist|Sind) {Area} {Devicename} {Room} {Status}
+(Ist|Sind) {Area} {Devicename} (in|im|in dem|im Raum|in dem Raum|Raum|in der) {Room} {Status}

@@ -1,0 +1,3 @@
+Starte Szene {Name}
+Starte Szene {Name} (in|im|in dem|im Raum|in dem Raum|Raum|in der) {Room}
+Szene {Name}

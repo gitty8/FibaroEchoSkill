@@ -1,0 +1,10 @@
+Schalte (die Lichter|Lichter|die Lampen|Lampen|die Lampe|Lampe|Licht|das Licht) {Light} {Status}
+(die Lichter|Lichter|die Lampen|Lampen|die Lampe|Lampe|Licht|das Licht) {Light} {Status}
+Schalte (die Lichter|Lichter|die Lampen|Lampen|die Lampe|Lampe|Licht|das Licht) {Light} und {Lighttwo} {Status}
+Schalte (die Lichter|Lichter|die Lampen|Lampen|die Lampe|Lampe|Licht|das Licht) {Light} (in|im|in dem|im Raum|in dem Raum|Raum|in der) {Room} und (in|im|in dem|im Raum|in dem Raum|Raum|in der) {Roomtwo} {Status}
+(die Lichter|Lichter|die Lampen|Lampen|die Lampe|Lampe|Licht|das Licht) {Light} (in|im|in dem|im Raum|in dem Raum|Raum|in der) {Room} und (in|im|in dem|im Raum|in dem Raum|Raum|in der) {Roomtwo} {Status}
+Schalte (die Lichter|Lichter|die Lampen|Lampen|die Lampe|Lampe|Licht|das Licht) {Light} (in|im|in dem|im Raum|in dem Raum|Raum|in der) {Room} {Status}
+Schalte (die Lichter|Lichter|die Lampen|Lampen|die Lampe|Lampe|Licht|das Licht) (in|im|in dem|im Raum|in dem Raum|Raum|in der) {Room} {Status}
+(die Lichter|Lichter|die Lampen|Lampen|die Lampe|Lampe|Licht|das Licht) (in|im|in dem|im Raum|in dem Raum|Raum|in der) {Room} {Status}
+Schalte alle (die Lichter|Lichter|die Lampen|Lampen|die Lampe|Lampe|Licht|das Licht) {Status}
+Schalte alle (die Lichter|Lichter|die Lampen|Lampen|die Lampe|Lampe|Licht|das Licht) (in|im|in dem|im Raum|in dem Raum|Raum|in der) {Room} {Status}

@@ -1,0 +1,5 @@
+Wie ist der Status (von der|vom|von dem|von|der|die) {Device}
+Status (von der|vom|von dem|von|der|die) {Device}
+Wie ist der Status (von der|vom|von dem|von|der|die) {Device} (in|im|in dem|im Raum|in dem Raum|Raum|in der) {Room}
+Status (von der|vom|von dem|von|der|die) {Device} (in|im|in dem|im Raum|in dem Raum|Raum|in der) {Room}
+Ist (von der|vom|von dem|von|der|die) {Device} {Status}

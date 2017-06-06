@@ -1,0 +1,13 @@
+Fahre (Rollladen|Rollo|Rollläden|Rollos|die Rollos|die Rollläden|den Rollo|den Rollladen) {Shutter} {Direction}
+Fahre (Rollladen|Rollo|Rollläden|Rollos|die Rollos|die Rollläden|den Rollo|den Rollladen) {Shutter} (in|im|in dem|im Raum|in dem Raum|Raum|in der) {Room} {Direction}
+Fahre (Rollladen|Rollo|Rollläden|Rollos|die Rollos|die Rollläden|den Rollo|den Rollladen) (in|im|in dem|im Raum|in dem Raum|Raum|in der) {Room} {Direction}
+Fahre (Rollladen|Rollo|Rollläden|Rollos|die Rollos|die Rollläden|den Rollo|den Rollladen) (in|im|in dem|im Raum|in dem Raum|Raum|in der) {Room} auf {Percent} Prozent
+Fahre (Rollladen|Rollo|Rollläden|Rollos|die Rollos|die Rollläden|den Rollo|den Rollladen) (in|im|in dem|im Raum|in dem Raum|Raum|in der) {Room} auf {Percent} Prozent {Direction}
+Fahre (Rollladen|Rollo|Rollläden|Rollos|die Rollos|die Rollläden|den Rollo|den Rollladen) im Raum {Room} auf {Percent} Prozent
+{Direction} (Rollladen|Rollo|Rollläden|Rollos|die Rollos|die Rollläden|den Rollo|den Rollladen) {Shutter}
+{Direction} (Rollladen|Rollo|Rollläden|Rollos|die Rollos|die Rollläden|den Rollo|den Rollladen) {Shutter} (in|im|in dem|im Raum|in dem Raum|Raum|in der) {Room}
+{Direction} (Rollladen|Rollo|Rollläden|Rollos|die Rollos|die Rollläden|den Rollo|den Rollladen)
+{Direction} (Rollladen|Rollo|Rollläden|Rollos|die Rollos|die Rollläden|den Rollo|den Rollladen) (in|im|in dem|im Raum|in dem Raum|Raum|in der) {Room}
+(Rollladen|Rollo|Rollläden|Rollos|die Rollos|die Rollläden|den Rollo|den Rollladen) (in|im|in dem|im Raum|in dem Raum|Raum|in der) {Room} auf {Percent} Prozent
+(Rollladen|Rollo|Rollläden|Rollos|die Rollos|die Rollläden|den Rollo|den Rollladen) {Shutter} auf {Percent} Prozent
+{Shutter} auf {Percent} Prozent

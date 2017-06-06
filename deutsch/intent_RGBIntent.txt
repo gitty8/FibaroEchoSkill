@@ -1,0 +1,18 @@
+Wie sind die {Mode} (von der|vom|von dem|von|der|die) {Device}
+Welches {Mode} nutzt (von der|vom|von dem|von|der|die) {Device}
+Welches {Mode} läuft auf (von der|vom|von dem|von|der|die) {Device}
+Setze Programm {Program} (von der|vom|von dem|von|der|die) {Device}
+Setze die Farbe Rot (von der|vom|von dem|von|der|die) {Device} auf {Red} Prozent
+Setze die Farbe Blau (von der|vom|von dem|von|der|die) {Device} auf {Blue} Prozent
+Setze die Farbe Grün (von der|vom|von dem|von|der|die) {Device} auf {Green} Prozent
+Setze die Farbe Weiß (von der|vom|von dem|von|der|die) {Device} auf {White} Prozent
+Setze {Device} auf {Red} Prozent Rot
+Setze {Device} auf {Blue} Prozent Blau
+Setze {Device} auf {Green} Prozent Grün
+Setze {Device} auf {White} Prozent Weiß
+Setze Rot (von der|vom|von dem|von|der|die) {Device} auf {Red} Prozent
+Setze Blau (von der|vom|von dem|von|der|die) {Device} auf {Blue} Prozent
+Setze Grün (von der|vom|von dem|von|der|die) {Device} auf {Green} Prozent
+Setze Weiß (von der|vom|von dem|von|der|die) {Device} auf {White} Prozent
+Setze Helligkeit (von der|vom|von dem|von|der|die) {Device} auf {Brightness} Prozent
+Setze die Farben (von der|vom|von dem|von|der|die) {Device} auf {Red} Prozent Rot {Green} Prozent Gelb {Blue} Prozent Blau {White} Prozent Weiß {Brightness} Prozent Helligkeit

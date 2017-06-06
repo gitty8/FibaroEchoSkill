@@ -1,0 +1,3 @@
+Wie ist der Verbauch (von der|vom|von dem|von|der|die) {Device}
+Nenn mir den Verbauch (von der|vom|von dem|von|der|die) {Device}
+Wieviel verbraucht (von der|vom|von dem|von|der|die) {Device}

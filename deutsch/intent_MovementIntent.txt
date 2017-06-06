@@ -1,0 +1,2 @@
+In wechem Raum ist Bewegung
+Ist Bewegung (in|im|in dem|im Raum|in dem Raum|Raum|in der) {Room}Wann war die letzte Bewegung (in|im|in dem|im Raum|in dem Raum|Raum|in der) {Room}

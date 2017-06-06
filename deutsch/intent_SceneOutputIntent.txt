@@ -1,0 +1,4 @@
+Ausgabe von Szene {Name}
+Ausgabe von Szene {Name} (in|im|in dem|im Raum|in dem Raum|Raum|in der) {Room}
+Wie ist die Ausgabe von Szene {Name}
+Wie ist die Ausgabe von Szene {Name} (in|im|in dem|im Raum|in dem Raum|Raum|in der) {Room}

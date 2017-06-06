@@ -1,0 +1,9 @@
+Dimme (die Lichter|Lichter|die Lampen|Lampen|die Lampe|Lampe|Licht|das Licht) {Light} {Dimvalue} Prozent
+Dimme (die Lichter|Lichter|die Lampen|Lampen|die Lampe|Lampe|Licht|das Licht) {Light} (in|im|in dem|im Raum|in dem Raum|Raum|in der) {Room} {Dimvalue} Prozent
+Dimme (die Lichter|Lichter|die Lampen|Lampen|die Lampe|Lampe|Licht|das Licht) {Room} {Dimvalue} Prozent
+Dimme {Light} auf {Dimvalue} Prozent
+Dimme (die Lichter|Lichter|die Lampen|Lampen|die Lampe|Lampe|Licht|das Licht) {Light} auf {Dimvalue} Prozent
+Dimme (die Lichter|Lichter|die Lampen|Lampen|die Lampe|Lampe|Licht|das Licht) {Light} (in|im|in dem|im Raum|in dem Raum|Raum|in der) {Room} auf {Dimvalue} Prozent
+Dimme (die Lichter|Lichter|die Lampen|Lampen|die Lampe|Lampe|Licht|das Licht) {Room} auf {Dimvalue} Prozent
+Dimme alle (die Lichter|Lichter|die Lampen|Lampen|die Lampe|Lampe|Licht|das Licht) (in|im|in dem|im Raum|in dem Raum|Raum|in der) {Room} auf {Dimvalue} Prozent
+Dimme alle (die Lichter|Lichter|die Lampen|Lampen|die Lampe|Lampe|Licht|das Licht) auf {Dimvalue} Prozent
