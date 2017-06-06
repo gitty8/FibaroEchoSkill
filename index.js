@@ -1492,7 +1492,7 @@ EchoFibaro.prototype.intentHandlers = {
         var cmdValue='name=setColor&arg1='+blueValue+'&arg2='+greenValue+'&arg3='+redValue+'&arg4='+whiteValue;
         if (redValue!==undefined)
         {
-            redValue=(parseInt(redValue)*2,55).toFixed(0);
+            redValue=(parseInt(redValue)*2.55).toFixed(0);
             if (redValue<0||redValue>255)
             {
                 logAndSay(response,STATE_RESPONSES.DimValueIncorrect);
@@ -1503,7 +1503,7 @@ EchoFibaro.prototype.intentHandlers = {
         }
         if (greenValue!==undefined)
         {
-            greenValue=(parseInt(greenValue)*2,55).toFixed(0);
+            greenValue=(parseInt(greenValue)*2.55).toFixed(0);
             if (greenValue<0||greenValue>255)
             {
                 logAndSay(response,STATE_RESPONSES.DimValueIncorrect);
@@ -1514,7 +1514,7 @@ EchoFibaro.prototype.intentHandlers = {
         }
         if (blueValue!==undefined)
         {
-            blueValue=(parseInt(blueValue)*2,55).toFixed(0);
+            blueValue=(parseInt(blueValue)*2.55).toFixed(0);
             if (blueValue<0||blueValue>255)
             {
                 logAndSay(response,STATE_RESPONSES.DimValueIncorrect);
@@ -1525,7 +1525,7 @@ EchoFibaro.prototype.intentHandlers = {
         }
         if (whiteValue!==undefined)
         {
-            whiteValue=(parseInt(whiteValue)*2,55).toFixed(0);
+            whiteValue=(parseInt(whiteValue)*2.55).toFixed(0);
             if (whiteValue<0||whiteValue>255)
             {
                 logAndSay(response,STATE_RESPONSES.DimValueIncorrect);
