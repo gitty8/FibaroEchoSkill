@@ -1,79 +1,36 @@
-OpenIntent Welche {Area} {Status} sind
-OpenIntent Welche {Area} {Roomtype} {Status} sind
-OpenIntent Welche {Area} sind {Status}
-OpenIntent Welche {Area} sind {Roomtype} {Room} {Status}
-OpenIntent {Direct} {Area} {Roomtype} {Room} {Status}
-OpenIntent {Direct} {Area} {Devicename} {Room} {Status}
-OpenIntent {Direct} {Area} {Devicename} {Roomtype} {Room} {Status}
-
-TemperatureIntent Wie {Type} ist es {Roomtype} {Room}
-TemperatureIntent Nenn die {Type} {Roomtype} {Room}
-TemperatureIntent Wie ist die {Type} {Roomtype} {Room}
-TemperatureIntent Nenn mir die {Type} {Roomtype} {Room}
-TemperatureIntent Sag mir die {Type} {Roomtype} {Room}
-TemperatureIntent Wie {Type} ist es {Room}
-
-HeatingIntent Stelle {Heatingtype} {Roomtype} {Room} auf {Temperature} Grad
-HeatingIntent {Heatingtype} {Roomtype} {Room} auf {Temperature} Grad
-HeatingIntent Stelle {Heatingtype} {Roomtype} {Room} für {Duration} auf {Temperature} Grad
-HeatingIntent {Heatingtype} {Roomtype} {Room} für {Duration} auf {Temperature} Grad
-
 SceneIntent Starte Szene {Name}
-SceneIntent Starte Szene {Name} {Roomtype} {Room}
+SceneIntent Starte Szene {Name} in {Room}
+SceneIntent Starte Szene {Name} im {Room}
+SceneIntent Starte Szene {Name} in dem {Room}
+SceneIntent Starte Szene {Name} im Raum {Room}
+SceneIntent Starte Szene {Name} in dem Raum {Room}
+SceneIntent Starte Szene {Name} Raum {Room}
+SceneIntent Starte Szene {Name} in der {Room}
 SceneIntent Szene {Name}
 
 SceneOutputIntent Ausgabe von Szene {Name}
-SceneOutputIntent Ausgabe von Szene {Name} {Roomtype} {Room}
+SceneOutputIntent Ausgabe von Szene {Name} in {Room}
+SceneOutputIntent Ausgabe von Szene {Name} im {Room}
+SceneOutputIntent Ausgabe von Szene {Name} in dem {Room}
+SceneOutputIntent Ausgabe von Szene {Name} im Raum {Room}
+SceneOutputIntent Ausgabe von Szene {Name} in dem Raum {Room}
+SceneOutputIntent Ausgabe von Szene {Name} Raum {Room}
+SceneOutputIntent Ausgabe von Szene {Name} in der {Room}
 SceneOutputIntent Wie ist die Ausgabe von Szene {Name}
-SceneOutputIntent Wie ist die Ausgabe von Szene {Name} {Roomtype} {Room}
-
-ShutterIntent Fahre {Shuttertype} {Shutter} {Direction}
-ShutterIntent Fahre {Shuttertype} {Shutter} {Roomtype} {Room} {Direction}
-ShutterIntent Fahre {Shuttertype} {Roomtype} {Room} {Direction}
-ShutterIntent Fahre {Shuttertype} {Roomtype} {Room} auf {Percent} Prozent
-ShutterIntent Fahre {Shuttertype} {Roomtype} {Room} auf {Percent} Prozent {Direction}
-ShutterIntent {Direction} {Shuttertype} {Shutter} 
-ShutterIntent {Direction} {Shuttertype} {Shutter} {Roomtype} {Room}
-ShutterIntent {Direction} {Shuttertype}
-ShutterIntent {Direction} {Shuttertype} {Roomtype} {Room}
-ShutterIntent {Shuttertype} {Roomtype} {Room} auf {Percent} Prozent
-ShutterIntent {Shuttertype} {Shutter} auf {Percent} Prozent
-ShutterIntent {Shutter} auf {Percent} Prozent
-
-StatusIntent Wie ist der Status {Devicetype} {Device}
-StatusIntent Status {Devicetype} {Device}
-StatusIntent Wie ist der Status {Devicetype} {Device} {Roomtype} {Room}
-StatusIntent Status {Devicetype} {Device} {Roomtype} {Room}
-StatusIntent Ist {Devicetype} {Device} {Status}
-
-LightIntent Schalte {Lighttype} {Light} {Status}
-LightIntent {Lighttype} {Light} {Status}
-LightIntent Schalte {Lighttype} {Light} und {Lighttwo} {Status}
-LightIntent Schalte {Lighttype} {Light} {Roomtype} {Room} und {Roomtype} {Roomtwo} {Status}
-LightIntent {Lighttype} {Light} {Roomtype} {Room} und {Roomtype} {Roomtwo} {Status}
-LightIntent Schalte {Lighttype} {Light} {Roomtype} {Room} {Status}
-LightIntent Schalte {Lighttype} {Roomtype} {Room} {Status}
-LightIntent {Lighttype} {Roomtype} {Room} {Status}
-LightIntent Schalte alle {Lighttype} {Status}
-LightIntent Schalte alle {Lighttype} {Roomtype} {Room} {Status}
-
-DimIntent Dimme {Lighttype} {Light} {Dimvalue} Prozent
-DimIntent Dimme {Lighttype} {Light} {Roomtype} {Room} {Dimvalue} Prozent
-DimIntent Dimme {Lighttype} {Room} {Dimvalue} Prozent
-DimIntent Dimme {Light} auf {Dimvalue} Prozent
-DimIntent Dimme {Lighttype} {Light} auf {Dimvalue} Prozent
-DimIntent Dimme {Lighttype} {Light} {Roomtype} {Room} auf {Dimvalue} Prozent
-DimIntent Dimme {Lighttype} {Room} auf {Dimvalue} Prozent
-DimIntent Dimme alle {Lighttype} {Roomtype} {Room} auf {Dimvalue} Prozent
-DimIntent Dimme alle {Lighttype} auf {Dimvalue} Prozent
-
-SwitchIntent Schalte {Devicetypes} {Device} {Status}
-SwitchIntent Schalte {Device} {Status}
-SwitchIntent {Yesno}
+SceneOutputIntent Wie ist die Ausgabe von Szene {Name} in {Room}
+SceneOutputIntent Wie ist die Ausgabe von Szene {Name} im {Room}
+SceneOutputIntent Wie ist die Ausgabe von Szene {Name} in dem {Room}
+SceneOutputIntent Wie ist die Ausgabe von Szene {Name} im Raum {Room}
+SceneOutputIntent Wie ist die Ausgabe von Szene {Name} in dem Raum {Room}
+SceneOutputIntent Wie ist die Ausgabe von Szene {Name} Raum {Room}
+SceneOutputIntent Wie ist die Ausgabe von Szene {Name} in der {Room}
 
 GlobalIntent Wie ist der Status der Variable {Variable}
 GlobalIntent Status der Variable {Variable}
 GlobalIntent Status Variable {Variable}
+
+AlarmIntent Ist der Alarm geschaltet
+AlarmIntent Wie ist der Status vom Alarm
 
 GlobalSetIntent Setze Variable {Variable} auf {Value}
 GlobalSetIntent Setze Variable {Variable} auf den Wert {Value}
@@ -82,63 +39,2387 @@ VirtualIntent Rufe Button {Button} im Modul {Module} auf
 VirtualIntent Rufe Button {Button} im virtuellen Modul {Module} auf
 VirtualIntent Drücke Button {Button} im Modul {Module}
 VirtualIntent Drücke Button {Button} im virtuellen Modul {Module}
-VirtualIntent Rufe Button {Button} im Modul {Module} {Roomtype} {Room} auf
-VirtualIntent Rufe Button {Button} im virtuellen Modul {Module} {Roomtype} {Room} auf
-VirtualIntent Drücke Button {Button} im Modul {Module} {Roomtype} {Room}
-VirtualIntent Drücke Button {Button} im virtuellen Modul {Module} {Roomtype} {Room}
+VirtualIntent Rufe Button {Button} im Modul {Module} in {Room} auf
+VirtualIntent Rufe Button {Button} im Modul {Module} im {Room} auf
+VirtualIntent Rufe Button {Button} im Modul {Module} in dem {Room} auf
+VirtualIntent Rufe Button {Button} im Modul {Module} im Raum {Room} auf
+VirtualIntent Rufe Button {Button} im Modul {Module} in dem Raum {Room} auf
+VirtualIntent Rufe Button {Button} im Modul {Module} Raum {Room} auf
+VirtualIntent Rufe Button {Button} im Modul {Module} in der {Room} auf
+VirtualIntent Rufe Button {Button} im virtuellen Modul {Module} in {Room} auf
+VirtualIntent Rufe Button {Button} im virtuellen Modul {Module} im {Room} auf
+VirtualIntent Rufe Button {Button} im virtuellen Modul {Module} in dem {Room} auf
+VirtualIntent Rufe Button {Button} im virtuellen Modul {Module} im Raum {Room} auf
+VirtualIntent Rufe Button {Button} im virtuellen Modul {Module} in dem Raum {Room} auf
+VirtualIntent Rufe Button {Button} im virtuellen Modul {Module} Raum {Room} auf
+VirtualIntent Rufe Button {Button} im virtuellen Modul {Module} in der {Room} auf
+VirtualIntent Drücke Button {Button} im Modul {Module} in {Room}
+VirtualIntent Drücke Button {Button} im Modul {Module} im {Room}
+VirtualIntent Drücke Button {Button} im Modul {Module} in dem {Room}
+VirtualIntent Drücke Button {Button} im Modul {Module} im Raum {Room}
+VirtualIntent Drücke Button {Button} im Modul {Module} in dem Raum {Room}
+VirtualIntent Drücke Button {Button} im Modul {Module} Raum {Room}
+VirtualIntent Drücke Button {Button} im Modul {Module} in der {Room}
+VirtualIntent Drücke Button {Button} im virtuellen Modul {Module} in {Room}
+VirtualIntent Drücke Button {Button} im virtuellen Modul {Module} im {Room}
+VirtualIntent Drücke Button {Button} im virtuellen Modul {Module} in dem {Room}
+VirtualIntent Drücke Button {Button} im virtuellen Modul {Module} im Raum {Room}
+VirtualIntent Drücke Button {Button} im virtuellen Modul {Module} in dem Raum {Room}
+VirtualIntent Drücke Button {Button} im virtuellen Modul {Module} Raum {Room}
+VirtualIntent Drücke Button {Button} im virtuellen Modul {Module} in der {Room}
 VirtualIntent Setze Slider {Button} auf {Value} Prozent im Modul {Module}
 VirtualIntent Stelle Slider {Button} auf {Value} Prozent im Modul {Module}
 VirtualIntent Setze Slider {Button} auf {Value} im Modul {Module}
 VirtualIntent Stelle Slider {Button} auf {Value} im Modul {Module}
 
-UsageIntent Wie ist der Verbauch {Devicetype} {Device}
-UsageIntent Nenn mir den Verbauch {Devicetype} {Device}
-UsageIntent Wieviel verbraucht {Devicetype} {Device}
+OpenIntent Welche {Area} {Status} sind
+OpenIntent Welche {Area} in {Room} {Status} sind
+OpenIntent Welche {Area} im {Room} {Status} sind
+OpenIntent Welche {Area} in dem {Room} {Status} sind
+OpenIntent Welche {Area} im Raum {Room} {Status} sind
+OpenIntent Welche {Area} in dem Raum {Room} {Status} sind
+OpenIntent Welche {Area} Raum {Room} {Status} sind
+OpenIntent Welche {Area} in der {Room} {Status} sind
+OpenIntent Welche {Area} sind {Status}
+OpenIntent Welche {Area} sind in {Room} {Status}
+OpenIntent Welche {Area} sind im {Room} {Status}
+OpenIntent Welche {Area} sind in dem {Room} {Status}
+OpenIntent Welche {Area} sind im Raum {Room} {Status}
+OpenIntent Welche {Area} sind in dem Raum {Room} {Status}
+OpenIntent Welche {Area} sind Raum {Room} {Status}
+OpenIntent Welche {Area} sind in der {Room} {Status}
+OpenIntent Ist {Area} in {Room} {Status}
+OpenIntent Ist {Area} im {Room} {Status}
+OpenIntent Ist {Area} in dem {Room} {Status}
+OpenIntent Ist {Area} im Raum {Room} {Status}
+OpenIntent Ist {Area} in dem Raum {Room} {Status}
+OpenIntent Ist {Area} Raum {Room} {Status}
+OpenIntent Ist {Area} in der {Room} {Status}
+OpenIntent Sind {Area} in {Room} {Status}
+OpenIntent Sind {Area} im {Room} {Status}
+OpenIntent Sind {Area} in dem {Room} {Status}
+OpenIntent Sind {Area} im Raum {Room} {Status}
+OpenIntent Sind {Area} in dem Raum {Room} {Status}
+OpenIntent Sind {Area} Raum {Room} {Status}
+OpenIntent Sind {Area} in der {Room} {Status}
+OpenIntent Ist {Area} {Devicename} {Room} {Status}
+OpenIntent Sind {Area} {Devicename} {Room} {Status}
+OpenIntent Ist {Area} {Devicename} in {Room} {Status}
+OpenIntent Ist {Area} {Devicename} im {Room} {Status}
+OpenIntent Ist {Area} {Devicename} in dem {Room} {Status}
+OpenIntent Ist {Area} {Devicename} im Raum {Room} {Status}
+OpenIntent Ist {Area} {Devicename} in dem Raum {Room} {Status}
+OpenIntent Ist {Area} {Devicename} Raum {Room} {Status}
+OpenIntent Ist {Area} {Devicename} in der {Room} {Status}
+OpenIntent Sind {Area} {Devicename} in {Room} {Status}
+OpenIntent Sind {Area} {Devicename} im {Room} {Status}
+OpenIntent Sind {Area} {Devicename} in dem {Room} {Status}
+OpenIntent Sind {Area} {Devicename} im Raum {Room} {Status}
+OpenIntent Sind {Area} {Devicename} in dem Raum {Room} {Status}
+OpenIntent Sind {Area} {Devicename} Raum {Room} {Status}
+OpenIntent Sind {Area} {Devicename} in der {Room} {Status}
 
-AlarmIntent Ist der Alarm geschaltet
-AlarmIntent Wie ist der Status vom Alarm
+TemperatureIntent Wie {Type} ist es in {Room}
+TemperatureIntent Wie {Type} ist es im {Room}
+TemperatureIntent Wie {Type} ist es in dem {Room}
+TemperatureIntent Wie {Type} ist es im Raum {Room}
+TemperatureIntent Wie {Type} ist es in dem Raum {Room}
+TemperatureIntent Wie {Type} ist es Raum {Room}
+TemperatureIntent Wie {Type} ist es in der {Room}
+TemperatureIntent Nenn die {Type} in {Room}
+TemperatureIntent Nenn die {Type} im {Room}
+TemperatureIntent Nenn die {Type} in dem {Room}
+TemperatureIntent Nenn die {Type} im Raum {Room}
+TemperatureIntent Nenn die {Type} in dem Raum {Room}
+TemperatureIntent Nenn die {Type} Raum {Room}
+TemperatureIntent Nenn die {Type} in der {Room}
+TemperatureIntent Wie ist die {Type} in {Room}
+TemperatureIntent Wie ist die {Type} im {Room}
+TemperatureIntent Wie ist die {Type} in dem {Room}
+TemperatureIntent Wie ist die {Type} im Raum {Room}
+TemperatureIntent Wie ist die {Type} in dem Raum {Room}
+TemperatureIntent Wie ist die {Type} Raum {Room}
+TemperatureIntent Wie ist die {Type} in der {Room}
+TemperatureIntent Nenn mir die {Type} in {Room}
+TemperatureIntent Nenn mir die {Type} im {Room}
+TemperatureIntent Nenn mir die {Type} in dem {Room}
+TemperatureIntent Nenn mir die {Type} im Raum {Room}
+TemperatureIntent Nenn mir die {Type} in dem Raum {Room}
+TemperatureIntent Nenn mir die {Type} Raum {Room}
+TemperatureIntent Nenn mir die {Type} in der {Room}
+TemperatureIntent Sag mir die {Type} in {Room}
+TemperatureIntent Sag mir die {Type} im {Room}
+TemperatureIntent Sag mir die {Type} in dem {Room}
+TemperatureIntent Sag mir die {Type} im Raum {Room}
+TemperatureIntent Sag mir die {Type} in dem Raum {Room}
+TemperatureIntent Sag mir die {Type} Raum {Room}
+TemperatureIntent Sag mir die {Type} in der {Room}
+TemperatureIntent Wie {Type} ist es {Room}
 
-RGBIntent Wie sind die {Mode} {Devicetype} {Device}
-RGBIntent Welches {Mode} nutzt {Devicetype} {Device}
-RGBIntent Welches {Mode} läuft auf {Devicetype} {Device}
-RGBIntent Setze Programm {Program} {Devicetype} {Device}
-RGBIntent Setze die Farbe Rot {Devicetype} {Device} auf {Red} Prozent
-RGBIntent Setze die Farbe Blau {Devicetype} {Device} auf {Blue} Prozent
-RGBIntent Setze die Farbe Grün {Devicetype} {Device} auf {Green} Prozent
-RGBIntent Setze die Farbe Weiß {Devicetype} {Device} auf {White} Prozent
+StatusIntent Wie ist der Status von der {Device}
+StatusIntent Wie ist der Status vom {Device}
+StatusIntent Wie ist der Status von dem {Device}
+StatusIntent Wie ist der Status von {Device}
+StatusIntent Wie ist der Status der {Device}
+StatusIntent Wie ist der Status die {Device}
+StatusIntent Status von der {Device}
+StatusIntent Status vom {Device}
+StatusIntent Status von dem {Device}
+StatusIntent Status von {Device}
+StatusIntent Status der {Device}
+StatusIntent Status die {Device}
+StatusIntent Wie ist der Status von der {Device} in {Room}
+StatusIntent Wie ist der Status von der {Device} im {Room}
+StatusIntent Wie ist der Status von der {Device} in dem {Room}
+StatusIntent Wie ist der Status von der {Device} im Raum {Room}
+StatusIntent Wie ist der Status von der {Device} in dem Raum {Room}
+StatusIntent Wie ist der Status von der {Device} Raum {Room}
+StatusIntent Wie ist der Status von der {Device} in der {Room}
+StatusIntent Wie ist der Status vom {Device} in {Room}
+StatusIntent Wie ist der Status vom {Device} im {Room}
+StatusIntent Wie ist der Status vom {Device} in dem {Room}
+StatusIntent Wie ist der Status vom {Device} im Raum {Room}
+StatusIntent Wie ist der Status vom {Device} in dem Raum {Room}
+StatusIntent Wie ist der Status vom {Device} Raum {Room}
+StatusIntent Wie ist der Status vom {Device} in der {Room}
+StatusIntent Wie ist der Status von dem {Device} in {Room}
+StatusIntent Wie ist der Status von dem {Device} im {Room}
+StatusIntent Wie ist der Status von dem {Device} in dem {Room}
+StatusIntent Wie ist der Status von dem {Device} im Raum {Room}
+StatusIntent Wie ist der Status von dem {Device} in dem Raum {Room}
+StatusIntent Wie ist der Status von dem {Device} Raum {Room}
+StatusIntent Wie ist der Status von dem {Device} in der {Room}
+StatusIntent Wie ist der Status von {Device} in {Room}
+StatusIntent Wie ist der Status von {Device} im {Room}
+StatusIntent Wie ist der Status von {Device} in dem {Room}
+StatusIntent Wie ist der Status von {Device} im Raum {Room}
+StatusIntent Wie ist der Status von {Device} in dem Raum {Room}
+StatusIntent Wie ist der Status von {Device} Raum {Room}
+StatusIntent Wie ist der Status von {Device} in der {Room}
+StatusIntent Wie ist der Status der {Device} in {Room}
+StatusIntent Wie ist der Status der {Device} im {Room}
+StatusIntent Wie ist der Status der {Device} in dem {Room}
+StatusIntent Wie ist der Status der {Device} im Raum {Room}
+StatusIntent Wie ist der Status der {Device} in dem Raum {Room}
+StatusIntent Wie ist der Status der {Device} Raum {Room}
+StatusIntent Wie ist der Status der {Device} in der {Room}
+StatusIntent Wie ist der Status die {Device} in {Room}
+StatusIntent Wie ist der Status die {Device} im {Room}
+StatusIntent Wie ist der Status die {Device} in dem {Room}
+StatusIntent Wie ist der Status die {Device} im Raum {Room}
+StatusIntent Wie ist der Status die {Device} in dem Raum {Room}
+StatusIntent Wie ist der Status die {Device} Raum {Room}
+StatusIntent Wie ist der Status die {Device} in der {Room}
+StatusIntent Status von der {Device} in {Room}
+StatusIntent Status von der {Device} im {Room}
+StatusIntent Status von der {Device} in dem {Room}
+StatusIntent Status von der {Device} im Raum {Room}
+StatusIntent Status von der {Device} in dem Raum {Room}
+StatusIntent Status von der {Device} Raum {Room}
+StatusIntent Status von der {Device} in der {Room}
+StatusIntent Status vom {Device} in {Room}
+StatusIntent Status vom {Device} im {Room}
+StatusIntent Status vom {Device} in dem {Room}
+StatusIntent Status vom {Device} im Raum {Room}
+StatusIntent Status vom {Device} in dem Raum {Room}
+StatusIntent Status vom {Device} Raum {Room}
+StatusIntent Status vom {Device} in der {Room}
+StatusIntent Status von dem {Device} in {Room}
+StatusIntent Status von dem {Device} im {Room}
+StatusIntent Status von dem {Device} in dem {Room}
+StatusIntent Status von dem {Device} im Raum {Room}
+StatusIntent Status von dem {Device} in dem Raum {Room}
+StatusIntent Status von dem {Device} Raum {Room}
+StatusIntent Status von dem {Device} in der {Room}
+StatusIntent Status von {Device} in {Room}
+StatusIntent Status von {Device} im {Room}
+StatusIntent Status von {Device} in dem {Room}
+StatusIntent Status von {Device} im Raum {Room}
+StatusIntent Status von {Device} in dem Raum {Room}
+StatusIntent Status von {Device} Raum {Room}
+StatusIntent Status von {Device} in der {Room}
+StatusIntent Status der {Device} in {Room}
+StatusIntent Status der {Device} im {Room}
+StatusIntent Status der {Device} in dem {Room}
+StatusIntent Status der {Device} im Raum {Room}
+StatusIntent Status der {Device} in dem Raum {Room}
+StatusIntent Status der {Device} Raum {Room}
+StatusIntent Status der {Device} in der {Room}
+StatusIntent Status die {Device} in {Room}
+StatusIntent Status die {Device} im {Room}
+StatusIntent Status die {Device} in dem {Room}
+StatusIntent Status die {Device} im Raum {Room}
+StatusIntent Status die {Device} in dem Raum {Room}
+StatusIntent Status die {Device} Raum {Room}
+StatusIntent Status die {Device} in der {Room}
+StatusIntent Ist von der {Device} {Status}
+StatusIntent Ist vom {Device} {Status}
+StatusIntent Ist von dem {Device} {Status}
+StatusIntent Ist von {Device} {Status}
+StatusIntent Ist der {Device} {Status}
+StatusIntent Ist die {Device} {Status}
+
+MovementIntent In wechem Raum ist Bewegung
+MovementIntent Ist Bewegung in {Room} Wann war die letzte Bewegung in {Room}
+MovementIntent Ist Bewegung in {Room} Wann war die letzte Bewegung im {Room}
+MovementIntent Ist Bewegung in {Room} Wann war die letzte Bewegung in dem {Room}
+MovementIntent Ist Bewegung in {Room} Wann war die letzte Bewegung im Raum {Room}
+MovementIntent Ist Bewegung in {Room} Wann war die letzte Bewegung in dem Raum {Room}
+MovementIntent Ist Bewegung in {Room} Wann war die letzte Bewegung Raum {Room}
+MovementIntent Ist Bewegung in {Room} Wann war die letzte Bewegung in der {Room}
+MovementIntent Ist Bewegung im {Room} Wann war die letzte Bewegung in {Room}
+MovementIntent Ist Bewegung im {Room} Wann war die letzte Bewegung im {Room}
+MovementIntent Ist Bewegung im {Room} Wann war die letzte Bewegung in dem {Room}
+MovementIntent Ist Bewegung im {Room} Wann war die letzte Bewegung im Raum {Room}
+MovementIntent Ist Bewegung im {Room} Wann war die letzte Bewegung in dem Raum {Room}
+MovementIntent Ist Bewegung im {Room} Wann war die letzte Bewegung Raum {Room}
+MovementIntent Ist Bewegung im {Room} Wann war die letzte Bewegung in der {Room}
+MovementIntent Ist Bewegung in dem {Room} Wann war die letzte Bewegung in {Room}
+MovementIntent Ist Bewegung in dem {Room} Wann war die letzte Bewegung im {Room}
+MovementIntent Ist Bewegung in dem {Room} Wann war die letzte Bewegung in dem {Room}
+MovementIntent Ist Bewegung in dem {Room} Wann war die letzte Bewegung im Raum {Room}
+MovementIntent Ist Bewegung in dem {Room} Wann war die letzte Bewegung in dem Raum {Room}
+MovementIntent Ist Bewegung in dem {Room} Wann war die letzte Bewegung Raum {Room}
+MovementIntent Ist Bewegung in dem {Room} Wann war die letzte Bewegung in der {Room}
+MovementIntent Ist Bewegung im Raum {Room} Wann war die letzte Bewegung in {Room}
+MovementIntent Ist Bewegung im Raum {Room} Wann war die letzte Bewegung im {Room}
+MovementIntent Ist Bewegung im Raum {Room} Wann war die letzte Bewegung in dem {Room}
+MovementIntent Ist Bewegung im Raum {Room} Wann war die letzte Bewegung im Raum {Room}
+MovementIntent Ist Bewegung im Raum {Room} Wann war die letzte Bewegung in dem Raum {Room}
+MovementIntent Ist Bewegung im Raum {Room} Wann war die letzte Bewegung Raum {Room}
+MovementIntent Ist Bewegung im Raum {Room} Wann war die letzte Bewegung in der {Room}
+MovementIntent Ist Bewegung in dem Raum {Room} Wann war die letzte Bewegung in {Room}
+MovementIntent Ist Bewegung in dem Raum {Room} Wann war die letzte Bewegung im {Room}
+MovementIntent Ist Bewegung in dem Raum {Room} Wann war die letzte Bewegung in dem {Room}
+MovementIntent Ist Bewegung in dem Raum {Room} Wann war die letzte Bewegung im Raum {Room}
+MovementIntent Ist Bewegung in dem Raum {Room} Wann war die letzte Bewegung in dem Raum {Room}
+MovementIntent Ist Bewegung in dem Raum {Room} Wann war die letzte Bewegung Raum {Room}
+MovementIntent Ist Bewegung in dem Raum {Room} Wann war die letzte Bewegung in der {Room}
+MovementIntent Ist Bewegung Raum {Room} Wann war die letzte Bewegung in {Room}
+MovementIntent Ist Bewegung Raum {Room} Wann war die letzte Bewegung im {Room}
+MovementIntent Ist Bewegung Raum {Room} Wann war die letzte Bewegung in dem {Room}
+MovementIntent Ist Bewegung Raum {Room} Wann war die letzte Bewegung im Raum {Room}
+MovementIntent Ist Bewegung Raum {Room} Wann war die letzte Bewegung in dem Raum {Room}
+MovementIntent Ist Bewegung Raum {Room} Wann war die letzte Bewegung Raum {Room}
+MovementIntent Ist Bewegung Raum {Room} Wann war die letzte Bewegung in der {Room}
+MovementIntent Ist Bewegung in der {Room} Wann war die letzte Bewegung in {Room}
+MovementIntent Ist Bewegung in der {Room} Wann war die letzte Bewegung im {Room}
+MovementIntent Ist Bewegung in der {Room} Wann war die letzte Bewegung in dem {Room}
+MovementIntent Ist Bewegung in der {Room} Wann war die letzte Bewegung im Raum {Room}
+MovementIntent Ist Bewegung in der {Room} Wann war die letzte Bewegung in dem Raum {Room}
+MovementIntent Ist Bewegung in der {Room} Wann war die letzte Bewegung Raum {Room}
+MovementIntent Ist Bewegung in der {Room} Wann war die letzte Bewegung in der {Room}
+
+UsageIntent Wie ist der Verbauch von der {Device}
+UsageIntent Wie ist der Verbauch vom {Device}
+UsageIntent Wie ist der Verbauch von dem {Device}
+UsageIntent Wie ist der Verbauch von {Device}
+UsageIntent Wie ist der Verbauch der {Device}
+UsageIntent Wie ist der Verbauch die {Device}
+UsageIntent Nenn mir den Verbauch von der {Device}
+UsageIntent Nenn mir den Verbauch vom {Device}
+UsageIntent Nenn mir den Verbauch von dem {Device}
+UsageIntent Nenn mir den Verbauch von {Device}
+UsageIntent Nenn mir den Verbauch der {Device}
+UsageIntent Nenn mir den Verbauch die {Device}
+UsageIntent Wieviel verbraucht von der {Device}
+UsageIntent Wieviel verbraucht vom {Device}
+UsageIntent Wieviel verbraucht von dem {Device}
+UsageIntent Wieviel verbraucht von {Device}
+UsageIntent Wieviel verbraucht der {Device}
+UsageIntent Wieviel verbraucht die {Device}
+
+RGBIntent Wie sind die {Mode} von der {Device}
+RGBIntent Wie sind die {Mode} vom {Device}
+RGBIntent Wie sind die {Mode} von dem {Device}
+RGBIntent Wie sind die {Mode} von {Device}
+RGBIntent Wie sind die {Mode} der {Device}
+RGBIntent Wie sind die {Mode} die {Device}
+RGBIntent Welches {Mode} nutzt von der {Device}
+RGBIntent Welches {Mode} nutzt vom {Device}
+RGBIntent Welches {Mode} nutzt von dem {Device}
+RGBIntent Welches {Mode} nutzt von {Device}
+RGBIntent Welches {Mode} nutzt der {Device}
+RGBIntent Welches {Mode} nutzt die {Device}
+RGBIntent Welches {Mode} läuft auf von der {Device}
+RGBIntent Welches {Mode} läuft auf vom {Device}
+RGBIntent Welches {Mode} läuft auf von dem {Device}
+RGBIntent Welches {Mode} läuft auf von {Device}
+RGBIntent Welches {Mode} läuft auf der {Device}
+RGBIntent Welches {Mode} läuft auf die {Device}
+RGBIntent Setze Programm {Program} von der {Device}
+RGBIntent Setze Programm {Program} vom {Device}
+RGBIntent Setze Programm {Program} von dem {Device}
+RGBIntent Setze Programm {Program} von {Device}
+RGBIntent Setze Programm {Program} der {Device}
+RGBIntent Setze Programm {Program} die {Device}
+RGBIntent Setze die Farbe Rot von der {Device} auf {Red} Prozent
+RGBIntent Setze die Farbe Rot vom {Device} auf {Red} Prozent
+RGBIntent Setze die Farbe Rot von dem {Device} auf {Red} Prozent
+RGBIntent Setze die Farbe Rot von {Device} auf {Red} Prozent
+RGBIntent Setze die Farbe Rot der {Device} auf {Red} Prozent
+RGBIntent Setze die Farbe Rot die {Device} auf {Red} Prozent
+RGBIntent Setze die Farbe Blau von der {Device} auf {Blue} Prozent
+RGBIntent Setze die Farbe Blau vom {Device} auf {Blue} Prozent
+RGBIntent Setze die Farbe Blau von dem {Device} auf {Blue} Prozent
+RGBIntent Setze die Farbe Blau von {Device} auf {Blue} Prozent
+RGBIntent Setze die Farbe Blau der {Device} auf {Blue} Prozent
+RGBIntent Setze die Farbe Blau die {Device} auf {Blue} Prozent
+RGBIntent Setze die Farbe Grün von der {Device} auf {Green} Prozent
+RGBIntent Setze die Farbe Grün vom {Device} auf {Green} Prozent
+RGBIntent Setze die Farbe Grün von dem {Device} auf {Green} Prozent
+RGBIntent Setze die Farbe Grün von {Device} auf {Green} Prozent
+RGBIntent Setze die Farbe Grün der {Device} auf {Green} Prozent
+RGBIntent Setze die Farbe Grün die {Device} auf {Green} Prozent
+RGBIntent Setze die Farbe Weiß von der {Device} auf {White} Prozent
+RGBIntent Setze die Farbe Weiß vom {Device} auf {White} Prozent
+RGBIntent Setze die Farbe Weiß von dem {Device} auf {White} Prozent
+RGBIntent Setze die Farbe Weiß von {Device} auf {White} Prozent
+RGBIntent Setze die Farbe Weiß der {Device} auf {White} Prozent
+RGBIntent Setze die Farbe Weiß die {Device} auf {White} Prozent
 RGBIntent Setze {Device} auf {Red} Prozent Rot
 RGBIntent Setze {Device} auf {Blue} Prozent Blau
 RGBIntent Setze {Device} auf {Green} Prozent Grün
 RGBIntent Setze {Device} auf {White} Prozent Weiß
-RGBIntent Setze Rot {Devicetype} {Device} auf {Red} Prozent
-RGBIntent Setze Blau {Devicetype} {Device} auf {Blue} Prozent
-RGBIntent Setze Grün {Devicetype} {Device} auf {Green} Prozent
-RGBIntent Setze Weiß {Devicetype} {Device} auf {White} Prozent
-RGBIntent Setze Helligkeit {Devicetype} {Device} auf {Brightness} Prozent
-RGBIntent Setze die Farben {Devicetype} {Device} auf {Red} Prozent Rot {Green} Prozent Gelb {Blue} Prozent Blau {White} Prozent Weiß {Brightness} Prozent Helligkeit
+RGBIntent Setze Rot von der {Device} auf {Red} Prozent
+RGBIntent Setze Rot vom {Device} auf {Red} Prozent
+RGBIntent Setze Rot von dem {Device} auf {Red} Prozent
+RGBIntent Setze Rot von {Device} auf {Red} Prozent
+RGBIntent Setze Rot der {Device} auf {Red} Prozent
+RGBIntent Setze Rot die {Device} auf {Red} Prozent
+RGBIntent Setze Blau von der {Device} auf {Blue} Prozent
+RGBIntent Setze Blau vom {Device} auf {Blue} Prozent
+RGBIntent Setze Blau von dem {Device} auf {Blue} Prozent
+RGBIntent Setze Blau von {Device} auf {Blue} Prozent
+RGBIntent Setze Blau der {Device} auf {Blue} Prozent
+RGBIntent Setze Blau die {Device} auf {Blue} Prozent
+RGBIntent Setze Grün von der {Device} auf {Green} Prozent
+RGBIntent Setze Grün vom {Device} auf {Green} Prozent
+RGBIntent Setze Grün von dem {Device} auf {Green} Prozent
+RGBIntent Setze Grün von {Device} auf {Green} Prozent
+RGBIntent Setze Grün der {Device} auf {Green} Prozent
+RGBIntent Setze Grün die {Device} auf {Green} Prozent
+RGBIntent Setze Weiß von der {Device} auf {White} Prozent
+RGBIntent Setze Weiß vom {Device} auf {White} Prozent
+RGBIntent Setze Weiß von dem {Device} auf {White} Prozent
+RGBIntent Setze Weiß von {Device} auf {White} Prozent
+RGBIntent Setze Weiß der {Device} auf {White} Prozent
+RGBIntent Setze Weiß die {Device} auf {White} Prozent
+RGBIntent Setze Helligkeit von der {Device} auf {Brightness} Prozent
+RGBIntent Setze Helligkeit vom {Device} auf {Brightness} Prozent
+RGBIntent Setze Helligkeit von dem {Device} auf {Brightness} Prozent
+RGBIntent Setze Helligkeit von {Device} auf {Brightness} Prozent
+RGBIntent Setze Helligkeit der {Device} auf {Brightness} Prozent
+RGBIntent Setze Helligkeit die {Device} auf {Brightness} Prozent
+RGBIntent Setze die Farben von der {Device} auf {Red} Prozent Rot {Green} Prozent Gelb {Blue} Prozent Blau {White} Prozent Weiß {Brightness} Prozent Helligkeit
+RGBIntent Setze die Farben vom {Device} auf {Red} Prozent Rot {Green} Prozent Gelb {Blue} Prozent Blau {White} Prozent Weiß {Brightness} Prozent Helligkeit
+RGBIntent Setze die Farben von dem {Device} auf {Red} Prozent Rot {Green} Prozent Gelb {Blue} Prozent Blau {White} Prozent Weiß {Brightness} Prozent Helligkeit
+RGBIntent Setze die Farben von {Device} auf {Red} Prozent Rot {Green} Prozent Gelb {Blue} Prozent Blau {White} Prozent Weiß {Brightness} Prozent Helligkeit
+RGBIntent Setze die Farben der {Device} auf {Red} Prozent Rot {Green} Prozent Gelb {Blue} Prozent Blau {White} Prozent Weiß {Brightness} Prozent Helligkeit
+RGBIntent Setze die Farben die {Device} auf {Red} Prozent Rot {Green} Prozent Gelb {Blue} Prozent Blau {White} Prozent Weiß {Brightness} Prozent Helligkeit
 
-RGBIntent Wie sind die {Mode} {Devicetype} {Device} {Roomtype} {Room}
-RGBIntent Welches {Mode} nutzt {Devicetype} {Device} {Roomtype} {Room}
-RGBIntent Welches {Mode} läuft auf {Devicetype} {Device} {Roomtype} {Room}
-RGBIntent Setze Programm {Program} {Devicetype} {Device} {Roomtype} {Room}
-RGBIntent Setze die Farbe Rot {Devicetype} {Device} {Roomtype} {Room} auf {Red} Prozent
-RGBIntent Setze die Farbe Blau {Devicetype} {Device} {Roomtype} {Room} auf {Blue} Prozent
-RGBIntent Setze die Farbe Grün {Devicetype} {Device} {Roomtype} {Room} auf {Green} Prozent
-RGBIntent Setze die Farbe Weiß {Devicetype} {Device} {Roomtype} {Room} auf {White} Prozent
-RGBIntent Setze {Device} {Roomtype} {Room} auf {Red} Prozent Rot
-RGBIntent Setze {Device} {Roomtype} {Room} auf {Blue} Prozent Blau
-RGBIntent Setze {Device} {Roomtype} {Room} auf {Green} Prozent Grün
-RGBIntent Setze {Device} {Roomtype} {Room} auf {White} Prozent Weiß
-RGBIntent Setze Rot {Devicetype} {Device} {Roomtype} {Room} auf {Red} Prozent
-RGBIntent Setze Blau {Devicetype} {Device} {Roomtype} {Room} auf {Blue} Prozent
-RGBIntent Setze Grün {Devicetype} {Device} {Roomtype} {Room} auf {Green} Prozent
-RGBIntent Setze Weiß {Devicetype} {Device} {Roomtype} {Room} auf {White} Prozent
-RGBIntent Setze Helligkeit {Devicetype} {Device} {Roomtype} {Room} auf {Brightness} Prozent
-RGBIntent Setze die Farben {Devicetype} {Device} {Roomtype} {Room} auf {Red} Prozent Rot {Green} Prozent Gelb {Blue} Prozent Blau {White} Prozent Weiß {Brightness} Prozent Helligkeit
+SwitchIntent Schalte {Device} {Status}
+SwitchIntent Schalte von der {Device} {Status}
+SwitchIntent Schalte vom {Device} {Status}
+SwitchIntent Schalte von dem {Device} {Status}
+SwitchIntent Schalte von {Device} {Status}
+SwitchIntent Schalte der {Device} {Status}
+SwitchIntent Schalte die {Device} {Status}
+SwitchIntent {Yesno}
 
-MovementIntent In wechem Raum ist Bewegung
-MovementIntent Ist Bewegung {Roomtype} {Room}
-MovementIntent Wann war die letzte Bewegung {Roomtype} {Room}
+LightIntent Schalte die Lichter {Light} {Status}
+LightIntent Schalte Lichter {Light} {Status}
+LightIntent Schalte die Lampen {Light} {Status}
+LightIntent Schalte Lampen {Light} {Status}
+LightIntent Schalte die Lampe {Light} {Status}
+LightIntent Schalte Lampe {Light} {Status}
+LightIntent Schalte Licht {Light} {Status}
+LightIntent Schalte das Licht {Light} {Status}
+LightIntent die Lichter {Light} {Status}
+LightIntent Lichter {Light} {Status}
+LightIntent die Lampen {Light} {Status}
+LightIntent Lampen {Light} {Status}
+LightIntent die Lampe {Light} {Status}
+LightIntent Lampe {Light} {Status}
+LightIntent Licht {Light} {Status}
+LightIntent das Licht {Light} {Status}
+LightIntent Schalte die Lichter {Light} und {Lighttwo} {Status}
+LightIntent Schalte Lichter {Light} und {Lighttwo} {Status}
+LightIntent Schalte die Lampen {Light} und {Lighttwo} {Status}
+LightIntent Schalte Lampen {Light} und {Lighttwo} {Status}
+LightIntent Schalte die Lampe {Light} und {Lighttwo} {Status}
+LightIntent Schalte Lampe {Light} und {Lighttwo} {Status}
+LightIntent Schalte Licht {Light} und {Lighttwo} {Status}
+LightIntent Schalte das Licht {Light} und {Lighttwo} {Status}
+LightIntent Schalte die Lichter {Light} in {Room} und in {Roomtwo} {Status}
+LightIntent Schalte die Lichter {Light} in {Room} und im {Roomtwo} {Status}
+LightIntent Schalte die Lichter {Light} in {Room} und in dem {Roomtwo} {Status}
+LightIntent Schalte die Lichter {Light} in {Room} und im Raum {Roomtwo} {Status}
+LightIntent Schalte die Lichter {Light} in {Room} und in dem Raum {Roomtwo} {Status}
+LightIntent Schalte die Lichter {Light} in {Room} und Raum {Roomtwo} {Status}
+LightIntent Schalte die Lichter {Light} in {Room} und in der {Roomtwo} {Status}
+LightIntent Schalte die Lichter {Light} im {Room} und in {Roomtwo} {Status}
+LightIntent Schalte die Lichter {Light} im {Room} und im {Roomtwo} {Status}
+LightIntent Schalte die Lichter {Light} im {Room} und in dem {Roomtwo} {Status}
+LightIntent Schalte die Lichter {Light} im {Room} und im Raum {Roomtwo} {Status}
+LightIntent Schalte die Lichter {Light} im {Room} und in dem Raum {Roomtwo} {Status}
+LightIntent Schalte die Lichter {Light} im {Room} und Raum {Roomtwo} {Status}
+LightIntent Schalte die Lichter {Light} im {Room} und in der {Roomtwo} {Status}
+LightIntent Schalte die Lichter {Light} in dem {Room} und in {Roomtwo} {Status}
+LightIntent Schalte die Lichter {Light} in dem {Room} und im {Roomtwo} {Status}
+LightIntent Schalte die Lichter {Light} in dem {Room} und in dem {Roomtwo} {Status}
+LightIntent Schalte die Lichter {Light} in dem {Room} und im Raum {Roomtwo} {Status}
+LightIntent Schalte die Lichter {Light} in dem {Room} und in dem Raum {Roomtwo} {Status}
+LightIntent Schalte die Lichter {Light} in dem {Room} und Raum {Roomtwo} {Status}
+LightIntent Schalte die Lichter {Light} in dem {Room} und in der {Roomtwo} {Status}
+LightIntent Schalte die Lichter {Light} im Raum {Room} und in {Roomtwo} {Status}
+LightIntent Schalte die Lichter {Light} im Raum {Room} und im {Roomtwo} {Status}
+LightIntent Schalte die Lichter {Light} im Raum {Room} und in dem {Roomtwo} {Status}
+LightIntent Schalte die Lichter {Light} im Raum {Room} und im Raum {Roomtwo} {Status}
+LightIntent Schalte die Lichter {Light} im Raum {Room} und in dem Raum {Roomtwo} {Status}
+LightIntent Schalte die Lichter {Light} im Raum {Room} und Raum {Roomtwo} {Status}
+LightIntent Schalte die Lichter {Light} im Raum {Room} und in der {Roomtwo} {Status}
+LightIntent Schalte die Lichter {Light} in dem Raum {Room} und in {Roomtwo} {Status}
+LightIntent Schalte die Lichter {Light} in dem Raum {Room} und im {Roomtwo} {Status}
+LightIntent Schalte die Lichter {Light} in dem Raum {Room} und in dem {Roomtwo} {Status}
+LightIntent Schalte die Lichter {Light} in dem Raum {Room} und im Raum {Roomtwo} {Status}
+LightIntent Schalte die Lichter {Light} in dem Raum {Room} und in dem Raum {Roomtwo} {Status}
+LightIntent Schalte die Lichter {Light} in dem Raum {Room} und Raum {Roomtwo} {Status}
+LightIntent Schalte die Lichter {Light} in dem Raum {Room} und in der {Roomtwo} {Status}
+LightIntent Schalte die Lichter {Light} Raum {Room} und in {Roomtwo} {Status}
+LightIntent Schalte die Lichter {Light} Raum {Room} und im {Roomtwo} {Status}
+LightIntent Schalte die Lichter {Light} Raum {Room} und in dem {Roomtwo} {Status}
+LightIntent Schalte die Lichter {Light} Raum {Room} und im Raum {Roomtwo} {Status}
+LightIntent Schalte die Lichter {Light} Raum {Room} und in dem Raum {Roomtwo} {Status}
+LightIntent Schalte die Lichter {Light} Raum {Room} und Raum {Roomtwo} {Status}
+LightIntent Schalte die Lichter {Light} Raum {Room} und in der {Roomtwo} {Status}
+LightIntent Schalte die Lichter {Light} in der {Room} und in {Roomtwo} {Status}
+LightIntent Schalte die Lichter {Light} in der {Room} und im {Roomtwo} {Status}
+LightIntent Schalte die Lichter {Light} in der {Room} und in dem {Roomtwo} {Status}
+LightIntent Schalte die Lichter {Light} in der {Room} und im Raum {Roomtwo} {Status}
+LightIntent Schalte die Lichter {Light} in der {Room} und in dem Raum {Roomtwo} {Status}
+LightIntent Schalte die Lichter {Light} in der {Room} und Raum {Roomtwo} {Status}
+LightIntent Schalte die Lichter {Light} in der {Room} und in der {Roomtwo} {Status}
+LightIntent Schalte Lichter {Light} in {Room} und in {Roomtwo} {Status}
+LightIntent Schalte Lichter {Light} in {Room} und im {Roomtwo} {Status}
+LightIntent Schalte Lichter {Light} in {Room} und in dem {Roomtwo} {Status}
+LightIntent Schalte Lichter {Light} in {Room} und im Raum {Roomtwo} {Status}
+LightIntent Schalte Lichter {Light} in {Room} und in dem Raum {Roomtwo} {Status}
+LightIntent Schalte Lichter {Light} in {Room} und Raum {Roomtwo} {Status}
+LightIntent Schalte Lichter {Light} in {Room} und in der {Roomtwo} {Status}
+LightIntent Schalte Lichter {Light} im {Room} und in {Roomtwo} {Status}
+LightIntent Schalte Lichter {Light} im {Room} und im {Roomtwo} {Status}
+LightIntent Schalte Lichter {Light} im {Room} und in dem {Roomtwo} {Status}
+LightIntent Schalte Lichter {Light} im {Room} und im Raum {Roomtwo} {Status}
+LightIntent Schalte Lichter {Light} im {Room} und in dem Raum {Roomtwo} {Status}
+LightIntent Schalte Lichter {Light} im {Room} und Raum {Roomtwo} {Status}
+LightIntent Schalte Lichter {Light} im {Room} und in der {Roomtwo} {Status}
+LightIntent Schalte Lichter {Light} in dem {Room} und in {Roomtwo} {Status}
+LightIntent Schalte Lichter {Light} in dem {Room} und im {Roomtwo} {Status}
+LightIntent Schalte Lichter {Light} in dem {Room} und in dem {Roomtwo} {Status}
+LightIntent Schalte Lichter {Light} in dem {Room} und im Raum {Roomtwo} {Status}
+LightIntent Schalte Lichter {Light} in dem {Room} und in dem Raum {Roomtwo} {Status}
+LightIntent Schalte Lichter {Light} in dem {Room} und Raum {Roomtwo} {Status}
+LightIntent Schalte Lichter {Light} in dem {Room} und in der {Roomtwo} {Status}
+LightIntent Schalte Lichter {Light} im Raum {Room} und in {Roomtwo} {Status}
+LightIntent Schalte Lichter {Light} im Raum {Room} und im {Roomtwo} {Status}
+LightIntent Schalte Lichter {Light} im Raum {Room} und in dem {Roomtwo} {Status}
+LightIntent Schalte Lichter {Light} im Raum {Room} und im Raum {Roomtwo} {Status}
+LightIntent Schalte Lichter {Light} im Raum {Room} und in dem Raum {Roomtwo} {Status}
+LightIntent Schalte Lichter {Light} im Raum {Room} und Raum {Roomtwo} {Status}
+LightIntent Schalte Lichter {Light} im Raum {Room} und in der {Roomtwo} {Status}
+LightIntent Schalte Lichter {Light} in dem Raum {Room} und in {Roomtwo} {Status}
+LightIntent Schalte Lichter {Light} in dem Raum {Room} und im {Roomtwo} {Status}
+LightIntent Schalte Lichter {Light} in dem Raum {Room} und in dem {Roomtwo} {Status}
+LightIntent Schalte Lichter {Light} in dem Raum {Room} und im Raum {Roomtwo} {Status}
+LightIntent Schalte Lichter {Light} in dem Raum {Room} und in dem Raum {Roomtwo} {Status}
+LightIntent Schalte Lichter {Light} in dem Raum {Room} und Raum {Roomtwo} {Status}
+LightIntent Schalte Lichter {Light} in dem Raum {Room} und in der {Roomtwo} {Status}
+LightIntent Schalte Lichter {Light} Raum {Room} und in {Roomtwo} {Status}
+LightIntent Schalte Lichter {Light} Raum {Room} und im {Roomtwo} {Status}
+LightIntent Schalte Lichter {Light} Raum {Room} und in dem {Roomtwo} {Status}
+LightIntent Schalte Lichter {Light} Raum {Room} und im Raum {Roomtwo} {Status}
+LightIntent Schalte Lichter {Light} Raum {Room} und in dem Raum {Roomtwo} {Status}
+LightIntent Schalte Lichter {Light} Raum {Room} und Raum {Roomtwo} {Status}
+LightIntent Schalte Lichter {Light} Raum {Room} und in der {Roomtwo} {Status}
+LightIntent Schalte Lichter {Light} in der {Room} und in {Roomtwo} {Status}
+LightIntent Schalte Lichter {Light} in der {Room} und im {Roomtwo} {Status}
+LightIntent Schalte Lichter {Light} in der {Room} und in dem {Roomtwo} {Status}
+LightIntent Schalte Lichter {Light} in der {Room} und im Raum {Roomtwo} {Status}
+LightIntent Schalte Lichter {Light} in der {Room} und in dem Raum {Roomtwo} {Status}
+LightIntent Schalte Lichter {Light} in der {Room} und Raum {Roomtwo} {Status}
+LightIntent Schalte Lichter {Light} in der {Room} und in der {Roomtwo} {Status}
+LightIntent Schalte die Lampen {Light} in {Room} und in {Roomtwo} {Status}
+LightIntent Schalte die Lampen {Light} in {Room} und im {Roomtwo} {Status}
+LightIntent Schalte die Lampen {Light} in {Room} und in dem {Roomtwo} {Status}
+LightIntent Schalte die Lampen {Light} in {Room} und im Raum {Roomtwo} {Status}
+LightIntent Schalte die Lampen {Light} in {Room} und in dem Raum {Roomtwo} {Status}
+LightIntent Schalte die Lampen {Light} in {Room} und Raum {Roomtwo} {Status}
+LightIntent Schalte die Lampen {Light} in {Room} und in der {Roomtwo} {Status}
+LightIntent Schalte die Lampen {Light} im {Room} und in {Roomtwo} {Status}
+LightIntent Schalte die Lampen {Light} im {Room} und im {Roomtwo} {Status}
+LightIntent Schalte die Lampen {Light} im {Room} und in dem {Roomtwo} {Status}
+LightIntent Schalte die Lampen {Light} im {Room} und im Raum {Roomtwo} {Status}
+LightIntent Schalte die Lampen {Light} im {Room} und in dem Raum {Roomtwo} {Status}
+LightIntent Schalte die Lampen {Light} im {Room} und Raum {Roomtwo} {Status}
+LightIntent Schalte die Lampen {Light} im {Room} und in der {Roomtwo} {Status}
+LightIntent Schalte die Lampen {Light} in dem {Room} und in {Roomtwo} {Status}
+LightIntent Schalte die Lampen {Light} in dem {Room} und im {Roomtwo} {Status}
+LightIntent Schalte die Lampen {Light} in dem {Room} und in dem {Roomtwo} {Status}
+LightIntent Schalte die Lampen {Light} in dem {Room} und im Raum {Roomtwo} {Status}
+LightIntent Schalte die Lampen {Light} in dem {Room} und in dem Raum {Roomtwo} {Status}
+LightIntent Schalte die Lampen {Light} in dem {Room} und Raum {Roomtwo} {Status}
+LightIntent Schalte die Lampen {Light} in dem {Room} und in der {Roomtwo} {Status}
+LightIntent Schalte die Lampen {Light} im Raum {Room} und in {Roomtwo} {Status}
+LightIntent Schalte die Lampen {Light} im Raum {Room} und im {Roomtwo} {Status}
+LightIntent Schalte die Lampen {Light} im Raum {Room} und in dem {Roomtwo} {Status}
+LightIntent Schalte die Lampen {Light} im Raum {Room} und im Raum {Roomtwo} {Status}
+LightIntent Schalte die Lampen {Light} im Raum {Room} und in dem Raum {Roomtwo} {Status}
+LightIntent Schalte die Lampen {Light} im Raum {Room} und Raum {Roomtwo} {Status}
+LightIntent Schalte die Lampen {Light} im Raum {Room} und in der {Roomtwo} {Status}
+LightIntent Schalte die Lampen {Light} in dem Raum {Room} und in {Roomtwo} {Status}
+LightIntent Schalte die Lampen {Light} in dem Raum {Room} und im {Roomtwo} {Status}
+LightIntent Schalte die Lampen {Light} in dem Raum {Room} und in dem {Roomtwo} {Status}
+LightIntent Schalte die Lampen {Light} in dem Raum {Room} und im Raum {Roomtwo} {Status}
+LightIntent Schalte die Lampen {Light} in dem Raum {Room} und in dem Raum {Roomtwo} {Status}
+LightIntent Schalte die Lampen {Light} in dem Raum {Room} und Raum {Roomtwo} {Status}
+LightIntent Schalte die Lampen {Light} in dem Raum {Room} und in der {Roomtwo} {Status}
+LightIntent Schalte die Lampen {Light} Raum {Room} und in {Roomtwo} {Status}
+LightIntent Schalte die Lampen {Light} Raum {Room} und im {Roomtwo} {Status}
+LightIntent Schalte die Lampen {Light} Raum {Room} und in dem {Roomtwo} {Status}
+LightIntent Schalte die Lampen {Light} Raum {Room} und im Raum {Roomtwo} {Status}
+LightIntent Schalte die Lampen {Light} Raum {Room} und in dem Raum {Roomtwo} {Status}
+LightIntent Schalte die Lampen {Light} Raum {Room} und Raum {Roomtwo} {Status}
+LightIntent Schalte die Lampen {Light} Raum {Room} und in der {Roomtwo} {Status}
+LightIntent Schalte die Lampen {Light} in der {Room} und in {Roomtwo} {Status}
+LightIntent Schalte die Lampen {Light} in der {Room} und im {Roomtwo} {Status}
+LightIntent Schalte die Lampen {Light} in der {Room} und in dem {Roomtwo} {Status}
+LightIntent Schalte die Lampen {Light} in der {Room} und im Raum {Roomtwo} {Status}
+LightIntent Schalte die Lampen {Light} in der {Room} und in dem Raum {Roomtwo} {Status}
+LightIntent Schalte die Lampen {Light} in der {Room} und Raum {Roomtwo} {Status}
+LightIntent Schalte die Lampen {Light} in der {Room} und in der {Roomtwo} {Status}
+LightIntent Schalte Lampen {Light} in {Room} und in {Roomtwo} {Status}
+LightIntent Schalte Lampen {Light} in {Room} und im {Roomtwo} {Status}
+LightIntent Schalte Lampen {Light} in {Room} und in dem {Roomtwo} {Status}
+LightIntent Schalte Lampen {Light} in {Room} und im Raum {Roomtwo} {Status}
+LightIntent Schalte Lampen {Light} in {Room} und in dem Raum {Roomtwo} {Status}
+LightIntent Schalte Lampen {Light} in {Room} und Raum {Roomtwo} {Status}
+LightIntent Schalte Lampen {Light} in {Room} und in der {Roomtwo} {Status}
+LightIntent Schalte Lampen {Light} im {Room} und in {Roomtwo} {Status}
+LightIntent Schalte Lampen {Light} im {Room} und im {Roomtwo} {Status}
+LightIntent Schalte Lampen {Light} im {Room} und in dem {Roomtwo} {Status}
+LightIntent Schalte Lampen {Light} im {Room} und im Raum {Roomtwo} {Status}
+LightIntent Schalte Lampen {Light} im {Room} und in dem Raum {Roomtwo} {Status}
+LightIntent Schalte Lampen {Light} im {Room} und Raum {Roomtwo} {Status}
+LightIntent Schalte Lampen {Light} im {Room} und in der {Roomtwo} {Status}
+LightIntent Schalte Lampen {Light} in dem {Room} und in {Roomtwo} {Status}
+LightIntent Schalte Lampen {Light} in dem {Room} und im {Roomtwo} {Status}
+LightIntent Schalte Lampen {Light} in dem {Room} und in dem {Roomtwo} {Status}
+LightIntent Schalte Lampen {Light} in dem {Room} und im Raum {Roomtwo} {Status}
+LightIntent Schalte Lampen {Light} in dem {Room} und in dem Raum {Roomtwo} {Status}
+LightIntent Schalte Lampen {Light} in dem {Room} und Raum {Roomtwo} {Status}
+LightIntent Schalte Lampen {Light} in dem {Room} und in der {Roomtwo} {Status}
+LightIntent Schalte Lampen {Light} im Raum {Room} und in {Roomtwo} {Status}
+LightIntent Schalte Lampen {Light} im Raum {Room} und im {Roomtwo} {Status}
+LightIntent Schalte Lampen {Light} im Raum {Room} und in dem {Roomtwo} {Status}
+LightIntent Schalte Lampen {Light} im Raum {Room} und im Raum {Roomtwo} {Status}
+LightIntent Schalte Lampen {Light} im Raum {Room} und in dem Raum {Roomtwo} {Status}
+LightIntent Schalte Lampen {Light} im Raum {Room} und Raum {Roomtwo} {Status}
+LightIntent Schalte Lampen {Light} im Raum {Room} und in der {Roomtwo} {Status}
+LightIntent Schalte Lampen {Light} in dem Raum {Room} und in {Roomtwo} {Status}
+LightIntent Schalte Lampen {Light} in dem Raum {Room} und im {Roomtwo} {Status}
+LightIntent Schalte Lampen {Light} in dem Raum {Room} und in dem {Roomtwo} {Status}
+LightIntent Schalte Lampen {Light} in dem Raum {Room} und im Raum {Roomtwo} {Status}
+LightIntent Schalte Lampen {Light} in dem Raum {Room} und in dem Raum {Roomtwo} {Status}
+LightIntent Schalte Lampen {Light} in dem Raum {Room} und Raum {Roomtwo} {Status}
+LightIntent Schalte Lampen {Light} in dem Raum {Room} und in der {Roomtwo} {Status}
+LightIntent Schalte Lampen {Light} Raum {Room} und in {Roomtwo} {Status}
+LightIntent Schalte Lampen {Light} Raum {Room} und im {Roomtwo} {Status}
+LightIntent Schalte Lampen {Light} Raum {Room} und in dem {Roomtwo} {Status}
+LightIntent Schalte Lampen {Light} Raum {Room} und im Raum {Roomtwo} {Status}
+LightIntent Schalte Lampen {Light} Raum {Room} und in dem Raum {Roomtwo} {Status}
+LightIntent Schalte Lampen {Light} Raum {Room} und Raum {Roomtwo} {Status}
+LightIntent Schalte Lampen {Light} Raum {Room} und in der {Roomtwo} {Status}
+LightIntent Schalte Lampen {Light} in der {Room} und in {Roomtwo} {Status}
+LightIntent Schalte Lampen {Light} in der {Room} und im {Roomtwo} {Status}
+LightIntent Schalte Lampen {Light} in der {Room} und in dem {Roomtwo} {Status}
+LightIntent Schalte Lampen {Light} in der {Room} und im Raum {Roomtwo} {Status}
+LightIntent Schalte Lampen {Light} in der {Room} und in dem Raum {Roomtwo} {Status}
+LightIntent Schalte Lampen {Light} in der {Room} und Raum {Roomtwo} {Status}
+LightIntent Schalte Lampen {Light} in der {Room} und in der {Roomtwo} {Status}
+LightIntent Schalte die Lampe {Light} in {Room} und in {Roomtwo} {Status}
+LightIntent Schalte die Lampe {Light} in {Room} und im {Roomtwo} {Status}
+LightIntent Schalte die Lampe {Light} in {Room} und in dem {Roomtwo} {Status}
+LightIntent Schalte die Lampe {Light} in {Room} und im Raum {Roomtwo} {Status}
+LightIntent Schalte die Lampe {Light} in {Room} und in dem Raum {Roomtwo} {Status}
+LightIntent Schalte die Lampe {Light} in {Room} und Raum {Roomtwo} {Status}
+LightIntent Schalte die Lampe {Light} in {Room} und in der {Roomtwo} {Status}
+LightIntent Schalte die Lampe {Light} im {Room} und in {Roomtwo} {Status}
+LightIntent Schalte die Lampe {Light} im {Room} und im {Roomtwo} {Status}
+LightIntent Schalte die Lampe {Light} im {Room} und in dem {Roomtwo} {Status}
+LightIntent Schalte die Lampe {Light} im {Room} und im Raum {Roomtwo} {Status}
+LightIntent Schalte die Lampe {Light} im {Room} und in dem Raum {Roomtwo} {Status}
+LightIntent Schalte die Lampe {Light} im {Room} und Raum {Roomtwo} {Status}
+LightIntent Schalte die Lampe {Light} im {Room} und in der {Roomtwo} {Status}
+LightIntent Schalte die Lampe {Light} in dem {Room} und in {Roomtwo} {Status}
+LightIntent Schalte die Lampe {Light} in dem {Room} und im {Roomtwo} {Status}
+LightIntent Schalte die Lampe {Light} in dem {Room} und in dem {Roomtwo} {Status}
+LightIntent Schalte die Lampe {Light} in dem {Room} und im Raum {Roomtwo} {Status}
+LightIntent Schalte die Lampe {Light} in dem {Room} und in dem Raum {Roomtwo} {Status}
+LightIntent Schalte die Lampe {Light} in dem {Room} und Raum {Roomtwo} {Status}
+LightIntent Schalte die Lampe {Light} in dem {Room} und in der {Roomtwo} {Status}
+LightIntent Schalte die Lampe {Light} im Raum {Room} und in {Roomtwo} {Status}
+LightIntent Schalte die Lampe {Light} im Raum {Room} und im {Roomtwo} {Status}
+LightIntent Schalte die Lampe {Light} im Raum {Room} und in dem {Roomtwo} {Status}
+LightIntent Schalte die Lampe {Light} im Raum {Room} und im Raum {Roomtwo} {Status}
+LightIntent Schalte die Lampe {Light} im Raum {Room} und in dem Raum {Roomtwo} {Status}
+LightIntent Schalte die Lampe {Light} im Raum {Room} und Raum {Roomtwo} {Status}
+LightIntent Schalte die Lampe {Light} im Raum {Room} und in der {Roomtwo} {Status}
+LightIntent Schalte die Lampe {Light} in dem Raum {Room} und in {Roomtwo} {Status}
+LightIntent Schalte die Lampe {Light} in dem Raum {Room} und im {Roomtwo} {Status}
+LightIntent Schalte die Lampe {Light} in dem Raum {Room} und in dem {Roomtwo} {Status}
+LightIntent Schalte die Lampe {Light} in dem Raum {Room} und im Raum {Roomtwo} {Status}
+LightIntent Schalte die Lampe {Light} in dem Raum {Room} und in dem Raum {Roomtwo} {Status}
+LightIntent Schalte die Lampe {Light} in dem Raum {Room} und Raum {Roomtwo} {Status}
+LightIntent Schalte die Lampe {Light} in dem Raum {Room} und in der {Roomtwo} {Status}
+LightIntent Schalte die Lampe {Light} Raum {Room} und in {Roomtwo} {Status}
+LightIntent Schalte die Lampe {Light} Raum {Room} und im {Roomtwo} {Status}
+LightIntent Schalte die Lampe {Light} Raum {Room} und in dem {Roomtwo} {Status}
+LightIntent Schalte die Lampe {Light} Raum {Room} und im Raum {Roomtwo} {Status}
+LightIntent Schalte die Lampe {Light} Raum {Room} und in dem Raum {Roomtwo} {Status}
+LightIntent Schalte die Lampe {Light} Raum {Room} und Raum {Roomtwo} {Status}
+LightIntent Schalte die Lampe {Light} Raum {Room} und in der {Roomtwo} {Status}
+LightIntent Schalte die Lampe {Light} in der {Room} und in {Roomtwo} {Status}
+LightIntent Schalte die Lampe {Light} in der {Room} und im {Roomtwo} {Status}
+LightIntent Schalte die Lampe {Light} in der {Room} und in dem {Roomtwo} {Status}
+LightIntent Schalte die Lampe {Light} in der {Room} und im Raum {Roomtwo} {Status}
+LightIntent Schalte die Lampe {Light} in der {Room} und in dem Raum {Roomtwo} {Status}
+LightIntent Schalte die Lampe {Light} in der {Room} und Raum {Roomtwo} {Status}
+LightIntent Schalte die Lampe {Light} in der {Room} und in der {Roomtwo} {Status}
+LightIntent Schalte Lampe {Light} in {Room} und in {Roomtwo} {Status}
+LightIntent Schalte Lampe {Light} in {Room} und im {Roomtwo} {Status}
+LightIntent Schalte Lampe {Light} in {Room} und in dem {Roomtwo} {Status}
+LightIntent Schalte Lampe {Light} in {Room} und im Raum {Roomtwo} {Status}
+LightIntent Schalte Lampe {Light} in {Room} und in dem Raum {Roomtwo} {Status}
+LightIntent Schalte Lampe {Light} in {Room} und Raum {Roomtwo} {Status}
+LightIntent Schalte Lampe {Light} in {Room} und in der {Roomtwo} {Status}
+LightIntent Schalte Lampe {Light} im {Room} und in {Roomtwo} {Status}
+LightIntent Schalte Lampe {Light} im {Room} und im {Roomtwo} {Status}
+LightIntent Schalte Lampe {Light} im {Room} und in dem {Roomtwo} {Status}
+LightIntent Schalte Lampe {Light} im {Room} und im Raum {Roomtwo} {Status}
+LightIntent Schalte Lampe {Light} im {Room} und in dem Raum {Roomtwo} {Status}
+LightIntent Schalte Lampe {Light} im {Room} und Raum {Roomtwo} {Status}
+LightIntent Schalte Lampe {Light} im {Room} und in der {Roomtwo} {Status}
+LightIntent Schalte Lampe {Light} in dem {Room} und in {Roomtwo} {Status}
+LightIntent Schalte Lampe {Light} in dem {Room} und im {Roomtwo} {Status}
+LightIntent Schalte Lampe {Light} in dem {Room} und in dem {Roomtwo} {Status}
+LightIntent Schalte Lampe {Light} in dem {Room} und im Raum {Roomtwo} {Status}
+LightIntent Schalte Lampe {Light} in dem {Room} und in dem Raum {Roomtwo} {Status}
+LightIntent Schalte Lampe {Light} in dem {Room} und Raum {Roomtwo} {Status}
+LightIntent Schalte Lampe {Light} in dem {Room} und in der {Roomtwo} {Status}
+LightIntent Schalte Lampe {Light} im Raum {Room} und in {Roomtwo} {Status}
+LightIntent Schalte Lampe {Light} im Raum {Room} und im {Roomtwo} {Status}
+LightIntent Schalte Lampe {Light} im Raum {Room} und in dem {Roomtwo} {Status}
+LightIntent Schalte Lampe {Light} im Raum {Room} und im Raum {Roomtwo} {Status}
+LightIntent Schalte Lampe {Light} im Raum {Room} und in dem Raum {Roomtwo} {Status}
+LightIntent Schalte Lampe {Light} im Raum {Room} und Raum {Roomtwo} {Status}
+LightIntent Schalte Lampe {Light} im Raum {Room} und in der {Roomtwo} {Status}
+LightIntent Schalte Lampe {Light} in dem Raum {Room} und in {Roomtwo} {Status}
+LightIntent Schalte Lampe {Light} in dem Raum {Room} und im {Roomtwo} {Status}
+LightIntent Schalte Lampe {Light} in dem Raum {Room} und in dem {Roomtwo} {Status}
+LightIntent Schalte Lampe {Light} in dem Raum {Room} und im Raum {Roomtwo} {Status}
+LightIntent Schalte Lampe {Light} in dem Raum {Room} und in dem Raum {Roomtwo} {Status}
+LightIntent Schalte Lampe {Light} in dem Raum {Room} und Raum {Roomtwo} {Status}
+LightIntent Schalte Lampe {Light} in dem Raum {Room} und in der {Roomtwo} {Status}
+LightIntent Schalte Lampe {Light} Raum {Room} und in {Roomtwo} {Status}
+LightIntent Schalte Lampe {Light} Raum {Room} und im {Roomtwo} {Status}
+LightIntent Schalte Lampe {Light} Raum {Room} und in dem {Roomtwo} {Status}
+LightIntent Schalte Lampe {Light} Raum {Room} und im Raum {Roomtwo} {Status}
+LightIntent Schalte Lampe {Light} Raum {Room} und in dem Raum {Roomtwo} {Status}
+LightIntent Schalte Lampe {Light} Raum {Room} und Raum {Roomtwo} {Status}
+LightIntent Schalte Lampe {Light} Raum {Room} und in der {Roomtwo} {Status}
+LightIntent Schalte Lampe {Light} in der {Room} und in {Roomtwo} {Status}
+LightIntent Schalte Lampe {Light} in der {Room} und im {Roomtwo} {Status}
+LightIntent Schalte Lampe {Light} in der {Room} und in dem {Roomtwo} {Status}
+LightIntent Schalte Lampe {Light} in der {Room} und im Raum {Roomtwo} {Status}
+LightIntent Schalte Lampe {Light} in der {Room} und in dem Raum {Roomtwo} {Status}
+LightIntent Schalte Lampe {Light} in der {Room} und Raum {Roomtwo} {Status}
+LightIntent Schalte Lampe {Light} in der {Room} und in der {Roomtwo} {Status}
+LightIntent Schalte Licht {Light} in {Room} und in {Roomtwo} {Status}
+LightIntent Schalte Licht {Light} in {Room} und im {Roomtwo} {Status}
+LightIntent Schalte Licht {Light} in {Room} und in dem {Roomtwo} {Status}
+LightIntent Schalte Licht {Light} in {Room} und im Raum {Roomtwo} {Status}
+LightIntent Schalte Licht {Light} in {Room} und in dem Raum {Roomtwo} {Status}
+LightIntent Schalte Licht {Light} in {Room} und Raum {Roomtwo} {Status}
+LightIntent Schalte Licht {Light} in {Room} und in der {Roomtwo} {Status}
+LightIntent Schalte Licht {Light} im {Room} und in {Roomtwo} {Status}
+LightIntent Schalte Licht {Light} im {Room} und im {Roomtwo} {Status}
+LightIntent Schalte Licht {Light} im {Room} und in dem {Roomtwo} {Status}
+LightIntent Schalte Licht {Light} im {Room} und im Raum {Roomtwo} {Status}
+LightIntent Schalte Licht {Light} im {Room} und in dem Raum {Roomtwo} {Status}
+LightIntent Schalte Licht {Light} im {Room} und Raum {Roomtwo} {Status}
+LightIntent Schalte Licht {Light} im {Room} und in der {Roomtwo} {Status}
+LightIntent Schalte Licht {Light} in dem {Room} und in {Roomtwo} {Status}
+LightIntent Schalte Licht {Light} in dem {Room} und im {Roomtwo} {Status}
+LightIntent Schalte Licht {Light} in dem {Room} und in dem {Roomtwo} {Status}
+LightIntent Schalte Licht {Light} in dem {Room} und im Raum {Roomtwo} {Status}
+LightIntent Schalte Licht {Light} in dem {Room} und in dem Raum {Roomtwo} {Status}
+LightIntent Schalte Licht {Light} in dem {Room} und Raum {Roomtwo} {Status}
+LightIntent Schalte Licht {Light} in dem {Room} und in der {Roomtwo} {Status}
+LightIntent Schalte Licht {Light} im Raum {Room} und in {Roomtwo} {Status}
+LightIntent Schalte Licht {Light} im Raum {Room} und im {Roomtwo} {Status}
+LightIntent Schalte Licht {Light} im Raum {Room} und in dem {Roomtwo} {Status}
+LightIntent Schalte Licht {Light} im Raum {Room} und im Raum {Roomtwo} {Status}
+LightIntent Schalte Licht {Light} im Raum {Room} und in dem Raum {Roomtwo} {Status}
+LightIntent Schalte Licht {Light} im Raum {Room} und Raum {Roomtwo} {Status}
+LightIntent Schalte Licht {Light} im Raum {Room} und in der {Roomtwo} {Status}
+LightIntent Schalte Licht {Light} in dem Raum {Room} und in {Roomtwo} {Status}
+LightIntent Schalte Licht {Light} in dem Raum {Room} und im {Roomtwo} {Status}
+LightIntent Schalte Licht {Light} in dem Raum {Room} und in dem {Roomtwo} {Status}
+LightIntent Schalte Licht {Light} in dem Raum {Room} und im Raum {Roomtwo} {Status}
+LightIntent Schalte Licht {Light} in dem Raum {Room} und in dem Raum {Roomtwo} {Status}
+LightIntent Schalte Licht {Light} in dem Raum {Room} und Raum {Roomtwo} {Status}
+LightIntent Schalte Licht {Light} in dem Raum {Room} und in der {Roomtwo} {Status}
+LightIntent Schalte Licht {Light} Raum {Room} und in {Roomtwo} {Status}
+LightIntent Schalte Licht {Light} Raum {Room} und im {Roomtwo} {Status}
+LightIntent Schalte Licht {Light} Raum {Room} und in dem {Roomtwo} {Status}
+LightIntent Schalte Licht {Light} Raum {Room} und im Raum {Roomtwo} {Status}
+LightIntent Schalte Licht {Light} Raum {Room} und in dem Raum {Roomtwo} {Status}
+LightIntent Schalte Licht {Light} Raum {Room} und Raum {Roomtwo} {Status}
+LightIntent Schalte Licht {Light} Raum {Room} und in der {Roomtwo} {Status}
+LightIntent Schalte Licht {Light} in der {Room} und in {Roomtwo} {Status}
+LightIntent Schalte Licht {Light} in der {Room} und im {Roomtwo} {Status}
+LightIntent Schalte Licht {Light} in der {Room} und in dem {Roomtwo} {Status}
+LightIntent Schalte Licht {Light} in der {Room} und im Raum {Roomtwo} {Status}
+LightIntent Schalte Licht {Light} in der {Room} und in dem Raum {Roomtwo} {Status}
+LightIntent Schalte Licht {Light} in der {Room} und Raum {Roomtwo} {Status}
+LightIntent Schalte Licht {Light} in der {Room} und in der {Roomtwo} {Status}
+LightIntent Schalte das Licht {Light} in {Room} und in {Roomtwo} {Status}
+LightIntent Schalte das Licht {Light} in {Room} und im {Roomtwo} {Status}
+LightIntent Schalte das Licht {Light} in {Room} und in dem {Roomtwo} {Status}
+LightIntent Schalte das Licht {Light} in {Room} und im Raum {Roomtwo} {Status}
+LightIntent Schalte das Licht {Light} in {Room} und in dem Raum {Roomtwo} {Status}
+LightIntent Schalte das Licht {Light} in {Room} und Raum {Roomtwo} {Status}
+LightIntent Schalte das Licht {Light} in {Room} und in der {Roomtwo} {Status}
+LightIntent Schalte das Licht {Light} im {Room} und in {Roomtwo} {Status}
+LightIntent Schalte das Licht {Light} im {Room} und im {Roomtwo} {Status}
+LightIntent Schalte das Licht {Light} im {Room} und in dem {Roomtwo} {Status}
+LightIntent Schalte das Licht {Light} im {Room} und im Raum {Roomtwo} {Status}
+LightIntent Schalte das Licht {Light} im {Room} und in dem Raum {Roomtwo} {Status}
+LightIntent Schalte das Licht {Light} im {Room} und Raum {Roomtwo} {Status}
+LightIntent Schalte das Licht {Light} im {Room} und in der {Roomtwo} {Status}
+LightIntent Schalte das Licht {Light} in dem {Room} und in {Roomtwo} {Status}
+LightIntent Schalte das Licht {Light} in dem {Room} und im {Roomtwo} {Status}
+LightIntent Schalte das Licht {Light} in dem {Room} und in dem {Roomtwo} {Status}
+LightIntent Schalte das Licht {Light} in dem {Room} und im Raum {Roomtwo} {Status}
+LightIntent Schalte das Licht {Light} in dem {Room} und in dem Raum {Roomtwo} {Status}
+LightIntent Schalte das Licht {Light} in dem {Room} und Raum {Roomtwo} {Status}
+LightIntent Schalte das Licht {Light} in dem {Room} und in der {Roomtwo} {Status}
+LightIntent Schalte das Licht {Light} im Raum {Room} und in {Roomtwo} {Status}
+LightIntent Schalte das Licht {Light} im Raum {Room} und im {Roomtwo} {Status}
+LightIntent Schalte das Licht {Light} im Raum {Room} und in dem {Roomtwo} {Status}
+LightIntent Schalte das Licht {Light} im Raum {Room} und im Raum {Roomtwo} {Status}
+LightIntent Schalte das Licht {Light} im Raum {Room} und in dem Raum {Roomtwo} {Status}
+LightIntent Schalte das Licht {Light} im Raum {Room} und Raum {Roomtwo} {Status}
+LightIntent Schalte das Licht {Light} im Raum {Room} und in der {Roomtwo} {Status}
+LightIntent Schalte das Licht {Light} in dem Raum {Room} und in {Roomtwo} {Status}
+LightIntent Schalte das Licht {Light} in dem Raum {Room} und im {Roomtwo} {Status}
+LightIntent Schalte das Licht {Light} in dem Raum {Room} und in dem {Roomtwo} {Status}
+LightIntent Schalte das Licht {Light} in dem Raum {Room} und im Raum {Roomtwo} {Status}
+LightIntent Schalte das Licht {Light} in dem Raum {Room} und in dem Raum {Roomtwo} {Status}
+LightIntent Schalte das Licht {Light} in dem Raum {Room} und Raum {Roomtwo} {Status}
+LightIntent Schalte das Licht {Light} in dem Raum {Room} und in der {Roomtwo} {Status}
+LightIntent Schalte das Licht {Light} Raum {Room} und in {Roomtwo} {Status}
+LightIntent Schalte das Licht {Light} Raum {Room} und im {Roomtwo} {Status}
+LightIntent Schalte das Licht {Light} Raum {Room} und in dem {Roomtwo} {Status}
+LightIntent Schalte das Licht {Light} Raum {Room} und im Raum {Roomtwo} {Status}
+LightIntent Schalte das Licht {Light} Raum {Room} und in dem Raum {Roomtwo} {Status}
+LightIntent Schalte das Licht {Light} Raum {Room} und Raum {Roomtwo} {Status}
+LightIntent Schalte das Licht {Light} Raum {Room} und in der {Roomtwo} {Status}
+LightIntent Schalte das Licht {Light} in der {Room} und in {Roomtwo} {Status}
+LightIntent Schalte das Licht {Light} in der {Room} und im {Roomtwo} {Status}
+LightIntent Schalte das Licht {Light} in der {Room} und in dem {Roomtwo} {Status}
+LightIntent Schalte das Licht {Light} in der {Room} und im Raum {Roomtwo} {Status}
+LightIntent Schalte das Licht {Light} in der {Room} und in dem Raum {Roomtwo} {Status}
+LightIntent Schalte das Licht {Light} in der {Room} und Raum {Roomtwo} {Status}
+LightIntent Schalte das Licht {Light} in der {Room} und in der {Roomtwo} {Status}
+LightIntent die Lichter {Light} in {Room} und in {Roomtwo} {Status}
+LightIntent die Lichter {Light} in {Room} und im {Roomtwo} {Status}
+LightIntent die Lichter {Light} in {Room} und in dem {Roomtwo} {Status}
+LightIntent die Lichter {Light} in {Room} und im Raum {Roomtwo} {Status}
+LightIntent die Lichter {Light} in {Room} und in dem Raum {Roomtwo} {Status}
+LightIntent die Lichter {Light} in {Room} und Raum {Roomtwo} {Status}
+LightIntent die Lichter {Light} in {Room} und in der {Roomtwo} {Status}
+LightIntent die Lichter {Light} im {Room} und in {Roomtwo} {Status}
+LightIntent die Lichter {Light} im {Room} und im {Roomtwo} {Status}
+LightIntent die Lichter {Light} im {Room} und in dem {Roomtwo} {Status}
+LightIntent die Lichter {Light} im {Room} und im Raum {Roomtwo} {Status}
+LightIntent die Lichter {Light} im {Room} und in dem Raum {Roomtwo} {Status}
+LightIntent die Lichter {Light} im {Room} und Raum {Roomtwo} {Status}
+LightIntent die Lichter {Light} im {Room} und in der {Roomtwo} {Status}
+LightIntent die Lichter {Light} in dem {Room} und in {Roomtwo} {Status}
+LightIntent die Lichter {Light} in dem {Room} und im {Roomtwo} {Status}
+LightIntent die Lichter {Light} in dem {Room} und in dem {Roomtwo} {Status}
+LightIntent die Lichter {Light} in dem {Room} und im Raum {Roomtwo} {Status}
+LightIntent die Lichter {Light} in dem {Room} und in dem Raum {Roomtwo} {Status}
+LightIntent die Lichter {Light} in dem {Room} und Raum {Roomtwo} {Status}
+LightIntent die Lichter {Light} in dem {Room} und in der {Roomtwo} {Status}
+LightIntent die Lichter {Light} im Raum {Room} und in {Roomtwo} {Status}
+LightIntent die Lichter {Light} im Raum {Room} und im {Roomtwo} {Status}
+LightIntent die Lichter {Light} im Raum {Room} und in dem {Roomtwo} {Status}
+LightIntent die Lichter {Light} im Raum {Room} und im Raum {Roomtwo} {Status}
+LightIntent die Lichter {Light} im Raum {Room} und in dem Raum {Roomtwo} {Status}
+LightIntent die Lichter {Light} im Raum {Room} und Raum {Roomtwo} {Status}
+LightIntent die Lichter {Light} im Raum {Room} und in der {Roomtwo} {Status}
+LightIntent die Lichter {Light} in dem Raum {Room} und in {Roomtwo} {Status}
+LightIntent die Lichter {Light} in dem Raum {Room} und im {Roomtwo} {Status}
+LightIntent die Lichter {Light} in dem Raum {Room} und in dem {Roomtwo} {Status}
+LightIntent die Lichter {Light} in dem Raum {Room} und im Raum {Roomtwo} {Status}
+LightIntent die Lichter {Light} in dem Raum {Room} und in dem Raum {Roomtwo} {Status}
+LightIntent die Lichter {Light} in dem Raum {Room} und Raum {Roomtwo} {Status}
+LightIntent die Lichter {Light} in dem Raum {Room} und in der {Roomtwo} {Status}
+LightIntent die Lichter {Light} Raum {Room} und in {Roomtwo} {Status}
+LightIntent die Lichter {Light} Raum {Room} und im {Roomtwo} {Status}
+LightIntent die Lichter {Light} Raum {Room} und in dem {Roomtwo} {Status}
+LightIntent die Lichter {Light} Raum {Room} und im Raum {Roomtwo} {Status}
+LightIntent die Lichter {Light} Raum {Room} und in dem Raum {Roomtwo} {Status}
+LightIntent die Lichter {Light} Raum {Room} und Raum {Roomtwo} {Status}
+LightIntent die Lichter {Light} Raum {Room} und in der {Roomtwo} {Status}
+LightIntent die Lichter {Light} in der {Room} und in {Roomtwo} {Status}
+LightIntent die Lichter {Light} in der {Room} und im {Roomtwo} {Status}
+LightIntent die Lichter {Light} in der {Room} und in dem {Roomtwo} {Status}
+LightIntent die Lichter {Light} in der {Room} und im Raum {Roomtwo} {Status}
+LightIntent die Lichter {Light} in der {Room} und in dem Raum {Roomtwo} {Status}
+LightIntent die Lichter {Light} in der {Room} und Raum {Roomtwo} {Status}
+LightIntent die Lichter {Light} in der {Room} und in der {Roomtwo} {Status}
+LightIntent Lichter {Light} in {Room} und in {Roomtwo} {Status}
+LightIntent Lichter {Light} in {Room} und im {Roomtwo} {Status}
+LightIntent Lichter {Light} in {Room} und in dem {Roomtwo} {Status}
+LightIntent Lichter {Light} in {Room} und im Raum {Roomtwo} {Status}
+LightIntent Lichter {Light} in {Room} und in dem Raum {Roomtwo} {Status}
+LightIntent Lichter {Light} in {Room} und Raum {Roomtwo} {Status}
+LightIntent Lichter {Light} in {Room} und in der {Roomtwo} {Status}
+LightIntent Lichter {Light} im {Room} und in {Roomtwo} {Status}
+LightIntent Lichter {Light} im {Room} und im {Roomtwo} {Status}
+LightIntent Lichter {Light} im {Room} und in dem {Roomtwo} {Status}
+LightIntent Lichter {Light} im {Room} und im Raum {Roomtwo} {Status}
+LightIntent Lichter {Light} im {Room} und in dem Raum {Roomtwo} {Status}
+LightIntent Lichter {Light} im {Room} und Raum {Roomtwo} {Status}
+LightIntent Lichter {Light} im {Room} und in der {Roomtwo} {Status}
+LightIntent Lichter {Light} in dem {Room} und in {Roomtwo} {Status}
+LightIntent Lichter {Light} in dem {Room} und im {Roomtwo} {Status}
+LightIntent Lichter {Light} in dem {Room} und in dem {Roomtwo} {Status}
+LightIntent Lichter {Light} in dem {Room} und im Raum {Roomtwo} {Status}
+LightIntent Lichter {Light} in dem {Room} und in dem Raum {Roomtwo} {Status}
+LightIntent Lichter {Light} in dem {Room} und Raum {Roomtwo} {Status}
+LightIntent Lichter {Light} in dem {Room} und in der {Roomtwo} {Status}
+LightIntent Lichter {Light} im Raum {Room} und in {Roomtwo} {Status}
+LightIntent Lichter {Light} im Raum {Room} und im {Roomtwo} {Status}
+LightIntent Lichter {Light} im Raum {Room} und in dem {Roomtwo} {Status}
+LightIntent Lichter {Light} im Raum {Room} und im Raum {Roomtwo} {Status}
+LightIntent Lichter {Light} im Raum {Room} und in dem Raum {Roomtwo} {Status}
+LightIntent Lichter {Light} im Raum {Room} und Raum {Roomtwo} {Status}
+LightIntent Lichter {Light} im Raum {Room} und in der {Roomtwo} {Status}
+LightIntent Lichter {Light} in dem Raum {Room} und in {Roomtwo} {Status}
+LightIntent Lichter {Light} in dem Raum {Room} und im {Roomtwo} {Status}
+LightIntent Lichter {Light} in dem Raum {Room} und in dem {Roomtwo} {Status}
+LightIntent Lichter {Light} in dem Raum {Room} und im Raum {Roomtwo} {Status}
+LightIntent Lichter {Light} in dem Raum {Room} und in dem Raum {Roomtwo} {Status}
+LightIntent Lichter {Light} in dem Raum {Room} und Raum {Roomtwo} {Status}
+LightIntent Lichter {Light} in dem Raum {Room} und in der {Roomtwo} {Status}
+LightIntent Lichter {Light} Raum {Room} und in {Roomtwo} {Status}
+LightIntent Lichter {Light} Raum {Room} und im {Roomtwo} {Status}
+LightIntent Lichter {Light} Raum {Room} und in dem {Roomtwo} {Status}
+LightIntent Lichter {Light} Raum {Room} und im Raum {Roomtwo} {Status}
+LightIntent Lichter {Light} Raum {Room} und in dem Raum {Roomtwo} {Status}
+LightIntent Lichter {Light} Raum {Room} und Raum {Roomtwo} {Status}
+LightIntent Lichter {Light} Raum {Room} und in der {Roomtwo} {Status}
+LightIntent Lichter {Light} in der {Room} und in {Roomtwo} {Status}
+LightIntent Lichter {Light} in der {Room} und im {Roomtwo} {Status}
+LightIntent Lichter {Light} in der {Room} und in dem {Roomtwo} {Status}
+LightIntent Lichter {Light} in der {Room} und im Raum {Roomtwo} {Status}
+LightIntent Lichter {Light} in der {Room} und in dem Raum {Roomtwo} {Status}
+LightIntent Lichter {Light} in der {Room} und Raum {Roomtwo} {Status}
+LightIntent Lichter {Light} in der {Room} und in der {Roomtwo} {Status}
+LightIntent die Lampen {Light} in {Room} und in {Roomtwo} {Status}
+LightIntent die Lampen {Light} in {Room} und im {Roomtwo} {Status}
+LightIntent die Lampen {Light} in {Room} und in dem {Roomtwo} {Status}
+LightIntent die Lampen {Light} in {Room} und im Raum {Roomtwo} {Status}
+LightIntent die Lampen {Light} in {Room} und in dem Raum {Roomtwo} {Status}
+LightIntent die Lampen {Light} in {Room} und Raum {Roomtwo} {Status}
+LightIntent die Lampen {Light} in {Room} und in der {Roomtwo} {Status}
+LightIntent die Lampen {Light} im {Room} und in {Roomtwo} {Status}
+LightIntent die Lampen {Light} im {Room} und im {Roomtwo} {Status}
+LightIntent die Lampen {Light} im {Room} und in dem {Roomtwo} {Status}
+LightIntent die Lampen {Light} im {Room} und im Raum {Roomtwo} {Status}
+LightIntent die Lampen {Light} im {Room} und in dem Raum {Roomtwo} {Status}
+LightIntent die Lampen {Light} im {Room} und Raum {Roomtwo} {Status}
+LightIntent die Lampen {Light} im {Room} und in der {Roomtwo} {Status}
+LightIntent die Lampen {Light} in dem {Room} und in {Roomtwo} {Status}
+LightIntent die Lampen {Light} in dem {Room} und im {Roomtwo} {Status}
+LightIntent die Lampen {Light} in dem {Room} und in dem {Roomtwo} {Status}
+LightIntent die Lampen {Light} in dem {Room} und im Raum {Roomtwo} {Status}
+LightIntent die Lampen {Light} in dem {Room} und in dem Raum {Roomtwo} {Status}
+LightIntent die Lampen {Light} in dem {Room} und Raum {Roomtwo} {Status}
+LightIntent die Lampen {Light} in dem {Room} und in der {Roomtwo} {Status}
+LightIntent die Lampen {Light} im Raum {Room} und in {Roomtwo} {Status}
+LightIntent die Lampen {Light} im Raum {Room} und im {Roomtwo} {Status}
+LightIntent die Lampen {Light} im Raum {Room} und in dem {Roomtwo} {Status}
+LightIntent die Lampen {Light} im Raum {Room} und im Raum {Roomtwo} {Status}
+LightIntent die Lampen {Light} im Raum {Room} und in dem Raum {Roomtwo} {Status}
+LightIntent die Lampen {Light} im Raum {Room} und Raum {Roomtwo} {Status}
+LightIntent die Lampen {Light} im Raum {Room} und in der {Roomtwo} {Status}
+LightIntent die Lampen {Light} in dem Raum {Room} und in {Roomtwo} {Status}
+LightIntent die Lampen {Light} in dem Raum {Room} und im {Roomtwo} {Status}
+LightIntent die Lampen {Light} in dem Raum {Room} und in dem {Roomtwo} {Status}
+LightIntent die Lampen {Light} in dem Raum {Room} und im Raum {Roomtwo} {Status}
+LightIntent die Lampen {Light} in dem Raum {Room} und in dem Raum {Roomtwo} {Status}
+LightIntent die Lampen {Light} in dem Raum {Room} und Raum {Roomtwo} {Status}
+LightIntent die Lampen {Light} in dem Raum {Room} und in der {Roomtwo} {Status}
+LightIntent die Lampen {Light} Raum {Room} und in {Roomtwo} {Status}
+LightIntent die Lampen {Light} Raum {Room} und im {Roomtwo} {Status}
+LightIntent die Lampen {Light} Raum {Room} und in dem {Roomtwo} {Status}
+LightIntent die Lampen {Light} Raum {Room} und im Raum {Roomtwo} {Status}
+LightIntent die Lampen {Light} Raum {Room} und in dem Raum {Roomtwo} {Status}
+LightIntent die Lampen {Light} Raum {Room} und Raum {Roomtwo} {Status}
+LightIntent die Lampen {Light} Raum {Room} und in der {Roomtwo} {Status}
+LightIntent die Lampen {Light} in der {Room} und in {Roomtwo} {Status}
+LightIntent die Lampen {Light} in der {Room} und im {Roomtwo} {Status}
+LightIntent die Lampen {Light} in der {Room} und in dem {Roomtwo} {Status}
+LightIntent die Lampen {Light} in der {Room} und im Raum {Roomtwo} {Status}
+LightIntent die Lampen {Light} in der {Room} und in dem Raum {Roomtwo} {Status}
+LightIntent die Lampen {Light} in der {Room} und Raum {Roomtwo} {Status}
+LightIntent die Lampen {Light} in der {Room} und in der {Roomtwo} {Status}
+LightIntent Lampen {Light} in {Room} und in {Roomtwo} {Status}
+LightIntent Lampen {Light} in {Room} und im {Roomtwo} {Status}
+LightIntent Lampen {Light} in {Room} und in dem {Roomtwo} {Status}
+LightIntent Lampen {Light} in {Room} und im Raum {Roomtwo} {Status}
+LightIntent Lampen {Light} in {Room} und in dem Raum {Roomtwo} {Status}
+LightIntent Lampen {Light} in {Room} und Raum {Roomtwo} {Status}
+LightIntent Lampen {Light} in {Room} und in der {Roomtwo} {Status}
+LightIntent Lampen {Light} im {Room} und in {Roomtwo} {Status}
+LightIntent Lampen {Light} im {Room} und im {Roomtwo} {Status}
+LightIntent Lampen {Light} im {Room} und in dem {Roomtwo} {Status}
+LightIntent Lampen {Light} im {Room} und im Raum {Roomtwo} {Status}
+LightIntent Lampen {Light} im {Room} und in dem Raum {Roomtwo} {Status}
+LightIntent Lampen {Light} im {Room} und Raum {Roomtwo} {Status}
+LightIntent Lampen {Light} im {Room} und in der {Roomtwo} {Status}
+LightIntent Lampen {Light} in dem {Room} und in {Roomtwo} {Status}
+LightIntent Lampen {Light} in dem {Room} und im {Roomtwo} {Status}
+LightIntent Lampen {Light} in dem {Room} und in dem {Roomtwo} {Status}
+LightIntent Lampen {Light} in dem {Room} und im Raum {Roomtwo} {Status}
+LightIntent Lampen {Light} in dem {Room} und in dem Raum {Roomtwo} {Status}
+LightIntent Lampen {Light} in dem {Room} und Raum {Roomtwo} {Status}
+LightIntent Lampen {Light} in dem {Room} und in der {Roomtwo} {Status}
+LightIntent Lampen {Light} im Raum {Room} und in {Roomtwo} {Status}
+LightIntent Lampen {Light} im Raum {Room} und im {Roomtwo} {Status}
+LightIntent Lampen {Light} im Raum {Room} und in dem {Roomtwo} {Status}
+LightIntent Lampen {Light} im Raum {Room} und im Raum {Roomtwo} {Status}
+LightIntent Lampen {Light} im Raum {Room} und in dem Raum {Roomtwo} {Status}
+LightIntent Lampen {Light} im Raum {Room} und Raum {Roomtwo} {Status}
+LightIntent Lampen {Light} im Raum {Room} und in der {Roomtwo} {Status}
+LightIntent Lampen {Light} in dem Raum {Room} und in {Roomtwo} {Status}
+LightIntent Lampen {Light} in dem Raum {Room} und im {Roomtwo} {Status}
+LightIntent Lampen {Light} in dem Raum {Room} und in dem {Roomtwo} {Status}
+LightIntent Lampen {Light} in dem Raum {Room} und im Raum {Roomtwo} {Status}
+LightIntent Lampen {Light} in dem Raum {Room} und in dem Raum {Roomtwo} {Status}
+LightIntent Lampen {Light} in dem Raum {Room} und Raum {Roomtwo} {Status}
+LightIntent Lampen {Light} in dem Raum {Room} und in der {Roomtwo} {Status}
+LightIntent Lampen {Light} Raum {Room} und in {Roomtwo} {Status}
+LightIntent Lampen {Light} Raum {Room} und im {Roomtwo} {Status}
+LightIntent Lampen {Light} Raum {Room} und in dem {Roomtwo} {Status}
+LightIntent Lampen {Light} Raum {Room} und im Raum {Roomtwo} {Status}
+LightIntent Lampen {Light} Raum {Room} und in dem Raum {Roomtwo} {Status}
+LightIntent Lampen {Light} Raum {Room} und Raum {Roomtwo} {Status}
+LightIntent Lampen {Light} Raum {Room} und in der {Roomtwo} {Status}
+LightIntent Lampen {Light} in der {Room} und in {Roomtwo} {Status}
+LightIntent Lampen {Light} in der {Room} und im {Roomtwo} {Status}
+LightIntent Lampen {Light} in der {Room} und in dem {Roomtwo} {Status}
+LightIntent Lampen {Light} in der {Room} und im Raum {Roomtwo} {Status}
+LightIntent Lampen {Light} in der {Room} und in dem Raum {Roomtwo} {Status}
+LightIntent Lampen {Light} in der {Room} und Raum {Roomtwo} {Status}
+LightIntent Lampen {Light} in der {Room} und in der {Roomtwo} {Status}
+LightIntent die Lampe {Light} in {Room} und in {Roomtwo} {Status}
+LightIntent die Lampe {Light} in {Room} und im {Roomtwo} {Status}
+LightIntent die Lampe {Light} in {Room} und in dem {Roomtwo} {Status}
+LightIntent die Lampe {Light} in {Room} und im Raum {Roomtwo} {Status}
+LightIntent die Lampe {Light} in {Room} und in dem Raum {Roomtwo} {Status}
+LightIntent die Lampe {Light} in {Room} und Raum {Roomtwo} {Status}
+LightIntent die Lampe {Light} in {Room} und in der {Roomtwo} {Status}
+LightIntent die Lampe {Light} im {Room} und in {Roomtwo} {Status}
+LightIntent die Lampe {Light} im {Room} und im {Roomtwo} {Status}
+LightIntent die Lampe {Light} im {Room} und in dem {Roomtwo} {Status}
+LightIntent die Lampe {Light} im {Room} und im Raum {Roomtwo} {Status}
+LightIntent die Lampe {Light} im {Room} und in dem Raum {Roomtwo} {Status}
+LightIntent die Lampe {Light} im {Room} und Raum {Roomtwo} {Status}
+LightIntent die Lampe {Light} im {Room} und in der {Roomtwo} {Status}
+LightIntent die Lampe {Light} in dem {Room} und in {Roomtwo} {Status}
+LightIntent die Lampe {Light} in dem {Room} und im {Roomtwo} {Status}
+LightIntent die Lampe {Light} in dem {Room} und in dem {Roomtwo} {Status}
+LightIntent die Lampe {Light} in dem {Room} und im Raum {Roomtwo} {Status}
+LightIntent die Lampe {Light} in dem {Room} und in dem Raum {Roomtwo} {Status}
+LightIntent die Lampe {Light} in dem {Room} und Raum {Roomtwo} {Status}
+LightIntent die Lampe {Light} in dem {Room} und in der {Roomtwo} {Status}
+LightIntent die Lampe {Light} im Raum {Room} und in {Roomtwo} {Status}
+LightIntent die Lampe {Light} im Raum {Room} und im {Roomtwo} {Status}
+LightIntent die Lampe {Light} im Raum {Room} und in dem {Roomtwo} {Status}
+LightIntent die Lampe {Light} im Raum {Room} und im Raum {Roomtwo} {Status}
+LightIntent die Lampe {Light} im Raum {Room} und in dem Raum {Roomtwo} {Status}
+LightIntent die Lampe {Light} im Raum {Room} und Raum {Roomtwo} {Status}
+LightIntent die Lampe {Light} im Raum {Room} und in der {Roomtwo} {Status}
+LightIntent die Lampe {Light} in dem Raum {Room} und in {Roomtwo} {Status}
+LightIntent die Lampe {Light} in dem Raum {Room} und im {Roomtwo} {Status}
+LightIntent die Lampe {Light} in dem Raum {Room} und in dem {Roomtwo} {Status}
+LightIntent die Lampe {Light} in dem Raum {Room} und im Raum {Roomtwo} {Status}
+LightIntent die Lampe {Light} in dem Raum {Room} und in dem Raum {Roomtwo} {Status}
+LightIntent die Lampe {Light} in dem Raum {Room} und Raum {Roomtwo} {Status}
+LightIntent die Lampe {Light} in dem Raum {Room} und in der {Roomtwo} {Status}
+LightIntent die Lampe {Light} Raum {Room} und in {Roomtwo} {Status}
+LightIntent die Lampe {Light} Raum {Room} und im {Roomtwo} {Status}
+LightIntent die Lampe {Light} Raum {Room} und in dem {Roomtwo} {Status}
+LightIntent die Lampe {Light} Raum {Room} und im Raum {Roomtwo} {Status}
+LightIntent die Lampe {Light} Raum {Room} und in dem Raum {Roomtwo} {Status}
+LightIntent die Lampe {Light} Raum {Room} und Raum {Roomtwo} {Status}
+LightIntent die Lampe {Light} Raum {Room} und in der {Roomtwo} {Status}
+LightIntent die Lampe {Light} in der {Room} und in {Roomtwo} {Status}
+LightIntent die Lampe {Light} in der {Room} und im {Roomtwo} {Status}
+LightIntent die Lampe {Light} in der {Room} und in dem {Roomtwo} {Status}
+LightIntent die Lampe {Light} in der {Room} und im Raum {Roomtwo} {Status}
+LightIntent die Lampe {Light} in der {Room} und in dem Raum {Roomtwo} {Status}
+LightIntent die Lampe {Light} in der {Room} und Raum {Roomtwo} {Status}
+LightIntent die Lampe {Light} in der {Room} und in der {Roomtwo} {Status}
+LightIntent Lampe {Light} in {Room} und in {Roomtwo} {Status}
+LightIntent Lampe {Light} in {Room} und im {Roomtwo} {Status}
+LightIntent Lampe {Light} in {Room} und in dem {Roomtwo} {Status}
+LightIntent Lampe {Light} in {Room} und im Raum {Roomtwo} {Status}
+LightIntent Lampe {Light} in {Room} und in dem Raum {Roomtwo} {Status}
+LightIntent Lampe {Light} in {Room} und Raum {Roomtwo} {Status}
+LightIntent Lampe {Light} in {Room} und in der {Roomtwo} {Status}
+LightIntent Lampe {Light} im {Room} und in {Roomtwo} {Status}
+LightIntent Lampe {Light} im {Room} und im {Roomtwo} {Status}
+LightIntent Lampe {Light} im {Room} und in dem {Roomtwo} {Status}
+LightIntent Lampe {Light} im {Room} und im Raum {Roomtwo} {Status}
+LightIntent Lampe {Light} im {Room} und in dem Raum {Roomtwo} {Status}
+LightIntent Lampe {Light} im {Room} und Raum {Roomtwo} {Status}
+LightIntent Lampe {Light} im {Room} und in der {Roomtwo} {Status}
+LightIntent Lampe {Light} in dem {Room} und in {Roomtwo} {Status}
+LightIntent Lampe {Light} in dem {Room} und im {Roomtwo} {Status}
+LightIntent Lampe {Light} in dem {Room} und in dem {Roomtwo} {Status}
+LightIntent Lampe {Light} in dem {Room} und im Raum {Roomtwo} {Status}
+LightIntent Lampe {Light} in dem {Room} und in dem Raum {Roomtwo} {Status}
+LightIntent Lampe {Light} in dem {Room} und Raum {Roomtwo} {Status}
+LightIntent Lampe {Light} in dem {Room} und in der {Roomtwo} {Status}
+LightIntent Lampe {Light} im Raum {Room} und in {Roomtwo} {Status}
+LightIntent Lampe {Light} im Raum {Room} und im {Roomtwo} {Status}
+LightIntent Lampe {Light} im Raum {Room} und in dem {Roomtwo} {Status}
+LightIntent Lampe {Light} im Raum {Room} und im Raum {Roomtwo} {Status}
+LightIntent Lampe {Light} im Raum {Room} und in dem Raum {Roomtwo} {Status}
+LightIntent Lampe {Light} im Raum {Room} und Raum {Roomtwo} {Status}
+LightIntent Lampe {Light} im Raum {Room} und in der {Roomtwo} {Status}
+LightIntent Lampe {Light} in dem Raum {Room} und in {Roomtwo} {Status}
+LightIntent Lampe {Light} in dem Raum {Room} und im {Roomtwo} {Status}
+LightIntent Lampe {Light} in dem Raum {Room} und in dem {Roomtwo} {Status}
+LightIntent Lampe {Light} in dem Raum {Room} und im Raum {Roomtwo} {Status}
+LightIntent Lampe {Light} in dem Raum {Room} und in dem Raum {Roomtwo} {Status}
+LightIntent Lampe {Light} in dem Raum {Room} und Raum {Roomtwo} {Status}
+LightIntent Lampe {Light} in dem Raum {Room} und in der {Roomtwo} {Status}
+LightIntent Lampe {Light} Raum {Room} und in {Roomtwo} {Status}
+LightIntent Lampe {Light} Raum {Room} und im {Roomtwo} {Status}
+LightIntent Lampe {Light} Raum {Room} und in dem {Roomtwo} {Status}
+LightIntent Lampe {Light} Raum {Room} und im Raum {Roomtwo} {Status}
+LightIntent Lampe {Light} Raum {Room} und in dem Raum {Roomtwo} {Status}
+LightIntent Lampe {Light} Raum {Room} und Raum {Roomtwo} {Status}
+LightIntent Lampe {Light} Raum {Room} und in der {Roomtwo} {Status}
+LightIntent Lampe {Light} in der {Room} und in {Roomtwo} {Status}
+LightIntent Lampe {Light} in der {Room} und im {Roomtwo} {Status}
+LightIntent Lampe {Light} in der {Room} und in dem {Roomtwo} {Status}
+LightIntent Lampe {Light} in der {Room} und im Raum {Roomtwo} {Status}
+LightIntent Lampe {Light} in der {Room} und in dem Raum {Roomtwo} {Status}
+LightIntent Lampe {Light} in der {Room} und Raum {Roomtwo} {Status}
+LightIntent Lampe {Light} in der {Room} und in der {Roomtwo} {Status}
+LightIntent Licht {Light} in {Room} und in {Roomtwo} {Status}
+LightIntent Licht {Light} in {Room} und im {Roomtwo} {Status}
+LightIntent Licht {Light} in {Room} und in dem {Roomtwo} {Status}
+LightIntent Licht {Light} in {Room} und im Raum {Roomtwo} {Status}
+LightIntent Licht {Light} in {Room} und in dem Raum {Roomtwo} {Status}
+LightIntent Licht {Light} in {Room} und Raum {Roomtwo} {Status}
+LightIntent Licht {Light} in {Room} und in der {Roomtwo} {Status}
+LightIntent Licht {Light} im {Room} und in {Roomtwo} {Status}
+LightIntent Licht {Light} im {Room} und im {Roomtwo} {Status}
+LightIntent Licht {Light} im {Room} und in dem {Roomtwo} {Status}
+LightIntent Licht {Light} im {Room} und im Raum {Roomtwo} {Status}
+LightIntent Licht {Light} im {Room} und in dem Raum {Roomtwo} {Status}
+LightIntent Licht {Light} im {Room} und Raum {Roomtwo} {Status}
+LightIntent Licht {Light} im {Room} und in der {Roomtwo} {Status}
+LightIntent Licht {Light} in dem {Room} und in {Roomtwo} {Status}
+LightIntent Licht {Light} in dem {Room} und im {Roomtwo} {Status}
+LightIntent Licht {Light} in dem {Room} und in dem {Roomtwo} {Status}
+LightIntent Licht {Light} in dem {Room} und im Raum {Roomtwo} {Status}
+LightIntent Licht {Light} in dem {Room} und in dem Raum {Roomtwo} {Status}
+LightIntent Licht {Light} in dem {Room} und Raum {Roomtwo} {Status}
+LightIntent Licht {Light} in dem {Room} und in der {Roomtwo} {Status}
+LightIntent Licht {Light} im Raum {Room} und in {Roomtwo} {Status}
+LightIntent Licht {Light} im Raum {Room} und im {Roomtwo} {Status}
+LightIntent Licht {Light} im Raum {Room} und in dem {Roomtwo} {Status}
+LightIntent Licht {Light} im Raum {Room} und im Raum {Roomtwo} {Status}
+LightIntent Licht {Light} im Raum {Room} und in dem Raum {Roomtwo} {Status}
+LightIntent Licht {Light} im Raum {Room} und Raum {Roomtwo} {Status}
+LightIntent Licht {Light} im Raum {Room} und in der {Roomtwo} {Status}
+LightIntent Licht {Light} in dem Raum {Room} und in {Roomtwo} {Status}
+LightIntent Licht {Light} in dem Raum {Room} und im {Roomtwo} {Status}
+LightIntent Licht {Light} in dem Raum {Room} und in dem {Roomtwo} {Status}
+LightIntent Licht {Light} in dem Raum {Room} und im Raum {Roomtwo} {Status}
+LightIntent Licht {Light} in dem Raum {Room} und in dem Raum {Roomtwo} {Status}
+LightIntent Licht {Light} in dem Raum {Room} und Raum {Roomtwo} {Status}
+LightIntent Licht {Light} in dem Raum {Room} und in der {Roomtwo} {Status}
+LightIntent Licht {Light} Raum {Room} und in {Roomtwo} {Status}
+LightIntent Licht {Light} Raum {Room} und im {Roomtwo} {Status}
+LightIntent Licht {Light} Raum {Room} und in dem {Roomtwo} {Status}
+LightIntent Licht {Light} Raum {Room} und im Raum {Roomtwo} {Status}
+LightIntent Licht {Light} Raum {Room} und in dem Raum {Roomtwo} {Status}
+LightIntent Licht {Light} Raum {Room} und Raum {Roomtwo} {Status}
+LightIntent Licht {Light} Raum {Room} und in der {Roomtwo} {Status}
+LightIntent Licht {Light} in der {Room} und in {Roomtwo} {Status}
+LightIntent Licht {Light} in der {Room} und im {Roomtwo} {Status}
+LightIntent Licht {Light} in der {Room} und in dem {Roomtwo} {Status}
+LightIntent Licht {Light} in der {Room} und im Raum {Roomtwo} {Status}
+LightIntent Licht {Light} in der {Room} und in dem Raum {Roomtwo} {Status}
+LightIntent Licht {Light} in der {Room} und Raum {Roomtwo} {Status}
+LightIntent Licht {Light} in der {Room} und in der {Roomtwo} {Status}
+LightIntent das Licht {Light} in {Room} und in {Roomtwo} {Status}
+LightIntent das Licht {Light} in {Room} und im {Roomtwo} {Status}
+LightIntent das Licht {Light} in {Room} und in dem {Roomtwo} {Status}
+LightIntent das Licht {Light} in {Room} und im Raum {Roomtwo} {Status}
+LightIntent das Licht {Light} in {Room} und in dem Raum {Roomtwo} {Status}
+LightIntent das Licht {Light} in {Room} und Raum {Roomtwo} {Status}
+LightIntent das Licht {Light} in {Room} und in der {Roomtwo} {Status}
+LightIntent das Licht {Light} im {Room} und in {Roomtwo} {Status}
+LightIntent das Licht {Light} im {Room} und im {Roomtwo} {Status}
+LightIntent das Licht {Light} im {Room} und in dem {Roomtwo} {Status}
+LightIntent das Licht {Light} im {Room} und im Raum {Roomtwo} {Status}
+LightIntent das Licht {Light} im {Room} und in dem Raum {Roomtwo} {Status}
+LightIntent das Licht {Light} im {Room} und Raum {Roomtwo} {Status}
+LightIntent das Licht {Light} im {Room} und in der {Roomtwo} {Status}
+LightIntent das Licht {Light} in dem {Room} und in {Roomtwo} {Status}
+LightIntent das Licht {Light} in dem {Room} und im {Roomtwo} {Status}
+LightIntent das Licht {Light} in dem {Room} und in dem {Roomtwo} {Status}
+LightIntent das Licht {Light} in dem {Room} und im Raum {Roomtwo} {Status}
+LightIntent das Licht {Light} in dem {Room} und in dem Raum {Roomtwo} {Status}
+LightIntent das Licht {Light} in dem {Room} und Raum {Roomtwo} {Status}
+LightIntent das Licht {Light} in dem {Room} und in der {Roomtwo} {Status}
+LightIntent das Licht {Light} im Raum {Room} und in {Roomtwo} {Status}
+LightIntent das Licht {Light} im Raum {Room} und im {Roomtwo} {Status}
+LightIntent das Licht {Light} im Raum {Room} und in dem {Roomtwo} {Status}
+LightIntent das Licht {Light} im Raum {Room} und im Raum {Roomtwo} {Status}
+LightIntent das Licht {Light} im Raum {Room} und in dem Raum {Roomtwo} {Status}
+LightIntent das Licht {Light} im Raum {Room} und Raum {Roomtwo} {Status}
+LightIntent das Licht {Light} im Raum {Room} und in der {Roomtwo} {Status}
+LightIntent das Licht {Light} in dem Raum {Room} und in {Roomtwo} {Status}
+LightIntent das Licht {Light} in dem Raum {Room} und im {Roomtwo} {Status}
+LightIntent das Licht {Light} in dem Raum {Room} und in dem {Roomtwo} {Status}
+LightIntent das Licht {Light} in dem Raum {Room} und im Raum {Roomtwo} {Status}
+LightIntent das Licht {Light} in dem Raum {Room} und in dem Raum {Roomtwo} {Status}
+LightIntent das Licht {Light} in dem Raum {Room} und Raum {Roomtwo} {Status}
+LightIntent das Licht {Light} in dem Raum {Room} und in der {Roomtwo} {Status}
+LightIntent das Licht {Light} Raum {Room} und in {Roomtwo} {Status}
+LightIntent das Licht {Light} Raum {Room} und im {Roomtwo} {Status}
+LightIntent das Licht {Light} Raum {Room} und in dem {Roomtwo} {Status}
+LightIntent das Licht {Light} Raum {Room} und im Raum {Roomtwo} {Status}
+LightIntent das Licht {Light} Raum {Room} und in dem Raum {Roomtwo} {Status}
+LightIntent das Licht {Light} Raum {Room} und Raum {Roomtwo} {Status}
+LightIntent das Licht {Light} Raum {Room} und in der {Roomtwo} {Status}
+LightIntent das Licht {Light} in der {Room} und in {Roomtwo} {Status}
+LightIntent das Licht {Light} in der {Room} und im {Roomtwo} {Status}
+LightIntent das Licht {Light} in der {Room} und in dem {Roomtwo} {Status}
+LightIntent das Licht {Light} in der {Room} und im Raum {Roomtwo} {Status}
+LightIntent das Licht {Light} in der {Room} und in dem Raum {Roomtwo} {Status}
+LightIntent das Licht {Light} in der {Room} und Raum {Roomtwo} {Status}
+LightIntent das Licht {Light} in der {Room} und in der {Roomtwo} {Status}
+LightIntent Schalte die Lichter {Light} in {Room} {Status}
+LightIntent Schalte die Lichter {Light} im {Room} {Status}
+LightIntent Schalte die Lichter {Light} in dem {Room} {Status}
+LightIntent Schalte die Lichter {Light} im Raum {Room} {Status}
+LightIntent Schalte die Lichter {Light} in dem Raum {Room} {Status}
+LightIntent Schalte die Lichter {Light} Raum {Room} {Status}
+LightIntent Schalte die Lichter {Light} in der {Room} {Status}
+LightIntent Schalte Lichter {Light} in {Room} {Status}
+LightIntent Schalte Lichter {Light} im {Room} {Status}
+LightIntent Schalte Lichter {Light} in dem {Room} {Status}
+LightIntent Schalte Lichter {Light} im Raum {Room} {Status}
+LightIntent Schalte Lichter {Light} in dem Raum {Room} {Status}
+LightIntent Schalte Lichter {Light} Raum {Room} {Status}
+LightIntent Schalte Lichter {Light} in der {Room} {Status}
+LightIntent Schalte die Lampen {Light} in {Room} {Status}
+LightIntent Schalte die Lampen {Light} im {Room} {Status}
+LightIntent Schalte die Lampen {Light} in dem {Room} {Status}
+LightIntent Schalte die Lampen {Light} im Raum {Room} {Status}
+LightIntent Schalte die Lampen {Light} in dem Raum {Room} {Status}
+LightIntent Schalte die Lampen {Light} Raum {Room} {Status}
+LightIntent Schalte die Lampen {Light} in der {Room} {Status}
+LightIntent Schalte Lampen {Light} in {Room} {Status}
+LightIntent Schalte Lampen {Light} im {Room} {Status}
+LightIntent Schalte Lampen {Light} in dem {Room} {Status}
+LightIntent Schalte Lampen {Light} im Raum {Room} {Status}
+LightIntent Schalte Lampen {Light} in dem Raum {Room} {Status}
+LightIntent Schalte Lampen {Light} Raum {Room} {Status}
+LightIntent Schalte Lampen {Light} in der {Room} {Status}
+LightIntent Schalte die Lampe {Light} in {Room} {Status}
+LightIntent Schalte die Lampe {Light} im {Room} {Status}
+LightIntent Schalte die Lampe {Light} in dem {Room} {Status}
+LightIntent Schalte die Lampe {Light} im Raum {Room} {Status}
+LightIntent Schalte die Lampe {Light} in dem Raum {Room} {Status}
+LightIntent Schalte die Lampe {Light} Raum {Room} {Status}
+LightIntent Schalte die Lampe {Light} in der {Room} {Status}
+LightIntent Schalte Lampe {Light} in {Room} {Status}
+LightIntent Schalte Lampe {Light} im {Room} {Status}
+LightIntent Schalte Lampe {Light} in dem {Room} {Status}
+LightIntent Schalte Lampe {Light} im Raum {Room} {Status}
+LightIntent Schalte Lampe {Light} in dem Raum {Room} {Status}
+LightIntent Schalte Lampe {Light} Raum {Room} {Status}
+LightIntent Schalte Lampe {Light} in der {Room} {Status}
+LightIntent Schalte Licht {Light} in {Room} {Status}
+LightIntent Schalte Licht {Light} im {Room} {Status}
+LightIntent Schalte Licht {Light} in dem {Room} {Status}
+LightIntent Schalte Licht {Light} im Raum {Room} {Status}
+LightIntent Schalte Licht {Light} in dem Raum {Room} {Status}
+LightIntent Schalte Licht {Light} Raum {Room} {Status}
+LightIntent Schalte Licht {Light} in der {Room} {Status}
+LightIntent Schalte das Licht {Light} in {Room} {Status}
+LightIntent Schalte das Licht {Light} im {Room} {Status}
+LightIntent Schalte das Licht {Light} in dem {Room} {Status}
+LightIntent Schalte das Licht {Light} im Raum {Room} {Status}
+LightIntent Schalte das Licht {Light} in dem Raum {Room} {Status}
+LightIntent Schalte das Licht {Light} Raum {Room} {Status}
+LightIntent Schalte das Licht {Light} in der {Room} {Status}
+LightIntent Schalte die Lichter in {Room} {Status}
+LightIntent Schalte die Lichter im {Room} {Status}
+LightIntent Schalte die Lichter in dem {Room} {Status}
+LightIntent Schalte die Lichter im Raum {Room} {Status}
+LightIntent Schalte die Lichter in dem Raum {Room} {Status}
+LightIntent Schalte die Lichter Raum {Room} {Status}
+LightIntent Schalte die Lichter in der {Room} {Status}
+LightIntent Schalte Lichter in {Room} {Status}
+LightIntent Schalte Lichter im {Room} {Status}
+LightIntent Schalte Lichter in dem {Room} {Status}
+LightIntent Schalte Lichter im Raum {Room} {Status}
+LightIntent Schalte Lichter in dem Raum {Room} {Status}
+LightIntent Schalte Lichter Raum {Room} {Status}
+LightIntent Schalte Lichter in der {Room} {Status}
+LightIntent Schalte die Lampen in {Room} {Status}
+LightIntent Schalte die Lampen im {Room} {Status}
+LightIntent Schalte die Lampen in dem {Room} {Status}
+LightIntent Schalte die Lampen im Raum {Room} {Status}
+LightIntent Schalte die Lampen in dem Raum {Room} {Status}
+LightIntent Schalte die Lampen Raum {Room} {Status}
+LightIntent Schalte die Lampen in der {Room} {Status}
+LightIntent Schalte Lampen in {Room} {Status}
+LightIntent Schalte Lampen im {Room} {Status}
+LightIntent Schalte Lampen in dem {Room} {Status}
+LightIntent Schalte Lampen im Raum {Room} {Status}
+LightIntent Schalte Lampen in dem Raum {Room} {Status}
+LightIntent Schalte Lampen Raum {Room} {Status}
+LightIntent Schalte Lampen in der {Room} {Status}
+LightIntent Schalte die Lampe in {Room} {Status}
+LightIntent Schalte die Lampe im {Room} {Status}
+LightIntent Schalte die Lampe in dem {Room} {Status}
+LightIntent Schalte die Lampe im Raum {Room} {Status}
+LightIntent Schalte die Lampe in dem Raum {Room} {Status}
+LightIntent Schalte die Lampe Raum {Room} {Status}
+LightIntent Schalte die Lampe in der {Room} {Status}
+LightIntent Schalte Lampe in {Room} {Status}
+LightIntent Schalte Lampe im {Room} {Status}
+LightIntent Schalte Lampe in dem {Room} {Status}
+LightIntent Schalte Lampe im Raum {Room} {Status}
+LightIntent Schalte Lampe in dem Raum {Room} {Status}
+LightIntent Schalte Lampe Raum {Room} {Status}
+LightIntent Schalte Lampe in der {Room} {Status}
+LightIntent Schalte Licht in {Room} {Status}
+LightIntent Schalte Licht im {Room} {Status}
+LightIntent Schalte Licht in dem {Room} {Status}
+LightIntent Schalte Licht im Raum {Room} {Status}
+LightIntent Schalte Licht in dem Raum {Room} {Status}
+LightIntent Schalte Licht Raum {Room} {Status}
+LightIntent Schalte Licht in der {Room} {Status}
+LightIntent Schalte das Licht in {Room} {Status}
+LightIntent Schalte das Licht im {Room} {Status}
+LightIntent Schalte das Licht in dem {Room} {Status}
+LightIntent Schalte das Licht im Raum {Room} {Status}
+LightIntent Schalte das Licht in dem Raum {Room} {Status}
+LightIntent Schalte das Licht Raum {Room} {Status}
+LightIntent Schalte das Licht in der {Room} {Status}
+LightIntent die Lichter in {Room} {Status}
+LightIntent die Lichter im {Room} {Status}
+LightIntent die Lichter in dem {Room} {Status}
+LightIntent die Lichter im Raum {Room} {Status}
+LightIntent die Lichter in dem Raum {Room} {Status}
+LightIntent die Lichter Raum {Room} {Status}
+LightIntent die Lichter in der {Room} {Status}
+LightIntent Lichter in {Room} {Status}
+LightIntent Lichter im {Room} {Status}
+LightIntent Lichter in dem {Room} {Status}
+LightIntent Lichter im Raum {Room} {Status}
+LightIntent Lichter in dem Raum {Room} {Status}
+LightIntent Lichter Raum {Room} {Status}
+LightIntent Lichter in der {Room} {Status}
+LightIntent die Lampen in {Room} {Status}
+LightIntent die Lampen im {Room} {Status}
+LightIntent die Lampen in dem {Room} {Status}
+LightIntent die Lampen im Raum {Room} {Status}
+LightIntent die Lampen in dem Raum {Room} {Status}
+LightIntent die Lampen Raum {Room} {Status}
+LightIntent die Lampen in der {Room} {Status}
+LightIntent Lampen in {Room} {Status}
+LightIntent Lampen im {Room} {Status}
+LightIntent Lampen in dem {Room} {Status}
+LightIntent Lampen im Raum {Room} {Status}
+LightIntent Lampen in dem Raum {Room} {Status}
+LightIntent Lampen Raum {Room} {Status}
+LightIntent Lampen in der {Room} {Status}
+LightIntent die Lampe in {Room} {Status}
+LightIntent die Lampe im {Room} {Status}
+LightIntent die Lampe in dem {Room} {Status}
+LightIntent die Lampe im Raum {Room} {Status}
+LightIntent die Lampe in dem Raum {Room} {Status}
+LightIntent die Lampe Raum {Room} {Status}
+LightIntent die Lampe in der {Room} {Status}
+LightIntent Lampe in {Room} {Status}
+LightIntent Lampe im {Room} {Status}
+LightIntent Lampe in dem {Room} {Status}
+LightIntent Lampe im Raum {Room} {Status}
+LightIntent Lampe in dem Raum {Room} {Status}
+LightIntent Lampe Raum {Room} {Status}
+LightIntent Lampe in der {Room} {Status}
+LightIntent Licht in {Room} {Status}
+LightIntent Licht im {Room} {Status}
+LightIntent Licht in dem {Room} {Status}
+LightIntent Licht im Raum {Room} {Status}
+LightIntent Licht in dem Raum {Room} {Status}
+LightIntent Licht Raum {Room} {Status}
+LightIntent Licht in der {Room} {Status}
+LightIntent das Licht in {Room} {Status}
+LightIntent das Licht im {Room} {Status}
+LightIntent das Licht in dem {Room} {Status}
+LightIntent das Licht im Raum {Room} {Status}
+LightIntent das Licht in dem Raum {Room} {Status}
+LightIntent das Licht Raum {Room} {Status}
+LightIntent das Licht in der {Room} {Status}
+LightIntent Schalte alle die Lichter {Status}
+LightIntent Schalte alle Lichter {Status}
+LightIntent Schalte alle die Lampen {Status}
+LightIntent Schalte alle Lampen {Status}
+LightIntent Schalte alle die Lampe {Status}
+LightIntent Schalte alle Lampe {Status}
+LightIntent Schalte alle Licht {Status}
+LightIntent Schalte alle das Licht {Status}
+LightIntent Schalte alle die Lichter in {Room} {Status}
+LightIntent Schalte alle die Lichter im {Room} {Status}
+LightIntent Schalte alle die Lichter in dem {Room} {Status}
+LightIntent Schalte alle die Lichter im Raum {Room} {Status}
+LightIntent Schalte alle die Lichter in dem Raum {Room} {Status}
+LightIntent Schalte alle die Lichter Raum {Room} {Status}
+LightIntent Schalte alle die Lichter in der {Room} {Status}
+LightIntent Schalte alle Lichter in {Room} {Status}
+LightIntent Schalte alle Lichter im {Room} {Status}
+LightIntent Schalte alle Lichter in dem {Room} {Status}
+LightIntent Schalte alle Lichter im Raum {Room} {Status}
+LightIntent Schalte alle Lichter in dem Raum {Room} {Status}
+LightIntent Schalte alle Lichter Raum {Room} {Status}
+LightIntent Schalte alle Lichter in der {Room} {Status}
+LightIntent Schalte alle die Lampen in {Room} {Status}
+LightIntent Schalte alle die Lampen im {Room} {Status}
+LightIntent Schalte alle die Lampen in dem {Room} {Status}
+LightIntent Schalte alle die Lampen im Raum {Room} {Status}
+LightIntent Schalte alle die Lampen in dem Raum {Room} {Status}
+LightIntent Schalte alle die Lampen Raum {Room} {Status}
+LightIntent Schalte alle die Lampen in der {Room} {Status}
+LightIntent Schalte alle Lampen in {Room} {Status}
+LightIntent Schalte alle Lampen im {Room} {Status}
+LightIntent Schalte alle Lampen in dem {Room} {Status}
+LightIntent Schalte alle Lampen im Raum {Room} {Status}
+LightIntent Schalte alle Lampen in dem Raum {Room} {Status}
+LightIntent Schalte alle Lampen Raum {Room} {Status}
+LightIntent Schalte alle Lampen in der {Room} {Status}
+LightIntent Schalte alle die Lampe in {Room} {Status}
+LightIntent Schalte alle die Lampe im {Room} {Status}
+LightIntent Schalte alle die Lampe in dem {Room} {Status}
+LightIntent Schalte alle die Lampe im Raum {Room} {Status}
+LightIntent Schalte alle die Lampe in dem Raum {Room} {Status}
+LightIntent Schalte alle die Lampe Raum {Room} {Status}
+LightIntent Schalte alle die Lampe in der {Room} {Status}
+LightIntent Schalte alle Lampe in {Room} {Status}
+LightIntent Schalte alle Lampe im {Room} {Status}
+LightIntent Schalte alle Lampe in dem {Room} {Status}
+LightIntent Schalte alle Lampe im Raum {Room} {Status}
+LightIntent Schalte alle Lampe in dem Raum {Room} {Status}
+LightIntent Schalte alle Lampe Raum {Room} {Status}
+LightIntent Schalte alle Lampe in der {Room} {Status}
+LightIntent Schalte alle Licht in {Room} {Status}
+LightIntent Schalte alle Licht im {Room} {Status}
+LightIntent Schalte alle Licht in dem {Room} {Status}
+LightIntent Schalte alle Licht im Raum {Room} {Status}
+LightIntent Schalte alle Licht in dem Raum {Room} {Status}
+LightIntent Schalte alle Licht Raum {Room} {Status}
+LightIntent Schalte alle Licht in der {Room} {Status}
+LightIntent Schalte alle das Licht in {Room} {Status}
+LightIntent Schalte alle das Licht im {Room} {Status}
+LightIntent Schalte alle das Licht in dem {Room} {Status}
+LightIntent Schalte alle das Licht im Raum {Room} {Status}
+LightIntent Schalte alle das Licht in dem Raum {Room} {Status}
+LightIntent Schalte alle das Licht Raum {Room} {Status}
+LightIntent Schalte alle das Licht in der {Room} {Status}
+
+DimIntent Dimme die Lichter {Light} {Dimvalue} Prozent
+DimIntent Dimme Lichter {Light} {Dimvalue} Prozent
+DimIntent Dimme die Lampen {Light} {Dimvalue} Prozent
+DimIntent Dimme Lampen {Light} {Dimvalue} Prozent
+DimIntent Dimme die Lampe {Light} {Dimvalue} Prozent
+DimIntent Dimme Lampe {Light} {Dimvalue} Prozent
+DimIntent Dimme Licht {Light} {Dimvalue} Prozent
+DimIntent Dimme das Licht {Light} {Dimvalue} Prozent
+DimIntent Dimme die Lichter {Light} in {Room} {Dimvalue} Prozent
+DimIntent Dimme die Lichter {Light} im {Room} {Dimvalue} Prozent
+DimIntent Dimme die Lichter {Light} in dem {Room} {Dimvalue} Prozent
+DimIntent Dimme die Lichter {Light} im Raum {Room} {Dimvalue} Prozent
+DimIntent Dimme die Lichter {Light} in dem Raum {Room} {Dimvalue} Prozent
+DimIntent Dimme die Lichter {Light} Raum {Room} {Dimvalue} Prozent
+DimIntent Dimme die Lichter {Light} in der {Room} {Dimvalue} Prozent
+DimIntent Dimme Lichter {Light} in {Room} {Dimvalue} Prozent
+DimIntent Dimme Lichter {Light} im {Room} {Dimvalue} Prozent
+DimIntent Dimme Lichter {Light} in dem {Room} {Dimvalue} Prozent
+DimIntent Dimme Lichter {Light} im Raum {Room} {Dimvalue} Prozent
+DimIntent Dimme Lichter {Light} in dem Raum {Room} {Dimvalue} Prozent
+DimIntent Dimme Lichter {Light} Raum {Room} {Dimvalue} Prozent
+DimIntent Dimme Lichter {Light} in der {Room} {Dimvalue} Prozent
+DimIntent Dimme die Lampen {Light} in {Room} {Dimvalue} Prozent
+DimIntent Dimme die Lampen {Light} im {Room} {Dimvalue} Prozent
+DimIntent Dimme die Lampen {Light} in dem {Room} {Dimvalue} Prozent
+DimIntent Dimme die Lampen {Light} im Raum {Room} {Dimvalue} Prozent
+DimIntent Dimme die Lampen {Light} in dem Raum {Room} {Dimvalue} Prozent
+DimIntent Dimme die Lampen {Light} Raum {Room} {Dimvalue} Prozent
+DimIntent Dimme die Lampen {Light} in der {Room} {Dimvalue} Prozent
+DimIntent Dimme Lampen {Light} in {Room} {Dimvalue} Prozent
+DimIntent Dimme Lampen {Light} im {Room} {Dimvalue} Prozent
+DimIntent Dimme Lampen {Light} in dem {Room} {Dimvalue} Prozent
+DimIntent Dimme Lampen {Light} im Raum {Room} {Dimvalue} Prozent
+DimIntent Dimme Lampen {Light} in dem Raum {Room} {Dimvalue} Prozent
+DimIntent Dimme Lampen {Light} Raum {Room} {Dimvalue} Prozent
+DimIntent Dimme Lampen {Light} in der {Room} {Dimvalue} Prozent
+DimIntent Dimme die Lampe {Light} in {Room} {Dimvalue} Prozent
+DimIntent Dimme die Lampe {Light} im {Room} {Dimvalue} Prozent
+DimIntent Dimme die Lampe {Light} in dem {Room} {Dimvalue} Prozent
+DimIntent Dimme die Lampe {Light} im Raum {Room} {Dimvalue} Prozent
+DimIntent Dimme die Lampe {Light} in dem Raum {Room} {Dimvalue} Prozent
+DimIntent Dimme die Lampe {Light} Raum {Room} {Dimvalue} Prozent
+DimIntent Dimme die Lampe {Light} in der {Room} {Dimvalue} Prozent
+DimIntent Dimme Lampe {Light} in {Room} {Dimvalue} Prozent
+DimIntent Dimme Lampe {Light} im {Room} {Dimvalue} Prozent
+DimIntent Dimme Lampe {Light} in dem {Room} {Dimvalue} Prozent
+DimIntent Dimme Lampe {Light} im Raum {Room} {Dimvalue} Prozent
+DimIntent Dimme Lampe {Light} in dem Raum {Room} {Dimvalue} Prozent
+DimIntent Dimme Lampe {Light} Raum {Room} {Dimvalue} Prozent
+DimIntent Dimme Lampe {Light} in der {Room} {Dimvalue} Prozent
+DimIntent Dimme Licht {Light} in {Room} {Dimvalue} Prozent
+DimIntent Dimme Licht {Light} im {Room} {Dimvalue} Prozent
+DimIntent Dimme Licht {Light} in dem {Room} {Dimvalue} Prozent
+DimIntent Dimme Licht {Light} im Raum {Room} {Dimvalue} Prozent
+DimIntent Dimme Licht {Light} in dem Raum {Room} {Dimvalue} Prozent
+DimIntent Dimme Licht {Light} Raum {Room} {Dimvalue} Prozent
+DimIntent Dimme Licht {Light} in der {Room} {Dimvalue} Prozent
+DimIntent Dimme das Licht {Light} in {Room} {Dimvalue} Prozent
+DimIntent Dimme das Licht {Light} im {Room} {Dimvalue} Prozent
+DimIntent Dimme das Licht {Light} in dem {Room} {Dimvalue} Prozent
+DimIntent Dimme das Licht {Light} im Raum {Room} {Dimvalue} Prozent
+DimIntent Dimme das Licht {Light} in dem Raum {Room} {Dimvalue} Prozent
+DimIntent Dimme das Licht {Light} Raum {Room} {Dimvalue} Prozent
+DimIntent Dimme das Licht {Light} in der {Room} {Dimvalue} Prozent
+DimIntent Dimme die Lichter {Room} {Dimvalue} Prozent
+DimIntent Dimme Lichter {Room} {Dimvalue} Prozent
+DimIntent Dimme die Lampen {Room} {Dimvalue} Prozent
+DimIntent Dimme Lampen {Room} {Dimvalue} Prozent
+DimIntent Dimme die Lampe {Room} {Dimvalue} Prozent
+DimIntent Dimme Lampe {Room} {Dimvalue} Prozent
+DimIntent Dimme Licht {Room} {Dimvalue} Prozent
+DimIntent Dimme das Licht {Room} {Dimvalue} Prozent
+DimIntent Dimme {Light} auf {Dimvalue} Prozent
+DimIntent Dimme die Lichter {Light} auf {Dimvalue} Prozent
+DimIntent Dimme Lichter {Light} auf {Dimvalue} Prozent
+DimIntent Dimme die Lampen {Light} auf {Dimvalue} Prozent
+DimIntent Dimme Lampen {Light} auf {Dimvalue} Prozent
+DimIntent Dimme die Lampe {Light} auf {Dimvalue} Prozent
+DimIntent Dimme Lampe {Light} auf {Dimvalue} Prozent
+DimIntent Dimme Licht {Light} auf {Dimvalue} Prozent
+DimIntent Dimme das Licht {Light} auf {Dimvalue} Prozent
+DimIntent Dimme die Lichter {Light} in {Room} auf {Dimvalue} Prozent
+DimIntent Dimme die Lichter {Light} im {Room} auf {Dimvalue} Prozent
+DimIntent Dimme die Lichter {Light} in dem {Room} auf {Dimvalue} Prozent
+DimIntent Dimme die Lichter {Light} im Raum {Room} auf {Dimvalue} Prozent
+DimIntent Dimme die Lichter {Light} in dem Raum {Room} auf {Dimvalue} Prozent
+DimIntent Dimme die Lichter {Light} Raum {Room} auf {Dimvalue} Prozent
+DimIntent Dimme die Lichter {Light} in der {Room} auf {Dimvalue} Prozent
+DimIntent Dimme Lichter {Light} in {Room} auf {Dimvalue} Prozent
+DimIntent Dimme Lichter {Light} im {Room} auf {Dimvalue} Prozent
+DimIntent Dimme Lichter {Light} in dem {Room} auf {Dimvalue} Prozent
+DimIntent Dimme Lichter {Light} im Raum {Room} auf {Dimvalue} Prozent
+DimIntent Dimme Lichter {Light} in dem Raum {Room} auf {Dimvalue} Prozent
+DimIntent Dimme Lichter {Light} Raum {Room} auf {Dimvalue} Prozent
+DimIntent Dimme Lichter {Light} in der {Room} auf {Dimvalue} Prozent
+DimIntent Dimme die Lampen {Light} in {Room} auf {Dimvalue} Prozent
+DimIntent Dimme die Lampen {Light} im {Room} auf {Dimvalue} Prozent
+DimIntent Dimme die Lampen {Light} in dem {Room} auf {Dimvalue} Prozent
+DimIntent Dimme die Lampen {Light} im Raum {Room} auf {Dimvalue} Prozent
+DimIntent Dimme die Lampen {Light} in dem Raum {Room} auf {Dimvalue} Prozent
+DimIntent Dimme die Lampen {Light} Raum {Room} auf {Dimvalue} Prozent
+DimIntent Dimme die Lampen {Light} in der {Room} auf {Dimvalue} Prozent
+DimIntent Dimme Lampen {Light} in {Room} auf {Dimvalue} Prozent
+DimIntent Dimme Lampen {Light} im {Room} auf {Dimvalue} Prozent
+DimIntent Dimme Lampen {Light} in dem {Room} auf {Dimvalue} Prozent
+DimIntent Dimme Lampen {Light} im Raum {Room} auf {Dimvalue} Prozent
+DimIntent Dimme Lampen {Light} in dem Raum {Room} auf {Dimvalue} Prozent
+DimIntent Dimme Lampen {Light} Raum {Room} auf {Dimvalue} Prozent
+DimIntent Dimme Lampen {Light} in der {Room} auf {Dimvalue} Prozent
+DimIntent Dimme die Lampe {Light} in {Room} auf {Dimvalue} Prozent
+DimIntent Dimme die Lampe {Light} im {Room} auf {Dimvalue} Prozent
+DimIntent Dimme die Lampe {Light} in dem {Room} auf {Dimvalue} Prozent
+DimIntent Dimme die Lampe {Light} im Raum {Room} auf {Dimvalue} Prozent
+DimIntent Dimme die Lampe {Light} in dem Raum {Room} auf {Dimvalue} Prozent
+DimIntent Dimme die Lampe {Light} Raum {Room} auf {Dimvalue} Prozent
+DimIntent Dimme die Lampe {Light} in der {Room} auf {Dimvalue} Prozent
+DimIntent Dimme Lampe {Light} in {Room} auf {Dimvalue} Prozent
+DimIntent Dimme Lampe {Light} im {Room} auf {Dimvalue} Prozent
+DimIntent Dimme Lampe {Light} in dem {Room} auf {Dimvalue} Prozent
+DimIntent Dimme Lampe {Light} im Raum {Room} auf {Dimvalue} Prozent
+DimIntent Dimme Lampe {Light} in dem Raum {Room} auf {Dimvalue} Prozent
+DimIntent Dimme Lampe {Light} Raum {Room} auf {Dimvalue} Prozent
+DimIntent Dimme Lampe {Light} in der {Room} auf {Dimvalue} Prozent
+DimIntent Dimme Licht {Light} in {Room} auf {Dimvalue} Prozent
+DimIntent Dimme Licht {Light} im {Room} auf {Dimvalue} Prozent
+DimIntent Dimme Licht {Light} in dem {Room} auf {Dimvalue} Prozent
+DimIntent Dimme Licht {Light} im Raum {Room} auf {Dimvalue} Prozent
+DimIntent Dimme Licht {Light} in dem Raum {Room} auf {Dimvalue} Prozent
+DimIntent Dimme Licht {Light} Raum {Room} auf {Dimvalue} Prozent
+DimIntent Dimme Licht {Light} in der {Room} auf {Dimvalue} Prozent
+DimIntent Dimme das Licht {Light} in {Room} auf {Dimvalue} Prozent
+DimIntent Dimme das Licht {Light} im {Room} auf {Dimvalue} Prozent
+DimIntent Dimme das Licht {Light} in dem {Room} auf {Dimvalue} Prozent
+DimIntent Dimme das Licht {Light} im Raum {Room} auf {Dimvalue} Prozent
+DimIntent Dimme das Licht {Light} in dem Raum {Room} auf {Dimvalue} Prozent
+DimIntent Dimme das Licht {Light} Raum {Room} auf {Dimvalue} Prozent
+DimIntent Dimme das Licht {Light} in der {Room} auf {Dimvalue} Prozent
+DimIntent Dimme die Lichter {Room} auf {Dimvalue} Prozent
+DimIntent Dimme Lichter {Room} auf {Dimvalue} Prozent
+DimIntent Dimme die Lampen {Room} auf {Dimvalue} Prozent
+DimIntent Dimme Lampen {Room} auf {Dimvalue} Prozent
+DimIntent Dimme die Lampe {Room} auf {Dimvalue} Prozent
+DimIntent Dimme Lampe {Room} auf {Dimvalue} Prozent
+DimIntent Dimme Licht {Room} auf {Dimvalue} Prozent
+DimIntent Dimme das Licht {Room} auf {Dimvalue} Prozent
+DimIntent Dimme alle die Lichter in {Room} auf {Dimvalue} Prozent
+DimIntent Dimme alle die Lichter im {Room} auf {Dimvalue} Prozent
+DimIntent Dimme alle die Lichter in dem {Room} auf {Dimvalue} Prozent
+DimIntent Dimme alle die Lichter im Raum {Room} auf {Dimvalue} Prozent
+DimIntent Dimme alle die Lichter in dem Raum {Room} auf {Dimvalue} Prozent
+DimIntent Dimme alle die Lichter Raum {Room} auf {Dimvalue} Prozent
+DimIntent Dimme alle die Lichter in der {Room} auf {Dimvalue} Prozent
+DimIntent Dimme alle Lichter in {Room} auf {Dimvalue} Prozent
+DimIntent Dimme alle Lichter im {Room} auf {Dimvalue} Prozent
+DimIntent Dimme alle Lichter in dem {Room} auf {Dimvalue} Prozent
+DimIntent Dimme alle Lichter im Raum {Room} auf {Dimvalue} Prozent
+DimIntent Dimme alle Lichter in dem Raum {Room} auf {Dimvalue} Prozent
+DimIntent Dimme alle Lichter Raum {Room} auf {Dimvalue} Prozent
+DimIntent Dimme alle Lichter in der {Room} auf {Dimvalue} Prozent
+DimIntent Dimme alle die Lampen in {Room} auf {Dimvalue} Prozent
+DimIntent Dimme alle die Lampen im {Room} auf {Dimvalue} Prozent
+DimIntent Dimme alle die Lampen in dem {Room} auf {Dimvalue} Prozent
+DimIntent Dimme alle die Lampen im Raum {Room} auf {Dimvalue} Prozent
+DimIntent Dimme alle die Lampen in dem Raum {Room} auf {Dimvalue} Prozent
+DimIntent Dimme alle die Lampen Raum {Room} auf {Dimvalue} Prozent
+DimIntent Dimme alle die Lampen in der {Room} auf {Dimvalue} Prozent
+DimIntent Dimme alle Lampen in {Room} auf {Dimvalue} Prozent
+DimIntent Dimme alle Lampen im {Room} auf {Dimvalue} Prozent
+DimIntent Dimme alle Lampen in dem {Room} auf {Dimvalue} Prozent
+DimIntent Dimme alle Lampen im Raum {Room} auf {Dimvalue} Prozent
+DimIntent Dimme alle Lampen in dem Raum {Room} auf {Dimvalue} Prozent
+DimIntent Dimme alle Lampen Raum {Room} auf {Dimvalue} Prozent
+DimIntent Dimme alle Lampen in der {Room} auf {Dimvalue} Prozent
+DimIntent Dimme alle die Lampe in {Room} auf {Dimvalue} Prozent
+DimIntent Dimme alle die Lampe im {Room} auf {Dimvalue} Prozent
+DimIntent Dimme alle die Lampe in dem {Room} auf {Dimvalue} Prozent
+DimIntent Dimme alle die Lampe im Raum {Room} auf {Dimvalue} Prozent
+DimIntent Dimme alle die Lampe in dem Raum {Room} auf {Dimvalue} Prozent
+DimIntent Dimme alle die Lampe Raum {Room} auf {Dimvalue} Prozent
+DimIntent Dimme alle die Lampe in der {Room} auf {Dimvalue} Prozent
+DimIntent Dimme alle Lampe in {Room} auf {Dimvalue} Prozent
+DimIntent Dimme alle Lampe im {Room} auf {Dimvalue} Prozent
+DimIntent Dimme alle Lampe in dem {Room} auf {Dimvalue} Prozent
+DimIntent Dimme alle Lampe im Raum {Room} auf {Dimvalue} Prozent
+DimIntent Dimme alle Lampe in dem Raum {Room} auf {Dimvalue} Prozent
+DimIntent Dimme alle Lampe Raum {Room} auf {Dimvalue} Prozent
+DimIntent Dimme alle Lampe in der {Room} auf {Dimvalue} Prozent
+DimIntent Dimme alle Licht in {Room} auf {Dimvalue} Prozent
+DimIntent Dimme alle Licht im {Room} auf {Dimvalue} Prozent
+DimIntent Dimme alle Licht in dem {Room} auf {Dimvalue} Prozent
+DimIntent Dimme alle Licht im Raum {Room} auf {Dimvalue} Prozent
+DimIntent Dimme alle Licht in dem Raum {Room} auf {Dimvalue} Prozent
+DimIntent Dimme alle Licht Raum {Room} auf {Dimvalue} Prozent
+DimIntent Dimme alle Licht in der {Room} auf {Dimvalue} Prozent
+DimIntent Dimme alle das Licht in {Room} auf {Dimvalue} Prozent
+DimIntent Dimme alle das Licht im {Room} auf {Dimvalue} Prozent
+DimIntent Dimme alle das Licht in dem {Room} auf {Dimvalue} Prozent
+DimIntent Dimme alle das Licht im Raum {Room} auf {Dimvalue} Prozent
+DimIntent Dimme alle das Licht in dem Raum {Room} auf {Dimvalue} Prozent
+DimIntent Dimme alle das Licht Raum {Room} auf {Dimvalue} Prozent
+DimIntent Dimme alle das Licht in der {Room} auf {Dimvalue} Prozent
+DimIntent Dimme alle die Lichter auf {Dimvalue} Prozent
+DimIntent Dimme alle Lichter auf {Dimvalue} Prozent
+DimIntent Dimme alle die Lampen auf {Dimvalue} Prozent
+DimIntent Dimme alle Lampen auf {Dimvalue} Prozent
+DimIntent Dimme alle die Lampe auf {Dimvalue} Prozent
+DimIntent Dimme alle Lampe auf {Dimvalue} Prozent
+DimIntent Dimme alle Licht auf {Dimvalue} Prozent
+DimIntent Dimme alle das Licht auf {Dimvalue} Prozent
+
+HeatingIntent Stelle Heizung in {Room} auf {Temperature} Grad
+HeatingIntent Stelle Heizung im {Room} auf {Temperature} Grad
+HeatingIntent Stelle Heizung in dem {Room} auf {Temperature} Grad
+HeatingIntent Stelle Heizung im Raum {Room} auf {Temperature} Grad
+HeatingIntent Stelle Heizung in dem Raum {Room} auf {Temperature} Grad
+HeatingIntent Stelle Heizung Raum {Room} auf {Temperature} Grad
+HeatingIntent Stelle Heizung in der {Room} auf {Temperature} Grad
+HeatingIntent Stelle die Heizung in {Room} auf {Temperature} Grad
+HeatingIntent Stelle die Heizung im {Room} auf {Temperature} Grad
+HeatingIntent Stelle die Heizung in dem {Room} auf {Temperature} Grad
+HeatingIntent Stelle die Heizung im Raum {Room} auf {Temperature} Grad
+HeatingIntent Stelle die Heizung in dem Raum {Room} auf {Temperature} Grad
+HeatingIntent Stelle die Heizung Raum {Room} auf {Temperature} Grad
+HeatingIntent Stelle die Heizung in der {Room} auf {Temperature} Grad
+HeatingIntent Stelle Heizungen in {Room} auf {Temperature} Grad
+HeatingIntent Stelle Heizungen im {Room} auf {Temperature} Grad
+HeatingIntent Stelle Heizungen in dem {Room} auf {Temperature} Grad
+HeatingIntent Stelle Heizungen im Raum {Room} auf {Temperature} Grad
+HeatingIntent Stelle Heizungen in dem Raum {Room} auf {Temperature} Grad
+HeatingIntent Stelle Heizungen Raum {Room} auf {Temperature} Grad
+HeatingIntent Stelle Heizungen in der {Room} auf {Temperature} Grad
+HeatingIntent Stelle die Heizungen in {Room} auf {Temperature} Grad
+HeatingIntent Stelle die Heizungen im {Room} auf {Temperature} Grad
+HeatingIntent Stelle die Heizungen in dem {Room} auf {Temperature} Grad
+HeatingIntent Stelle die Heizungen im Raum {Room} auf {Temperature} Grad
+HeatingIntent Stelle die Heizungen in dem Raum {Room} auf {Temperature} Grad
+HeatingIntent Stelle die Heizungen Raum {Room} auf {Temperature} Grad
+HeatingIntent Stelle die Heizungen in der {Room} auf {Temperature} Grad
+HeatingIntent Stelle Heizkörper in {Room} auf {Temperature} Grad
+HeatingIntent Stelle Heizkörper im {Room} auf {Temperature} Grad
+HeatingIntent Stelle Heizkörper in dem {Room} auf {Temperature} Grad
+HeatingIntent Stelle Heizkörper im Raum {Room} auf {Temperature} Grad
+HeatingIntent Stelle Heizkörper in dem Raum {Room} auf {Temperature} Grad
+HeatingIntent Stelle Heizkörper Raum {Room} auf {Temperature} Grad
+HeatingIntent Stelle Heizkörper in der {Room} auf {Temperature} Grad
+HeatingIntent Stelle der Heizkörper in {Room} auf {Temperature} Grad
+HeatingIntent Stelle der Heizkörper im {Room} auf {Temperature} Grad
+HeatingIntent Stelle der Heizkörper in dem {Room} auf {Temperature} Grad
+HeatingIntent Stelle der Heizkörper im Raum {Room} auf {Temperature} Grad
+HeatingIntent Stelle der Heizkörper in dem Raum {Room} auf {Temperature} Grad
+HeatingIntent Stelle der Heizkörper Raum {Room} auf {Temperature} Grad
+HeatingIntent Stelle der Heizkörper in der {Room} auf {Temperature} Grad
+HeatingIntent Stelle den Heizkörper in {Room} auf {Temperature} Grad
+HeatingIntent Stelle den Heizkörper im {Room} auf {Temperature} Grad
+HeatingIntent Stelle den Heizkörper in dem {Room} auf {Temperature} Grad
+HeatingIntent Stelle den Heizkörper im Raum {Room} auf {Temperature} Grad
+HeatingIntent Stelle den Heizkörper in dem Raum {Room} auf {Temperature} Grad
+HeatingIntent Stelle den Heizkörper Raum {Room} auf {Temperature} Grad
+HeatingIntent Stelle den Heizkörper in der {Room} auf {Temperature} Grad
+HeatingIntent Stelle die Heizkörper in {Room} auf {Temperature} Grad
+HeatingIntent Stelle die Heizkörper im {Room} auf {Temperature} Grad
+HeatingIntent Stelle die Heizkörper in dem {Room} auf {Temperature} Grad
+HeatingIntent Stelle die Heizkörper im Raum {Room} auf {Temperature} Grad
+HeatingIntent Stelle die Heizkörper in dem Raum {Room} auf {Temperature} Grad
+HeatingIntent Stelle die Heizkörper Raum {Room} auf {Temperature} Grad
+HeatingIntent Stelle die Heizkörper in der {Room} auf {Temperature} Grad
+HeatingIntent Stelle das Thermostat in {Room} auf {Temperature} Grad
+HeatingIntent Stelle das Thermostat im {Room} auf {Temperature} Grad
+HeatingIntent Stelle das Thermostat in dem {Room} auf {Temperature} Grad
+HeatingIntent Stelle das Thermostat im Raum {Room} auf {Temperature} Grad
+HeatingIntent Stelle das Thermostat in dem Raum {Room} auf {Temperature} Grad
+HeatingIntent Stelle das Thermostat Raum {Room} auf {Temperature} Grad
+HeatingIntent Stelle das Thermostat in der {Room} auf {Temperature} Grad
+HeatingIntent Stelle Thermostat in {Room} auf {Temperature} Grad
+HeatingIntent Stelle Thermostat im {Room} auf {Temperature} Grad
+HeatingIntent Stelle Thermostat in dem {Room} auf {Temperature} Grad
+HeatingIntent Stelle Thermostat im Raum {Room} auf {Temperature} Grad
+HeatingIntent Stelle Thermostat in dem Raum {Room} auf {Temperature} Grad
+HeatingIntent Stelle Thermostat Raum {Room} auf {Temperature} Grad
+HeatingIntent Stelle Thermostat in der {Room} auf {Temperature} Grad
+HeatingIntent Stelle die Thermostate in {Room} auf {Temperature} Grad
+HeatingIntent Stelle die Thermostate im {Room} auf {Temperature} Grad
+HeatingIntent Stelle die Thermostate in dem {Room} auf {Temperature} Grad
+HeatingIntent Stelle die Thermostate im Raum {Room} auf {Temperature} Grad
+HeatingIntent Stelle die Thermostate in dem Raum {Room} auf {Temperature} Grad
+HeatingIntent Stelle die Thermostate Raum {Room} auf {Temperature} Grad
+HeatingIntent Stelle die Thermostate in der {Room} auf {Temperature} Grad
+HeatingIntent Heizung in {Room} auf {Temperature} Grad
+HeatingIntent Heizung im {Room} auf {Temperature} Grad
+HeatingIntent Heizung in dem {Room} auf {Temperature} Grad
+HeatingIntent Heizung im Raum {Room} auf {Temperature} Grad
+HeatingIntent Heizung in dem Raum {Room} auf {Temperature} Grad
+HeatingIntent Heizung Raum {Room} auf {Temperature} Grad
+HeatingIntent Heizung in der {Room} auf {Temperature} Grad
+HeatingIntent die Heizung in {Room} auf {Temperature} Grad
+HeatingIntent die Heizung im {Room} auf {Temperature} Grad
+HeatingIntent die Heizung in dem {Room} auf {Temperature} Grad
+HeatingIntent die Heizung im Raum {Room} auf {Temperature} Grad
+HeatingIntent die Heizung in dem Raum {Room} auf {Temperature} Grad
+HeatingIntent die Heizung Raum {Room} auf {Temperature} Grad
+HeatingIntent die Heizung in der {Room} auf {Temperature} Grad
+HeatingIntent Heizungen in {Room} auf {Temperature} Grad
+HeatingIntent Heizungen im {Room} auf {Temperature} Grad
+HeatingIntent Heizungen in dem {Room} auf {Temperature} Grad
+HeatingIntent Heizungen im Raum {Room} auf {Temperature} Grad
+HeatingIntent Heizungen in dem Raum {Room} auf {Temperature} Grad
+HeatingIntent Heizungen Raum {Room} auf {Temperature} Grad
+HeatingIntent Heizungen in der {Room} auf {Temperature} Grad
+HeatingIntent die Heizungen in {Room} auf {Temperature} Grad
+HeatingIntent die Heizungen im {Room} auf {Temperature} Grad
+HeatingIntent die Heizungen in dem {Room} auf {Temperature} Grad
+HeatingIntent die Heizungen im Raum {Room} auf {Temperature} Grad
+HeatingIntent die Heizungen in dem Raum {Room} auf {Temperature} Grad
+HeatingIntent die Heizungen Raum {Room} auf {Temperature} Grad
+HeatingIntent die Heizungen in der {Room} auf {Temperature} Grad
+HeatingIntent Heizkörper in {Room} auf {Temperature} Grad
+HeatingIntent Heizkörper im {Room} auf {Temperature} Grad
+HeatingIntent Heizkörper in dem {Room} auf {Temperature} Grad
+HeatingIntent Heizkörper im Raum {Room} auf {Temperature} Grad
+HeatingIntent Heizkörper in dem Raum {Room} auf {Temperature} Grad
+HeatingIntent Heizkörper Raum {Room} auf {Temperature} Grad
+HeatingIntent Heizkörper in der {Room} auf {Temperature} Grad
+HeatingIntent der Heizkörper in {Room} auf {Temperature} Grad
+HeatingIntent der Heizkörper im {Room} auf {Temperature} Grad
+HeatingIntent der Heizkörper in dem {Room} auf {Temperature} Grad
+HeatingIntent der Heizkörper im Raum {Room} auf {Temperature} Grad
+HeatingIntent der Heizkörper in dem Raum {Room} auf {Temperature} Grad
+HeatingIntent der Heizkörper Raum {Room} auf {Temperature} Grad
+HeatingIntent der Heizkörper in der {Room} auf {Temperature} Grad
+HeatingIntent den Heizkörper in {Room} auf {Temperature} Grad
+HeatingIntent den Heizkörper im {Room} auf {Temperature} Grad
+HeatingIntent den Heizkörper in dem {Room} auf {Temperature} Grad
+HeatingIntent den Heizkörper im Raum {Room} auf {Temperature} Grad
+HeatingIntent den Heizkörper in dem Raum {Room} auf {Temperature} Grad
+HeatingIntent den Heizkörper Raum {Room} auf {Temperature} Grad
+HeatingIntent den Heizkörper in der {Room} auf {Temperature} Grad
+HeatingIntent die Heizkörper in {Room} auf {Temperature} Grad
+HeatingIntent die Heizkörper im {Room} auf {Temperature} Grad
+HeatingIntent die Heizkörper in dem {Room} auf {Temperature} Grad
+HeatingIntent die Heizkörper im Raum {Room} auf {Temperature} Grad
+HeatingIntent die Heizkörper in dem Raum {Room} auf {Temperature} Grad
+HeatingIntent die Heizkörper Raum {Room} auf {Temperature} Grad
+HeatingIntent die Heizkörper in der {Room} auf {Temperature} Grad
+HeatingIntent das Thermostat in {Room} auf {Temperature} Grad
+HeatingIntent das Thermostat im {Room} auf {Temperature} Grad
+HeatingIntent das Thermostat in dem {Room} auf {Temperature} Grad
+HeatingIntent das Thermostat im Raum {Room} auf {Temperature} Grad
+HeatingIntent das Thermostat in dem Raum {Room} auf {Temperature} Grad
+HeatingIntent das Thermostat Raum {Room} auf {Temperature} Grad
+HeatingIntent das Thermostat in der {Room} auf {Temperature} Grad
+HeatingIntent Thermostat in {Room} auf {Temperature} Grad
+HeatingIntent Thermostat im {Room} auf {Temperature} Grad
+HeatingIntent Thermostat in dem {Room} auf {Temperature} Grad
+HeatingIntent Thermostat im Raum {Room} auf {Temperature} Grad
+HeatingIntent Thermostat in dem Raum {Room} auf {Temperature} Grad
+HeatingIntent Thermostat Raum {Room} auf {Temperature} Grad
+HeatingIntent Thermostat in der {Room} auf {Temperature} Grad
+HeatingIntent die Thermostate in {Room} auf {Temperature} Grad
+HeatingIntent die Thermostate im {Room} auf {Temperature} Grad
+HeatingIntent die Thermostate in dem {Room} auf {Temperature} Grad
+HeatingIntent die Thermostate im Raum {Room} auf {Temperature} Grad
+HeatingIntent die Thermostate in dem Raum {Room} auf {Temperature} Grad
+HeatingIntent die Thermostate Raum {Room} auf {Temperature} Grad
+HeatingIntent die Thermostate in der {Room} auf {Temperature} Grad
+HeatingIntent Stelle Heizung in {Room} für {Duration} auf {Temperature} Grad
+HeatingIntent Stelle Heizung im {Room} für {Duration} auf {Temperature} Grad
+HeatingIntent Stelle Heizung in dem {Room} für {Duration} auf {Temperature} Grad
+HeatingIntent Stelle Heizung im Raum {Room} für {Duration} auf {Temperature} Grad
+HeatingIntent Stelle Heizung in dem Raum {Room} für {Duration} auf {Temperature} Grad
+HeatingIntent Stelle Heizung Raum {Room} für {Duration} auf {Temperature} Grad
+HeatingIntent Stelle Heizung in der {Room} für {Duration} auf {Temperature} Grad
+HeatingIntent Stelle die Heizung in {Room} für {Duration} auf {Temperature} Grad
+HeatingIntent Stelle die Heizung im {Room} für {Duration} auf {Temperature} Grad
+HeatingIntent Stelle die Heizung in dem {Room} für {Duration} auf {Temperature} Grad
+HeatingIntent Stelle die Heizung im Raum {Room} für {Duration} auf {Temperature} Grad
+HeatingIntent Stelle die Heizung in dem Raum {Room} für {Duration} auf {Temperature} Grad
+HeatingIntent Stelle die Heizung Raum {Room} für {Duration} auf {Temperature} Grad
+HeatingIntent Stelle die Heizung in der {Room} für {Duration} auf {Temperature} Grad
+HeatingIntent Stelle Heizungen in {Room} für {Duration} auf {Temperature} Grad
+HeatingIntent Stelle Heizungen im {Room} für {Duration} auf {Temperature} Grad
+HeatingIntent Stelle Heizungen in dem {Room} für {Duration} auf {Temperature} Grad
+HeatingIntent Stelle Heizungen im Raum {Room} für {Duration} auf {Temperature} Grad
+HeatingIntent Stelle Heizungen in dem Raum {Room} für {Duration} auf {Temperature} Grad
+HeatingIntent Stelle Heizungen Raum {Room} für {Duration} auf {Temperature} Grad
+HeatingIntent Stelle Heizungen in der {Room} für {Duration} auf {Temperature} Grad
+HeatingIntent Stelle die Heizungen in {Room} für {Duration} auf {Temperature} Grad
+HeatingIntent Stelle die Heizungen im {Room} für {Duration} auf {Temperature} Grad
+HeatingIntent Stelle die Heizungen in dem {Room} für {Duration} auf {Temperature} Grad
+HeatingIntent Stelle die Heizungen im Raum {Room} für {Duration} auf {Temperature} Grad
+HeatingIntent Stelle die Heizungen in dem Raum {Room} für {Duration} auf {Temperature} Grad
+HeatingIntent Stelle die Heizungen Raum {Room} für {Duration} auf {Temperature} Grad
+HeatingIntent Stelle die Heizungen in der {Room} für {Duration} auf {Temperature} Grad
+HeatingIntent Stelle Heizkörper in {Room} für {Duration} auf {Temperature} Grad
+HeatingIntent Stelle Heizkörper im {Room} für {Duration} auf {Temperature} Grad
+HeatingIntent Stelle Heizkörper in dem {Room} für {Duration} auf {Temperature} Grad
+HeatingIntent Stelle Heizkörper im Raum {Room} für {Duration} auf {Temperature} Grad
+HeatingIntent Stelle Heizkörper in dem Raum {Room} für {Duration} auf {Temperature} Grad
+HeatingIntent Stelle Heizkörper Raum {Room} für {Duration} auf {Temperature} Grad
+HeatingIntent Stelle Heizkörper in der {Room} für {Duration} auf {Temperature} Grad
+HeatingIntent Stelle der Heizkörper in {Room} für {Duration} auf {Temperature} Grad
+HeatingIntent Stelle der Heizkörper im {Room} für {Duration} auf {Temperature} Grad
+HeatingIntent Stelle der Heizkörper in dem {Room} für {Duration} auf {Temperature} Grad
+HeatingIntent Stelle der Heizkörper im Raum {Room} für {Duration} auf {Temperature} Grad
+HeatingIntent Stelle der Heizkörper in dem Raum {Room} für {Duration} auf {Temperature} Grad
+HeatingIntent Stelle der Heizkörper Raum {Room} für {Duration} auf {Temperature} Grad
+HeatingIntent Stelle der Heizkörper in der {Room} für {Duration} auf {Temperature} Grad
+HeatingIntent Stelle den Heizkörper in {Room} für {Duration} auf {Temperature} Grad
+HeatingIntent Stelle den Heizkörper im {Room} für {Duration} auf {Temperature} Grad
+HeatingIntent Stelle den Heizkörper in dem {Room} für {Duration} auf {Temperature} Grad
+HeatingIntent Stelle den Heizkörper im Raum {Room} für {Duration} auf {Temperature} Grad
+HeatingIntent Stelle den Heizkörper in dem Raum {Room} für {Duration} auf {Temperature} Grad
+HeatingIntent Stelle den Heizkörper Raum {Room} für {Duration} auf {Temperature} Grad
+HeatingIntent Stelle den Heizkörper in der {Room} für {Duration} auf {Temperature} Grad
+HeatingIntent Stelle die Heizkörper in {Room} für {Duration} auf {Temperature} Grad
+HeatingIntent Stelle die Heizkörper im {Room} für {Duration} auf {Temperature} Grad
+HeatingIntent Stelle die Heizkörper in dem {Room} für {Duration} auf {Temperature} Grad
+HeatingIntent Stelle die Heizkörper im Raum {Room} für {Duration} auf {Temperature} Grad
+HeatingIntent Stelle die Heizkörper in dem Raum {Room} für {Duration} auf {Temperature} Grad
+HeatingIntent Stelle die Heizkörper Raum {Room} für {Duration} auf {Temperature} Grad
+HeatingIntent Stelle die Heizkörper in der {Room} für {Duration} auf {Temperature} Grad
+HeatingIntent Stelle das Thermostat in {Room} für {Duration} auf {Temperature} Grad
+HeatingIntent Stelle das Thermostat im {Room} für {Duration} auf {Temperature} Grad
+HeatingIntent Stelle das Thermostat in dem {Room} für {Duration} auf {Temperature} Grad
+HeatingIntent Stelle das Thermostat im Raum {Room} für {Duration} auf {Temperature} Grad
+HeatingIntent Stelle das Thermostat in dem Raum {Room} für {Duration} auf {Temperature} Grad
+HeatingIntent Stelle das Thermostat Raum {Room} für {Duration} auf {Temperature} Grad
+HeatingIntent Stelle das Thermostat in der {Room} für {Duration} auf {Temperature} Grad
+HeatingIntent Stelle Thermostat in {Room} für {Duration} auf {Temperature} Grad
+HeatingIntent Stelle Thermostat im {Room} für {Duration} auf {Temperature} Grad
+HeatingIntent Stelle Thermostat in dem {Room} für {Duration} auf {Temperature} Grad
+HeatingIntent Stelle Thermostat im Raum {Room} für {Duration} auf {Temperature} Grad
+HeatingIntent Stelle Thermostat in dem Raum {Room} für {Duration} auf {Temperature} Grad
+HeatingIntent Stelle Thermostat Raum {Room} für {Duration} auf {Temperature} Grad
+HeatingIntent Stelle Thermostat in der {Room} für {Duration} auf {Temperature} Grad
+HeatingIntent Stelle die Thermostate in {Room} für {Duration} auf {Temperature} Grad
+HeatingIntent Stelle die Thermostate im {Room} für {Duration} auf {Temperature} Grad
+HeatingIntent Stelle die Thermostate in dem {Room} für {Duration} auf {Temperature} Grad
+HeatingIntent Stelle die Thermostate im Raum {Room} für {Duration} auf {Temperature} Grad
+HeatingIntent Stelle die Thermostate in dem Raum {Room} für {Duration} auf {Temperature} Grad
+HeatingIntent Stelle die Thermostate Raum {Room} für {Duration} auf {Temperature} Grad
+HeatingIntent Stelle die Thermostate in der {Room} für {Duration} auf {Temperature} Grad
+HeatingIntent Heizung in {Room} für {Duration} auf {Temperature} Grad
+HeatingIntent Heizung im {Room} für {Duration} auf {Temperature} Grad
+HeatingIntent Heizung in dem {Room} für {Duration} auf {Temperature} Grad
+HeatingIntent Heizung im Raum {Room} für {Duration} auf {Temperature} Grad
+HeatingIntent Heizung in dem Raum {Room} für {Duration} auf {Temperature} Grad
+HeatingIntent Heizung Raum {Room} für {Duration} auf {Temperature} Grad
+HeatingIntent Heizung in der {Room} für {Duration} auf {Temperature} Grad
+HeatingIntent die Heizung in {Room} für {Duration} auf {Temperature} Grad
+HeatingIntent die Heizung im {Room} für {Duration} auf {Temperature} Grad
+HeatingIntent die Heizung in dem {Room} für {Duration} auf {Temperature} Grad
+HeatingIntent die Heizung im Raum {Room} für {Duration} auf {Temperature} Grad
+HeatingIntent die Heizung in dem Raum {Room} für {Duration} auf {Temperature} Grad
+HeatingIntent die Heizung Raum {Room} für {Duration} auf {Temperature} Grad
+HeatingIntent die Heizung in der {Room} für {Duration} auf {Temperature} Grad
+HeatingIntent Heizungen in {Room} für {Duration} auf {Temperature} Grad
+HeatingIntent Heizungen im {Room} für {Duration} auf {Temperature} Grad
+HeatingIntent Heizungen in dem {Room} für {Duration} auf {Temperature} Grad
+HeatingIntent Heizungen im Raum {Room} für {Duration} auf {Temperature} Grad
+HeatingIntent Heizungen in dem Raum {Room} für {Duration} auf {Temperature} Grad
+HeatingIntent Heizungen Raum {Room} für {Duration} auf {Temperature} Grad
+HeatingIntent Heizungen in der {Room} für {Duration} auf {Temperature} Grad
+HeatingIntent die Heizungen in {Room} für {Duration} auf {Temperature} Grad
+HeatingIntent die Heizungen im {Room} für {Duration} auf {Temperature} Grad
+HeatingIntent die Heizungen in dem {Room} für {Duration} auf {Temperature} Grad
+HeatingIntent die Heizungen im Raum {Room} für {Duration} auf {Temperature} Grad
+HeatingIntent die Heizungen in dem Raum {Room} für {Duration} auf {Temperature} Grad
+HeatingIntent die Heizungen Raum {Room} für {Duration} auf {Temperature} Grad
+HeatingIntent die Heizungen in der {Room} für {Duration} auf {Temperature} Grad
+HeatingIntent Heizkörper in {Room} für {Duration} auf {Temperature} Grad
+HeatingIntent Heizkörper im {Room} für {Duration} auf {Temperature} Grad
+HeatingIntent Heizkörper in dem {Room} für {Duration} auf {Temperature} Grad
+HeatingIntent Heizkörper im Raum {Room} für {Duration} auf {Temperature} Grad
+HeatingIntent Heizkörper in dem Raum {Room} für {Duration} auf {Temperature} Grad
+HeatingIntent Heizkörper Raum {Room} für {Duration} auf {Temperature} Grad
+HeatingIntent Heizkörper in der {Room} für {Duration} auf {Temperature} Grad
+HeatingIntent der Heizkörper in {Room} für {Duration} auf {Temperature} Grad
+HeatingIntent der Heizkörper im {Room} für {Duration} auf {Temperature} Grad
+HeatingIntent der Heizkörper in dem {Room} für {Duration} auf {Temperature} Grad
+HeatingIntent der Heizkörper im Raum {Room} für {Duration} auf {Temperature} Grad
+HeatingIntent der Heizkörper in dem Raum {Room} für {Duration} auf {Temperature} Grad
+HeatingIntent der Heizkörper Raum {Room} für {Duration} auf {Temperature} Grad
+HeatingIntent der Heizkörper in der {Room} für {Duration} auf {Temperature} Grad
+HeatingIntent den Heizkörper in {Room} für {Duration} auf {Temperature} Grad
+HeatingIntent den Heizkörper im {Room} für {Duration} auf {Temperature} Grad
+HeatingIntent den Heizkörper in dem {Room} für {Duration} auf {Temperature} Grad
+HeatingIntent den Heizkörper im Raum {Room} für {Duration} auf {Temperature} Grad
+HeatingIntent den Heizkörper in dem Raum {Room} für {Duration} auf {Temperature} Grad
+HeatingIntent den Heizkörper Raum {Room} für {Duration} auf {Temperature} Grad
+HeatingIntent den Heizkörper in der {Room} für {Duration} auf {Temperature} Grad
+HeatingIntent die Heizkörper in {Room} für {Duration} auf {Temperature} Grad
+HeatingIntent die Heizkörper im {Room} für {Duration} auf {Temperature} Grad
+HeatingIntent die Heizkörper in dem {Room} für {Duration} auf {Temperature} Grad
+HeatingIntent die Heizkörper im Raum {Room} für {Duration} auf {Temperature} Grad
+HeatingIntent die Heizkörper in dem Raum {Room} für {Duration} auf {Temperature} Grad
+HeatingIntent die Heizkörper Raum {Room} für {Duration} auf {Temperature} Grad
+HeatingIntent die Heizkörper in der {Room} für {Duration} auf {Temperature} Grad
+HeatingIntent das Thermostat in {Room} für {Duration} auf {Temperature} Grad
+HeatingIntent das Thermostat im {Room} für {Duration} auf {Temperature} Grad
+HeatingIntent das Thermostat in dem {Room} für {Duration} auf {Temperature} Grad
+HeatingIntent das Thermostat im Raum {Room} für {Duration} auf {Temperature} Grad
+HeatingIntent das Thermostat in dem Raum {Room} für {Duration} auf {Temperature} Grad
+HeatingIntent das Thermostat Raum {Room} für {Duration} auf {Temperature} Grad
+HeatingIntent das Thermostat in der {Room} für {Duration} auf {Temperature} Grad
+HeatingIntent Thermostat in {Room} für {Duration} auf {Temperature} Grad
+HeatingIntent Thermostat im {Room} für {Duration} auf {Temperature} Grad
+HeatingIntent Thermostat in dem {Room} für {Duration} auf {Temperature} Grad
+HeatingIntent Thermostat im Raum {Room} für {Duration} auf {Temperature} Grad
+HeatingIntent Thermostat in dem Raum {Room} für {Duration} auf {Temperature} Grad
+HeatingIntent Thermostat Raum {Room} für {Duration} auf {Temperature} Grad
+HeatingIntent Thermostat in der {Room} für {Duration} auf {Temperature} Grad
+HeatingIntent die Thermostate in {Room} für {Duration} auf {Temperature} Grad
+HeatingIntent die Thermostate im {Room} für {Duration} auf {Temperature} Grad
+HeatingIntent die Thermostate in dem {Room} für {Duration} auf {Temperature} Grad
+HeatingIntent die Thermostate im Raum {Room} für {Duration} auf {Temperature} Grad
+HeatingIntent die Thermostate in dem Raum {Room} für {Duration} auf {Temperature} Grad
+HeatingIntent die Thermostate Raum {Room} für {Duration} auf {Temperature} Grad
+HeatingIntent die Thermostate in der {Room} für {Duration} auf {Temperature} Grad
+
+ShutterIntent Fahre Rollladen {Shutter} {Direction}
+ShutterIntent Fahre Rollo {Shutter} {Direction}
+ShutterIntent Fahre Rollläden {Shutter} {Direction}
+ShutterIntent Fahre Rollos {Shutter} {Direction}
+ShutterIntent Fahre die Rollos {Shutter} {Direction}
+ShutterIntent Fahre die Rollläden {Shutter} {Direction}
+ShutterIntent Fahre den Rollo {Shutter} {Direction}
+ShutterIntent Fahre den Rollladen {Shutter} {Direction}
+ShutterIntent Fahre Rollladen {Shutter} in {Room} {Direction}
+ShutterIntent Fahre Rollladen {Shutter} im {Room} {Direction}
+ShutterIntent Fahre Rollladen {Shutter} in dem {Room} {Direction}
+ShutterIntent Fahre Rollladen {Shutter} im Raum {Room} {Direction}
+ShutterIntent Fahre Rollladen {Shutter} in dem Raum {Room} {Direction}
+ShutterIntent Fahre Rollladen {Shutter} Raum {Room} {Direction}
+ShutterIntent Fahre Rollladen {Shutter} in der {Room} {Direction}
+ShutterIntent Fahre Rollo {Shutter} in {Room} {Direction}
+ShutterIntent Fahre Rollo {Shutter} im {Room} {Direction}
+ShutterIntent Fahre Rollo {Shutter} in dem {Room} {Direction}
+ShutterIntent Fahre Rollo {Shutter} im Raum {Room} {Direction}
+ShutterIntent Fahre Rollo {Shutter} in dem Raum {Room} {Direction}
+ShutterIntent Fahre Rollo {Shutter} Raum {Room} {Direction}
+ShutterIntent Fahre Rollo {Shutter} in der {Room} {Direction}
+ShutterIntent Fahre Rollläden {Shutter} in {Room} {Direction}
+ShutterIntent Fahre Rollläden {Shutter} im {Room} {Direction}
+ShutterIntent Fahre Rollläden {Shutter} in dem {Room} {Direction}
+ShutterIntent Fahre Rollläden {Shutter} im Raum {Room} {Direction}
+ShutterIntent Fahre Rollläden {Shutter} in dem Raum {Room} {Direction}
+ShutterIntent Fahre Rollläden {Shutter} Raum {Room} {Direction}
+ShutterIntent Fahre Rollläden {Shutter} in der {Room} {Direction}
+ShutterIntent Fahre Rollos {Shutter} in {Room} {Direction}
+ShutterIntent Fahre Rollos {Shutter} im {Room} {Direction}
+ShutterIntent Fahre Rollos {Shutter} in dem {Room} {Direction}
+ShutterIntent Fahre Rollos {Shutter} im Raum {Room} {Direction}
+ShutterIntent Fahre Rollos {Shutter} in dem Raum {Room} {Direction}
+ShutterIntent Fahre Rollos {Shutter} Raum {Room} {Direction}
+ShutterIntent Fahre Rollos {Shutter} in der {Room} {Direction}
+ShutterIntent Fahre die Rollos {Shutter} in {Room} {Direction}
+ShutterIntent Fahre die Rollos {Shutter} im {Room} {Direction}
+ShutterIntent Fahre die Rollos {Shutter} in dem {Room} {Direction}
+ShutterIntent Fahre die Rollos {Shutter} im Raum {Room} {Direction}
+ShutterIntent Fahre die Rollos {Shutter} in dem Raum {Room} {Direction}
+ShutterIntent Fahre die Rollos {Shutter} Raum {Room} {Direction}
+ShutterIntent Fahre die Rollos {Shutter} in der {Room} {Direction}
+ShutterIntent Fahre die Rollläden {Shutter} in {Room} {Direction}
+ShutterIntent Fahre die Rollläden {Shutter} im {Room} {Direction}
+ShutterIntent Fahre die Rollläden {Shutter} in dem {Room} {Direction}
+ShutterIntent Fahre die Rollläden {Shutter} im Raum {Room} {Direction}
+ShutterIntent Fahre die Rollläden {Shutter} in dem Raum {Room} {Direction}
+ShutterIntent Fahre die Rollläden {Shutter} Raum {Room} {Direction}
+ShutterIntent Fahre die Rollläden {Shutter} in der {Room} {Direction}
+ShutterIntent Fahre den Rollo {Shutter} in {Room} {Direction}
+ShutterIntent Fahre den Rollo {Shutter} im {Room} {Direction}
+ShutterIntent Fahre den Rollo {Shutter} in dem {Room} {Direction}
+ShutterIntent Fahre den Rollo {Shutter} im Raum {Room} {Direction}
+ShutterIntent Fahre den Rollo {Shutter} in dem Raum {Room} {Direction}
+ShutterIntent Fahre den Rollo {Shutter} Raum {Room} {Direction}
+ShutterIntent Fahre den Rollo {Shutter} in der {Room} {Direction}
+ShutterIntent Fahre den Rollladen {Shutter} in {Room} {Direction}
+ShutterIntent Fahre den Rollladen {Shutter} im {Room} {Direction}
+ShutterIntent Fahre den Rollladen {Shutter} in dem {Room} {Direction}
+ShutterIntent Fahre den Rollladen {Shutter} im Raum {Room} {Direction}
+ShutterIntent Fahre den Rollladen {Shutter} in dem Raum {Room} {Direction}
+ShutterIntent Fahre den Rollladen {Shutter} Raum {Room} {Direction}
+ShutterIntent Fahre den Rollladen {Shutter} in der {Room} {Direction}
+ShutterIntent Fahre Rollladen in {Room} {Direction}
+ShutterIntent Fahre Rollladen im {Room} {Direction}
+ShutterIntent Fahre Rollladen in dem {Room} {Direction}
+ShutterIntent Fahre Rollladen im Raum {Room} {Direction}
+ShutterIntent Fahre Rollladen in dem Raum {Room} {Direction}
+ShutterIntent Fahre Rollladen Raum {Room} {Direction}
+ShutterIntent Fahre Rollladen in der {Room} {Direction}
+ShutterIntent Fahre Rollo in {Room} {Direction}
+ShutterIntent Fahre Rollo im {Room} {Direction}
+ShutterIntent Fahre Rollo in dem {Room} {Direction}
+ShutterIntent Fahre Rollo im Raum {Room} {Direction}
+ShutterIntent Fahre Rollo in dem Raum {Room} {Direction}
+ShutterIntent Fahre Rollo Raum {Room} {Direction}
+ShutterIntent Fahre Rollo in der {Room} {Direction}
+ShutterIntent Fahre Rollläden in {Room} {Direction}
+ShutterIntent Fahre Rollläden im {Room} {Direction}
+ShutterIntent Fahre Rollläden in dem {Room} {Direction}
+ShutterIntent Fahre Rollläden im Raum {Room} {Direction}
+ShutterIntent Fahre Rollläden in dem Raum {Room} {Direction}
+ShutterIntent Fahre Rollläden Raum {Room} {Direction}
+ShutterIntent Fahre Rollläden in der {Room} {Direction}
+ShutterIntent Fahre Rollos in {Room} {Direction}
+ShutterIntent Fahre Rollos im {Room} {Direction}
+ShutterIntent Fahre Rollos in dem {Room} {Direction}
+ShutterIntent Fahre Rollos im Raum {Room} {Direction}
+ShutterIntent Fahre Rollos in dem Raum {Room} {Direction}
+ShutterIntent Fahre Rollos Raum {Room} {Direction}
+ShutterIntent Fahre Rollos in der {Room} {Direction}
+ShutterIntent Fahre die Rollos in {Room} {Direction}
+ShutterIntent Fahre die Rollos im {Room} {Direction}
+ShutterIntent Fahre die Rollos in dem {Room} {Direction}
+ShutterIntent Fahre die Rollos im Raum {Room} {Direction}
+ShutterIntent Fahre die Rollos in dem Raum {Room} {Direction}
+ShutterIntent Fahre die Rollos Raum {Room} {Direction}
+ShutterIntent Fahre die Rollos in der {Room} {Direction}
+ShutterIntent Fahre die Rollläden in {Room} {Direction}
+ShutterIntent Fahre die Rollläden im {Room} {Direction}
+ShutterIntent Fahre die Rollläden in dem {Room} {Direction}
+ShutterIntent Fahre die Rollläden im Raum {Room} {Direction}
+ShutterIntent Fahre die Rollläden in dem Raum {Room} {Direction}
+ShutterIntent Fahre die Rollläden Raum {Room} {Direction}
+ShutterIntent Fahre die Rollläden in der {Room} {Direction}
+ShutterIntent Fahre den Rollo in {Room} {Direction}
+ShutterIntent Fahre den Rollo im {Room} {Direction}
+ShutterIntent Fahre den Rollo in dem {Room} {Direction}
+ShutterIntent Fahre den Rollo im Raum {Room} {Direction}
+ShutterIntent Fahre den Rollo in dem Raum {Room} {Direction}
+ShutterIntent Fahre den Rollo Raum {Room} {Direction}
+ShutterIntent Fahre den Rollo in der {Room} {Direction}
+ShutterIntent Fahre den Rollladen in {Room} {Direction}
+ShutterIntent Fahre den Rollladen im {Room} {Direction}
+ShutterIntent Fahre den Rollladen in dem {Room} {Direction}
+ShutterIntent Fahre den Rollladen im Raum {Room} {Direction}
+ShutterIntent Fahre den Rollladen in dem Raum {Room} {Direction}
+ShutterIntent Fahre den Rollladen Raum {Room} {Direction}
+ShutterIntent Fahre den Rollladen in der {Room} {Direction}
+ShutterIntent Fahre Rollladen in {Room} auf {Percent} Prozent
+ShutterIntent Fahre Rollladen im {Room} auf {Percent} Prozent
+ShutterIntent Fahre Rollladen in dem {Room} auf {Percent} Prozent
+ShutterIntent Fahre Rollladen im Raum {Room} auf {Percent} Prozent
+ShutterIntent Fahre Rollladen in dem Raum {Room} auf {Percent} Prozent
+ShutterIntent Fahre Rollladen Raum {Room} auf {Percent} Prozent
+ShutterIntent Fahre Rollladen in der {Room} auf {Percent} Prozent
+ShutterIntent Fahre Rollo in {Room} auf {Percent} Prozent
+ShutterIntent Fahre Rollo im {Room} auf {Percent} Prozent
+ShutterIntent Fahre Rollo in dem {Room} auf {Percent} Prozent
+ShutterIntent Fahre Rollo im Raum {Room} auf {Percent} Prozent
+ShutterIntent Fahre Rollo in dem Raum {Room} auf {Percent} Prozent
+ShutterIntent Fahre Rollo Raum {Room} auf {Percent} Prozent
+ShutterIntent Fahre Rollo in der {Room} auf {Percent} Prozent
+ShutterIntent Fahre Rollläden in {Room} auf {Percent} Prozent
+ShutterIntent Fahre Rollläden im {Room} auf {Percent} Prozent
+ShutterIntent Fahre Rollläden in dem {Room} auf {Percent} Prozent
+ShutterIntent Fahre Rollläden im Raum {Room} auf {Percent} Prozent
+ShutterIntent Fahre Rollläden in dem Raum {Room} auf {Percent} Prozent
+ShutterIntent Fahre Rollläden Raum {Room} auf {Percent} Prozent
+ShutterIntent Fahre Rollläden in der {Room} auf {Percent} Prozent
+ShutterIntent Fahre Rollos in {Room} auf {Percent} Prozent
+ShutterIntent Fahre Rollos im {Room} auf {Percent} Prozent
+ShutterIntent Fahre Rollos in dem {Room} auf {Percent} Prozent
+ShutterIntent Fahre Rollos im Raum {Room} auf {Percent} Prozent
+ShutterIntent Fahre Rollos in dem Raum {Room} auf {Percent} Prozent
+ShutterIntent Fahre Rollos Raum {Room} auf {Percent} Prozent
+ShutterIntent Fahre Rollos in der {Room} auf {Percent} Prozent
+ShutterIntent Fahre die Rollos in {Room} auf {Percent} Prozent
+ShutterIntent Fahre die Rollos im {Room} auf {Percent} Prozent
+ShutterIntent Fahre die Rollos in dem {Room} auf {Percent} Prozent
+ShutterIntent Fahre die Rollos im Raum {Room} auf {Percent} Prozent
+ShutterIntent Fahre die Rollos in dem Raum {Room} auf {Percent} Prozent
+ShutterIntent Fahre die Rollos Raum {Room} auf {Percent} Prozent
+ShutterIntent Fahre die Rollos in der {Room} auf {Percent} Prozent
+ShutterIntent Fahre die Rollläden in {Room} auf {Percent} Prozent
+ShutterIntent Fahre die Rollläden im {Room} auf {Percent} Prozent
+ShutterIntent Fahre die Rollläden in dem {Room} auf {Percent} Prozent
+ShutterIntent Fahre die Rollläden im Raum {Room} auf {Percent} Prozent
+ShutterIntent Fahre die Rollläden in dem Raum {Room} auf {Percent} Prozent
+ShutterIntent Fahre die Rollläden Raum {Room} auf {Percent} Prozent
+ShutterIntent Fahre die Rollläden in der {Room} auf {Percent} Prozent
+ShutterIntent Fahre den Rollo in {Room} auf {Percent} Prozent
+ShutterIntent Fahre den Rollo im {Room} auf {Percent} Prozent
+ShutterIntent Fahre den Rollo in dem {Room} auf {Percent} Prozent
+ShutterIntent Fahre den Rollo im Raum {Room} auf {Percent} Prozent
+ShutterIntent Fahre den Rollo in dem Raum {Room} auf {Percent} Prozent
+ShutterIntent Fahre den Rollo Raum {Room} auf {Percent} Prozent
+ShutterIntent Fahre den Rollo in der {Room} auf {Percent} Prozent
+ShutterIntent Fahre den Rollladen in {Room} auf {Percent} Prozent
+ShutterIntent Fahre den Rollladen im {Room} auf {Percent} Prozent
+ShutterIntent Fahre den Rollladen in dem {Room} auf {Percent} Prozent
+ShutterIntent Fahre den Rollladen im Raum {Room} auf {Percent} Prozent
+ShutterIntent Fahre den Rollladen in dem Raum {Room} auf {Percent} Prozent
+ShutterIntent Fahre den Rollladen Raum {Room} auf {Percent} Prozent
+ShutterIntent Fahre den Rollladen in der {Room} auf {Percent} Prozent
+ShutterIntent Fahre Rollladen in {Room} auf {Percent} Prozent {Direction}
+ShutterIntent Fahre Rollladen im {Room} auf {Percent} Prozent {Direction}
+ShutterIntent Fahre Rollladen in dem {Room} auf {Percent} Prozent {Direction}
+ShutterIntent Fahre Rollladen im Raum {Room} auf {Percent} Prozent {Direction}
+ShutterIntent Fahre Rollladen in dem Raum {Room} auf {Percent} Prozent {Direction}
+ShutterIntent Fahre Rollladen Raum {Room} auf {Percent} Prozent {Direction}
+ShutterIntent Fahre Rollladen in der {Room} auf {Percent} Prozent {Direction}
+ShutterIntent Fahre Rollo in {Room} auf {Percent} Prozent {Direction}
+ShutterIntent Fahre Rollo im {Room} auf {Percent} Prozent {Direction}
+ShutterIntent Fahre Rollo in dem {Room} auf {Percent} Prozent {Direction}
+ShutterIntent Fahre Rollo im Raum {Room} auf {Percent} Prozent {Direction}
+ShutterIntent Fahre Rollo in dem Raum {Room} auf {Percent} Prozent {Direction}
+ShutterIntent Fahre Rollo Raum {Room} auf {Percent} Prozent {Direction}
+ShutterIntent Fahre Rollo in der {Room} auf {Percent} Prozent {Direction}
+ShutterIntent Fahre Rollläden in {Room} auf {Percent} Prozent {Direction}
+ShutterIntent Fahre Rollläden im {Room} auf {Percent} Prozent {Direction}
+ShutterIntent Fahre Rollläden in dem {Room} auf {Percent} Prozent {Direction}
+ShutterIntent Fahre Rollläden im Raum {Room} auf {Percent} Prozent {Direction}
+ShutterIntent Fahre Rollläden in dem Raum {Room} auf {Percent} Prozent {Direction}
+ShutterIntent Fahre Rollläden Raum {Room} auf {Percent} Prozent {Direction}
+ShutterIntent Fahre Rollläden in der {Room} auf {Percent} Prozent {Direction}
+ShutterIntent Fahre Rollos in {Room} auf {Percent} Prozent {Direction}
+ShutterIntent Fahre Rollos im {Room} auf {Percent} Prozent {Direction}
+ShutterIntent Fahre Rollos in dem {Room} auf {Percent} Prozent {Direction}
+ShutterIntent Fahre Rollos im Raum {Room} auf {Percent} Prozent {Direction}
+ShutterIntent Fahre Rollos in dem Raum {Room} auf {Percent} Prozent {Direction}
+ShutterIntent Fahre Rollos Raum {Room} auf {Percent} Prozent {Direction}
+ShutterIntent Fahre Rollos in der {Room} auf {Percent} Prozent {Direction}
+ShutterIntent Fahre die Rollos in {Room} auf {Percent} Prozent {Direction}
+ShutterIntent Fahre die Rollos im {Room} auf {Percent} Prozent {Direction}
+ShutterIntent Fahre die Rollos in dem {Room} auf {Percent} Prozent {Direction}
+ShutterIntent Fahre die Rollos im Raum {Room} auf {Percent} Prozent {Direction}
+ShutterIntent Fahre die Rollos in dem Raum {Room} auf {Percent} Prozent {Direction}
+ShutterIntent Fahre die Rollos Raum {Room} auf {Percent} Prozent {Direction}
+ShutterIntent Fahre die Rollos in der {Room} auf {Percent} Prozent {Direction}
+ShutterIntent Fahre die Rollläden in {Room} auf {Percent} Prozent {Direction}
+ShutterIntent Fahre die Rollläden im {Room} auf {Percent} Prozent {Direction}
+ShutterIntent Fahre die Rollläden in dem {Room} auf {Percent} Prozent {Direction}
+ShutterIntent Fahre die Rollläden im Raum {Room} auf {Percent} Prozent {Direction}
+ShutterIntent Fahre die Rollläden in dem Raum {Room} auf {Percent} Prozent {Direction}
+ShutterIntent Fahre die Rollläden Raum {Room} auf {Percent} Prozent {Direction}
+ShutterIntent Fahre die Rollläden in der {Room} auf {Percent} Prozent {Direction}
+ShutterIntent Fahre den Rollo in {Room} auf {Percent} Prozent {Direction}
+ShutterIntent Fahre den Rollo im {Room} auf {Percent} Prozent {Direction}
+ShutterIntent Fahre den Rollo in dem {Room} auf {Percent} Prozent {Direction}
+ShutterIntent Fahre den Rollo im Raum {Room} auf {Percent} Prozent {Direction}
+ShutterIntent Fahre den Rollo in dem Raum {Room} auf {Percent} Prozent {Direction}
+ShutterIntent Fahre den Rollo Raum {Room} auf {Percent} Prozent {Direction}
+ShutterIntent Fahre den Rollo in der {Room} auf {Percent} Prozent {Direction}
+ShutterIntent Fahre den Rollladen in {Room} auf {Percent} Prozent {Direction}
+ShutterIntent Fahre den Rollladen im {Room} auf {Percent} Prozent {Direction}
+ShutterIntent Fahre den Rollladen in dem {Room} auf {Percent} Prozent {Direction}
+ShutterIntent Fahre den Rollladen im Raum {Room} auf {Percent} Prozent {Direction}
+ShutterIntent Fahre den Rollladen in dem Raum {Room} auf {Percent} Prozent {Direction}
+ShutterIntent Fahre den Rollladen Raum {Room} auf {Percent} Prozent {Direction}
+ShutterIntent Fahre den Rollladen in der {Room} auf {Percent} Prozent {Direction}
+ShutterIntent Fahre Rollladen im Raum {Room} auf {Percent} Prozent
+ShutterIntent Fahre Rollo im Raum {Room} auf {Percent} Prozent
+ShutterIntent Fahre Rollläden im Raum {Room} auf {Percent} Prozent
+ShutterIntent Fahre Rollos im Raum {Room} auf {Percent} Prozent
+ShutterIntent Fahre die Rollos im Raum {Room} auf {Percent} Prozent
+ShutterIntent Fahre die Rollläden im Raum {Room} auf {Percent} Prozent
+ShutterIntent Fahre den Rollo im Raum {Room} auf {Percent} Prozent
+ShutterIntent Fahre den Rollladen im Raum {Room} auf {Percent} Prozent
+ShutterIntent {Direction} Rollladen {Shutter}
+ShutterIntent {Direction} Rollo {Shutter}
+ShutterIntent {Direction} Rollläden {Shutter}
+ShutterIntent {Direction} Rollos {Shutter}
+ShutterIntent {Direction} die Rollos {Shutter}
+ShutterIntent {Direction} die Rollläden {Shutter}
+ShutterIntent {Direction} den Rollo {Shutter}
+ShutterIntent {Direction} den Rollladen {Shutter}
+ShutterIntent {Direction} Rollladen {Shutter} in {Room}
+ShutterIntent {Direction} Rollladen {Shutter} im {Room}
+ShutterIntent {Direction} Rollladen {Shutter} in dem {Room}
+ShutterIntent {Direction} Rollladen {Shutter} im Raum {Room}
+ShutterIntent {Direction} Rollladen {Shutter} in dem Raum {Room}
+ShutterIntent {Direction} Rollladen {Shutter} Raum {Room}
+ShutterIntent {Direction} Rollladen {Shutter} in der {Room}
+ShutterIntent {Direction} Rollo {Shutter} in {Room}
+ShutterIntent {Direction} Rollo {Shutter} im {Room}
+ShutterIntent {Direction} Rollo {Shutter} in dem {Room}
+ShutterIntent {Direction} Rollo {Shutter} im Raum {Room}
+ShutterIntent {Direction} Rollo {Shutter} in dem Raum {Room}
+ShutterIntent {Direction} Rollo {Shutter} Raum {Room}
+ShutterIntent {Direction} Rollo {Shutter} in der {Room}
+ShutterIntent {Direction} Rollläden {Shutter} in {Room}
+ShutterIntent {Direction} Rollläden {Shutter} im {Room}
+ShutterIntent {Direction} Rollläden {Shutter} in dem {Room}
+ShutterIntent {Direction} Rollläden {Shutter} im Raum {Room}
+ShutterIntent {Direction} Rollläden {Shutter} in dem Raum {Room}
+ShutterIntent {Direction} Rollläden {Shutter} Raum {Room}
+ShutterIntent {Direction} Rollläden {Shutter} in der {Room}
+ShutterIntent {Direction} Rollos {Shutter} in {Room}
+ShutterIntent {Direction} Rollos {Shutter} im {Room}
+ShutterIntent {Direction} Rollos {Shutter} in dem {Room}
+ShutterIntent {Direction} Rollos {Shutter} im Raum {Room}
+ShutterIntent {Direction} Rollos {Shutter} in dem Raum {Room}
+ShutterIntent {Direction} Rollos {Shutter} Raum {Room}
+ShutterIntent {Direction} Rollos {Shutter} in der {Room}
+ShutterIntent {Direction} die Rollos {Shutter} in {Room}
+ShutterIntent {Direction} die Rollos {Shutter} im {Room}
+ShutterIntent {Direction} die Rollos {Shutter} in dem {Room}
+ShutterIntent {Direction} die Rollos {Shutter} im Raum {Room}
+ShutterIntent {Direction} die Rollos {Shutter} in dem Raum {Room}
+ShutterIntent {Direction} die Rollos {Shutter} Raum {Room}
+ShutterIntent {Direction} die Rollos {Shutter} in der {Room}
+ShutterIntent {Direction} die Rollläden {Shutter} in {Room}
+ShutterIntent {Direction} die Rollläden {Shutter} im {Room}
+ShutterIntent {Direction} die Rollläden {Shutter} in dem {Room}
+ShutterIntent {Direction} die Rollläden {Shutter} im Raum {Room}
+ShutterIntent {Direction} die Rollläden {Shutter} in dem Raum {Room}
+ShutterIntent {Direction} die Rollläden {Shutter} Raum {Room}
+ShutterIntent {Direction} die Rollläden {Shutter} in der {Room}
+ShutterIntent {Direction} den Rollo {Shutter} in {Room}
+ShutterIntent {Direction} den Rollo {Shutter} im {Room}
+ShutterIntent {Direction} den Rollo {Shutter} in dem {Room}
+ShutterIntent {Direction} den Rollo {Shutter} im Raum {Room}
+ShutterIntent {Direction} den Rollo {Shutter} in dem Raum {Room}
+ShutterIntent {Direction} den Rollo {Shutter} Raum {Room}
+ShutterIntent {Direction} den Rollo {Shutter} in der {Room}
+ShutterIntent {Direction} den Rollladen {Shutter} in {Room}
+ShutterIntent {Direction} den Rollladen {Shutter} im {Room}
+ShutterIntent {Direction} den Rollladen {Shutter} in dem {Room}
+ShutterIntent {Direction} den Rollladen {Shutter} im Raum {Room}
+ShutterIntent {Direction} den Rollladen {Shutter} in dem Raum {Room}
+ShutterIntent {Direction} den Rollladen {Shutter} Raum {Room}
+ShutterIntent {Direction} den Rollladen {Shutter} in der {Room}
+ShutterIntent {Direction} Rollladen
+ShutterIntent {Direction} Rollo
+ShutterIntent {Direction} Rollläden
+ShutterIntent {Direction} Rollos
+ShutterIntent {Direction} die Rollos
+ShutterIntent {Direction} die Rollläden
+ShutterIntent {Direction} den Rollo
+ShutterIntent {Direction} den Rollladen
+ShutterIntent {Direction} Rollladen in {Room}
+ShutterIntent {Direction} Rollladen im {Room}
+ShutterIntent {Direction} Rollladen in dem {Room}
+ShutterIntent {Direction} Rollladen im Raum {Room}
+ShutterIntent {Direction} Rollladen in dem Raum {Room}
+ShutterIntent {Direction} Rollladen Raum {Room}
+ShutterIntent {Direction} Rollladen in der {Room}
+ShutterIntent {Direction} Rollo in {Room}
+ShutterIntent {Direction} Rollo im {Room}
+ShutterIntent {Direction} Rollo in dem {Room}
+ShutterIntent {Direction} Rollo im Raum {Room}
+ShutterIntent {Direction} Rollo in dem Raum {Room}
+ShutterIntent {Direction} Rollo Raum {Room}
+ShutterIntent {Direction} Rollo in der {Room}
+ShutterIntent {Direction} Rollläden in {Room}
+ShutterIntent {Direction} Rollläden im {Room}
+ShutterIntent {Direction} Rollläden in dem {Room}
+ShutterIntent {Direction} Rollläden im Raum {Room}
+ShutterIntent {Direction} Rollläden in dem Raum {Room}
+ShutterIntent {Direction} Rollläden Raum {Room}
+ShutterIntent {Direction} Rollläden in der {Room}
+ShutterIntent {Direction} Rollos in {Room}
+ShutterIntent {Direction} Rollos im {Room}
+ShutterIntent {Direction} Rollos in dem {Room}
+ShutterIntent {Direction} Rollos im Raum {Room}
+ShutterIntent {Direction} Rollos in dem Raum {Room}
+ShutterIntent {Direction} Rollos Raum {Room}
+ShutterIntent {Direction} Rollos in der {Room}
+ShutterIntent {Direction} die Rollos in {Room}
+ShutterIntent {Direction} die Rollos im {Room}
+ShutterIntent {Direction} die Rollos in dem {Room}
+ShutterIntent {Direction} die Rollos im Raum {Room}
+ShutterIntent {Direction} die Rollos in dem Raum {Room}
+ShutterIntent {Direction} die Rollos Raum {Room}
+ShutterIntent {Direction} die Rollos in der {Room}
+ShutterIntent {Direction} die Rollläden in {Room}
+ShutterIntent {Direction} die Rollläden im {Room}
+ShutterIntent {Direction} die Rollläden in dem {Room}
+ShutterIntent {Direction} die Rollläden im Raum {Room}
+ShutterIntent {Direction} die Rollläden in dem Raum {Room}
+ShutterIntent {Direction} die Rollläden Raum {Room}
+ShutterIntent {Direction} die Rollläden in der {Room}
+ShutterIntent {Direction} den Rollo in {Room}
+ShutterIntent {Direction} den Rollo im {Room}
+ShutterIntent {Direction} den Rollo in dem {Room}
+ShutterIntent {Direction} den Rollo im Raum {Room}
+ShutterIntent {Direction} den Rollo in dem Raum {Room}
+ShutterIntent {Direction} den Rollo Raum {Room}
+ShutterIntent {Direction} den Rollo in der {Room}
+ShutterIntent {Direction} den Rollladen in {Room}
+ShutterIntent {Direction} den Rollladen im {Room}
+ShutterIntent {Direction} den Rollladen in dem {Room}
+ShutterIntent {Direction} den Rollladen im Raum {Room}
+ShutterIntent {Direction} den Rollladen in dem Raum {Room}
+ShutterIntent {Direction} den Rollladen Raum {Room}
+ShutterIntent {Direction} den Rollladen in der {Room}
+ShutterIntent Rollladen in {Room} auf {Percent} Prozent
+ShutterIntent Rollladen im {Room} auf {Percent} Prozent
+ShutterIntent Rollladen in dem {Room} auf {Percent} Prozent
+ShutterIntent Rollladen im Raum {Room} auf {Percent} Prozent
+ShutterIntent Rollladen in dem Raum {Room} auf {Percent} Prozent
+ShutterIntent Rollladen Raum {Room} auf {Percent} Prozent
+ShutterIntent Rollladen in der {Room} auf {Percent} Prozent
+ShutterIntent Rollo in {Room} auf {Percent} Prozent
+ShutterIntent Rollo im {Room} auf {Percent} Prozent
+ShutterIntent Rollo in dem {Room} auf {Percent} Prozent
+ShutterIntent Rollo im Raum {Room} auf {Percent} Prozent
+ShutterIntent Rollo in dem Raum {Room} auf {Percent} Prozent
+ShutterIntent Rollo Raum {Room} auf {Percent} Prozent
+ShutterIntent Rollo in der {Room} auf {Percent} Prozent
+ShutterIntent Rollläden in {Room} auf {Percent} Prozent
+ShutterIntent Rollläden im {Room} auf {Percent} Prozent
+ShutterIntent Rollläden in dem {Room} auf {Percent} Prozent
+ShutterIntent Rollläden im Raum {Room} auf {Percent} Prozent
+ShutterIntent Rollläden in dem Raum {Room} auf {Percent} Prozent
+ShutterIntent Rollläden Raum {Room} auf {Percent} Prozent
+ShutterIntent Rollläden in der {Room} auf {Percent} Prozent
+ShutterIntent Rollos in {Room} auf {Percent} Prozent
+ShutterIntent Rollos im {Room} auf {Percent} Prozent
+ShutterIntent Rollos in dem {Room} auf {Percent} Prozent
+ShutterIntent Rollos im Raum {Room} auf {Percent} Prozent
+ShutterIntent Rollos in dem Raum {Room} auf {Percent} Prozent
+ShutterIntent Rollos Raum {Room} auf {Percent} Prozent
+ShutterIntent Rollos in der {Room} auf {Percent} Prozent
+ShutterIntent die Rollos in {Room} auf {Percent} Prozent
+ShutterIntent die Rollos im {Room} auf {Percent} Prozent
+ShutterIntent die Rollos in dem {Room} auf {Percent} Prozent
+ShutterIntent die Rollos im Raum {Room} auf {Percent} Prozent
+ShutterIntent die Rollos in dem Raum {Room} auf {Percent} Prozent
+ShutterIntent die Rollos Raum {Room} auf {Percent} Prozent
+ShutterIntent die Rollos in der {Room} auf {Percent} Prozent
+ShutterIntent die Rollläden in {Room} auf {Percent} Prozent
+ShutterIntent die Rollläden im {Room} auf {Percent} Prozent
+ShutterIntent die Rollläden in dem {Room} auf {Percent} Prozent
+ShutterIntent die Rollläden im Raum {Room} auf {Percent} Prozent
+ShutterIntent die Rollläden in dem Raum {Room} auf {Percent} Prozent
+ShutterIntent die Rollläden Raum {Room} auf {Percent} Prozent
+ShutterIntent die Rollläden in der {Room} auf {Percent} Prozent
+ShutterIntent den Rollo in {Room} auf {Percent} Prozent
+ShutterIntent den Rollo im {Room} auf {Percent} Prozent
+ShutterIntent den Rollo in dem {Room} auf {Percent} Prozent
+ShutterIntent den Rollo im Raum {Room} auf {Percent} Prozent
+ShutterIntent den Rollo in dem Raum {Room} auf {Percent} Prozent
+ShutterIntent den Rollo Raum {Room} auf {Percent} Prozent
+ShutterIntent den Rollo in der {Room} auf {Percent} Prozent
+ShutterIntent den Rollladen in {Room} auf {Percent} Prozent
+ShutterIntent den Rollladen im {Room} auf {Percent} Prozent
+ShutterIntent den Rollladen in dem {Room} auf {Percent} Prozent
+ShutterIntent den Rollladen im Raum {Room} auf {Percent} Prozent
+ShutterIntent den Rollladen in dem Raum {Room} auf {Percent} Prozent
+ShutterIntent den Rollladen Raum {Room} auf {Percent} Prozent
+ShutterIntent den Rollladen in der {Room} auf {Percent} Prozent
+ShutterIntent Rollladen {Shutter} auf {Percent} Prozent
+ShutterIntent Rollo {Shutter} auf {Percent} Prozent
+ShutterIntent Rollläden {Shutter} auf {Percent} Prozent
+ShutterIntent Rollos {Shutter} auf {Percent} Prozent
+ShutterIntent die Rollos {Shutter} auf {Percent} Prozent
+ShutterIntent die Rollläden {Shutter} auf {Percent} Prozent
+ShutterIntent den Rollo {Shutter} auf {Percent} Prozent
+ShutterIntent den Rollladen {Shutter} auf {Percent} Prozent
+ShutterIntent {Shutter} auf {Percent} Prozent
 
 StopIntent Stop
 StopIntent Alexa stop
